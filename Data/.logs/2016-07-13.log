@@ -1,0 +1,1019 @@
+12:37:06.110	127.0.0.1:56896	admin	REQUEST	XQUERY json:serialize(db:open("WEBActions")/*)	12.72 ms
+12:37:06.163	127.0.0.1:56896	admin	OK	Query executed in 42.06 ms.	46.51 ms
+12:37:06.231	127.0.0.1:56897	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.27 ms
+12:37:06.232	127.0.0.1:56897	admin	OK	BIND[0] $dbname=main_app	0.4 ms
+12:37:06.233	127.0.0.1:56897	admin	OK	BIND[0] $tablename=bin/modules.xml	0.18 ms
+12:37:06.240	127.0.0.1:56897	admin	OK	BIND[0] $modulename=TEST	0.24 ms
+12:37:06.264	127.0.0.1:56897	admin	OK	EXEC[0]	22.34 ms
+12:37:06.341	127.0.0.1:56898	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.18 ms
+12:37:06.341	127.0.0.1:56898	admin	OK	BIND[0] $dbname=main_app	0.17 ms
+12:37:06.342	127.0.0.1:56898	admin	OK	BIND[0] $tablename=bin/modules.xml	0.13 ms
+12:37:06.342	127.0.0.1:56898	admin	OK	BIND[0] $modulename=BRjx	0.11 ms
+12:37:06.364	127.0.0.1:56898	admin	OK	EXEC[0]	22.32 ms
+12:37:06.454	127.0.0.1:56899	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.24 ms
+12:37:06.455	127.0.0.1:56899	admin	OK	BIND[0] $dbname=main_app	0.2 ms
+12:37:06.455	127.0.0.1:56899	admin	OK	BIND[0] $tablename=bin/modules.xml	0.16 ms
+12:37:06.456	127.0.0.1:56899	admin	OK	BIND[0] $modulename=BRjxRecord	0.1 ms
+12:37:06.477	127.0.0.1:56899	admin	OK	EXEC[0]	21.2 ms
+12:37:06.526	127.0.0.1:56900	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, element _ {db:open($dbname)//*/app/init/text()}})	0.17 ms
+12:37:06.527	127.0.0.1:56900	admin	OK	BIND[0] $dbname=main_app	0.18 ms
+12:37:06.542	127.0.0.1:56900	admin	OK	EXEC[0]	15.52 ms
+12:37:06.558	127.0.0.1:56900	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/records/_[./rc/text()='boot']/command/*})	0.18 ms
+12:37:06.558	127.0.0.1:56900	admin	OK	BIND[1] $dbname=main_app	0.16 ms
+12:37:06.572	127.0.0.1:56900	admin	OK	EXEC[1]	13.23 ms
+12:37:06.575	127.0.0.1:56900	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/BRjx/*})	0.19 ms
+12:37:06.582	127.0.0.1:56900	admin	OK	BIND[2] $dbname=main_app	0.17 ms
+12:37:06.593	127.0.0.1:56900	admin	OK	EXEC[2]	10.37 ms
+12:37:06.604	127.0.0.1:56900	admin	OK	QUERY[3] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/main/app/*})	0.17 ms
+12:37:06.605	127.0.0.1:56900	admin	OK	BIND[3] $dbname=main_app	0.15 ms
+12:37:06.617	127.0.0.1:56900	admin	OK	EXEC[3]	11.82 ms
+12:37:06.627	127.0.0.1:56900	admin	OK	QUERY[4] declare variable $dbname as xs:string external; json:serialize(element json { attribute type {'object'}, element commands { attribute type {'object'}, for $n in db:open($dbname)/commands/records/_ return element {$n/name/text()} { attribute type {'object'}, $n/properties, $n/script } } })	0.16 ms
+12:37:06.627	127.0.0.1:56900	admin	OK	BIND[4] $dbname=main_app	0.15 ms
+12:37:06.643	127.0.0.1:56900	admin	OK	EXEC[4]	16.53 ms
+12:37:06.880	127.0.0.1:56901	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {"array"}, for $r in $database/*/records/_ where ($r/name = "getRecords" and $r/type = "xquery") or ($r/name = "getTables" and $r/type = "xquery") return $r (:string, number, boolean, null, object, array:) } )	0.92 ms
+12:37:06.881	127.0.0.1:56901	admin	OK	BIND[0] $dbname=main_app	0.21 ms
+12:37:06.882	127.0.0.1:56901	admin	OK	BIND[0] $tablename=/bin/commands.xml	0.11 ms
+12:37:06.890	127.0.0.1:56901	admin	OK	EXEC[0]	8.5 ms
+12:37:07.309	127.0.0.1:56902	admin	REQUEST	XQUERY json:serialize(db:open("WEBActions")/*)	1.19 ms
+12:37:07.312	127.0.0.1:56902	admin	OK	Query executed in 2.67 ms.	3.08 ms
+12:37:27.997	127.0.0.1:56903	admin	REQUEST	XQUERY json:serialize(db:open("WEBActions")/*)	0.45 ms
+12:37:27.999	127.0.0.1:56903	admin	OK	Query executed in 2.13 ms.	2.44 ms
+12:37:28.204	127.0.0.1:56904	admin	REQUEST	XQUERY json:serialize(db:open("WEBActions")/*)	0.41 ms
+12:37:28.209	127.0.0.1:56904	admin	OK	Query executed in 4.35 ms.	4.73 ms
+12:37:49.201	127.0.0.1:56905	admin	REQUEST	XQUERY json:serialize(db:open("WEBActions")/*)	0.61 ms
+12:37:49.204	127.0.0.1:56905	admin	OK	Query executed in 3.18 ms.	3.53 ms
+12:37:49.244	127.0.0.1:56906	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.17 ms
+12:37:49.245	127.0.0.1:56906	admin	OK	BIND[0] $dbname=main_app	0.15 ms
+12:37:49.245	127.0.0.1:56906	admin	OK	BIND[0] $tablename=bin/modules.xml	0.08 ms
+12:37:49.245	127.0.0.1:56906	admin	OK	BIND[0] $modulename=TEST	0.08 ms
+12:37:49.279	127.0.0.1:56906	admin	OK	EXEC[0]	33.45 ms
+12:37:49.310	127.0.0.1:56907	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.17 ms
+12:37:49.310	127.0.0.1:56907	admin	OK	BIND[0] $dbname=main_app	0.12 ms
+12:37:49.311	127.0.0.1:56907	admin	OK	BIND[0] $tablename=bin/modules.xml	0.1 ms
+12:37:49.311	127.0.0.1:56907	admin	OK	BIND[0] $modulename=BRjx	0.09 ms
+12:37:49.321	127.0.0.1:56907	admin	OK	EXEC[0]	9.84 ms
+12:37:49.397	127.0.0.1:56908	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.18 ms
+12:37:49.398	127.0.0.1:56908	admin	OK	BIND[0] $dbname=main_app	0.21 ms
+12:37:49.409	127.0.0.1:56908	admin	OK	BIND[0] $tablename=bin/modules.xml	0.27 ms
+12:37:49.409	127.0.0.1:56908	admin	OK	BIND[0] $modulename=BRjxRecord	0.09 ms
+12:37:49.420	127.0.0.1:56908	admin	OK	EXEC[0]	10.79 ms
+12:37:49.482	127.0.0.1:56909	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, element _ {db:open($dbname)//*/app/init/text()}})	0.16 ms
+12:37:49.490	127.0.0.1:56909	admin	OK	BIND[0] $dbname=main_app	0.26 ms
+12:37:49.495	127.0.0.1:56909	admin	OK	EXEC[0]	5.04 ms
+12:37:49.517	127.0.0.1:56909	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/records/_[./rc/text()='boot']/command/*})	0.2 ms
+12:37:49.518	127.0.0.1:56909	admin	OK	BIND[1] $dbname=main_app	0.18 ms
+12:37:49.527	127.0.0.1:56909	admin	OK	EXEC[1]	8.47 ms
+12:37:49.528	127.0.0.1:56909	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/BRjx/*})	0.12 ms
+12:37:49.528	127.0.0.1:56909	admin	OK	BIND[2] $dbname=main_app	0.13 ms
+12:37:49.535	127.0.0.1:56909	admin	OK	EXEC[2]	7.05 ms
+12:37:49.540	127.0.0.1:56909	admin	OK	QUERY[3] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/main/app/*})	0.34 ms
+12:37:49.560	127.0.0.1:56909	admin	OK	BIND[3] $dbname=main_app	0.25 ms
+12:37:49.567	127.0.0.1:56909	admin	OK	EXEC[3]	6.49 ms
+12:37:49.598	127.0.0.1:56909	admin	OK	QUERY[4] declare variable $dbname as xs:string external; json:serialize(element json { attribute type {'object'}, element commands { attribute type {'object'}, for $n in db:open($dbname)/commands/records/_ return element {$n/name/text()} { attribute type {'object'}, $n/properties, $n/script } } })	0.21 ms
+12:37:49.598	127.0.0.1:56909	admin	OK	BIND[4] $dbname=main_app	0.13 ms
+12:37:49.632	127.0.0.1:56909	admin	OK	EXEC[4]	60.33 ms
+12:37:49.952	127.0.0.1:56910	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {"array"}, for $r in $database/*/records/_ where ($r/name = "getRecords" and $r/type = "xquery") or ($r/name = "getTables" and $r/type = "xquery") return $r (:string, number, boolean, null, object, array:) } )	0.71 ms
+12:37:49.953	127.0.0.1:56910	admin	OK	BIND[0] $dbname=main_app	0.19 ms
+12:37:49.953	127.0.0.1:56910	admin	OK	BIND[0] $tablename=/bin/commands.xml	0.09 ms
+12:37:49.959	127.0.0.1:56910	admin	OK	EXEC[0]	6.21 ms
+12:37:50.926	127.0.0.1:56912	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	0.71 ms
+12:37:50.953	127.0.0.1:56912	admin	OK	Query executed in 27.14 ms.	27.57 ms
+12:37:51.016	127.0.0.1:56913	admin	REQUEST	XQUERY json:serialize(db:open("WEBActions")/*)	0.41 ms
+12:37:51.018	127.0.0.1:56913	admin	OK	Query executed in 2.33 ms.	2.68 ms
+12:38:15.353	127.0.0.1:56914	admin	REQUEST	XQUERY json:serialize(db:open("WEBActions")/*)	0.4 ms
+12:38:15.361	127.0.0.1:56914	admin	OK	Query executed in 5.74 ms.	7.81 ms
+12:38:15.457	127.0.0.1:56915	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.21 ms
+12:38:15.458	127.0.0.1:56915	admin	OK	BIND[0] $dbname=main_app	0.18 ms
+12:38:15.460	127.0.0.1:56915	admin	OK	BIND[0] $tablename=bin/modules.xml	0.25 ms
+12:38:15.464	127.0.0.1:56915	admin	OK	BIND[0] $modulename=TEST	0.29 ms
+12:38:15.475	127.0.0.1:56915	admin	OK	EXEC[0]	8.95 ms
+12:38:15.554	127.0.0.1:56916	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.17 ms
+12:38:15.554	127.0.0.1:56916	admin	OK	BIND[0] $dbname=main_app	0.13 ms
+12:38:15.555	127.0.0.1:56916	admin	OK	BIND[0] $tablename=bin/modules.xml	0.1 ms
+12:38:15.555	127.0.0.1:56916	admin	OK	BIND[0] $modulename=BRjx	0.08 ms
+12:38:15.564	127.0.0.1:56916	admin	OK	EXEC[0]	8.67 ms
+12:38:15.608	127.0.0.1:56917	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.18 ms
+12:38:15.608	127.0.0.1:56917	admin	OK	BIND[0] $dbname=main_app	0.12 ms
+12:38:15.608	127.0.0.1:56917	admin	OK	BIND[0] $tablename=bin/modules.xml	0.08 ms
+12:38:15.609	127.0.0.1:56917	admin	OK	BIND[0] $modulename=BRjxRecord	0.09 ms
+12:38:15.616	127.0.0.1:56917	admin	OK	EXEC[0]	7.7 ms
+12:38:15.671	127.0.0.1:56918	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, element _ {db:open($dbname)//*/app/init/text()}})	0.17 ms
+12:38:15.673	127.0.0.1:56918	admin	OK	BIND[0] $dbname=main_app	0.2 ms
+12:38:15.678	127.0.0.1:56918	admin	OK	EXEC[0]	5.21 ms
+12:38:15.700	127.0.0.1:56918	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/records/_[./rc/text()='boot']/command/*})	0.18 ms
+12:38:15.701	127.0.0.1:56918	admin	OK	BIND[1] $dbname=main_app	0.15 ms
+12:38:15.708	127.0.0.1:56918	admin	OK	EXEC[1]	6.76 ms
+12:38:15.731	127.0.0.1:56918	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/BRjx/*})	0.21 ms
+12:38:15.732	127.0.0.1:56918	admin	OK	BIND[2] $dbname=main_app	0.14 ms
+12:38:15.738	127.0.0.1:56918	admin	OK	EXEC[2]	6.08 ms
+12:38:15.739	127.0.0.1:56918	admin	OK	QUERY[3] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/main/app/*})	0.09 ms
+12:38:15.739	127.0.0.1:56918	admin	OK	BIND[3] $dbname=main_app	0.15 ms
+12:38:15.744	127.0.0.1:56918	admin	OK	EXEC[3]	4.64 ms
+12:38:15.761	127.0.0.1:56918	admin	OK	QUERY[4] declare variable $dbname as xs:string external; json:serialize(element json { attribute type {'object'}, element commands { attribute type {'object'}, for $n in db:open($dbname)/commands/records/_ return element {$n/name/text()} { attribute type {'object'}, $n/properties, $n/script } } })	0.21 ms
+12:38:15.763	127.0.0.1:56918	admin	OK	BIND[4] $dbname=main_app	0.15 ms
+12:38:15.772	127.0.0.1:56918	admin	OK	EXEC[4]	8.76 ms
+12:38:15.957	127.0.0.1:56919	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {"array"}, for $r in $database/*/records/_ where ($r/name = "getRecords" and $r/type = "xquery") or ($r/name = "getTables" and $r/type = "xquery") return $r (:string, number, boolean, null, object, array:) } )	0.25 ms
+12:38:15.959	127.0.0.1:56919	admin	OK	BIND[0] $dbname=main_app	0.2 ms
+12:38:15.959	127.0.0.1:56919	admin	OK	BIND[0] $tablename=/bin/commands.xml	0.07 ms
+12:38:15.965	127.0.0.1:56919	admin	OK	EXEC[0]	6.09 ms
+12:38:16.160	127.0.0.1:56920	admin	REQUEST	XQUERY json:serialize(db:open("WEBActions")/*)	0.43 ms
+12:38:16.165	127.0.0.1:56920	admin	OK	Query executed in 4.21 ms.	4.57 ms
+12:38:38.946	127.0.0.1:56921	admin	REQUEST	XQUERY json:serialize(db:open("WEBActions")/*)	0.39 ms
+12:38:38.948	127.0.0.1:56921	admin	OK	Query executed in 1.62 ms.	1.91 ms
+12:38:39.012	127.0.0.1:56922	admin	REQUEST	XQUERY json:serialize(db:open("WEBActions")/*)	0.38 ms
+12:38:39.014	127.0.0.1:56922	admin	OK	Query executed in 1.72 ms.	1.99 ms
+12:48:24.888	127.0.0.1:56928	admin	REQUEST	XQUERY json:serialize(db:open("WEBActions")/*)	0.45 ms
+12:48:24.891	127.0.0.1:56928	admin	OK	Query executed in 3.04 ms.	3.72 ms
+12:48:24.922	127.0.0.1:56929	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.13 ms
+12:48:24.922	127.0.0.1:56929	admin	OK	BIND[0] $dbname=main_app	0.11 ms
+12:48:24.922	127.0.0.1:56929	admin	OK	BIND[0] $tablename=bin/modules.xml	0.07 ms
+12:48:24.923	127.0.0.1:56929	admin	OK	BIND[0] $modulename=TEST	0.09 ms
+12:48:24.931	127.0.0.1:56929	admin	OK	EXEC[0]	8.26 ms
+12:48:24.993	127.0.0.1:56930	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.12 ms
+12:48:24.993	127.0.0.1:56930	admin	OK	BIND[0] $dbname=main_app	0.12 ms
+12:48:24.994	127.0.0.1:56930	admin	OK	BIND[0] $tablename=bin/modules.xml	0.08 ms
+12:48:24.994	127.0.0.1:56930	admin	OK	BIND[0] $modulename=BRjx	0.06 ms
+12:48:24.999	127.0.0.1:56930	admin	OK	EXEC[0]	5.04 ms
+12:48:25.064	127.0.0.1:56931	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.17 ms
+12:48:25.064	127.0.0.1:56931	admin	OK	BIND[0] $dbname=main_app	0.15 ms
+12:48:25.064	127.0.0.1:56931	admin	OK	BIND[0] $tablename=bin/modules.xml	0.08 ms
+12:48:25.065	127.0.0.1:56931	admin	OK	BIND[0] $modulename=BRjxRecord	0.1 ms
+12:48:25.075	127.0.0.1:56931	admin	OK	EXEC[0]	9.3 ms
+12:48:25.126	127.0.0.1:56932	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, element _ {db:open($dbname)//*/app/init/text()}})	0.18 ms
+12:48:25.127	127.0.0.1:56932	admin	OK	BIND[0] $dbname=main_app	0.14 ms
+12:48:25.141	127.0.0.1:56932	admin	OK	EXEC[0]	4.37 ms
+12:48:25.161	127.0.0.1:56932	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/records/_[./rc/text()='boot']/command/*})	0.19 ms
+12:48:25.167	127.0.0.1:56932	admin	OK	BIND[1] $dbname=main_app	0.63 ms
+12:48:25.209	127.0.0.1:56932	admin	OK	EXEC[1]	4.67 ms
+12:48:25.220	127.0.0.1:56932	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/BRjx/*})	0.16 ms
+12:48:25.222	127.0.0.1:56932	admin	OK	BIND[2] $dbname=main_app	0.19 ms
+12:48:25.226	127.0.0.1:56932	admin	OK	EXEC[2]	4.01 ms
+12:48:25.227	127.0.0.1:56932	admin	OK	QUERY[3] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/main/app/*})	0.11 ms
+12:48:25.283	127.0.0.1:56932	admin	OK	BIND[3] $dbname=main_app	0.25 ms
+12:48:25.287	127.0.0.1:56932	admin	OK	EXEC[3]	2.98 ms
+12:48:25.308	127.0.0.1:56932	admin	OK	QUERY[4] declare variable $dbname as xs:string external; json:serialize(element json { attribute type {'object'}, element commands { attribute type {'object'}, for $n in db:open($dbname)/commands/records/_ return element {$n/name/text()} { attribute type {'object'}, $n/properties, $n/script } } })	0.16 ms
+12:48:25.309	127.0.0.1:56932	admin	OK	BIND[4] $dbname=main_app	0.12 ms
+12:48:25.318	127.0.0.1:56932	admin	OK	EXEC[4]	9.43 ms
+12:48:25.471	127.0.0.1:56933	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {"array"}, for $r in $database/*/records/_ where ($r/name = "getRecords" and $r/type = "xquery") or ($r/name = "getTables" and $r/type = "xquery") return $r (:string, number, boolean, null, object, array:) } )	0.19 ms
+12:48:25.472	127.0.0.1:56933	admin	OK	BIND[0] $dbname=main_app	0.16 ms
+12:48:25.472	127.0.0.1:56933	admin	OK	BIND[0] $tablename=/bin/commands.xml	0.07 ms
+12:48:25.478	127.0.0.1:56933	admin	OK	EXEC[0]	5.76 ms
+12:48:25.701	127.0.0.1:56934	admin	REQUEST	XQUERY json:serialize(db:open("WEBActions")/*)	0.58 ms
+12:48:25.705	127.0.0.1:56934	admin	OK	Query executed in 3.22 ms.	4.2 ms
+20:46:31.561	SERVER	admin	OK	Server was stopped (port: 1984).
+20:46:39.736	SERVER	admin	OK	Server was started (port: 1984).
+20:46:44.826	127.0.0.1:56978	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	39.29 ms
+20:46:46.596	127.0.0.1:56978	admin	OK	Query executed in 1768.62 ms.	1770.57 ms
+20:46:46.614	127.0.0.1:56979	admin	REQUEST	XQUERY json:serialize(db:open("WEBActions")/*)	0.43 ms
+20:46:46.619	127.0.0.1:56979	admin	OK	Query executed in 4.45 ms.	4.98 ms
+20:46:46.648	127.0.0.1:56980	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	1.5 ms
+20:46:46.656	127.0.0.1:56980	admin	OK	BIND[0] $dbname=main_app	7.21 ms
+20:46:46.657	127.0.0.1:56980	admin	OK	BIND[0] $tablename=bin/modules.xml	0.14 ms
+20:46:46.657	127.0.0.1:56980	admin	OK	BIND[0] $modulename=TEST	0.11 ms
+20:46:46.688	127.0.0.1:56980	admin	OK	EXEC[0]	30.84 ms
+20:46:46.709	127.0.0.1:56981	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.25 ms
+20:46:46.709	127.0.0.1:56981	admin	OK	BIND[0] $dbname=main_app	0.18 ms
+20:46:46.710	127.0.0.1:56981	admin	OK	BIND[0] $tablename=bin/modules.xml	0.12 ms
+20:46:46.710	127.0.0.1:56981	admin	OK	BIND[0] $modulename=BRjx	0.1 ms
+20:46:46.718	127.0.0.1:56981	admin	OK	EXEC[0]	7.64 ms
+20:46:46.754	127.0.0.1:56982	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.23 ms
+20:46:46.754	127.0.0.1:56982	admin	OK	BIND[0] $dbname=main_app	0.15 ms
+20:46:46.755	127.0.0.1:56982	admin	OK	BIND[0] $tablename=bin/modules.xml	0.12 ms
+20:46:46.755	127.0.0.1:56982	admin	OK	BIND[0] $modulename=BRjxRecord	0.11 ms
+20:46:46.765	127.0.0.1:56982	admin	OK	EXEC[0]	9.42 ms
+20:46:46.820	127.0.0.1:56983	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, element _ {db:open($dbname)//*/app/init/text()}})	0.18 ms
+20:46:46.822	127.0.0.1:56983	admin	OK	BIND[0] $dbname=main_app	0.19 ms
+20:46:46.829	127.0.0.1:56983	admin	OK	EXEC[0]	7.28 ms
+20:46:46.841	127.0.0.1:56983	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/records/_[./rc/text()='boot']/command/*})	0.16 ms
+20:46:46.842	127.0.0.1:56983	admin	OK	BIND[1] $dbname=main_app	0.18 ms
+20:46:46.852	127.0.0.1:56983	admin	OK	EXEC[1]	10.01 ms
+20:46:46.869	127.0.0.1:56983	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/BRjx/*})	0.21 ms
+20:46:46.869	127.0.0.1:56983	admin	OK	BIND[2] $dbname=main_app	0.17 ms
+20:46:46.876	127.0.0.1:56983	admin	OK	EXEC[2]	4.16 ms
+20:46:46.895	127.0.0.1:56983	admin	OK	QUERY[3] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/main/app/*})	0.27 ms
+20:46:46.896	127.0.0.1:56983	admin	OK	BIND[3] $dbname=main_app	0.18 ms
+20:46:46.905	127.0.0.1:56983	admin	OK	EXEC[3]	6.51 ms
+20:46:46.924	127.0.0.1:56983	admin	OK	QUERY[4] declare variable $dbname as xs:string external; json:serialize(element json { attribute type {'object'}, element commands { attribute type {'object'}, for $n in db:open($dbname)/commands/records/_ return element {$n/name/text()} { attribute type {'object'}, $n/properties, $n/script } } })	0.22 ms
+20:46:46.927	127.0.0.1:56983	admin	OK	BIND[4] $dbname=main_app	0.23 ms
+20:46:46.942	127.0.0.1:56983	admin	OK	EXEC[4]	11.12 ms
+20:46:47.151	127.0.0.1:56984	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {"array"}, for $r in $database/*/records/_ where ($r/name = "getRecords" and $r/type = "xquery") or ($r/name = "getTables" and $r/type = "xquery") return $r (:string, number, boolean, null, object, array:) } )	0.32 ms
+20:46:47.152	127.0.0.1:56984	admin	OK	BIND[0] $dbname=main_app	0.18 ms
+20:46:47.153	127.0.0.1:56984	admin	OK	BIND[0] $tablename=/bin/commands.xml	0.15 ms
+20:46:47.163	127.0.0.1:56984	admin	OK	EXEC[0]	10.27 ms
+20:46:47.791	127.0.0.1:56986	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	0.51 ms
+20:46:47.873	127.0.0.1:56986	admin	OK	Query executed in 81.6 ms.	81.97 ms
+20:46:47.902	127.0.0.1:56987	admin	REQUEST	XQUERY json:serialize(db:open("WEBActions")/*)	0.45 ms
+20:46:47.905	127.0.0.1:56987	admin	OK	Query executed in 1.89 ms.	2.32 ms
+20:50:36.024	SERVER	admin	OK	Server was stopped (port: 1984).
+20:50:44.514	SERVER	admin	OK	Server was started (port: 1984).
+20:50:55.317	127.0.0.1:56990	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	45.25 ms
+20:50:56.544	127.0.0.1:56990	admin	OK	Query executed in 1225.08 ms.	1226.84 ms
+20:50:56.588	127.0.0.1:56991	admin	REQUEST	XQUERY undefined	0.48 ms
+20:50:56.592	127.0.0.1:56991	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	3.45 ms
+20:54:24.852	SERVER	admin	OK	Server was stopped (port: 1984).
+20:54:36.820	SERVER	admin	OK	Server was started (port: 1984).
+20:54:54.244	127.0.0.1:56996	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	34.31 ms
+20:54:55.524	127.0.0.1:56996	admin	OK	Query executed in 1278.18 ms.	1279.96 ms
+20:54:55.542	127.0.0.1:56997	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.45 ms
+20:54:55.547	127.0.0.1:56997	admin	OK	Query executed in 4.27 ms.	4.87 ms
+20:54:55.581	127.0.0.1:56998	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	1.56 ms
+20:54:55.589	127.0.0.1:56998	admin	OK	BIND[0] $dbname=main_app	6.15 ms
+20:54:55.590	127.0.0.1:56998	admin	OK	BIND[0] $tablename=bin/modules.xml	0.16 ms
+20:54:55.590	127.0.0.1:56998	admin	OK	BIND[0] $modulename=TEST	0.1 ms
+20:54:55.615	127.0.0.1:56998	admin	OK	EXEC[0]	24.97 ms
+20:54:55.637	127.0.0.1:56999	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.19 ms
+20:54:55.638	127.0.0.1:56999	admin	OK	BIND[0] $dbname=main_app	0.18 ms
+20:54:55.638	127.0.0.1:56999	admin	OK	BIND[0] $tablename=bin/modules.xml	0.11 ms
+20:54:55.638	127.0.0.1:56999	admin	OK	BIND[0] $modulename=BRjx	0.1 ms
+20:54:55.646	127.0.0.1:56999	admin	OK	EXEC[0]	7.72 ms
+20:54:55.682	127.0.0.1:57000	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.23 ms
+20:54:55.683	127.0.0.1:57000	admin	OK	BIND[0] $dbname=main_app	0.18 ms
+20:54:55.683	127.0.0.1:57000	admin	OK	BIND[0] $tablename=bin/modules.xml	0.11 ms
+20:54:55.683	127.0.0.1:57000	admin	OK	BIND[0] $modulename=BRjxRecord	0.1 ms
+20:54:55.693	127.0.0.1:57000	admin	OK	EXEC[0]	9.44 ms
+20:54:55.729	127.0.0.1:57001	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, element _ {db:open($dbname)//*/app/init/text()}})	0.21 ms
+20:54:55.730	127.0.0.1:57001	admin	OK	BIND[0] $dbname=main_app	0.19 ms
+20:54:55.737	127.0.0.1:57001	admin	OK	EXEC[0]	6.94 ms
+20:54:55.756	127.0.0.1:57001	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/records/_[./rc/text()='boot']/command/*})	0.22 ms
+20:54:55.756	127.0.0.1:57001	admin	OK	BIND[1] $dbname=main_app	0.16 ms
+20:54:55.767	127.0.0.1:57001	admin	OK	EXEC[1]	9.73 ms
+20:54:55.767	127.0.0.1:57001	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/BRjx/*})	0.1 ms
+20:54:55.768	127.0.0.1:57001	admin	OK	BIND[2] $dbname=main_app	0.16 ms
+20:54:55.771	127.0.0.1:57001	admin	OK	EXEC[2]	3.53 ms
+20:54:55.772	127.0.0.1:57001	admin	OK	QUERY[3] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/main/app/*})	0.12 ms
+20:54:55.772	127.0.0.1:57001	admin	OK	BIND[3] $dbname=main_app	0.13 ms
+20:54:55.776	127.0.0.1:57001	admin	OK	EXEC[3]	3.57 ms
+20:54:55.776	127.0.0.1:57001	admin	OK	QUERY[4] declare variable $dbname as xs:string external; json:serialize(element json { attribute type {'object'}, element commands { attribute type {'object'}, for $n in db:open($dbname)/commands/records/_ return element {$n/name/text()} { attribute type {'object'}, $n/properties, $n/script } } })	0.12 ms
+20:54:55.777	127.0.0.1:57001	admin	OK	BIND[4] $dbname=main_app	0.15 ms
+20:54:55.785	127.0.0.1:57001	admin	OK	EXEC[4]	8.45 ms
+20:54:55.987	127.0.0.1:57002	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {"array"}, for $r in $database/*/records/_ where ($r/name = "getRecords" and $r/type = "xquery") or ($r/name = "getTables" and $r/type = "xquery") return $r (:string, number, boolean, null, object, array:) } )	0.2 ms
+20:54:55.987	127.0.0.1:57002	admin	OK	BIND[0] $dbname=main_app	0.16 ms
+20:54:55.988	127.0.0.1:57002	admin	OK	BIND[0] $tablename=/bin/commands.xml	0.13 ms
+20:54:55.996	127.0.0.1:57002	admin	OK	EXEC[0]	7.14 ms
+20:54:56.693	127.0.0.1:57004	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	1.27 ms
+20:54:56.769	127.0.0.1:57004	admin	OK	Query executed in 74.94 ms.	75.3 ms
+20:54:56.781	127.0.0.1:57005	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.38 ms
+20:54:56.783	127.0.0.1:57005	admin	OK	Query executed in 1.83 ms.	2.23 ms
+21:14:19.804	SERVER	admin	OK	Server was stopped (port: 1984).
+21:14:30.214	SERVER	admin	OK	Server was started (port: 1984).
+21:14:39.715	127.0.0.1:57014	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	34.25 ms
+21:14:40.875	127.0.0.1:57014	admin	OK	Query executed in 1152.29 ms.	1160.26 ms
+21:14:40.899	127.0.0.1:57015	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.65 ms
+21:14:40.904	127.0.0.1:57015	admin	OK	Query executed in 4.07 ms.	4.66 ms
+21:14:40.945	127.0.0.1:57016	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	1.57 ms
+21:14:40.955	127.0.0.1:57016	admin	OK	BIND[0] $dbname=main_app	8.73 ms
+21:14:40.956	127.0.0.1:57016	admin	OK	BIND[0] $tablename=bin/modules.xml	0.17 ms
+21:14:40.956	127.0.0.1:57016	admin	OK	BIND[0] $modulename=TEST	0.1 ms
+21:14:40.992	127.0.0.1:57016	admin	OK	EXEC[0]	36.01 ms
+21:14:41.028	127.0.0.1:57017	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.21 ms
+21:14:41.028	127.0.0.1:57017	admin	OK	BIND[0] $dbname=main_app	0.17 ms
+21:14:41.029	127.0.0.1:57017	admin	OK	BIND[0] $tablename=bin/modules.xml	0.12 ms
+21:14:41.029	127.0.0.1:57017	admin	OK	BIND[0] $modulename=BRjx	0.11 ms
+21:14:41.037	127.0.0.1:57017	admin	OK	EXEC[0]	7.61 ms
+21:14:41.116	127.0.0.1:57018	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.24 ms
+21:14:41.117	127.0.0.1:57018	admin	OK	BIND[0] $dbname=main_app	0.17 ms
+21:14:41.117	127.0.0.1:57018	admin	OK	BIND[0] $tablename=bin/modules.xml	0.1 ms
+21:14:41.117	127.0.0.1:57018	admin	OK	BIND[0] $modulename=BRjxRecord	0.1 ms
+21:14:41.127	127.0.0.1:57018	admin	OK	EXEC[0]	9.45 ms
+21:14:41.155	127.0.0.1:57019	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, element _ {db:open($dbname)//*/app/init/text()}})	0.18 ms
+21:14:41.157	127.0.0.1:57019	admin	OK	BIND[0] $dbname=main_app	0.19 ms
+21:14:41.164	127.0.0.1:57019	admin	OK	EXEC[0]	6.95 ms
+21:14:41.181	127.0.0.1:57019	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/records/_[./rc/text()='boot']/command/*})	0.22 ms
+21:14:41.182	127.0.0.1:57019	admin	OK	BIND[1] $dbname=main_app	0.16 ms
+21:14:41.192	127.0.0.1:57019	admin	OK	EXEC[1]	9.82 ms
+21:14:41.193	127.0.0.1:57019	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/BRjx/*})	0.14 ms
+21:14:41.194	127.0.0.1:57019	admin	OK	BIND[2] $dbname=main_app	0.16 ms
+21:14:41.197	127.0.0.1:57019	admin	OK	EXEC[2]	3.47 ms
+21:14:41.198	127.0.0.1:57019	admin	OK	QUERY[3] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/main/app/*})	0.12 ms
+21:14:41.198	127.0.0.1:57019	admin	OK	BIND[3] $dbname=main_app	0.12 ms
+21:14:41.201	127.0.0.1:57019	admin	OK	EXEC[3]	3.23 ms
+21:14:41.202	127.0.0.1:57019	admin	OK	QUERY[4] declare variable $dbname as xs:string external; json:serialize(element json { attribute type {'object'}, element commands { attribute type {'object'}, for $n in db:open($dbname)/commands/records/_ return element {$n/name/text()} { attribute type {'object'}, $n/properties, $n/script } } })	0.14 ms
+21:14:41.202	127.0.0.1:57019	admin	OK	BIND[4] $dbname=main_app	0.12 ms
+21:14:41.210	127.0.0.1:57019	admin	OK	EXEC[4]	7.94 ms
+21:14:41.425	127.0.0.1:57020	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {"array"}, for $r in $database/*/records/_ where ($r/name = "getRecords" and $r/type = "xquery") or ($r/name = "getTables" and $r/type = "xquery") return $r (:string, number, boolean, null, object, array:) } )	0.2 ms
+21:14:41.425	127.0.0.1:57020	admin	OK	BIND[0] $dbname=main_app	0.14 ms
+21:14:41.426	127.0.0.1:57020	admin	OK	BIND[0] $tablename=/bin/commands.xml	0.13 ms
+21:14:41.434	127.0.0.1:57020	admin	OK	EXEC[0]	8.36 ms
+21:14:42.094	127.0.0.1:57022	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	0.78 ms
+21:14:42.142	127.0.0.1:57022	admin	OK	Query executed in 47.71 ms.	48.06 ms
+21:14:42.185	127.0.0.1:57023	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.39 ms
+21:14:42.188	127.0.0.1:57023	admin	OK	Query executed in 1.95 ms.	3.79 ms
+21:26:17.157	SERVER	admin	OK	Server was stopped (port: 1984).
+21:26:26.670	SERVER	admin	OK	Server was started (port: 1984).
+21:26:33.782	127.0.0.1:57030	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	32.57 ms
+21:26:35.459	127.0.0.1:57030	admin	OK	Query executed in 1675.19 ms.	1676.92 ms
+21:26:35.477	127.0.0.1:57031	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.5 ms
+21:26:35.482	127.0.0.1:57031	admin	OK	Query executed in 3.85 ms.	4.37 ms
+21:28:48.615	SERVER	admin	OK	Server was stopped (port: 1984).
+21:28:57.717	SERVER	admin	OK	Server was started (port: 1984).
+21:29:04.816	127.0.0.1:57037	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	36.12 ms
+21:29:06.275	127.0.0.1:57037	admin	OK	Query executed in 1457.2 ms.	1459.0 ms
+21:29:06.295	127.0.0.1:57038	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.45 ms
+21:29:06.299	127.0.0.1:57038	admin	OK	Query executed in 3.76 ms.	4.29 ms
+21:29:44.615	127.0.0.1:57045	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.41 ms
+21:29:44.618	127.0.0.1:57045	admin	OK	Query executed in 2.13 ms.	3.9 ms
+21:29:44.978	127.0.0.1:57046	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.47 ms
+21:29:44.980	127.0.0.1:57046	admin	OK	Query executed in 2.0 ms.	2.46 ms
+21:30:53.298	127.0.0.1:57048	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	0.55 ms
+21:30:53.420	127.0.0.1:57048	admin	OK	Query executed in 121.96 ms.	122.42 ms
+21:30:53.441	127.0.0.1:57049	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	2.67 ms
+21:30:53.449	127.0.0.1:57049	admin	OK	Query executed in 7.08 ms.	7.51 ms
+21:30:53.535	127.0.0.1:57050	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.42 ms
+21:30:53.538	127.0.0.1:57050	admin	OK	Query executed in 2.32 ms.	3.09 ms
+21:30:58.579	127.0.0.1:57051	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.4 ms
+21:30:58.583	127.0.0.1:57051	admin	OK	Query executed in 3.39 ms.	3.73 ms
+21:31:20.281	127.0.0.1:57055	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	2.13 ms
+21:31:20.283	127.0.0.1:57055	admin	OK	Query executed in 1.92 ms.	2.21 ms
+21:31:20.344	127.0.0.1:57056	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.43 ms
+21:31:20.346	127.0.0.1:57056	admin	OK	Query executed in 1.98 ms.	2.31 ms
+21:31:27.395	127.0.0.1:57057	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.39 ms
+21:31:27.397	127.0.0.1:57057	admin	OK	Query executed in 1.85 ms.	2.13 ms
+21:31:27.476	127.0.0.1:57058	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.41 ms
+21:31:27.478	127.0.0.1:57058	admin	OK	Query executed in 2.43 ms.	2.77 ms
+21:31:28.581	127.0.0.1:57059	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.5 ms
+21:31:28.585	127.0.0.1:57059	admin	OK	Query executed in 3.96 ms.	4.28 ms
+21:31:28.656	127.0.0.1:57060	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.41 ms
+21:31:28.661	127.0.0.1:57060	admin	OK	Query executed in 2.36 ms.	5.66 ms
+21:31:29.440	127.0.0.1:57061	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.4 ms
+21:31:29.442	127.0.0.1:57061	admin	OK	Query executed in 1.94 ms.	2.24 ms
+21:31:29.512	127.0.0.1:57062	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.35 ms
+21:31:29.515	127.0.0.1:57062	admin	OK	Query executed in 2.18 ms.	2.49 ms
+21:31:30.051	127.0.0.1:57063	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.42 ms
+21:31:30.076	127.0.0.1:57063	admin	OK	Query executed in 24.41 ms.	24.82 ms
+21:31:30.116	127.0.0.1:57064	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.52 ms
+21:31:30.119	127.0.0.1:57064	admin	OK	Query executed in 2.11 ms.	2.43 ms
+21:31:35.012	127.0.0.1:57065	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.41 ms
+21:31:35.014	127.0.0.1:57065	admin	OK	Query executed in 2.24 ms.	2.55 ms
+21:31:36.979	127.0.0.1:57069	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.48 ms
+21:31:36.984	127.0.0.1:57069	admin	OK	Query executed in 4.45 ms.	4.85 ms
+21:31:37.764	127.0.0.1:57073	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.91 ms
+21:31:37.767	127.0.0.1:57073	admin	OK	Query executed in 2.18 ms.	2.51 ms
+21:31:38.270	127.0.0.1:57075	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.36 ms
+21:31:38.273	127.0.0.1:57075	admin	OK	Query executed in 2.48 ms.	2.81 ms
+21:35:44.607	SERVER	admin	OK	Server was stopped (port: 1984).
+21:35:53.733	SERVER	admin	OK	Server was started (port: 1984).
+21:35:57.624	127.0.0.1:57083	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	33.29 ms
+21:35:59.196	127.0.0.1:57083	admin	OK	Query executed in 1569.68 ms.	1571.68 ms
+21:35:59.227	127.0.0.1:57084	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.45 ms
+21:35:59.232	127.0.0.1:57084	admin	OK	Query executed in 3.98 ms.	4.55 ms
+21:35:59.266	127.0.0.1:57085	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	1.61 ms
+21:35:59.275	127.0.0.1:57085	admin	OK	BIND[0] $dbname=main_app	6.44 ms
+21:35:59.276	127.0.0.1:57085	admin	OK	BIND[0] $tablename=/bin/modules.xml	0.14 ms
+21:35:59.276	127.0.0.1:57085	admin	OK	BIND[0] $modulename=TEST	0.13 ms
+21:35:59.313	127.0.0.1:57085	admin	OK	EXEC[0]	47.77 ms
+21:35:59.336	127.0.0.1:57086	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.21 ms
+21:35:59.337	127.0.0.1:57086	admin	OK	BIND[0] $dbname=main_app	0.17 ms
+21:35:59.337	127.0.0.1:57086	admin	OK	BIND[0] $tablename=/bin/modules.xml	0.11 ms
+21:35:59.337	127.0.0.1:57086	admin	OK	BIND[0] $modulename=BRjx	0.1 ms
+21:35:59.345	127.0.0.1:57086	admin	OK	EXEC[0]	7.61 ms
+21:35:59.392	127.0.0.1:57087	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.2 ms
+21:35:59.393	127.0.0.1:57087	admin	OK	BIND[0] $dbname=main_app	0.17 ms
+21:35:59.393	127.0.0.1:57087	admin	OK	BIND[0] $tablename=/bin/modules.xml	0.1 ms
+21:35:59.393	127.0.0.1:57087	admin	OK	BIND[0] $modulename=BRjxRecord	0.1 ms
+21:35:59.404	127.0.0.1:57087	admin	OK	EXEC[0]	10.54 ms
+21:35:59.477	127.0.0.1:57088	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, element _ {db:open($dbname)//*/app/init/text()}})	0.21 ms
+21:35:59.478	127.0.0.1:57088	admin	OK	BIND[0] $dbname=main_app	0.17 ms
+21:35:59.485	127.0.0.1:57088	admin	OK	EXEC[0]	6.94 ms
+21:35:59.486	127.0.0.1:57088	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/records/_[./rc/text()='boot']/command/*})	0.12 ms
+21:35:59.486	127.0.0.1:57088	admin	OK	BIND[1] $dbname=main_app	0.14 ms
+21:35:59.500	127.0.0.1:57088	admin	OK	EXEC[1]	13.08 ms
+21:35:59.531	127.0.0.1:57088	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/BRjx/*})	0.23 ms
+21:35:59.544	127.0.0.1:57088	admin	OK	BIND[2] $dbname=main_app	0.29 ms
+21:35:59.548	127.0.0.1:57088	admin	OK	EXEC[2]	4.04 ms
+21:35:59.571	127.0.0.1:57088	admin	OK	QUERY[3] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/main/app/*})	0.19 ms
+21:35:59.572	127.0.0.1:57088	admin	OK	BIND[3] $dbname=main_app	0.17 ms
+21:35:59.587	127.0.0.1:57088	admin	OK	EXEC[3]	4.71 ms
+21:35:59.620	127.0.0.1:57088	admin	OK	QUERY[4] declare variable $dbname as xs:string external; json:serialize(element json { attribute type {'object'}, element commands { attribute type {'object'}, for $n in db:open($dbname)/commands/records/_ return element {$n/name/text()} { attribute type {'object'}, $n/properties, $n/script } } })	0.24 ms
+21:35:59.620	127.0.0.1:57088	admin	OK	BIND[4] $dbname=main_app	0.15 ms
+21:35:59.636	127.0.0.1:57088	admin	OK	EXEC[4]	15.8 ms
+21:35:59.829	127.0.0.1:57089	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {"array"}, for $r in $database/*/records/_ where ($r/name = "getRecords" and $r/type = "xquery") or ($r/name = "getTables" and $r/type = "xquery") return $r (:string, number, boolean, null, object, array:) } )	0.24 ms
+21:35:59.830	127.0.0.1:57089	admin	OK	BIND[0] $dbname=main_app	0.17 ms
+21:35:59.831	127.0.0.1:57089	admin	OK	BIND[0] $tablename=/bin/commands.xml	0.12 ms
+21:35:59.838	127.0.0.1:57089	admin	OK	EXEC[0]	6.7 ms
+21:36:00.434	127.0.0.1:57091	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	0.61 ms
+21:36:00.498	127.0.0.1:57091	admin	OK	Query executed in 64.37 ms.	64.78 ms
+21:36:00.531	127.0.0.1:57092	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.48 ms
+21:36:00.533	127.0.0.1:57092	admin	OK	Query executed in 1.79 ms.	2.24 ms
+21:36:27.720	127.0.0.1:57093	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	0.55 ms
+21:36:27.790	127.0.0.1:57093	admin	OK	Query executed in 70.07 ms.	70.72 ms
+21:36:27.915	127.0.0.1:57094	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.44 ms
+21:36:27.918	127.0.0.1:57094	admin	OK	Query executed in 2.1 ms.	3.06 ms
+21:36:27.969	127.0.0.1:57095	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.23 ms
+21:36:27.969	127.0.0.1:57095	admin	OK	BIND[0] $dbname=main_app	0.14 ms
+21:36:27.970	127.0.0.1:57095	admin	OK	BIND[0] $tablename=/bin/modules.xml	0.12 ms
+21:36:27.970	127.0.0.1:57095	admin	OK	BIND[0] $modulename=TEST	0.09 ms
+21:36:27.982	127.0.0.1:57095	admin	OK	EXEC[0]	12.59 ms
+21:36:28.035	127.0.0.1:57096	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.29 ms
+21:36:28.038	127.0.0.1:57096	admin	OK	BIND[0] $dbname=main_app	0.24 ms
+21:36:28.038	127.0.0.1:57096	admin	OK	BIND[0] $tablename=/bin/modules.xml	0.12 ms
+21:36:28.038	127.0.0.1:57096	admin	OK	BIND[0] $modulename=BRjx	0.1 ms
+21:36:28.047	127.0.0.1:57096	admin	OK	EXEC[0]	8.34 ms
+21:36:28.119	127.0.0.1:57097	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.33 ms
+21:36:28.121	127.0.0.1:57097	admin	OK	BIND[0] $dbname=main_app	0.23 ms
+21:36:28.122	127.0.0.1:57097	admin	OK	BIND[0] $tablename=/bin/modules.xml	0.13 ms
+21:36:28.122	127.0.0.1:57097	admin	OK	BIND[0] $modulename=BRjxRecord	0.11 ms
+21:36:28.133	127.0.0.1:57097	admin	OK	EXEC[0]	11.12 ms
+21:36:28.189	127.0.0.1:57098	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, element _ {db:open($dbname)//*/app/init/text()}})	0.18 ms
+21:36:28.191	127.0.0.1:57098	admin	OK	BIND[0] $dbname=main_app	0.2 ms
+21:36:28.198	127.0.0.1:57098	admin	OK	EXEC[0]	6.71 ms
+21:36:28.220	127.0.0.1:57098	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/records/_[./rc/text()='boot']/command/*})	0.25 ms
+21:36:28.221	127.0.0.1:57098	admin	OK	BIND[1] $dbname=main_app	0.18 ms
+21:36:28.226	127.0.0.1:57098	admin	OK	EXEC[1]	4.18 ms
+21:36:28.251	127.0.0.1:57098	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/BRjx/*})	0.2 ms
+21:36:28.252	127.0.0.1:57098	admin	OK	BIND[2] $dbname=main_app	0.17 ms
+21:36:28.256	127.0.0.1:57098	admin	OK	EXEC[2]	3.33 ms
+21:36:28.283	127.0.0.1:57098	admin	OK	QUERY[3] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/main/app/*})	0.19 ms
+21:36:28.283	127.0.0.1:57098	admin	OK	BIND[3] $dbname=main_app	0.14 ms
+21:36:28.287	127.0.0.1:57098	admin	OK	EXEC[3]	3.53 ms
+21:36:28.288	127.0.0.1:57098	admin	OK	QUERY[4] declare variable $dbname as xs:string external; json:serialize(element json { attribute type {'object'}, element commands { attribute type {'object'}, for $n in db:open($dbname)/commands/records/_ return element {$n/name/text()} { attribute type {'object'}, $n/properties, $n/script } } })	0.18 ms
+21:36:28.288	127.0.0.1:57098	admin	OK	BIND[4] $dbname=main_app	0.12 ms
+21:36:28.300	127.0.0.1:57098	admin	OK	EXEC[4]	12.28 ms
+21:36:28.571	127.0.0.1:57099	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {"array"}, for $r in $database/*/records/_ where ($r/name = "getRecords" and $r/type = "xquery") or ($r/name = "getTables" and $r/type = "xquery") return $r (:string, number, boolean, null, object, array:) } )	0.26 ms
+21:36:28.572	127.0.0.1:57099	admin	OK	BIND[0] $dbname=main_app	0.17 ms
+21:36:28.572	127.0.0.1:57099	admin	OK	BIND[0] $tablename=/bin/commands.xml	0.08 ms
+21:36:28.578	127.0.0.1:57099	admin	OK	EXEC[0]	5.92 ms
+21:36:29.100	127.0.0.1:57100	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	0.67 ms
+21:36:29.178	127.0.0.1:57100	admin	OK	Query executed in 76.96 ms.	77.75 ms
+21:36:29.241	127.0.0.1:57101	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.34 ms
+21:36:29.243	127.0.0.1:57101	admin	OK	Query executed in 1.76 ms.	2.05 ms
+21:36:34.843	SERVER	admin	OK	Server was stopped (port: 1984).
+21:36:43.126	SERVER	admin	OK	Server was started (port: 1984).
+21:36:52.359	127.0.0.1:57104	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	40.35 ms
+21:36:53.727	127.0.0.1:57104	admin	OK	Query executed in 1364.48 ms.	1366.25 ms
+21:36:53.742	127.0.0.1:57105	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.42 ms
+21:36:53.746	127.0.0.1:57105	admin	OK	Query executed in 3.93 ms.	4.46 ms
+21:36:53.780	127.0.0.1:57106	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	1.54 ms
+21:36:53.789	127.0.0.1:57106	admin	OK	BIND[0] $dbname=main_app	7.39 ms
+21:36:53.790	127.0.0.1:57106	admin	OK	BIND[0] $tablename=/bin/modules.xml	0.14 ms
+21:36:53.790	127.0.0.1:57106	admin	OK	BIND[0] $modulename=TEST	0.11 ms
+21:36:53.822	127.0.0.1:57106	admin	OK	EXEC[0]	31.96 ms
+21:36:53.847	127.0.0.1:57107	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.21 ms
+21:36:53.848	127.0.0.1:57107	admin	OK	BIND[0] $dbname=main_app	0.2 ms
+21:36:53.849	127.0.0.1:57107	admin	OK	BIND[0] $tablename=/bin/modules.xml	0.13 ms
+21:36:53.849	127.0.0.1:57107	admin	OK	BIND[0] $modulename=BRjx	0.11 ms
+21:36:53.860	127.0.0.1:57107	admin	OK	EXEC[0]	11.13 ms
+21:36:53.892	127.0.0.1:57108	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.21 ms
+21:36:53.892	127.0.0.1:57108	admin	OK	BIND[0] $dbname=main_app	0.15 ms
+21:36:53.892	127.0.0.1:57108	admin	OK	BIND[0] $tablename=/bin/modules.xml	0.1 ms
+21:36:53.892	127.0.0.1:57108	admin	OK	BIND[0] $modulename=BRjxRecord	0.11 ms
+21:36:53.902	127.0.0.1:57108	admin	OK	EXEC[0]	9.61 ms
+21:36:53.931	127.0.0.1:57109	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, element _ {db:open($dbname)//*/app/init/text()}})	0.17 ms
+21:36:53.932	127.0.0.1:57109	admin	OK	BIND[0] $dbname=main_app	0.17 ms
+21:36:53.939	127.0.0.1:57109	admin	OK	EXEC[0]	6.85 ms
+21:36:53.939	127.0.0.1:57109	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/records/_[./rc/text()='boot']/command/*})	0.11 ms
+21:36:53.940	127.0.0.1:57109	admin	OK	BIND[1] $dbname=main_app	0.2 ms
+21:36:53.950	127.0.0.1:57109	admin	OK	EXEC[1]	9.62 ms
+21:36:53.967	127.0.0.1:57109	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/BRjx/*})	0.26 ms
+21:36:53.968	127.0.0.1:57109	admin	OK	BIND[2] $dbname=main_app	0.16 ms
+21:36:53.972	127.0.0.1:57109	admin	OK	EXEC[2]	4.07 ms
+21:36:53.978	127.0.0.1:57109	admin	OK	QUERY[3] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/main/app/*})	0.19 ms
+21:36:53.992	127.0.0.1:57109	admin	OK	BIND[3] $dbname=main_app	0.23 ms
+21:36:53.996	127.0.0.1:57109	admin	OK	EXEC[3]	4.05 ms
+21:36:54.011	127.0.0.1:57109	admin	OK	QUERY[4] declare variable $dbname as xs:string external; json:serialize(element json { attribute type {'object'}, element commands { attribute type {'object'}, for $n in db:open($dbname)/commands/records/_ return element {$n/name/text()} { attribute type {'object'}, $n/properties, $n/script } } })	0.26 ms
+21:36:54.012	127.0.0.1:57109	admin	OK	BIND[4] $dbname=main_app	0.17 ms
+21:36:54.024	127.0.0.1:57109	admin	OK	EXEC[4]	15.25 ms
+21:36:54.230	127.0.0.1:57112	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {"array"}, for $r in $database/*/records/_ where ($r/name = "getRecords" and $r/type = "xquery") or ($r/name = "getTables" and $r/type = "xquery") return $r (:string, number, boolean, null, object, array:) } )	0.22 ms
+21:36:54.230	127.0.0.1:57112	admin	OK	BIND[0] $dbname=main_app	0.15 ms
+21:36:54.232	127.0.0.1:57112	admin	OK	BIND[0] $tablename=/bin/commands.xml	0.17 ms
+21:36:54.239	127.0.0.1:57112	admin	OK	EXEC[0]	6.95 ms
+21:36:54.912	127.0.0.1:57114	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	0.71 ms
+21:36:54.995	127.0.0.1:57114	admin	OK	Query executed in 81.2 ms.	83.42 ms
+21:36:55.008	127.0.0.1:57115	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.37 ms
+21:36:55.011	127.0.0.1:57115	admin	OK	Query executed in 2.02 ms.	2.59 ms
+21:37:02.509	127.0.0.1:57116	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.47 ms
+21:37:02.514	127.0.0.1:57116	admin	OK	Query executed in 5.25 ms.	5.62 ms
+21:37:02.716	127.0.0.1:57117	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.33 ms
+21:37:02.720	127.0.0.1:57117	admin	OK	Query executed in 3.27 ms.	3.6 ms
+21:37:07.545	127.0.0.1:57118	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	1.77 ms
+21:37:07.548	127.0.0.1:57118	admin	OK	Query executed in 2.93 ms.	3.29 ms
+21:37:07.587	127.0.0.1:57119	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.22 ms
+21:37:07.588	127.0.0.1:57119	admin	OK	BIND[0] $dbname=main_app	0.18 ms
+21:37:07.588	127.0.0.1:57119	admin	OK	BIND[0] $tablename=/bin/modules.xml	0.12 ms
+21:37:07.605	127.0.0.1:57119	admin	OK	BIND[0] $modulename=TEST	0.35 ms
+21:37:07.612	127.0.0.1:57119	admin	OK	EXEC[0]	6.22 ms
+21:37:07.680	127.0.0.1:57120	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.25 ms
+21:37:07.686	127.0.0.1:57120	admin	OK	BIND[0] $dbname=main_app	0.23 ms
+21:37:07.687	127.0.0.1:57120	admin	OK	BIND[0] $tablename=/bin/modules.xml	0.19 ms
+21:37:07.687	127.0.0.1:57120	admin	OK	BIND[0] $modulename=BRjx	0.08 ms
+21:37:07.697	127.0.0.1:57120	admin	OK	EXEC[0]	9.37 ms
+21:37:07.785	127.0.0.1:57121	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tablename as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {'array'}, for $r in $database//* where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.18 ms
+21:37:07.786	127.0.0.1:57121	admin	OK	BIND[0] $dbname=main_app	0.13 ms
+21:37:07.787	127.0.0.1:57121	admin	OK	BIND[0] $tablename=/bin/modules.xml	0.18 ms
+21:37:07.788	127.0.0.1:57121	admin	OK	BIND[0] $modulename=BRjxRecord	0.1 ms
+21:37:07.804	127.0.0.1:57121	admin	OK	EXEC[0]	16.19 ms
+21:37:07.853	127.0.0.1:57122	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, element _ {db:open($dbname)//*/app/init/text()}})	0.75 ms
+21:37:07.854	127.0.0.1:57122	admin	OK	BIND[0] $dbname=main_app	0.15 ms
+21:37:07.859	127.0.0.1:57122	admin	OK	EXEC[0]	4.19 ms
+21:37:07.881	127.0.0.1:57122	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/records/_[./rc/text()='boot']/command/*})	0.19 ms
+21:37:07.881	127.0.0.1:57122	admin	OK	BIND[1] $dbname=main_app	0.12 ms
+21:37:07.888	127.0.0.1:57122	admin	OK	EXEC[1]	5.52 ms
+21:37:07.911	127.0.0.1:57122	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/BRjx/*})	0.17 ms
+21:37:07.911	127.0.0.1:57122	admin	OK	BIND[2] $dbname=main_app	0.12 ms
+21:37:07.915	127.0.0.1:57122	admin	OK	EXEC[2]	3.18 ms
+21:37:07.945	127.0.0.1:57122	admin	OK	QUERY[3] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/main/app/*})	0.16 ms
+21:37:07.954	127.0.0.1:57122	admin	OK	BIND[3] $dbname=main_app	8.1 ms
+21:37:07.962	127.0.0.1:57122	admin	OK	EXEC[3]	3.37 ms
+21:37:07.967	127.0.0.1:57122	admin	OK	QUERY[4] declare variable $dbname as xs:string external; json:serialize(element json { attribute type {'object'}, element commands { attribute type {'object'}, for $n in db:open($dbname)/commands/records/_ return element {$n/name/text()} { attribute type {'object'}, $n/properties, $n/script } } })	0.18 ms
+21:37:07.994	127.0.0.1:57122	admin	OK	BIND[4] $dbname=main_app	0.23 ms
+21:37:08.011	127.0.0.1:57122	admin	OK	EXEC[4]	16.67 ms
+21:37:08.305	127.0.0.1:57123	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {"array"}, for $r in $database/*/records/_ where ($r/name = "getRecords" and $r/type = "xquery") or ($r/name = "getTables" and $r/type = "xquery") return $r (:string, number, boolean, null, object, array:) } )	0.22 ms
+21:37:08.306	127.0.0.1:57123	admin	OK	BIND[0] $dbname=main_app	0.14 ms
+21:37:08.306	127.0.0.1:57123	admin	OK	BIND[0] $tablename=/bin/commands.xml	0.09 ms
+21:37:08.313	127.0.0.1:57123	admin	OK	EXEC[0]	6.93 ms
+21:37:08.705	127.0.0.1:57124	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.36 ms
+21:37:08.715	127.0.0.1:57124	admin	OK	Query executed in 10.12 ms.	10.47 ms
+22:46:33.669	SERVER	admin	OK	Server was stopped (port: 1984).
+22:46:41.182	SERVER	admin	OK	Server was started (port: 1984).
+22:46:45.178	127.0.0.1:57158	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	32.03 ms
+22:46:46.583	127.0.0.1:57158	admin	OK	Query executed in 1401.56 ms.	1404.09 ms
+22:46:46.639	127.0.0.1:57159	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.45 ms
+22:46:46.644	127.0.0.1:57159	admin	OK	Query executed in 3.87 ms.	4.44 ms
+22:47:44.416	127.0.0.1:57164	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.54 ms
+22:47:44.421	127.0.0.1:57164	admin	OK	Query executed in 3.95 ms.	5.84 ms
+22:47:44.762	127.0.0.1:57165	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.36 ms
+22:47:44.765	127.0.0.1:57165	admin	OK	Query executed in 1.96 ms.	2.29 ms
+22:48:20.819	SERVER	admin	OK	Server was stopped (port: 1984).
+22:48:28.875	SERVER	admin	OK	Server was started (port: 1984).
+22:48:32.985	127.0.0.1:57168	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	48.23 ms
+22:48:34.516	127.0.0.1:57168	admin	OK	Query executed in 1525.6 ms.	1531.06 ms
+22:48:34.534	127.0.0.1:57169	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.5 ms
+22:48:34.539	127.0.0.1:57169	admin	OK	Query executed in 4.17 ms.	4.71 ms
+22:48:34.669	127.0.0.1:57170	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.42 ms
+22:48:34.671	127.0.0.1:57170	admin	OK	Query executed in 2.28 ms.	2.6 ms
+22:48:38.813	127.0.0.1:57171	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.36 ms
+22:48:38.816	127.0.0.1:57171	admin	OK	Query executed in 2.01 ms.	3.02 ms
+22:48:38.903	127.0.0.1:57172	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	12.71 ms
+22:48:38.932	127.0.0.1:57172	admin	OK	BIND[0] $dbname=main_app	22.7 ms
+22:48:38.939	127.0.0.1:57172	admin	OK	BIND[0] $tableid=org.mozilla.javascript.NativeArray@6f68bc4b	0.25 ms
+22:48:38.940	127.0.0.1:57172	admin	OK	BIND[0] $modulename=TEST	0.14 ms
+22:48:39.070	127.0.0.1:57172	admin	OK	EXEC[0]	122.89 ms
+22:48:39.083	127.0.0.1:57173	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.28 ms
+22:48:39.083	127.0.0.1:57173	admin	OK	BIND[0] $dbname=main_app	0.16 ms
+22:48:39.084	127.0.0.1:57173	admin	OK	BIND[0] $tableid=org.mozilla.javascript.NativeArray@af4c40f	0.13 ms
+22:48:39.084	127.0.0.1:57173	admin	OK	BIND[0] $modulename=BRjx	0.1 ms
+22:48:39.089	127.0.0.1:57173	admin	OK	EXEC[0]	5.3 ms
+22:48:39.124	127.0.0.1:57174	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.23 ms
+22:48:39.125	127.0.0.1:57174	admin	OK	BIND[0] $dbname=main_app	0.17 ms
+22:48:39.128	127.0.0.1:57174	admin	OK	BIND[0] $tableid=org.mozilla.javascript.NativeArray@6d2ce7aa	0.19 ms
+22:48:39.129	127.0.0.1:57174	admin	OK	BIND[0] $modulename=BRjxRecord	0.24 ms
+22:48:39.141	127.0.0.1:57174	admin	OK	EXEC[0]	11.0 ms
+22:48:48.976	127.0.0.1:57175	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.37 ms
+22:48:48.979	127.0.0.1:57175	admin	OK	Query executed in 1.98 ms.	2.27 ms
+22:48:49.051	127.0.0.1:57176	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.38 ms
+22:48:49.058	127.0.0.1:57176	admin	OK	BIND[0] $dbname=main_app	0.32 ms
+22:48:49.059	127.0.0.1:57176	admin	OK	BIND[0] $tableid=org.mozilla.javascript.NativeArray@47ba68ba	0.14 ms
+22:48:49.059	127.0.0.1:57176	admin	OK	BIND[0] $modulename=TEST	0.12 ms
+22:48:49.065	127.0.0.1:57176	admin	OK	EXEC[0]	5.66 ms
+22:48:49.115	127.0.0.1:57177	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.2 ms
+22:48:49.116	127.0.0.1:57177	admin	OK	BIND[0] $dbname=main_app	0.16 ms
+22:48:49.116	127.0.0.1:57177	admin	OK	BIND[0] $tableid=org.mozilla.javascript.NativeArray@63469b22	0.11 ms
+22:48:49.116	127.0.0.1:57177	admin	OK	BIND[0] $modulename=BRjx	0.1 ms
+22:48:49.125	127.0.0.1:57177	admin	OK	EXEC[0]	8.98 ms
+22:48:49.157	127.0.0.1:57178	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.21 ms
+22:48:49.158	127.0.0.1:57178	admin	OK	BIND[0] $dbname=main_app	0.18 ms
+22:48:49.159	127.0.0.1:57178	admin	OK	BIND[0] $tableid=org.mozilla.javascript.NativeArray@3f12d2a2	0.13 ms
+22:48:49.159	127.0.0.1:57178	admin	OK	BIND[0] $modulename=BRjxRecord	0.13 ms
+22:48:49.164	127.0.0.1:57178	admin	OK	EXEC[0]	5.17 ms
+22:48:53.365	127.0.0.1:57179	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	1.57 ms
+22:48:53.395	127.0.0.1:57179	admin	OK	Query executed in 28.73 ms.	71.77 ms
+22:48:53.545	127.0.0.1:57180	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.35 ms
+22:48:53.547	127.0.0.1:57180	admin	OK	Query executed in 1.91 ms.	2.22 ms
+22:48:56.034	127.0.0.1:57181	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.34 ms
+22:48:56.043	127.0.0.1:57181	admin	OK	Query executed in 8.32 ms.	8.77 ms
+22:48:56.097	127.0.0.1:57182	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.38 ms
+22:48:56.099	127.0.0.1:57182	admin	OK	Query executed in 1.79 ms.	2.07 ms
+22:50:20.211	SERVER	admin	OK	Server was stopped (port: 1984).
+22:50:28.011	SERVER	admin	OK	Server was started (port: 1984).
+22:50:40.026	127.0.0.1:57187	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	36.85 ms
+22:50:41.523	127.0.0.1:57187	admin	OK	Query executed in 1494.27 ms.	1496.09 ms
+22:50:41.541	127.0.0.1:57188	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.44 ms
+22:50:41.545	127.0.0.1:57188	admin	OK	Query executed in 3.72 ms.	4.28 ms
+22:50:41.574	127.0.0.1:57189	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	1.49 ms
+22:50:41.584	127.0.0.1:57189	admin	OK	BIND[0] $dbname=main_app	7.55 ms
+22:50:41.584	127.0.0.1:57189	admin	OK	BIND[0] $tableid=org.mozilla.javascript.NativeArray@49beb716	0.14 ms
+22:50:41.585	127.0.0.1:57189	admin	OK	BIND[0] $modulename=TEST	0.12 ms
+22:50:41.608	127.0.0.1:57189	admin	OK	EXEC[0]	22.8 ms
+22:50:41.629	127.0.0.1:57190	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.21 ms
+22:50:41.629	127.0.0.1:57190	admin	OK	BIND[0] $dbname=main_app	0.15 ms
+22:50:41.629	127.0.0.1:57190	admin	OK	BIND[0] $tableid=org.mozilla.javascript.NativeArray@302d36c7	0.11 ms
+22:50:41.629	127.0.0.1:57190	admin	OK	BIND[0] $modulename=BRjx	0.11 ms
+22:50:41.635	127.0.0.1:57190	admin	OK	EXEC[0]	5.46 ms
+22:50:41.659	127.0.0.1:57191	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.23 ms
+22:50:41.660	127.0.0.1:57191	admin	OK	BIND[0] $dbname=main_app	0.17 ms
+22:50:41.660	127.0.0.1:57191	admin	OK	BIND[0] $tableid=org.mozilla.javascript.NativeArray@3111965c	0.11 ms
+22:50:41.660	127.0.0.1:57191	admin	OK	BIND[0] $modulename=BRjxRecord	0.1 ms
+22:50:41.666	127.0.0.1:57191	admin	OK	EXEC[0]	5.14 ms
+22:53:18.465	SERVER	admin	OK	Server was stopped (port: 1984).
+22:53:27.535	SERVER	admin	OK	Server was started (port: 1984).
+22:53:35.470	127.0.0.1:57194	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	36.68 ms
+22:53:37.089	127.0.0.1:57194	admin	OK	Query executed in 1617.61 ms.	1619.4 ms
+22:53:37.119	127.0.0.1:57195	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.49 ms
+22:53:37.123	127.0.0.1:57195	admin	OK	Query executed in 3.87 ms.	4.45 ms
+22:53:37.154	127.0.0.1:57196	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	1.47 ms
+22:53:37.162	127.0.0.1:57196	admin	OK	BIND[0] $dbname=main_app	6.43 ms
+22:53:37.164	127.0.0.1:57196	admin	OK	BIND[0] $tableid=org.mozilla.javascript.NativeArray@69f3535c	0.16 ms
+22:53:37.164	127.0.0.1:57196	admin	OK	BIND[0] $modulename=TEST	0.1 ms
+22:53:37.190	127.0.0.1:57196	admin	OK	EXEC[0]	25.44 ms
+22:53:37.212	127.0.0.1:57197	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.21 ms
+22:53:37.212	127.0.0.1:57197	admin	OK	BIND[0] $dbname=main_app	0.15 ms
+22:53:37.213	127.0.0.1:57197	admin	OK	BIND[0] $tableid=org.mozilla.javascript.NativeArray@3484403e	0.13 ms
+22:53:37.213	127.0.0.1:57197	admin	OK	BIND[0] $modulename=BRjx	0.1 ms
+22:53:37.219	127.0.0.1:57197	admin	OK	EXEC[0]	5.7 ms
+22:53:37.240	127.0.0.1:57198	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.45 ms
+22:53:37.241	127.0.0.1:57198	admin	OK	BIND[0] $dbname=main_app	0.17 ms
+22:53:37.241	127.0.0.1:57198	admin	OK	BIND[0] $tableid=org.mozilla.javascript.NativeArray@1e0fbae5	0.11 ms
+22:53:37.241	127.0.0.1:57198	admin	OK	BIND[0] $modulename=BRjxRecord	0.1 ms
+22:53:37.247	127.0.0.1:57198	admin	OK	EXEC[0]	5.53 ms
+22:55:32.602	SERVER	admin	OK	Server was stopped (port: 1984).
+22:55:40.797	SERVER	admin	OK	Server was started (port: 1984).
+22:55:49.342	127.0.0.1:57201	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	35.17 ms
+22:55:50.817	127.0.0.1:57201	admin	OK	Query executed in 1472.92 ms.	1474.65 ms
+22:55:50.835	127.0.0.1:57202	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.44 ms
+22:55:50.839	127.0.0.1:57202	admin	OK	Query executed in 4.13 ms.	4.76 ms
+22:55:50.872	127.0.0.1:57203	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	1.52 ms
+22:55:50.881	127.0.0.1:57203	admin	OK	BIND[0] $dbname=main_app	7.04 ms
+22:55:50.882	127.0.0.1:57203	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.18 ms
+22:55:50.882	127.0.0.1:57203	admin	OK	BIND[0] $modulename=TEST	0.11 ms
+22:55:50.910	127.0.0.1:57203	admin	OK	EXEC[0]	27.59 ms
+22:55:50.947	127.0.0.1:57204	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.25 ms
+22:55:50.947	127.0.0.1:57204	admin	OK	BIND[0] $dbname=main_app	0.16 ms
+22:55:50.948	127.0.0.1:57204	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.13 ms
+22:55:50.948	127.0.0.1:57204	admin	OK	BIND[0] $modulename=BRjx	0.11 ms
+22:55:50.956	127.0.0.1:57204	admin	OK	EXEC[0]	8.01 ms
+22:55:50.989	127.0.0.1:57205	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.26 ms
+22:55:50.990	127.0.0.1:57205	admin	OK	BIND[0] $dbname=main_app	0.18 ms
+22:55:50.990	127.0.0.1:57205	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.11 ms
+22:55:50.990	127.0.0.1:57205	admin	OK	BIND[0] $modulename=BRjxRecord	0.1 ms
+22:55:51.000	127.0.0.1:57205	admin	OK	EXEC[0]	10.01 ms
+22:55:51.049	127.0.0.1:57206	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, element _ {db:open($dbname)//*/app/init/text()}})	0.18 ms
+22:55:51.050	127.0.0.1:57206	admin	OK	BIND[0] $dbname=main_app	0.16 ms
+22:55:51.057	127.0.0.1:57206	admin	OK	EXEC[0]	6.87 ms
+22:55:51.072	127.0.0.1:57206	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/records/_[./rc/text()='boot']/command/*})	0.2 ms
+22:55:51.073	127.0.0.1:57206	admin	OK	BIND[1] $dbname=main_app	0.17 ms
+22:55:51.084	127.0.0.1:57206	admin	OK	EXEC[1]	11.02 ms
+22:55:51.092	127.0.0.1:57206	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/BRjx/*})	0.14 ms
+22:55:51.092	127.0.0.1:57206	admin	OK	BIND[2] $dbname=main_app	0.14 ms
+22:55:51.103	127.0.0.1:57206	admin	OK	EXEC[2]	10.29 ms
+22:55:51.111	127.0.0.1:57206	admin	OK	QUERY[3] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/main/app/*})	0.15 ms
+22:55:51.111	127.0.0.1:57206	admin	OK	BIND[3] $dbname=main_app	0.14 ms
+22:55:51.115	127.0.0.1:57206	admin	OK	EXEC[3]	3.86 ms
+22:55:51.124	127.0.0.1:57206	admin	OK	QUERY[4] declare variable $dbname as xs:string external; json:serialize(element json { attribute type {'object'}, element commands { attribute type {'object'}, for $n in db:open($dbname)/commands/records/_ return element {$n/name/text()} { attribute type {'object'}, $n/properties, $n/script } } })	0.2 ms
+22:55:51.124	127.0.0.1:57206	admin	OK	BIND[4] $dbname=main_app	0.14 ms
+22:55:51.135	127.0.0.1:57206	admin	OK	EXEC[4]	11.3 ms
+22:55:51.351	127.0.0.1:57207	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) return json:serialize( element json { attribute type {"array"}, for $r in $database/*/records/_ where ($r/name = "getRecords" and $r/type = "xquery") or ($r/name = "getTables" and $r/type = "xquery") return $r (:string, number, boolean, null, object, array:) } )	0.22 ms
+22:55:51.352	127.0.0.1:57207	admin	OK	BIND[0] $dbname=main_app	0.16 ms
+22:55:51.353	127.0.0.1:57207	admin	OK	BIND[0] $tablename=/bin/commands.xml	0.13 ms
+22:55:51.362	127.0.0.1:57207	admin	OK	EXEC[0]	9.58 ms
+22:55:51.981	127.0.0.1:57209	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	0.53 ms
+22:55:52.068	127.0.0.1:57209	admin	OK	Query executed in 87.07 ms.	87.45 ms
+22:55:52.102	127.0.0.1:57210	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.38 ms
+22:55:52.105	127.0.0.1:57210	admin	OK	Query executed in 3.1 ms.	3.64 ms
+22:56:12.155	SERVER	admin	OK	Server was stopped (port: 1984).
+22:56:20.185	SERVER	admin	OK	Server was started (port: 1984).
+23:18:35.995	SERVER	admin	OK	Server was stopped (port: 1984).
+23:18:45.073	SERVER	admin	OK	Server was started (port: 1984).
+23:18:49.321	127.0.0.1:57220	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	38.98 ms
+23:18:50.825	127.0.0.1:57220	admin	OK	Query executed in 1501.82 ms.	1503.67 ms
+23:18:50.846	127.0.0.1:57221	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.42 ms
+23:18:50.850	127.0.0.1:57221	admin	OK	Query executed in 3.78 ms.	4.29 ms
+23:18:50.897	127.0.0.1:57222	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	1.48 ms
+23:18:50.904	127.0.0.1:57222	admin	OK	BIND[0] $dbname=main_app	5.87 ms
+23:18:50.905	127.0.0.1:57222	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.15 ms
+23:18:50.905	127.0.0.1:57222	admin	OK	BIND[0] $modulename=TEST	0.15 ms
+23:18:50.939	127.0.0.1:57222	admin	OK	EXEC[0]	33.74 ms
+23:18:50.966	127.0.0.1:57223	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.19 ms
+23:18:50.967	127.0.0.1:57223	admin	OK	BIND[0] $dbname=main_app	0.17 ms
+23:18:50.967	127.0.0.1:57223	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.11 ms
+23:18:50.967	127.0.0.1:57223	admin	OK	BIND[0] $modulename=BRjx	0.1 ms
+23:18:50.975	127.0.0.1:57223	admin	OK	EXEC[0]	8.09 ms
+23:18:51.009	127.0.0.1:57224	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.23 ms
+23:18:51.009	127.0.0.1:57224	admin	OK	BIND[0] $dbname=main_app	0.15 ms
+23:18:51.009	127.0.0.1:57224	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.11 ms
+23:18:51.010	127.0.0.1:57224	admin	OK	BIND[0] $modulename=BRjxRecord	0.12 ms
+23:18:51.019	127.0.0.1:57224	admin	OK	EXEC[0]	9.49 ms
+23:18:51.081	127.0.0.1:57225	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, element _ {db:open($dbname)//*/app/init/text()}})	0.17 ms
+23:18:51.093	127.0.0.1:57225	admin	OK	BIND[0] $dbname=main_app	0.28 ms
+23:18:51.101	127.0.0.1:57225	admin	OK	EXEC[0]	7.62 ms
+23:18:51.119	127.0.0.1:57225	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/records/_[./rc/text()='boot']/command/*})	0.2 ms
+23:18:51.120	127.0.0.1:57225	admin	OK	BIND[1] $dbname=main_app	0.17 ms
+23:18:51.133	127.0.0.1:57225	admin	OK	EXEC[1]	13.57 ms
+23:18:51.144	127.0.0.1:57225	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/BRjx/*})	1.41 ms
+23:18:51.151	127.0.0.1:57225	admin	OK	BIND[2] $dbname=main_app	0.23 ms
+23:18:51.156	127.0.0.1:57225	admin	OK	EXEC[2]	4.11 ms
+23:18:51.173	127.0.0.1:57225	admin	OK	QUERY[3] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/main/app/*})	0.21 ms
+23:18:51.173	127.0.0.1:57225	admin	OK	BIND[3] $dbname=main_app	0.14 ms
+23:18:51.183	127.0.0.1:57225	admin	OK	EXEC[3]	9.3 ms
+23:18:51.186	127.0.0.1:57225	admin	OK	QUERY[4] declare variable $dbname as xs:string external; json:serialize(element json { attribute type {'object'}, element commands { attribute type {'object'}, for $n in db:open($dbname)/commands/records/_ return element {$n/name/text()} { attribute type {'object'}, $n/properties, $n/script } } })	0.15 ms
+23:18:51.186	127.0.0.1:57225	admin	OK	BIND[4] $dbname=main_app	0.14 ms
+23:18:51.210	127.0.0.1:57225	admin	OK	EXEC[4]	8.36 ms
+23:18:51.415	127.0.0.1:57226	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tableid as xs:string external; let $database := db:open($dbname) return json:serialize( element json { attribute type {"array"}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = "getRecords" and $r/type = "xquery") or ($r/name = "getTables" and $r/type = "xquery") return $r } )	0.29 ms
+23:18:51.416	127.0.0.1:57226	admin	OK	BIND[0] $dbname=main_app	0.17 ms
+23:18:51.417	127.0.0.1:57226	admin	OK	BIND[0] $tableid=org.mozilla.javascript.NativeArray@674b3398	0.13 ms
+23:18:51.422	127.0.0.1:57226	admin	OK	EXEC[0]	5.41 ms
+23:18:52.017	127.0.0.1:57228	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	0.54 ms
+23:18:52.062	127.0.0.1:57228	admin	OK	Query executed in 44.82 ms.	45.17 ms
+23:18:52.101	127.0.0.1:57229	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.4 ms
+23:18:52.103	127.0.0.1:57229	admin	OK	Query executed in 1.8 ms.	2.23 ms
+23:23:11.445	SERVER	admin	OK	Server was stopped (port: 1984).
+23:23:19.887	SERVER	admin	OK	Server was started (port: 1984).
+23:23:24.913	127.0.0.1:57232	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	32.07 ms
+23:23:26.388	127.0.0.1:57232	admin	OK	Query executed in 1462.49 ms.	1474.47 ms
+23:23:26.404	127.0.0.1:57233	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.43 ms
+23:23:26.408	127.0.0.1:57233	admin	OK	Query executed in 3.8 ms.	4.37 ms
+23:23:26.440	127.0.0.1:57234	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	1.56 ms
+23:23:26.448	127.0.0.1:57234	admin	OK	BIND[0] $dbname=main_app	6.36 ms
+23:23:26.450	127.0.0.1:57234	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.17 ms
+23:23:26.450	127.0.0.1:57234	admin	OK	BIND[0] $modulename=TEST	0.11 ms
+23:23:26.487	127.0.0.1:57234	admin	OK	EXEC[0]	37.23 ms
+23:23:26.503	127.0.0.1:57235	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.2 ms
+23:23:26.504	127.0.0.1:57235	admin	OK	BIND[0] $dbname=main_app	0.18 ms
+23:23:26.504	127.0.0.1:57235	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.11 ms
+23:23:26.504	127.0.0.1:57235	admin	OK	BIND[0] $modulename=BRjx	0.1 ms
+23:23:26.513	127.0.0.1:57235	admin	OK	EXEC[0]	8.32 ms
+23:23:26.543	127.0.0.1:57236	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.19 ms
+23:23:26.544	127.0.0.1:57236	admin	OK	BIND[0] $dbname=main_app	0.17 ms
+23:23:26.544	127.0.0.1:57236	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.11 ms
+23:23:26.544	127.0.0.1:57236	admin	OK	BIND[0] $modulename=BRjxRecord	0.1 ms
+23:23:26.554	127.0.0.1:57236	admin	OK	EXEC[0]	9.92 ms
+23:23:26.584	127.0.0.1:57237	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, element _ {db:open($dbname)//*/app/init/text()}})	0.17 ms
+23:23:26.585	127.0.0.1:57237	admin	OK	BIND[0] $dbname=main_app	0.19 ms
+23:23:26.592	127.0.0.1:57237	admin	OK	EXEC[0]	7.09 ms
+23:23:26.608	127.0.0.1:57237	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/records/_[./rc/text()='boot']/command/*})	0.18 ms
+23:23:26.608	127.0.0.1:57237	admin	OK	BIND[1] $dbname=main_app	0.16 ms
+23:23:26.635	127.0.0.1:57237	admin	OK	EXEC[1]	26.78 ms
+23:23:26.636	127.0.0.1:57237	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/BRjx/*})	0.13 ms
+23:23:26.636	127.0.0.1:57237	admin	OK	BIND[2] $dbname=main_app	0.15 ms
+23:23:26.640	127.0.0.1:57237	admin	OK	EXEC[2]	3.91 ms
+23:23:26.659	127.0.0.1:57237	admin	OK	QUERY[3] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/main/app/*})	0.29 ms
+23:23:26.662	127.0.0.1:57237	admin	OK	BIND[3] $dbname=main_app	0.21 ms
+23:23:26.667	127.0.0.1:57237	admin	OK	EXEC[3]	4.0 ms
+23:23:26.683	127.0.0.1:57237	admin	OK	QUERY[4] declare variable $dbname as xs:string external; json:serialize(element json { attribute type {'object'}, element commands { attribute type {'object'}, for $n in db:open($dbname)/commands/records/_ return element {$n/name/text()} { attribute type {'object'}, $n/properties, $n/script } } })	0.22 ms
+23:23:26.684	127.0.0.1:57237	admin	OK	BIND[4] $dbname=main_app	0.18 ms
+23:23:26.700	127.0.0.1:57237	admin	OK	EXEC[4]	15.79 ms
+23:23:26.895	127.0.0.1:57238	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tableid as xs:string external; let $database := db:open($dbname) return json:serialize( element json { attribute type {"array"}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = "getRecords" and $r/type = "xquery") or ($r/name = "getTables" and $r/type = "xquery") return $r } )	0.2 ms
+23:23:26.896	127.0.0.1:57238	admin	OK	BIND[0] $dbname=main_app	0.25 ms
+23:23:26.898	127.0.0.1:57238	admin	OK	BIND[0] $tableid=org.mozilla.javascript.NativeArray@1ecb6aa5	0.15 ms
+23:23:26.903	127.0.0.1:57238	admin	OK	EXEC[0]	5.6 ms
+23:23:27.554	127.0.0.1:57240	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	0.53 ms
+23:23:27.665	127.0.0.1:57240	admin	OK	Query executed in 110.67 ms.	111.44 ms
+23:23:27.733	127.0.0.1:57241	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.47 ms
+23:23:27.751	127.0.0.1:57241	admin	OK	Query executed in 6.1 ms.	17.87 ms
+23:26:52.286	SERVER	admin	OK	Server was stopped (port: 1984).
+23:27:09.925	SERVER	admin	OK	Server was started (port: 1984).
+23:28:28.189	127.0.0.1:57247	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	40.42 ms
+23:28:29.493	127.0.0.1:57247	admin	OK	Query executed in 1301.31 ms.	1303.13 ms
+23:28:29.512	127.0.0.1:57248	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.43 ms
+23:28:29.516	127.0.0.1:57248	admin	OK	Query executed in 4.13 ms.	4.67 ms
+23:28:29.552	127.0.0.1:57249	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	1.47 ms
+23:28:29.560	127.0.0.1:57249	admin	OK	BIND[0] $dbname=main_app	5.93 ms
+23:28:29.560	127.0.0.1:57249	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.12 ms
+23:28:29.560	127.0.0.1:57249	admin	OK	BIND[0] $modulename=TEST	0.1 ms
+23:28:29.588	127.0.0.1:57249	admin	OK	EXEC[0]	27.67 ms
+23:28:29.615	127.0.0.1:57250	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.21 ms
+23:28:29.616	127.0.0.1:57250	admin	OK	BIND[0] $dbname=main_app	0.17 ms
+23:28:29.616	127.0.0.1:57250	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.11 ms
+23:28:29.616	127.0.0.1:57250	admin	OK	BIND[0] $modulename=BRjx	0.1 ms
+23:28:29.624	127.0.0.1:57250	admin	OK	EXEC[0]	7.92 ms
+23:28:29.651	127.0.0.1:57251	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.2 ms
+23:28:29.651	127.0.0.1:57251	admin	OK	BIND[0] $dbname=main_app	0.16 ms
+23:28:29.652	127.0.0.1:57251	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.13 ms
+23:28:29.652	127.0.0.1:57251	admin	OK	BIND[0] $modulename=BRjxRecord	0.1 ms
+23:28:29.662	127.0.0.1:57251	admin	OK	EXEC[0]	9.63 ms
+23:28:29.692	127.0.0.1:57252	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, element _ {db:open($dbname)//*/app/init/text()}})	0.18 ms
+23:28:29.693	127.0.0.1:57252	admin	OK	BIND[0] $dbname=main_app	0.18 ms
+23:28:29.700	127.0.0.1:57252	admin	OK	EXEC[0]	6.67 ms
+23:28:29.713	127.0.0.1:57252	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/records/_[./rc/text()='boot']/command/*})	0.17 ms
+23:28:29.714	127.0.0.1:57252	admin	OK	BIND[1] $dbname=main_app	0.17 ms
+23:28:29.724	127.0.0.1:57252	admin	OK	EXEC[1]	9.87 ms
+23:28:29.740	127.0.0.1:57252	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/BRjx/*})	0.22 ms
+23:28:29.740	127.0.0.1:57252	admin	OK	BIND[2] $dbname=main_app	0.15 ms
+23:28:29.744	127.0.0.1:57252	admin	OK	EXEC[2]	3.86 ms
+23:28:29.745	127.0.0.1:57252	admin	OK	QUERY[3] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/main/app/*})	0.13 ms
+23:28:29.745	127.0.0.1:57252	admin	OK	BIND[3] $dbname=main_app	0.13 ms
+23:28:29.749	127.0.0.1:57252	admin	OK	EXEC[3]	3.5 ms
+23:28:29.749	127.0.0.1:57252	admin	OK	QUERY[4] declare variable $dbname as xs:string external; json:serialize(element json { attribute type {'object'}, element commands { attribute type {'object'}, for $n in db:open($dbname)/commands/records/_ return element {$n/name/text()} { attribute type {'object'}, $n/properties, $n/script } } })	0.13 ms
+23:28:29.749	127.0.0.1:57252	admin	OK	BIND[4] $dbname=main_app	0.13 ms
+23:28:29.759	127.0.0.1:57252	admin	OK	EXEC[4]	9.92 ms
+23:28:29.956	127.0.0.1:57253	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tableid as xs:string external; let $database := db:open($dbname) return json:serialize( element json { attribute type {"array"}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = "getRecords" and $r/type = "xquery") or ($r/name = "getTables" and $r/type = "xquery") return $r } )	0.24 ms
+23:28:29.957	127.0.0.1:57253	admin	OK	BIND[0] $dbname=main_app	0.16 ms
+23:28:29.958	127.0.0.1:57253	admin	OK	BIND[0] $tableid=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.14 ms
+23:28:29.966	127.0.0.1:57253	admin	OK	EXEC[0]	7.62 ms
+23:28:30.631	127.0.0.1:57255	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	0.89 ms
+23:28:30.661	127.0.0.1:57255	admin	OK	Query executed in 30.21 ms.	30.62 ms
+23:28:30.672	127.0.0.1:57256	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.37 ms
+23:28:30.712	127.0.0.1:57256	admin	OK	Query executed in 2.01 ms.	40.32 ms
+23:29:05.720	SERVER	admin	OK	Server was stopped (port: 1984).
+23:29:13.513	SERVER	admin	OK	Server was started (port: 1984).
+23:29:19.914	127.0.0.1:57259	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	34.03 ms
+23:29:21.036	127.0.0.1:57259	admin	OK	Query executed in 1120.32 ms.	1122.23 ms
+23:29:21.069	127.0.0.1:57261	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.8 ms
+23:29:21.074	127.0.0.1:57261	admin	OK	Query executed in 4.07 ms.	4.64 ms
+23:29:21.139	127.0.0.1:57262	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	0.65 ms
+23:29:21.181	127.0.0.1:57262	admin	OK	Query executed in 41.28 ms.	56.66 ms
+23:29:21.235	127.0.0.1:57263	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.38 ms
+23:29:21.237	127.0.0.1:57263	admin	OK	Query executed in 2.14 ms.	2.57 ms
+23:29:21.268	127.0.0.1:57264	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	3.59 ms
+23:29:21.277	127.0.0.1:57264	admin	OK	BIND[0] $dbname=main_app	7.29 ms
+23:29:21.278	127.0.0.1:57264	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.15 ms
+23:29:21.278	127.0.0.1:57264	admin	OK	BIND[0] $modulename=TEST	0.12 ms
+23:29:21.324	127.0.0.1:57264	admin	OK	EXEC[0]	45.13 ms
+23:29:21.400	127.0.0.1:57265	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.24 ms
+23:29:21.400	127.0.0.1:57265	admin	OK	BIND[0] $dbname=main_app	0.18 ms
+23:29:21.400	127.0.0.1:57265	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.11 ms
+23:29:21.401	127.0.0.1:57265	admin	OK	BIND[0] $modulename=BRjx	0.11 ms
+23:29:21.409	127.0.0.1:57265	admin	OK	EXEC[0]	7.95 ms
+23:29:21.456	127.0.0.1:57266	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.19 ms
+23:29:21.456	127.0.0.1:57266	admin	OK	BIND[0] $dbname=main_app	0.14 ms
+23:29:21.456	127.0.0.1:57266	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.1 ms
+23:29:21.457	127.0.0.1:57266	admin	OK	BIND[0] $modulename=BRjxRecord	0.61 ms
+23:29:21.467	127.0.0.1:57266	admin	OK	EXEC[0]	10.1 ms
+23:29:21.504	127.0.0.1:57267	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, element _ {db:open($dbname)//*/app/init/text()}})	0.2 ms
+23:29:21.505	127.0.0.1:57267	admin	OK	BIND[0] $dbname=main_app	0.18 ms
+23:29:21.513	127.0.0.1:57267	admin	OK	EXEC[0]	7.13 ms
+23:29:21.535	127.0.0.1:57267	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/records/_[./rc/text()='boot']/command/*})	0.23 ms
+23:29:21.535	127.0.0.1:57267	admin	OK	BIND[1] $dbname=main_app	0.16 ms
+23:29:21.545	127.0.0.1:57267	admin	OK	EXEC[1]	9.78 ms
+23:29:21.566	127.0.0.1:57267	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/BRjx/*})	0.19 ms
+23:29:21.567	127.0.0.1:57267	admin	OK	BIND[2] $dbname=main_app	0.16 ms
+23:29:21.571	127.0.0.1:57267	admin	OK	EXEC[2]	3.67 ms
+23:29:21.572	127.0.0.1:57267	admin	OK	QUERY[3] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/main/app/*})	0.13 ms
+23:29:21.592	127.0.0.1:57267	admin	OK	BIND[3] $dbname=main_app	0.24 ms
+23:29:21.596	127.0.0.1:57267	admin	OK	EXEC[3]	3.48 ms
+23:29:21.614	127.0.0.1:57267	admin	OK	QUERY[4] declare variable $dbname as xs:string external; json:serialize(element json { attribute type {'object'}, element commands { attribute type {'object'}, for $n in db:open($dbname)/commands/records/_ return element {$n/name/text()} { attribute type {'object'}, $n/properties, $n/script } } })	0.33 ms
+23:29:21.616	127.0.0.1:57267	admin	OK	BIND[4] $dbname=main_app	0.21 ms
+23:29:21.624	127.0.0.1:57267	admin	OK	EXEC[4]	7.87 ms
+23:29:21.887	127.0.0.1:57268	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tableid as xs:string external; let $database := db:open($dbname) return json:serialize( element json { attribute type {"array"}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = "getRecords" and $r/type = "xquery") or ($r/name = "getTables" and $r/type = "xquery") return $r } )	0.19 ms
+23:29:21.888	127.0.0.1:57268	admin	OK	BIND[0] $dbname=main_app	0.15 ms
+23:29:21.893	127.0.0.1:57268	admin	OK	BIND[0] $tableid=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.24 ms
+23:29:21.901	127.0.0.1:57268	admin	OK	EXEC[0]	7.28 ms
+23:29:23.056	127.0.0.1:57270	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.4 ms
+23:29:23.059	127.0.0.1:57270	admin	OK	Query executed in 1.96 ms.	2.28 ms
+23:29:23.083	127.0.0.1:57271	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.25 ms
+23:29:23.084	127.0.0.1:57271	admin	OK	BIND[0] $dbname=main_app	0.18 ms
+23:29:23.089	127.0.0.1:57271	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.25 ms
+23:29:23.092	127.0.0.1:57271	admin	OK	BIND[0] $modulename=TEST	0.21 ms
+23:29:23.109	127.0.0.1:57271	admin	OK	EXEC[0]	15.47 ms
+23:29:23.145	127.0.0.1:57272	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.2 ms
+23:29:23.145	127.0.0.1:57272	admin	OK	BIND[0] $dbname=main_app	0.15 ms
+23:29:23.146	127.0.0.1:57272	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.12 ms
+23:29:23.146	127.0.0.1:57272	admin	OK	BIND[0] $modulename=BRjx	0.08 ms
+23:29:23.155	127.0.0.1:57272	admin	OK	EXEC[0]	8.74 ms
+23:29:23.192	127.0.0.1:57273	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.28 ms
+23:29:23.192	127.0.0.1:57273	admin	OK	BIND[0] $dbname=main_app	0.12 ms
+23:29:23.193	127.0.0.1:57273	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.15 ms
+23:29:23.194	127.0.0.1:57273	admin	OK	BIND[0] $modulename=BRjxRecord	0.14 ms
+23:29:23.204	127.0.0.1:57273	admin	OK	EXEC[0]	9.91 ms
+23:29:23.246	127.0.0.1:57274	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, element _ {db:open($dbname)//*/app/init/text()}})	0.16 ms
+23:29:23.248	127.0.0.1:57274	admin	OK	BIND[0] $dbname=main_app	0.17 ms
+23:29:23.252	127.0.0.1:57274	admin	OK	EXEC[0]	4.08 ms
+23:29:23.262	127.0.0.1:57274	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/records/_[./rc/text()='boot']/command/*})	0.18 ms
+23:29:23.262	127.0.0.1:57274	admin	OK	BIND[1] $dbname=main_app	0.13 ms
+23:29:23.267	127.0.0.1:57274	admin	OK	EXEC[1]	4.08 ms
+23:29:23.291	127.0.0.1:57274	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/BRjx/*})	0.17 ms
+23:29:23.292	127.0.0.1:57274	admin	OK	BIND[2] $dbname=main_app	0.14 ms
+23:29:23.295	127.0.0.1:57274	admin	OK	EXEC[2]	3.3 ms
+23:29:23.297	127.0.0.1:57274	admin	OK	QUERY[3] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/main/app/*})	0.11 ms
+23:29:23.317	127.0.0.1:57274	admin	OK	BIND[3] $dbname=main_app	0.25 ms
+23:29:23.326	127.0.0.1:57274	admin	OK	EXEC[3]	25.0 ms
+23:29:23.346	127.0.0.1:57274	admin	OK	QUERY[4] declare variable $dbname as xs:string external; json:serialize(element json { attribute type {'object'}, element commands { attribute type {'object'}, for $n in db:open($dbname)/commands/records/_ return element {$n/name/text()} { attribute type {'object'}, $n/properties, $n/script } } })	0.14 ms
+23:29:23.346	127.0.0.1:57274	admin	OK	BIND[4] $dbname=main_app	0.13 ms
+23:29:23.373	127.0.0.1:57274	admin	OK	EXEC[4]	26.57 ms
+23:29:23.601	127.0.0.1:57275	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tableid as xs:string external; let $database := db:open($dbname) return json:serialize( element json { attribute type {"array"}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = "getRecords" and $r/type = "xquery") or ($r/name = "getTables" and $r/type = "xquery") return $r } )	0.37 ms
+23:29:23.601	127.0.0.1:57275	admin	OK	BIND[0] $dbname=main_app	0.17 ms
+23:29:23.603	127.0.0.1:57275	admin	OK	BIND[0] $tableid=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.11 ms
+23:29:23.610	127.0.0.1:57275	admin	OK	EXEC[0]	6.9 ms
+23:29:23.882	127.0.0.1:57277	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.47 ms
+23:29:23.884	127.0.0.1:57277	admin	OK	Query executed in 1.73 ms.	2.05 ms
+23:29:33.444	127.0.0.1:57278	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.35 ms
+23:29:33.456	127.0.0.1:57278	admin	OK	Query executed in 11.0 ms.	11.34 ms
+23:29:33.488	127.0.0.1:57279	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.17 ms
+23:29:33.488	127.0.0.1:57279	admin	OK	BIND[0] $dbname=main_app	0.12 ms
+23:29:33.488	127.0.0.1:57279	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.08 ms
+23:29:33.489	127.0.0.1:57279	admin	OK	BIND[0] $modulename=TEST	0.09 ms
+23:29:33.494	127.0.0.1:57279	admin	OK	EXEC[0]	5.33 ms
+23:29:33.590	127.0.0.1:57280	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.17 ms
+23:29:33.591	127.0.0.1:57280	admin	OK	BIND[0] $dbname=main_app	0.14 ms
+23:29:33.591	127.0.0.1:57280	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.09 ms
+23:29:33.591	127.0.0.1:57280	admin	OK	BIND[0] $modulename=BRjx	0.08 ms
+23:29:33.600	127.0.0.1:57280	admin	OK	EXEC[0]	9.28 ms
+23:29:33.651	127.0.0.1:57281	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.18 ms
+23:29:33.651	127.0.0.1:57281	admin	OK	BIND[0] $dbname=main_app	0.17 ms
+23:29:33.651	127.0.0.1:57281	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.08 ms
+23:29:33.652	127.0.0.1:57281	admin	OK	BIND[0] $modulename=BRjxRecord	0.1 ms
+23:29:33.658	127.0.0.1:57281	admin	OK	EXEC[0]	6.62 ms
+23:29:33.688	127.0.0.1:57282	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, element _ {db:open($dbname)//*/app/init/text()}})	0.15 ms
+23:29:33.689	127.0.0.1:57282	admin	OK	BIND[0] $dbname=main_app	0.15 ms
+23:29:33.693	127.0.0.1:57282	admin	OK	EXEC[0]	3.21 ms
+23:29:33.713	127.0.0.1:57282	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/records/_[./rc/text()='boot']/command/*})	0.18 ms
+23:29:33.753	127.0.0.1:57282	admin	OK	BIND[1] $dbname=main_app	0.25 ms
+23:29:33.757	127.0.0.1:57282	admin	OK	EXEC[1]	4.14 ms
+23:29:33.791	127.0.0.1:57282	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/BRjx/*})	0.16 ms
+23:29:33.791	127.0.0.1:57282	admin	OK	BIND[2] $dbname=main_app	0.12 ms
+23:29:33.794	127.0.0.1:57282	admin	OK	EXEC[2]	2.99 ms
+23:29:33.795	127.0.0.1:57282	admin	OK	QUERY[3] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/main/app/*})	0.11 ms
+23:29:33.795	127.0.0.1:57282	admin	OK	BIND[3] $dbname=main_app	0.11 ms
+23:29:33.801	127.0.0.1:57282	admin	OK	EXEC[3]	5.28 ms
+23:29:33.802	127.0.0.1:57282	admin	OK	QUERY[4] declare variable $dbname as xs:string external; json:serialize(element json { attribute type {'object'}, element commands { attribute type {'object'}, for $n in db:open($dbname)/commands/records/_ return element {$n/name/text()} { attribute type {'object'}, $n/properties, $n/script } } })	0.23 ms
+23:29:33.805	127.0.0.1:57282	admin	OK	BIND[4] $dbname=main_app	0.44 ms
+23:29:33.859	127.0.0.1:57282	admin	OK	EXEC[4]	12.77 ms
+23:29:34.105	127.0.0.1:57283	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tableid as xs:string external; let $database := db:open($dbname) return json:serialize( element json { attribute type {"array"}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = "getRecords" and $r/type = "xquery") or ($r/name = "getTables" and $r/type = "xquery") return $r } )	0.19 ms
+23:29:34.105	127.0.0.1:57283	admin	OK	BIND[0] $dbname=main_app	0.15 ms
+23:29:34.106	127.0.0.1:57283	admin	OK	BIND[0] $tableid=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.12 ms
+23:29:34.112	127.0.0.1:57283	admin	OK	EXEC[0]	6.02 ms
+23:29:34.346	127.0.0.1:57284	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.62 ms
+23:29:34.353	127.0.0.1:57284	admin	OK	Query executed in 1.67 ms.	6.57 ms
+23:30:07.969	SERVER	admin	OK	Server was stopped (port: 1984).
+23:30:17.386	SERVER	admin	OK	Server was started (port: 1984).
+23:30:21.824	127.0.0.1:57287	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	32.39 ms
+23:30:23.270	127.0.0.1:57287	admin	OK	Query executed in 1405.98 ms.	1445.82 ms
+23:30:23.288	127.0.0.1:57288	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.48 ms
+23:30:23.293	127.0.0.1:57288	admin	OK	Query executed in 3.73 ms.	4.25 ms
+23:30:23.332	127.0.0.1:57289	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	1.65 ms
+23:30:23.340	127.0.0.1:57289	admin	OK	BIND[0] $dbname=main_app	5.71 ms
+23:30:23.340	127.0.0.1:57289	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.14 ms
+23:30:23.340	127.0.0.1:57289	admin	OK	BIND[0] $modulename=TEST	0.11 ms
+23:30:23.386	127.0.0.1:57289	admin	OK	EXEC[0]	45.8 ms
+23:30:23.398	127.0.0.1:57290	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.2 ms
+23:30:23.398	127.0.0.1:57290	admin	OK	BIND[0] $dbname=main_app	0.15 ms
+23:30:23.398	127.0.0.1:57290	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.11 ms
+23:30:23.399	127.0.0.1:57290	admin	OK	BIND[0] $modulename=BRjx	0.12 ms
+23:30:23.411	127.0.0.1:57290	admin	OK	EXEC[0]	11.87 ms
+23:30:23.443	127.0.0.1:57291	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.19 ms
+23:30:23.447	127.0.0.1:57291	admin	OK	BIND[0] $dbname=main_app	4.19 ms
+23:30:23.448	127.0.0.1:57291	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.17 ms
+23:30:23.448	127.0.0.1:57291	admin	OK	BIND[0] $modulename=BRjxRecord	0.1 ms
+23:30:23.458	127.0.0.1:57291	admin	OK	EXEC[0]	9.69 ms
+23:30:23.491	127.0.0.1:57292	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, element _ {db:open($dbname)//*/app/init/text()}})	0.16 ms
+23:30:23.491	127.0.0.1:57292	admin	OK	BIND[0] $dbname=main_app	0.15 ms
+23:30:23.498	127.0.0.1:57292	admin	OK	EXEC[0]	7.22 ms
+23:30:23.523	127.0.0.1:57292	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/records/_[./rc/text()='boot']/command/*})	0.22 ms
+23:30:23.523	127.0.0.1:57292	admin	OK	BIND[1] $dbname=main_app	0.15 ms
+23:30:23.534	127.0.0.1:57292	admin	OK	EXEC[1]	10.45 ms
+23:30:23.548	127.0.0.1:57292	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/BRjx/*})	0.2 ms
+23:30:23.549	127.0.0.1:57292	admin	OK	BIND[2] $dbname=main_app	0.16 ms
+23:30:23.553	127.0.0.1:57292	admin	OK	EXEC[2]	3.95 ms
+23:30:23.571	127.0.0.1:57292	admin	OK	QUERY[3] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/main/app/*})	0.2 ms
+23:30:23.572	127.0.0.1:57292	admin	OK	BIND[3] $dbname=main_app	0.17 ms
+23:30:23.577	127.0.0.1:57292	admin	OK	EXEC[3]	5.19 ms
+23:30:23.590	127.0.0.1:57292	admin	OK	QUERY[4] declare variable $dbname as xs:string external; json:serialize(element json { attribute type {'object'}, element commands { attribute type {'object'}, for $n in db:open($dbname)/commands/records/_ return element {$n/name/text()} { attribute type {'object'}, $n/properties, $n/script } } })	0.23 ms
+23:30:23.590	127.0.0.1:57292	admin	OK	BIND[4] $dbname=main_app	0.15 ms
+23:30:23.601	127.0.0.1:57292	admin	OK	EXEC[4]	11.17 ms
+23:30:23.795	127.0.0.1:57293	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tableid as xs:string external; let $database := db:open($dbname) return json:serialize( element json { attribute type {"array"}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = "getRecords" and $r/type = "xquery") or ($r/name = "getTables" and $r/type = "xquery") return $r } )	0.22 ms
+23:30:23.796	127.0.0.1:57293	admin	OK	BIND[0] $dbname=main_app	0.17 ms
+23:30:23.799	127.0.0.1:57293	admin	OK	BIND[0] $tableid=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.21 ms
+23:30:23.807	127.0.0.1:57293	admin	OK	EXEC[0]	7.94 ms
+23:30:24.638	127.0.0.1:57295	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	0.68 ms
+23:30:24.709	127.0.0.1:57295	admin	OK	Query executed in 70.1 ms.	70.47 ms
+23:30:24.720	127.0.0.1:57296	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.38 ms
+23:30:24.723	127.0.0.1:57296	admin	OK	Query executed in 1.91 ms.	2.36 ms
+23:37:10.647	127.0.0.1:57302	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.46 ms
+23:37:10.651	127.0.0.1:57302	admin	OK	Query executed in 3.7 ms.	4.34 ms
+23:37:10.672	127.0.0.1:57303	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.19 ms
+23:37:10.672	127.0.0.1:57303	admin	OK	BIND[0] $dbname=main_app	0.18 ms
+23:37:10.673	127.0.0.1:57303	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.17 ms
+23:37:10.673	127.0.0.1:57303	admin	OK	BIND[0] $modulename=TEST	0.11 ms
+23:37:10.685	127.0.0.1:57303	admin	OK	EXEC[0]	10.19 ms
+23:37:18.562	SERVER	admin	OK	Server was stopped (port: 1984).
+23:37:27.767	SERVER	admin	OK	Server was started (port: 1984).
+23:37:37.301	127.0.0.1:57306	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	39.98 ms
+23:37:38.663	127.0.0.1:57306	admin	OK	Query executed in 1357.05 ms.	1361.94 ms
+23:37:38.683	127.0.0.1:57307	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.43 ms
+23:37:38.688	127.0.0.1:57307	admin	OK	Query executed in 4.11 ms.	4.67 ms
+23:37:38.722	127.0.0.1:57308	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	1.53 ms
+23:37:38.733	127.0.0.1:57308	admin	OK	BIND[0] $dbname=main_app	6.7 ms
+23:37:38.734	127.0.0.1:57308	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.14 ms
+23:37:38.734	127.0.0.1:57308	admin	OK	BIND[0] $modulename=TEST	0.11 ms
+23:37:38.766	127.0.0.1:57308	admin	OK	EXEC[0]	31.4 ms
+23:37:38.805	127.0.0.1:57309	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.21 ms
+23:37:38.806	127.0.0.1:57309	admin	OK	BIND[0] $dbname=main_app	0.18 ms
+23:37:38.806	127.0.0.1:57309	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.12 ms
+23:37:38.806	127.0.0.1:57309	admin	OK	BIND[0] $modulename=BRjx	0.11 ms
+23:37:38.815	127.0.0.1:57309	admin	OK	EXEC[0]	8.19 ms
+23:37:38.844	127.0.0.1:57310	admin	OK	QUERY[0] declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })	0.2 ms
+23:37:38.844	127.0.0.1:57310	admin	OK	BIND[0] $dbname=main_app	0.15 ms
+23:37:38.845	127.0.0.1:57310	admin	OK	BIND[0] $tableid=0d6ef920-7ded-4832-b6ae-e12b9c64c73e	0.13 ms
+23:37:38.845	127.0.0.1:57310	admin	OK	BIND[0] $modulename=BRjxRecord	0.1 ms
+23:37:38.855	127.0.0.1:57310	admin	OK	EXEC[0]	9.71 ms
+23:37:38.883	127.0.0.1:57311	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, element _ {db:open($dbname)//*/app/init/text()}})	0.18 ms
+23:37:38.883	127.0.0.1:57311	admin	OK	BIND[0] $dbname=main_app	0.15 ms
+23:37:38.890	127.0.0.1:57311	admin	OK	EXEC[0]	6.49 ms
+23:37:38.909	127.0.0.1:57311	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/records/_[./rc/text()='boot']/command/*})	0.22 ms
+23:37:38.910	127.0.0.1:57311	admin	OK	BIND[1] $dbname=main_app	0.17 ms
+23:37:38.919	127.0.0.1:57311	admin	OK	EXEC[1]	9.42 ms
+23:37:38.936	127.0.0.1:57311	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/BRjx/*})	0.19 ms
+23:37:38.937	127.0.0.1:57311	admin	OK	BIND[2] $dbname=main_app	0.17 ms
+23:37:38.940	127.0.0.1:57311	admin	OK	EXEC[2]	3.54 ms
+23:37:38.964	127.0.0.1:57311	admin	OK	QUERY[3] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/main/app/*})	0.21 ms
+23:37:38.965	127.0.0.1:57311	admin	OK	BIND[3] $dbname=main_app	0.17 ms
+23:37:38.969	127.0.0.1:57311	admin	OK	EXEC[3]	3.64 ms
+23:37:38.985	127.0.0.1:57311	admin	OK	QUERY[4] declare variable $dbname as xs:string external; json:serialize(element json { attribute type {'object'}, element commands { attribute type {'object'}, for $n in db:open($dbname)/commands/records/_ return element {$n/name/text()} { attribute type {'object'}, $n/properties, $n/script } } })	0.26 ms
+23:37:38.986	127.0.0.1:57311	admin	OK	BIND[4] $dbname=main_app	0.17 ms
+23:37:38.993	127.0.0.1:57311	admin	OK	EXEC[4]	7.45 ms
+23:37:39.249	127.0.0.1:57312	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tableid as xs:string external; let $database := db:open($dbname) return json:serialize( element json { attribute type {"array"}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = "getRecords" and $r/type = "xquery") or ($r/name = "getTables" and $r/type = "xquery") return $r } )	0.2 ms
+23:37:39.250	127.0.0.1:57312	admin	OK	BIND[0] $dbname=main_app	0.17 ms
+23:37:39.250	127.0.0.1:57312	admin	OK	BIND[0] $tableid=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.11 ms
+23:37:39.257	127.0.0.1:57312	admin	OK	EXEC[0]	6.77 ms
+23:37:40.036	127.0.0.1:57314	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	1.16 ms
+23:37:40.096	127.0.0.1:57314	admin	OK	Query executed in 59.63 ms.	60.0 ms
+23:37:40.119	127.0.0.1:57315	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.46 ms
+23:37:40.125	127.0.0.1:57315	admin	OK	Query executed in 2.01 ms.	5.31 ms

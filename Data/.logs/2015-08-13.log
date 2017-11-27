@@ -1,0 +1,12 @@
+20:23:06.139	SERVER	admin	OK	Server was started (port: 1984).
+20:23:24.682	0:0:0:0:0:0:0:1:59350	admin	REQUEST	[GET] http://localhost:8080/webdav
+20:23:24.715	0:0:0:0:0:0:0:1:59350	admin	200		34.96 ms
+20:23:31.742	0:0:0:0:0:0:0:1:59350	admin	REQUEST	[GET] http://localhost:8080/webdav
+20:23:31.772	0:0:0:0:0:0:0:1:59350	admin	200		29.98 ms
+20:23:32.366	0:0:0:0:0:0:0:1:59355	admin	REQUEST	[GET] http://localhost:8080/apple-touch-icon-precomposed.png
+20:23:32.387	0:0:0:0:0:0:0:1:59357	admin	REQUEST	[GET] http://localhost:8080/favicon.ico
+20:23:32.986	0:0:0:0:0:0:0:1:59355	admin	404	No function found that matches the request.	619.84 ms
+20:23:32.988	0:0:0:0:0:0:0:1:59357	admin	404	No function found that matches the request.	600.72 ms
+20:23:32.997	0:0:0:0:0:0:0:1:59355	admin	REQUEST	[GET] http://localhost:8080/apple-touch-icon.png
+20:23:33.023	0:0:0:0:0:0:0:1:59355	admin	404	No function found that matches the request.	26.63 ms
+21:02:18.027	SERVER	admin	OK	Server was stopped (port: 1984).

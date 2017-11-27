@@ -1,0 +1,150 @@
+17:14:19.145	0:0:0:0:0:0:0:1:54110	admin	REQUEST	[GET] http://localhost:8080/
+17:14:19.285	0:0:0:0:0:0:0:1:54110	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 142/6: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	145.4 ms
+17:15:08.926	0:0:0:0:0:0:0:1:54114	admin	REQUEST	[GET] http://localhost:8080/
+17:15:08.933	0:0:0:0:0:0:0:1:54114	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 142/6: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	7.59 ms
+17:19:21.157	0:0:0:0:0:0:0:1:54280	admin	REQUEST	[GET] http://localhost:8080/
+17:19:21.167	0:0:0:0:0:0:0:1:54280	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 142/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	9.58 ms
+17:19:58.736	0:0:0:0:0:0:0:1:54284	admin	REQUEST	[GET] http://localhost:8080/
+17:19:58.742	0:0:0:0:0:0:0:1:54284	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 142/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	6.27 ms
+17:21:49.644	0:0:0:0:0:0:0:1:54292	admin	REQUEST	[GET] http://localhost:8080/
+17:21:49.665	0:0:0:0:0:0:0:1:54292	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 142/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	21.11 ms
+17:22:00.593	SERVER	admin	OK	Server was stopped (port: 1984).
+17:22:35.149	SERVER	admin	OK	Server was started (port: 1984).
+17:22:41.970	0:0:0:0:0:0:0:1:54296	admin	REQUEST	[GET] http://localhost:8080/
+17:22:42.721	0:0:0:0:0:0:0:1:54296	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 142/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	753.65 ms
+17:24:44.209	0:0:0:0:0:0:0:1:54302	admin	REQUEST	[GET] http://localhost:8080/
+17:24:44.271	0:0:0:0:0:0:0:1:54302	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 142/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	62.4 ms
+17:26:05.118	0:0:0:0:0:0:0:1:54308	admin	REQUEST	[GET] http://localhost:8080/
+17:26:05.141	0:0:0:0:0:0:0:1:54308	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 142/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	23.44 ms
+17:26:06.177	0:0:0:0:0:0:0:1:54308	admin	REQUEST	[GET] http://localhost:8080/
+17:26:06.228	0:0:0:0:0:0:0:1:54308	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 142/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	50.83 ms
+17:26:06.946	0:0:0:0:0:0:0:1:54308	admin	REQUEST	[GET] http://localhost:8080/
+17:26:06.963	0:0:0:0:0:0:0:1:54308	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 142/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	16.65 ms
+17:26:07.661	0:0:0:0:0:0:0:1:54308	admin	REQUEST	[GET] http://localhost:8080/
+17:26:07.677	0:0:0:0:0:0:0:1:54308	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 142/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	16.47 ms
+17:26:10.280	0:0:0:0:0:0:0:1:54308	admin	REQUEST	[GET] http://localhost:8080/
+17:26:10.293	0:0:0:0:0:0:0:1:54308	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 142/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	13.45 ms
+17:26:11.089	0:0:0:0:0:0:0:1:54308	admin	REQUEST	[GET] http://localhost:8080/
+17:26:11.121	0:0:0:0:0:0:0:1:54308	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 142/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	32.48 ms
+17:26:11.763	0:0:0:0:0:0:0:1:54308	admin	REQUEST	[GET] http://localhost:8080/
+17:26:11.785	0:0:0:0:0:0:0:1:54308	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 142/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	21.72 ms
+17:26:12.397	0:0:0:0:0:0:0:1:54308	admin	REQUEST	[GET] http://localhost:8080/
+17:26:12.410	0:0:0:0:0:0:0:1:54308	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 142/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	12.91 ms
+17:26:13.123	0:0:0:0:0:0:0:1:54308	admin	REQUEST	[GET] http://localhost:8080/
+17:26:13.139	0:0:0:0:0:0:0:1:54308	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 142/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	16.3 ms
+17:26:13.773	0:0:0:0:0:0:0:1:54308	admin	REQUEST	[GET] http://localhost:8080/
+17:26:13.786	0:0:0:0:0:0:0:1:54308	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 142/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	13.75 ms
+17:27:31.007	0:0:0:0:0:0:0:1:54312	admin	REQUEST	[GET] http://localhost:8080/
+17:27:31.027	0:0:0:0:0:0:0:1:54312	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	20.21 ms
+17:27:32.308	0:0:0:0:0:0:0:1:54312	admin	REQUEST	[GET] http://localhost:8080/
+17:27:32.322	0:0:0:0:0:0:0:1:54312	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	17.38 ms
+17:27:33.156	0:0:0:0:0:0:0:1:54312	admin	REQUEST	[GET] http://localhost:8080/
+17:27:33.169	0:0:0:0:0:0:0:1:54312	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	13.35 ms
+17:27:34.029	0:0:0:0:0:0:0:1:54312	admin	REQUEST	[GET] http://localhost:8080/
+17:27:34.044	0:0:0:0:0:0:0:1:54312	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	15.88 ms
+17:27:35.118	0:0:0:0:0:0:0:1:54312	admin	REQUEST	[GET] http://localhost:8080/
+17:27:35.128	0:0:0:0:0:0:0:1:54312	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	11.11 ms
+17:28:18.535	0:0:0:0:0:0:0:1:54316	admin	REQUEST	[GET] http://localhost:8080/.init
+17:28:18.536	0:0:0:0:0:0:0:1:54316	admin	200		0.4 ms
+17:28:19.215	0:0:0:0:0:0:0:1:54318	admin	REQUEST	[GET] http://localhost:8080/.init
+17:28:19.216	0:0:0:0:0:0:0:1:54318	admin	200		0.36 ms
+17:28:25.072	0:0:0:0:0:0:0:1:54318	admin	REQUEST	[GET] http://localhost:8080/
+17:28:25.085	0:0:0:0:0:0:0:1:54318	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	13.83 ms
+17:29:13.169	0:0:0:0:0:0:0:1:54320	admin	REQUEST	[GET] http://localhost:8080/
+17:29:13.180	0:0:0:0:0:0:0:1:54320	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	11.22 ms
+17:29:14.089	0:0:0:0:0:0:0:1:54320	admin	REQUEST	[GET] http://localhost:8080/
+17:29:14.103	0:0:0:0:0:0:0:1:54320	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	14.24 ms
+17:29:14.707	0:0:0:0:0:0:0:1:54320	admin	REQUEST	[GET] http://localhost:8080/
+17:29:14.718	0:0:0:0:0:0:0:1:54320	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	11.0 ms
+17:30:30.221	0:0:0:0:0:0:0:1:54324	admin	REQUEST	[GET] http://localhost:8080/
+17:30:30.230	0:0:0:0:0:0:0:1:54324	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	9.09 ms
+17:30:31.161	0:0:0:0:0:0:0:1:54324	admin	REQUEST	[GET] http://localhost:8080/
+17:30:31.173	0:0:0:0:0:0:0:1:54324	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	11.6 ms
+17:30:56.626	0:0:0:0:0:0:0:1:54324	admin	REQUEST	[GET] http://localhost:8080/
+17:30:56.637	0:0:0:0:0:0:0:1:54324	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 144/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	10.79 ms
+17:31:08.111	0:0:0:0:0:0:0:1:54324	admin	REQUEST	[GET] http://localhost:8080/
+17:31:08.120	0:0:0:0:0:0:0:1:54324	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 143/47: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	8.62 ms
+17:31:09.213	0:0:0:0:0:0:0:1:54324	admin	REQUEST	[GET] http://localhost:8080/
+17:31:09.226	0:0:0:0:0:0:0:1:54324	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 143/47: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	12.85 ms
+17:31:42.860	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/
+17:31:42.869	0:0:0:0:0:0:0:1:54328	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	8.85 ms
+17:31:43.947	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/
+17:31:43.956	0:0:0:0:0:0:0:1:54328	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	9.38 ms
+17:32:08.597	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/.init
+17:32:08.597	0:0:0:0:0:0:0:1:54328	admin	200		0.32 ms
+17:32:12.986	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/
+17:32:13.004	0:0:0:0:0:0:0:1:54328	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	17.63 ms
+17:32:25.124	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/
+17:32:26.169	0:0:0:0:0:0:0:1:54328	admin	302		1045.05 ms
+17:32:26.169	0:0:0:0:0:0:0:1:54328	admin	200		0.17 ms
+17:32:26.177	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/cm/app
+17:32:26.283	SERVER	admin	INFO	Missing Database. Start setup procedure.
+17:32:26.284	0:0:0:0:0:0:0:1:54328	admin	302		106.85 ms
+17:32:26.284	0:0:0:0:0:0:0:1:54328	admin	200		0.1 ms
+17:32:26.299	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/cm/install?message=Missing%20Database.%20Please%20setup%20Database.&text=Setup&link=install%2F.setup
+17:32:26.357	0:0:0:0:0:0:0:1:54328	admin	200		58.49 ms
+17:32:40.923	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/cm/install/.setup
+17:32:41.018	SERVER	admin	INFO	Database setup started.
+17:32:41.168	0:0:0:0:0:0:0:1:54328	admin	302		245.54 ms
+17:32:41.168	0:0:0:0:0:0:0:1:54328	admin	200		0.09 ms
+17:32:41.181	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/cm/install?message=Database%20app-cm%20successfully%20installed&text=Configure&link=install%2F.configure
+17:32:41.247	0:0:0:0:0:0:0:1:54328	admin	200		65.85 ms
+17:32:42.610	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/cm/install/.configure
+17:32:42.701	SERVER	admin	INFO	Database setup done!
+17:32:42.732	0:0:0:0:0:0:0:1:54328	admin	302		122.24 ms
+17:32:42.732	0:0:0:0:0:0:0:1:54328	admin	200		0.1 ms
+17:32:42.740	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/cm/install?message=Database%20app-cm%20%2F%209976aaba-b211-45c4-9ad1-1a87ea3d50df%20sucessfully%20setup&text=Start%20Application&link=%2F
+17:32:42.791	0:0:0:0:0:0:0:1:54328	admin	200		50.76 ms
+17:32:49.045	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/
+17:32:49.114	0:0:0:0:0:0:0:1:54328	admin	302		68.86 ms
+17:32:49.114	0:0:0:0:0:0:0:1:54328	admin	200		0.1 ms
+17:32:49.124	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/cm/app
+17:32:49.196	0:0:0:0:0:0:0:1:54328	admin	200		72.38 ms
+17:33:18.016	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/cm/app
+17:33:18.025	0:0:0:0:0:0:0:1:54328	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	8.95 ms
+17:33:45.711	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/cm/app
+17:33:45.720	0:0:0:0:0:0:0:1:54328	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	9.5 ms
+17:33:46.599	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/cm/app
+17:33:46.606	0:0:0:0:0:0:0:1:54328	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	7.22 ms
+17:34:07.433	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/cm/app
+17:34:07.442	0:0:0:0:0:0:0:1:54328	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	9.48 ms
+17:34:08.328	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/cm/app
+17:34:08.336	0:0:0:0:0:0:0:1:54328	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	8.79 ms
+17:34:19.255	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/cm/app
+17:34:19.261	0:0:0:0:0:0:0:1:54328	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	5.68 ms
+17:34:20.045	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/cm/app
+17:34:20.056	0:0:0:0:0:0:0:1:54328	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	10.63 ms
+17:34:28.797	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/cm/app
+17:34:28.804	0:0:0:0:0:0:0:1:54328	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	6.76 ms
+17:34:40.203	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/cm/app
+17:34:40.211	0:0:0:0:0:0:0:1:54328	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	8.18 ms
+17:34:49.644	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/cm/app
+17:34:49.653	0:0:0:0:0:0:0:1:54328	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	8.98 ms
+17:34:50.424	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/cm/app
+17:34:50.431	0:0:0:0:0:0:0:1:54328	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/9: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	7.07 ms
+17:35:02.649	0:0:0:0:0:0:0:1:54328	admin	REQUEST	[GET] http://localhost:8080/cm/app
+17:35:02.774	0:0:0:0:0:0:0:1:54328	admin	200		125.47 ms
+17:48:30.978	0:0:0:0:0:0:0:1:54338	admin	REQUEST	[GET] http://localhost:8080/cm/install?message=Database%20app-cm%20%2F%209976aaba-b211-45c4-9ad1-1a87ea3d50df%20sucessfully%20setup&text=Start%20Application&link=%2F
+17:48:31.075	0:0:0:0:0:0:0:1:54338	admin	200		97.08 ms
+17:48:37.458	0:0:0:0:0:0:0:1:54338	admin	REQUEST	[GET] http://localhost:8080/cm/install/.configure
+17:48:37.526	0:0:0:0:0:0:0:1:54338	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 100/17: [XPTY0004] xs:string expected, empty sequence found. Stack Trace: - /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 97/12	68.35 ms
+17:48:38.577	0:0:0:0:0:0:0:1:54340	admin	REQUEST	[GET] http://localhost:8080/cm/install/hh
+17:48:38.631	0:0:0:0:0:0:0:1:54340	admin	200		53.79 ms
+17:48:54.797	0:0:0:0:0:0:0:1:54340	admin	REQUEST	[GET] http://localhost:8080/cm/app/hh
+17:48:54.839	0:0:0:0:0:0:0:1:54340	admin	404	No function found that matches the request.	42.26 ms
+17:49:58.563	0:0:0:0:0:0:0:1:54348	admin	REQUEST	[GET] http://localhost:8080/cm/app
+17:49:58.569	0:0:0:0:0:0:0:1:54348	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/8: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	5.8 ms
+17:49:59.716	0:0:0:0:0:0:0:1:54348	admin	REQUEST	[GET] http://localhost:8080/cm/install/hh
+17:49:59.721	0:0:0:0:0:0:0:1:54348	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 145/8: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	5.14 ms
+17:50:47.577	0:0:0:0:0:0:0:1:54352	admin	REQUEST	[GET] http://localhost:8080/cm/install/hh
+17:50:47.637	0:0:0:0:0:0:0:1:54352	admin	200		59.86 ms
+17:51:11.317	0:0:0:0:0:0:0:1:54352	admin	REQUEST	[GET] http://localhost:8080/cm/install/hh
+17:51:11.378	0:0:0:0:0:0:0:1:54352	admin	200		61.01 ms
+17:51:13.142	0:0:0:0:0:0:0:1:54352	admin	REQUEST	[GET] http://localhost:8080/cm/install/hh
+17:51:13.173	0:0:0:0:0:0:0:1:54352	admin	200		31.66 ms
+17:51:25.361	0:0:0:0:0:0:0:1:54352	admin	REQUEST	[GET] http://localhost:8080/cm/install/hh
+17:51:25.433	0:0:0:0:0:0:0:1:54352	admin	200		71.79 ms
+17:51:26.926	0:0:0:0:0:0:0:1:54352	admin	REQUEST	[GET] http://localhost:8080/cm/install/hh
+17:51:26.959	0:0:0:0:0:0:0:1:54352	admin	200		33.86 ms
+17:52:46.105	0:0:0:0:0:0:0:1:54360	admin	REQUEST	[GET] http://localhost:8080/cm/install/hh
+17:52:46.161	0:0:0:0:0:0:0:1:54360	admin	200		56.28 ms

@@ -1,0 +1,50 @@
+07:39:45.391	0:0:0:0:0:0:0:1:51277	admin	REQUEST	[GET] http://localhost:8080/test
+07:39:45.792	0:0:0:0:0:0:0:1:51277	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/76: [XPST0003] Expecting '}', found '$'.	427.44 ms
+07:40:05.625	0:0:0:0:0:0:0:1:51277	admin	REQUEST	[GET] http://localhost:8080/test
+07:40:05.752	0:0:0:0:0:0:0:1:51277	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/37: [XPST0003] Expecting '}', found '{'.	127.62 ms
+07:40:38.587	0:0:0:0:0:0:0:1:51281	admin	REQUEST	[GET] http://localhost:8080/test
+07:40:38.691	0:0:0:0:0:0:0:1:51281	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/76: [XPST0003] Expecting '}', found '$'.	104.38 ms
+07:40:40.586	0:0:0:0:0:0:0:1:51281	admin	REQUEST	[GET] http://localhost:8080/test
+07:40:40.725	0:0:0:0:0:0:0:1:51281	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/76: [XPST0003] Expecting '}', found '$'.	140.1 ms
+07:41:31.011	0:0:0:0:0:0:0:1:51285	admin	REQUEST	[GET] http://localhost:8080/test
+07:41:31.154	0:0:0:0:0:0:0:1:51285	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/37: [XPST0003] Expecting '}', found '{'.	147.21 ms
+07:41:32.100	0:0:0:0:0:0:0:1:51285	admin	REQUEST	[GET] http://localhost:8080/test
+07:41:32.168	0:0:0:0:0:0:0:1:51285	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/37: [XPST0003] Expecting '}', found '{'.	74.95 ms
+07:42:55.877	0:0:0:0:0:0:0:1:51289	admin	REQUEST	[GET] http://localhost:8080/test
+07:42:55.960	0:0:0:0:0:0:0:1:51289	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/85: [XPST0003] Expecting closing bracket for function 'return'.	83.35 ms
+07:43:23.504	0:0:0:0:0:0:0:1:51289	admin	REQUEST	[GET] http://localhost:8080/test
+07:43:23.739	0:0:0:0:0:0:0:1:51289	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/77: [XPST0003] Expecting '}', found '$'.	234.38 ms
+07:44:00.328	0:0:0:0:0:0:0:1:51293	admin	REQUEST	[GET] http://localhost:8080/test
+07:44:00.385	0:0:0:0:0:0:0:1:51293	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/74: [XPST0003] Expecting '}', found '$'.	57.33 ms
+07:44:55.390	0:0:0:0:0:0:0:1:51297	admin	REQUEST	[GET] http://localhost:8080/test
+07:44:55.483	0:0:0:0:0:0:0:1:51297	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/77: [XPST0017] Unknown function 'return'.	93.16 ms
+07:45:20.319	0:0:0:0:0:0:0:1:51297	admin	REQUEST	[GET] http://localhost:8080/test
+07:45:20.387	0:0:0:0:0:0:0:1:51297	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/77: [XPST0017] Unknown function 'return'.	68.26 ms
+07:45:21.594	0:0:0:0:0:0:0:1:51297	admin	REQUEST	[GET] http://localhost:8080/test
+07:45:21.648	0:0:0:0:0:0:0:1:51297	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/77: [XPST0017] Unknown function 'return'.	54.55 ms
+07:45:22.814	0:0:0:0:0:0:0:1:51297	admin	REQUEST	[GET] http://localhost:8080/test
+07:45:22.868	0:0:0:0:0:0:0:1:51297	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/77: [XPST0017] Unknown function 'return'.	53.94 ms
+07:45:32.535	0:0:0:0:0:0:0:1:51297	admin	REQUEST	[GET] http://localhost:8080/test
+07:45:33.426	0:0:0:0:0:0:0:1:51297	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/83: [XPDY0002] s: no context value bound. Stack Trace: - /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/39	891.5 ms
+07:45:54.359	0:0:0:0:0:0:0:1:51297	admin	REQUEST	[GET] http://localhost:8080/test
+07:45:54.383	0:0:0:0:0:0:0:1:51297	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/79: [XPST0003] Expecting ')', found '''.	23.64 ms
+07:46:07.463	0:0:0:0:0:0:0:1:51297	admin	REQUEST	[GET] http://localhost:8080/test
+07:46:07.481	0:0:0:0:0:0:0:1:51297	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/78: [XPST0003] Expecting '}', found '''.	17.52 ms
+07:46:08.459	0:0:0:0:0:0:0:1:51297	admin	REQUEST	[GET] http://localhost:8080/test
+07:46:08.475	0:0:0:0:0:0:0:1:51297	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/78: [XPST0003] Expecting '}', found '''.	16.77 ms
+07:47:30.731	0:0:0:0:0:0:0:1:51303	admin	REQUEST	[GET] http://localhost:8080/test
+07:47:30.824	0:0:0:0:0:0:0:1:51303	admin	200		93.23 ms
+07:47:32.278	0:0:0:0:0:0:0:1:51303	admin	REQUEST	[GET] http://localhost:8080/test
+07:47:32.335	0:0:0:0:0:0:0:1:51303	admin	200		57.92 ms
+07:47:42.877	0:0:0:0:0:0:0:1:51303	admin	REQUEST	[GET] http://localhost:8080/test
+07:47:42.898	0:0:0:0:0:0:0:1:51303	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/78: [XPST0003] Expecting '}', found '$'.	20.83 ms
+07:47:44.297	0:0:0:0:0:0:0:1:51303	admin	REQUEST	[GET] http://localhost:8080/test
+07:47:44.316	0:0:0:0:0:0:0:1:51303	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/78: [XPST0003] Expecting '}', found '$'.	19.29 ms
+07:47:55.278	0:0:0:0:0:0:0:1:51303	admin	REQUEST	[GET] http://localhost:8080/test
+07:47:55.303	0:0:0:0:0:0:0:1:51303	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/79: [XPST0003] Expecting ')', found '$'.	25.26 ms
+07:47:56.200	0:0:0:0:0:0:0:1:51303	admin	REQUEST	[GET] http://localhost:8080/test
+07:47:56.226	0:0:0:0:0:0:0:1:51303	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/79: [XPST0003] Expecting ')', found '$'.	25.36 ms
+07:48:08.018	0:0:0:0:0:0:0:1:51303	admin	REQUEST	[GET] http://localhost:8080/test
+07:48:08.079	0:0:0:0:0:0:0:1:51303	admin	200		60.96 ms
+07:48:24.705	0:0:0:0:0:0:0:1:51303	admin	REQUEST	[GET] http://localhost:8080/test
+07:48:24.753	0:0:0:0:0:0:0:1:51303	admin	200		48.66 ms

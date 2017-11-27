@@ -1,0 +1,3 @@
+17:26:41.238	SERVER	admin	OK	Server was started (port: 1984).
+17:26:45.437	0:0:0:0:0:0:0:1:49551	admin	REQUEST	[GET] http://localhost:8080/test
+17:26:47.496	0:0:0:0:0:0:0:1:49551	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/34: [XPST0017] map:get(map,key): 1 argument supplied.	2069.15 ms

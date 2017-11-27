@@ -1,0 +1,18 @@
+10:29:24.070	127.0.0.1:55012	admin	REQUEST	[GET] http://localhost:8080/test
+10:29:24.199	127.0.0.1:55012	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 35/13: [XQTY0105] Invalid content: map { "header": "test1", "main":....	129.21 ms
+10:30:13.782	127.0.0.1:55053	admin	REQUEST	[GET] http://localhost:8080/test
+10:30:13.829	127.0.0.1:55053	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/21: [SENR0001] Items of type map(*) cannot be serialized.	46.91 ms
+10:30:14.838	127.0.0.1:55053	admin	REQUEST	[GET] http://localhost:8080/test
+10:30:14.882	127.0.0.1:55053	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/21: [SENR0001] Items of type map(*) cannot be serialized.	43.29 ms
+10:35:37.505	127.0.0.1:55145	admin	REQUEST	[GET] http://localhost:8080/test
+10:35:37.562	127.0.0.1:55145	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/39: [XQTY0105] Invalid content: map { "header": "test1", "main":....	57.21 ms
+10:35:38.496	127.0.0.1:55145	admin	REQUEST	[GET] http://localhost:8080/test
+10:35:38.542	127.0.0.1:55145	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/39: [XQTY0105] Invalid content: map { "header": "test1", "main":....	45.88 ms
+10:37:50.404	127.0.0.1:55149	admin	REQUEST	[GET] http://localhost:8080/test
+10:37:50.448	127.0.0.1:55149	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/39: [XQTY0105] Invalid content: map { "header": "test1", "main":....	43.84 ms
+10:37:52.194	127.0.0.1:55149	admin	REQUEST	[GET] http://localhost:8080/test
+10:37:52.229	127.0.0.1:55149	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/39: [XQTY0105] Invalid content: map { "header": "test1", "main":....	34.63 ms
+10:38:53.022	127.0.0.1:55152	admin	REQUEST	[GET] http://localhost:8080/test
+10:38:53.069	127.0.0.1:55152	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/33: [XPTY0019] *: node expected as input, map(*) found: map { "header": "test1", "main":....	47.62 ms
+10:41:42.991	127.0.0.1:55229	admin	REQUEST	[GET] http://localhost:8080/test
+10:41:43.002	127.0.0.1:55229	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 34/34: [XPST0017] map:get(map,key): 1 argument supplied.	11.95 ms

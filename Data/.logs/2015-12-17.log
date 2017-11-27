@@ -1,0 +1,74 @@
+14:26:12.149	SERVER	admin	OK	Server was started (port: 1984).
+14:26:59.077	SERVER	admin	OK	Server was stopped (port: 1984).
+14:43:52.116	SERVER	admin	OK	Server was started (port: 1984).
+14:44:37.718	0:0:0:0:0:0:0:1:51056	admin	REQUEST	[GET] http://localhost:8080/
+14:44:40.325	0:0:0:0:0:0:0:1:51056	admin	302		2609.27 ms
+14:44:40.325	0:0:0:0:0:0:0:1:51056	admin	200		0.97 ms
+14:44:40.348	0:0:0:0:0:0:0:1:51056	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:44:40.509	0:0:0:0:0:0:0:1:51056	admin	200		161.98 ms
+14:44:40.585	0:0:0:0:0:0:0:1:51062	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+14:44:40.677	0:0:0:0:0:0:0:1:51062	admin	200		91.95 ms
+14:44:41.933	0:0:0:0:0:0:0:1:51056	admin	REQUEST	[GET] http://localhost:8080/favicon.ico
+14:44:42.107	0:0:0:0:0:0:0:1:51056	admin	404	No function found that matches the request.	174.19 ms
+14:49:36.187	SERVER	admin	OK	Server was stopped (port: 1984).
+16:14:23.807	SERVER	admin	OK	Server was started (port: 1984).
+16:14:28.078	0:0:0:0:0:0:0:1:51666	admin	REQUEST	[GET] http://localhost:8080/
+16:14:30.209	0:0:0:0:0:0:0:1:51666	admin	302		2133.92 ms
+16:14:30.210	0:0:0:0:0:0:0:1:51666	admin	200		0.35 ms
+16:14:30.227	0:0:0:0:0:0:0:1:51666	admin	REQUEST	[GET] http://localhost:8080/cm/app
+16:14:30.425	0:0:0:0:0:0:0:1:51666	admin	200		198.28 ms
+16:14:30.467	0:0:0:0:0:0:0:1:51666	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+16:14:30.546	0:0:0:0:0:0:0:1:51666	admin	200		78.89 ms
+16:14:32.966	0:0:0:0:0:0:0:1:51666	admin	REQUEST	[GET] http://localhost:8080/dba
+16:14:33.028	0:0:0:0:0:0:0:1:51666	admin	302		61.97 ms
+16:14:33.028	0:0:0:0:0:0:0:1:51666	admin	200		0.18 ms
+16:14:33.041	0:0:0:0:0:0:0:1:51666	admin	REQUEST	[GET] http://localhost:8080/dba/databases
+16:14:33.291	0:0:0:0:0:0:0:1:51666	admin	302		250.21 ms
+16:14:33.291	0:0:0:0:0:0:0:1:51666	admin	200		0.17 ms
+16:14:33.300	0:0:0:0:0:0:0:1:51666	admin	REQUEST	[GET] http://localhost:8080/dba/login
+16:14:33.417	0:0:0:0:0:0:0:1:51666	admin	200		117.04 ms
+16:14:33.447	0:0:0:0:0:0:0:1:51667	admin	REQUEST	[GET] http://localhost:8080/dba/static/js.js
+16:14:33.522	0:0:0:0:0:0:0:1:51666	admin	REQUEST	[GET] http://localhost:8080/dba/static/style.css
+16:14:33.525	0:0:0:0:0:0:0:1:51667	admin	200		77.89 ms
+16:14:33.615	0:0:0:0:0:0:0:1:51666	admin	200		92.99 ms
+16:14:33.633	0:0:0:0:0:0:0:1:51669	admin	REQUEST	[GET] http://localhost:8080/dba/static/basex.svg
+16:14:33.814	0:0:0:0:0:0:0:1:51669	admin	200		180.83 ms
+16:14:48.641	0:0:0:0:0:0:0:1:51669	admin	REQUEST	[POST] http://localhost:8080/dba/login-check
+16:14:48.734	SERVER	admin	INFO	Login was denied: admin
+16:14:48.735	0:0:0:0:0:0:0:1:51669	admin	302		93.76 ms
+16:14:48.735	0:0:0:0:0:0:0:1:51669	admin	200		0.11 ms
+16:14:48.749	0:0:0:0:0:0:0:1:51669	admin	REQUEST	[GET] http://localhost:8080/dba/login?error=Please%20check%20your%20login%20data.&name=admin&url=
+16:14:48.853	0:0:0:0:0:0:0:1:51669	admin	200		103.9 ms
+16:14:53.710	0:0:0:0:0:0:0:1:51669	admin	REQUEST	[POST] http://localhost:8080/dba/login-check
+16:14:53.816	SERVER	admin	INFO	User was logged in: admin
+16:14:53.816	0:0:0:0:0:0:0:1:51669	admin	302		106.25 ms
+16:14:53.816	0:0:0:0:0:0:0:1:51669	admin	200		0.11 ms
+16:14:53.822	0:0:0:0:0:0:0:1:51669	admin	REQUEST	[GET] http://localhost:8080/dba/databases
+16:14:54.432	0:0:0:0:0:0:0:1:51669	admin	200		609.61 ms
+16:15:03.599	0:0:0:0:0:0:0:1:51669	admin	REQUEST	[GET] http://localhost:8080/dba/logout
+16:15:03.728	SERVER	admin	INFO	User was logged out: admin
+16:15:03.728	0:0:0:0:0:0:0:1:51669	admin	302		129.29 ms
+16:15:03.729	0:0:0:0:0:0:0:1:51669	admin	200		0.12 ms
+16:15:03.736	0:0:0:0:0:0:0:1:51669	admin	REQUEST	[GET] http://localhost:8080/dba/login?nane=admin&url=
+16:15:03.838	0:0:0:0:0:0:0:1:51669	admin	200		102.38 ms
+16:17:04.247	0:0:0:0:0:0:0:1:51680	admin	REQUEST	[GET] http://localhost:8080/
+16:17:04.304	0:0:0:0:0:0:0:1:51680	admin	302		57.09 ms
+16:17:04.304	0:0:0:0:0:0:0:1:51680	admin	200		0.12 ms
+16:17:04.325	0:0:0:0:0:0:0:1:51680	admin	REQUEST	[GET] http://localhost:8080/cm/app
+16:17:04.374	0:0:0:0:0:0:0:1:51680	admin	200		48.65 ms
+16:17:09.674	0:0:0:0:0:0:0:1:51680	admin	REQUEST	[GET] http://localhost:8080/
+16:17:09.720	0:0:0:0:0:0:0:1:51680	admin	302		48.16 ms
+16:17:09.722	0:0:0:0:0:0:0:1:51680	admin	200		0.16 ms
+16:17:09.734	0:0:0:0:0:0:0:1:51680	admin	REQUEST	[GET] http://localhost:8080/cm/app
+16:17:09.809	0:0:0:0:0:0:0:1:51680	admin	200		75.09 ms
+16:18:51.414	SERVER	admin	OK	Server was stopped (port: 1984).
+16:20:38.730	SERVER	admin	OK	Server was started (port: 1984).
+16:20:40.675	0:0:0:0:0:0:0:1:51760	admin	REQUEST	[GET] http://localhost:8080/
+16:20:43.511	0:0:0:0:0:0:0:1:51760	admin	302		2838.88 ms
+16:20:43.511	0:0:0:0:0:0:0:1:51760	admin	200		0.36 ms
+16:20:43.526	0:0:0:0:0:0:0:1:51760	admin	REQUEST	[GET] http://localhost:8080/cm/app
+16:20:43.630	0:0:0:0:0:0:0:1:51760	admin	200		103.81 ms
+16:21:01.075	0:0:0:0:0:0:0:1:51763	admin	REQUEST	[GET] http://localhost:8080/shutdown?tocken=HitTheRoad
+16:21:01.158	0:0:0:0:0:0:0:1:51763	admin	404	No function found that matches the request.	83.42 ms
+16:23:30.624	0:0:0:0:0:0:0:1:51986	admin	REQUEST	[GET] http://localhost:8080/shutdown?token=HitTheRoad
+16:23:30.682	0:0:0:0:0:0:0:1:51986	admin	404	No function found that matches the request.	57.33 ms

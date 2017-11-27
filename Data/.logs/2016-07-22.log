@@ -1,0 +1,25 @@
+07:46:40.271	SERVER	admin	OK	Server was started (port: 1984).
+07:48:06.222	SERVER	admin	OK	Server was stopped (port: 1984).
+07:48:14.766	SERVER	admin	OK	Server was started (port: 1984).
+07:48:37.238	127.0.0.1:52030	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element app {tokenize($db, '_')[1]}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	72.79 ms
+07:48:38.023	127.0.0.1:52030	admin	OK	Query executed in 782.05 ms.	784.71 ms
+07:48:38.045	127.0.0.1:52031	admin	REQUEST	XQUERY json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element app {tokenize($db, '_')[1]}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })	0.9 ms
+07:48:38.096	127.0.0.1:52031	admin	OK	Query executed in 49.94 ms.	50.29 ms
+07:48:38.148	127.0.0.1:52033	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	40.0 ms
+07:48:38.152	127.0.0.1:52033	admin	OK	Query executed in 4.02 ms.	4.62 ms
+07:48:38.595	127.0.0.1:52034	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	6.03 ms
+07:48:38.604	127.0.0.1:52034	admin	OK	Query executed in 2.45 ms.	3.25 ms
+07:55:31.202	127.0.0.1:52041	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.39 ms
+07:55:31.207	127.0.0.1:52041	admin	OK	Query executed in 4.05 ms.	4.39 ms
+17:05:28.779	127.0.0.1:53697	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	3.21 ms
+17:05:28.798	127.0.0.1:53697	admin	OK	Query executed in 12.58 ms.	17.53 ms
+17:05:29.011	127.0.0.1:53698	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.4 ms
+17:05:29.014	127.0.0.1:53698	admin	OK	Query executed in 2.61 ms.	3.02 ms
+17:07:34.171	127.0.0.1:53701	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.43 ms
+17:07:34.184	127.0.0.1:53701	admin	OK	Query executed in 11.78 ms.	12.86 ms
+17:07:34.324	127.0.0.1:53702	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.48 ms
+17:07:34.327	127.0.0.1:53702	admin	OK	Query executed in 2.73 ms.	3.07 ms
+17:08:23.512	127.0.0.1:53704	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.55 ms
+17:08:23.515	127.0.0.1:53704	admin	OK	Query executed in 2.92 ms.	3.27 ms
+17:08:23.650	127.0.0.1:53705	admin	REQUEST	XQUERY json:serialize(db:open('WEBActions')/*)	0.6 ms
+17:08:23.657	127.0.0.1:53705	admin	OK	Query executed in 6.89 ms.	7.3 ms

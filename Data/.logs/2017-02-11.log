@@ -1,0 +1,9 @@
+19:20:27.067	SERVER	admin	OK	Server was started (port: 1984).
+19:20:41.175	127.0.0.1:53465	admin	REQUEST	LIST	1.56 ms
+19:20:41.242	127.0.0.1:53465	admin	OK		67.16 ms
+19:21:22.232	127.0.0.1:53465	admin	REQUEST	db:open("BRjx_main");//*	40.59 ms
+19:21:22.232	127.0.0.1:53465	admin	ERROR	Stopped at , 1/21: Unknown command: db:open("BRjx_main"). Try 'help'.	0.08 ms
+19:21:40.362	127.0.0.1:53465	admin	REQUEST	XQUERY db:open("BRjx_main");//*	1.6 ms
+19:21:40.509	127.0.0.1:53465	admin	ERROR	Stopped at ., 1/22: [XPST0003] Unexpected end of query: ';//*'.	146.64 ms
+19:21:46.413	127.0.0.1:53465	admin	REQUEST	XQUERY db:open("BRjx_main")/*	0.29 ms
+19:21:46.476	127.0.0.1:53465	admin	OK	Query executed in 61.7 ms.	62.37 ms

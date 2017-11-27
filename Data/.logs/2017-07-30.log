@@ -1,0 +1,41 @@
+17:19:04.974	SERVER	admin	OK	Server wurde gestoppt (Port: 1984).
+17:20:08.071	SERVER	admin	OK	Server wurde gestartet (Port: 1984).
+17:23:18.073	127.0.0.1:60325	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $dbname as xs:string external; declare variable $tableid as xs:string external; let $database := db:open($dbname) let $json := element json {attribute type {"array"}, for $t in $database/* where (:$t/name() = "configs":) $t/id = $tableid (::) for $r in $t/records (:where expression:) for $c in $r/* return $c (:string, number, boolean, null, object, array:) } return $json	3.99 ms
+17:23:18.247	127.0.0.1:60325	admin	OK	BIND[0] undefined=undefined	167.13 ms
+17:23:18.248	127.0.0.1:60325	admin	OK	BIND[0] undefined=undefined	0.25 ms
+17:23:18.388	127.0.0.1:60325	admin	REQUEST	EXEC[0]	139.81 ms
+17:23:18.388	127.0.0.1:60325	admin	ERROR	Gestoppt in ., 4/10: [XPST0003] Unexpected end of query: 'namespace outpu...'.	0.14 ms
+17:25:34.533	127.0.0.1:60325	admin	OK	QUERY[1] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $dbname as xs:string external; declare variable $tableid as xs:string external; let $database := db:open($dbname) let $json := element json {attribute type {"array"}, for $t in $database/* where (:$t/name() = "configs":) $t/id = $tableid (::) for $r in $t/records (:where expression:) for $c in $r/* return $c (:string, number, boolean, null, object, array:) } return $json	0.57 ms
+17:25:34.541	127.0.0.1:60325	admin	OK	BIND[1] undefined=undefined	0.43 ms
+17:25:34.541	127.0.0.1:60325	admin	OK	BIND[1] undefined=undefined	0.22 ms
+17:25:34.865	127.0.0.1:60325	admin	REQUEST	EXEC[1]	324.0 ms
+17:25:34.866	127.0.0.1:60325	admin	ERROR	Gestoppt in ., 4/18: [XPDY0002] No value assigned to $dbname.	1.15 ms
+17:26:12.385	127.0.0.1:60325	admin	OK	QUERY[2] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $dbname as xs:string external; declare variable $tableid as xs:string external; let $database := db:open($dbname) let $json := element json {attribute type {"array"}, for $t in $database/* where (:$t/name() = "configs":) $t/id = $tableid (::) for $r in $t/records (:where expression:) for $c in $r/* return $c (:string, number, boolean, null, object, array:) } return $json	0.29 ms
+17:26:12.386	127.0.0.1:60325	admin	OK	BIND[2] undefined=undefined	0.21 ms
+17:26:12.386	127.0.0.1:60325	admin	OK	BIND[2] undefined=undefined	0.11 ms
+17:26:12.386	127.0.0.1:60325	admin	OK	BIND[2] undefined=undefined	0.11 ms
+17:26:12.387	127.0.0.1:60325	admin	OK	BIND[2] undefined=undefined	0.17 ms
+17:26:12.389	127.0.0.1:60325	admin	REQUEST	EXEC[2]	1.8 ms
+17:26:12.389	127.0.0.1:60325	admin	ERROR	Gestoppt in ., 4/18: [XPDY0002] No value assigned to $dbname.	0.1 ms
+17:28:28.459	127.0.0.1:60325	admin	OK	QUERY[3] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $dbname as xs:string external; declare variable $tableid as xs:string external; let $database := db:open($dbname) let $json := element json {attribute type {"array"}, for $t in $database/* where (:$t/name() = "configs":) $t/id = $tableid (::) for $r in $t/records (:where expression:) for $c in $r/* return $c (:string, number, boolean, null, object, array:) } return $json	0.35 ms
+17:28:28.460	127.0.0.1:60325	admin	OK	BIND[3] undefined=undefined	0.21 ms
+17:28:28.461	127.0.0.1:60325	admin	OK	BIND[3] undefined=undefined	0.14 ms
+17:28:28.462	127.0.0.1:60325	admin	REQUEST	EXEC[3]	1.73 ms
+17:28:28.463	127.0.0.1:60325	admin	ERROR	Gestoppt in ., 4/18: [XPDY0002] No value assigned to $dbname.	0.12 ms
+17:32:21.519	127.0.0.1:60431	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $dbname as xs:string external; declare variable $tableid as xs:string external; let $database := db:open($dbname) let $json := element json {attribute type {"array"}, for $t in $database/* where (:$t/name() = "configs":) $t/id = $tableid (::) for $r in $t/records (:where expression:) for $c in $r/* return $c (:string, number, boolean, null, object, array:) } return $json	0.46 ms
+17:32:21.527	127.0.0.1:60431	admin	OK	BIND[0] undefined=undefined	0.53 ms
+17:32:21.527	127.0.0.1:60431	admin	OK	BIND[0] undefined=undefined	0.18 ms
+17:32:21.529	127.0.0.1:60431	admin	OK	BIND[0] undefined=undefined	0.19 ms
+17:32:21.540	127.0.0.1:60431	admin	OK	BIND[0] undefined=undefined	0.25 ms
+17:32:21.546	127.0.0.1:60431	admin	REQUEST	EXEC[0]	2.64 ms
+17:32:21.546	127.0.0.1:60431	admin	ERROR	Gestoppt in ., 4/18: [XPDY0002] No value assigned to $dbname.	0.12 ms
+17:33:45.042	127.0.0.1:60431	admin	OK	QUERY[1] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $dbname as xs:string external; declare variable $tableid as xs:string external; let $database := db:open($dbname) let $json := element json {attribute type {"array"}, for $t in $database/* where (:$t/name() = "configs":) $t/id = $tableid (::) for $r in $t/records (:where expression:) for $c in $r/* return $c (:string, number, boolean, null, object, array:) } return $json	0.42 ms
+17:33:45.044	127.0.0.1:60431	admin	OK	BIND[1] undefined=undefined	0.22 ms
+17:33:45.046	127.0.0.1:60431	admin	REQUEST	EXEC[1]	1.7 ms
+17:33:45.047	127.0.0.1:60431	admin	ERROR	Gestoppt in ., 4/18: [XPDY0002] No value assigned to $dbname.	0.12 ms
+17:38:11.964	SERVER	admin	OK	Server wurde gestoppt (Port: 1984).
+17:39:15.094	SERVER	admin	OK	Server wurde gestartet (Port: 1984).
+17:39:50.106	127.0.0.1:60460	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $dbname as xs:string external; declare variable $tableid as xs:string external; let $database := db:open($dbname) let $json := element json {attribute type {"array"}, for $t in $database/* where (:$t/name() = "configs":) $t/id = $tableid (::) for $r in $t/records (:where expression:) for $c in $r/* return $c (:string, number, boolean, null, object, array:) } return $json	6.85 ms
+17:39:50.203	127.0.0.1:60460	admin	OK	BIND[0] $dbname=BRjx_main	94.19 ms
+17:39:50.204	127.0.0.1:60460	admin	OK	BIND[0] $tableid=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.2 ms
+17:39:50.801	127.0.0.1:60460	admin	OK	EXEC[0]	597.1 ms

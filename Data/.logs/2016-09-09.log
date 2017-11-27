@@ -1,0 +1,217 @@
+06:58:56.475	127.0.0.1:50115	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	4.85 ms
+06:58:56.489	127.0.0.1:50115	admin	OK	BIND[0] $dbname=app_cfg	0.51 ms
+06:58:56.505	127.0.0.1:50115	admin	REQUEST	EXEC[0]	15.12 ms
+06:58:56.505	127.0.0.1:50115	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.09 ms
+06:58:56.717	127.0.0.1:50116	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.19 ms
+06:58:56.719	127.0.0.1:50116	admin	OK	BIND[0] $dbname=app_cfg	0.23 ms
+06:58:56.722	127.0.0.1:50116	admin	OK	EXEC[0]	2.73 ms
+07:00:48.161	127.0.0.1:50125	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.15 ms
+07:00:48.162	127.0.0.1:50125	admin	OK	BIND[0] $dbname=app_cfg	0.23 ms
+07:00:48.168	127.0.0.1:50125	admin	REQUEST	EXEC[0]	4.89 ms
+07:00:48.168	127.0.0.1:50125	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.11 ms
+07:00:48.313	127.0.0.1:50126	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.18 ms
+07:00:48.315	127.0.0.1:50126	admin	OK	BIND[0] $dbname=app_cfg	0.23 ms
+07:00:48.329	127.0.0.1:50126	admin	OK	EXEC[0]	13.36 ms
+07:01:08.197	127.0.0.1:50127	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.22 ms
+07:01:08.199	127.0.0.1:50127	admin	OK	BIND[0] $dbname=app_cfg	0.18 ms
+07:01:08.202	127.0.0.1:50127	admin	REQUEST	EXEC[0]	3.31 ms
+07:01:08.203	127.0.0.1:50127	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.12 ms
+07:01:08.320	127.0.0.1:50128	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.18 ms
+07:01:08.320	127.0.0.1:50128	admin	OK	BIND[0] $dbname=app_cfg	0.15 ms
+07:01:08.323	127.0.0.1:50128	admin	OK	EXEC[0]	2.44 ms
+07:09:39.771	127.0.0.1:50163	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.18 ms
+07:09:39.774	127.0.0.1:50163	admin	OK	BIND[0] $dbname=app_cfg	0.23 ms
+07:09:39.780	127.0.0.1:50163	admin	REQUEST	EXEC[0]	4.86 ms
+07:09:39.781	127.0.0.1:50163	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.1 ms
+07:09:39.911	127.0.0.1:50164	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.17 ms
+07:09:39.912	127.0.0.1:50164	admin	OK	BIND[0] $dbname=app_cfg	0.14 ms
+07:09:39.915	127.0.0.1:50164	admin	OK	EXEC[0]	3.01 ms
+07:11:32.240	127.0.0.1:50184	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.17 ms
+07:11:32.240	127.0.0.1:50184	admin	OK	BIND[0] $dbname=app_cfg	0.16 ms
+07:11:32.250	127.0.0.1:50184	admin	REQUEST	EXEC[0]	5.49 ms
+07:11:32.250	127.0.0.1:50184	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.09 ms
+07:11:32.382	127.0.0.1:50185	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.15 ms
+07:11:32.382	127.0.0.1:50185	admin	OK	BIND[0] $dbname=app_cfg	0.15 ms
+07:11:32.390	127.0.0.1:50185	admin	OK	EXEC[0]	5.97 ms
+07:41:24.879	127.0.0.1:50213	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.19 ms
+07:41:24.879	127.0.0.1:50213	admin	OK	BIND[0] $dbname=app_cfg	0.16 ms
+07:41:24.888	127.0.0.1:50213	admin	REQUEST	EXEC[0]	8.09 ms
+07:41:24.888	127.0.0.1:50213	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.1 ms
+07:41:25.015	127.0.0.1:50214	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.15 ms
+07:41:25.016	127.0.0.1:50214	admin	OK	BIND[0] $dbname=app_cfg	0.14 ms
+07:41:25.023	127.0.0.1:50214	admin	OK	EXEC[0]	7.15 ms
+07:41:28.473	127.0.0.1:50215	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.2 ms
+07:41:28.475	127.0.0.1:50215	admin	OK	BIND[0] $dbname=app_cfg	0.15 ms
+07:41:28.477	127.0.0.1:50215	admin	REQUEST	EXEC[0]	2.41 ms
+07:41:28.477	127.0.0.1:50215	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.08 ms
+07:41:28.634	127.0.0.1:50216	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.2 ms
+07:41:28.636	127.0.0.1:50216	admin	OK	BIND[0] $dbname=app_cfg	0.85 ms
+07:41:28.638	127.0.0.1:50216	admin	OK	EXEC[0]	2.32 ms
+07:42:19.617	127.0.0.1:50221	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.2 ms
+07:42:19.617	127.0.0.1:50221	admin	OK	BIND[0] $dbname=app_cfg	0.13 ms
+07:42:19.619	127.0.0.1:50221	admin	REQUEST	EXEC[0]	2.32 ms
+07:42:19.620	127.0.0.1:50221	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.09 ms
+07:42:19.734	127.0.0.1:50222	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.17 ms
+07:42:19.735	127.0.0.1:50222	admin	OK	BIND[0] $dbname=app_cfg	0.14 ms
+07:42:19.737	127.0.0.1:50222	admin	OK	EXEC[0]	2.18 ms
+07:42:47.459	127.0.0.1:50226	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.36 ms
+07:42:47.462	127.0.0.1:50226	admin	OK	BIND[0] $dbname=app_cfg	0.21 ms
+07:42:47.464	127.0.0.1:50226	admin	REQUEST	EXEC[0]	2.34 ms
+07:42:47.464	127.0.0.1:50226	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.07 ms
+07:42:47.610	127.0.0.1:50227	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.14 ms
+07:42:47.610	127.0.0.1:50227	admin	OK	BIND[0] $dbname=app_cfg	0.18 ms
+07:42:47.614	127.0.0.1:50227	admin	OK	EXEC[0]	3.62 ms
+07:42:54.910	127.0.0.1:50228	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.17 ms
+07:42:54.911	127.0.0.1:50228	admin	OK	BIND[0] $dbname=app_cfg	0.14 ms
+07:42:54.914	127.0.0.1:50228	admin	REQUEST	EXEC[0]	2.14 ms
+07:42:54.914	127.0.0.1:50228	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.07 ms
+07:42:55.035	127.0.0.1:50229	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.14 ms
+07:42:55.036	127.0.0.1:50229	admin	OK	BIND[0] $dbname=app_cfg	0.15 ms
+07:42:55.038	127.0.0.1:50229	admin	OK	EXEC[0]	2.26 ms
+07:43:52.888	127.0.0.1:50237	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.16 ms
+07:43:52.889	127.0.0.1:50237	admin	OK	BIND[0] $dbname=app_cfg	0.14 ms
+07:43:52.892	127.0.0.1:50237	admin	REQUEST	EXEC[0]	8.02 ms
+07:43:52.897	127.0.0.1:50237	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.18 ms
+07:43:53.028	127.0.0.1:50238	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.17 ms
+07:43:53.028	127.0.0.1:50238	admin	OK	BIND[0] $dbname=app_cfg	0.14 ms
+07:43:53.032	127.0.0.1:50238	admin	OK	EXEC[0]	3.75 ms
+07:48:29.491	127.0.0.1:50566	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.35 ms
+07:48:29.493	127.0.0.1:50566	admin	OK	BIND[0] $dbname=app_cfg	0.37 ms
+07:48:29.500	127.0.0.1:50566	admin	REQUEST	EXEC[0]	7.38 ms
+07:48:29.500	127.0.0.1:50566	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.09 ms
+07:48:29.661	127.0.0.1:50568	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.15 ms
+07:48:29.661	127.0.0.1:50568	admin	OK	BIND[0] $dbname=app_cfg	0.12 ms
+07:48:29.665	127.0.0.1:50568	admin	OK	EXEC[0]	3.71 ms
+07:49:35.651	127.0.0.1:50661	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.38 ms
+07:49:35.653	127.0.0.1:50661	admin	OK	BIND[0] $dbname=app_cfg	0.22 ms
+07:49:35.659	127.0.0.1:50661	admin	REQUEST	EXEC[0]	6.24 ms
+07:49:35.659	127.0.0.1:50661	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.1 ms
+07:49:35.796	127.0.0.1:50662	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	1.9 ms
+07:49:35.798	127.0.0.1:50662	admin	OK	BIND[0] $dbname=app_cfg	0.18 ms
+07:49:35.801	127.0.0.1:50662	admin	OK	EXEC[0]	2.24 ms
+17:43:34.573	127.0.0.1:53041	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	1.38 ms
+17:43:34.579	127.0.0.1:53041	admin	OK	BIND[0] $dbname=app_cfg	0.42 ms
+17:43:34.590	127.0.0.1:53041	admin	REQUEST	EXEC[0]	9.71 ms
+17:43:34.590	127.0.0.1:53041	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.1 ms
+17:43:34.680	127.0.0.1:53042	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.16 ms
+17:43:34.681	127.0.0.1:53042	admin	OK	BIND[0] $dbname=app_cfg	0.14 ms
+17:43:34.685	127.0.0.1:53042	admin	OK	EXEC[0]	3.9 ms
+17:44:02.562	127.0.0.1:53047	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.29 ms
+17:44:02.562	127.0.0.1:53047	admin	OK	BIND[0] $dbname=app_cfg	0.16 ms
+17:44:02.565	127.0.0.1:53047	admin	REQUEST	EXEC[0]	2.28 ms
+17:44:02.565	127.0.0.1:53047	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.08 ms
+17:44:02.665	127.0.0.1:53048	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.19 ms
+17:44:02.665	127.0.0.1:53048	admin	OK	BIND[0] $dbname=app_cfg	0.12 ms
+17:44:02.667	127.0.0.1:53048	admin	OK	EXEC[0]	2.1 ms
+17:44:10.535	127.0.0.1:53050	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.17 ms
+17:44:10.538	127.0.0.1:53050	admin	OK	BIND[0] $dbname=app_cfg	0.28 ms
+17:44:10.542	127.0.0.1:53050	admin	REQUEST	EXEC[0]	3.88 ms
+17:44:10.542	127.0.0.1:53050	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.09 ms
+17:44:10.833	127.0.0.1:53051	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.13 ms
+17:44:10.833	127.0.0.1:53051	admin	OK	BIND[0] $dbname=app_cfg	0.12 ms
+17:44:10.836	127.0.0.1:53051	admin	OK	EXEC[0]	2.09 ms
+17:44:11.218	127.0.0.1:53053	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.13 ms
+17:44:11.219	127.0.0.1:53053	admin	OK	BIND[0] $dbname=app_cfg	0.14 ms
+17:44:11.221	127.0.0.1:53053	admin	REQUEST	EXEC[0]	2.26 ms
+17:44:11.221	127.0.0.1:53053	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.08 ms
+17:44:11.495	127.0.0.1:53054	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.14 ms
+17:44:11.495	127.0.0.1:53054	admin	OK	BIND[0] $dbname=app_cfg	0.12 ms
+17:44:11.497	127.0.0.1:53054	admin	OK	EXEC[0]	2.06 ms
+17:44:11.632	127.0.0.1:53055	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.13 ms
+17:44:11.632	127.0.0.1:53055	admin	OK	BIND[0] $dbname=app_cfg	0.13 ms
+17:44:11.634	127.0.0.1:53055	admin	REQUEST	EXEC[0]	1.99 ms
+17:44:11.634	127.0.0.1:53055	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.07 ms
+17:44:11.734	127.0.0.1:53056	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.14 ms
+17:44:11.735	127.0.0.1:53056	admin	OK	BIND[0] $dbname=app_cfg	0.15 ms
+17:44:11.737	127.0.0.1:53056	admin	OK	EXEC[0]	2.09 ms
+17:44:17.685	127.0.0.1:53057	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.15 ms
+17:44:17.686	127.0.0.1:53057	admin	OK	BIND[0] $dbname=app_cfg	0.13 ms
+17:44:17.688	127.0.0.1:53057	admin	REQUEST	EXEC[0]	2.47 ms
+17:44:17.688	127.0.0.1:53057	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.61 ms
+17:44:17.833	127.0.0.1:53058	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.14 ms
+17:44:17.833	127.0.0.1:53058	admin	OK	BIND[0] $dbname=app_cfg	0.12 ms
+17:44:17.835	127.0.0.1:53058	admin	OK	EXEC[0]	2.07 ms
+17:44:27.636	127.0.0.1:53059	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.14 ms
+17:44:27.636	127.0.0.1:53059	admin	OK	BIND[0] $dbname=app_cfg	0.12 ms
+17:44:27.638	127.0.0.1:53059	admin	REQUEST	EXEC[0]	2.08 ms
+17:44:27.638	127.0.0.1:53059	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.07 ms
+17:44:27.765	127.0.0.1:53060	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.13 ms
+17:44:27.766	127.0.0.1:53060	admin	OK	BIND[0] $dbname=app_cfg	0.16 ms
+17:44:27.768	127.0.0.1:53060	admin	OK	EXEC[0]	2.23 ms
+19:42:34.558	127.0.0.1:53198	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.31 ms
+19:42:34.559	127.0.0.1:53198	admin	OK	BIND[0] $dbname=app_cfg	0.27 ms
+19:42:34.573	127.0.0.1:53198	admin	REQUEST	EXEC[0]	9.88 ms
+19:42:34.574	127.0.0.1:53198	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.09 ms
+19:42:34.706	127.0.0.1:53199	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.13 ms
+19:42:34.706	127.0.0.1:53199	admin	OK	BIND[0] $dbname=app_cfg	0.11 ms
+19:42:34.709	127.0.0.1:53199	admin	OK	EXEC[0]	3.15 ms
+19:42:35.102	127.0.0.1:53202	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.14 ms
+19:42:35.104	127.0.0.1:53202	admin	OK	BIND[0] $dbname=app_cfg	1.03 ms
+19:42:35.118	127.0.0.1:53202	admin	REQUEST	EXEC[0]	13.59 ms
+19:42:35.118	127.0.0.1:53202	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.09 ms
+19:42:35.221	127.0.0.1:53203	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.14 ms
+19:42:35.222	127.0.0.1:53203	admin	OK	BIND[0] $dbname=app_cfg	0.16 ms
+19:42:35.224	127.0.0.1:53203	admin	OK	EXEC[0]	2.11 ms
+19:42:36.571	127.0.0.1:53205	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.13 ms
+19:42:36.571	127.0.0.1:53205	admin	OK	BIND[0] $dbname=app_cfg	0.11 ms
+19:42:36.573	127.0.0.1:53205	admin	REQUEST	EXEC[0]	2.1 ms
+19:42:36.574	127.0.0.1:53205	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.08 ms
+19:42:36.720	127.0.0.1:53206	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.16 ms
+19:42:36.721	127.0.0.1:53206	admin	OK	BIND[0] $dbname=app_cfg	0.13 ms
+19:42:36.728	127.0.0.1:53206	admin	OK	EXEC[0]	6.86 ms
+19:42:36.987	127.0.0.1:53209	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.13 ms
+19:42:36.988	127.0.0.1:53209	admin	OK	BIND[0] $dbname=app_cfg	0.12 ms
+19:42:36.990	127.0.0.1:53209	admin	REQUEST	EXEC[0]	2.19 ms
+19:42:36.990	127.0.0.1:53209	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.08 ms
+19:42:37.129	127.0.0.1:53210	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.15 ms
+19:42:37.130	127.0.0.1:53210	admin	OK	BIND[0] $dbname=app_cfg	0.12 ms
+19:42:37.132	127.0.0.1:53210	admin	OK	EXEC[0]	2.63 ms
+19:42:37.281	127.0.0.1:53211	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.13 ms
+19:42:37.281	127.0.0.1:53211	admin	OK	BIND[0] $dbname=app_cfg	0.17 ms
+19:42:37.283	127.0.0.1:53211	admin	REQUEST	EXEC[0]	1.88 ms
+19:42:37.283	127.0.0.1:53211	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.07 ms
+19:42:37.471	127.0.0.1:53212	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.12 ms
+19:42:37.472	127.0.0.1:53212	admin	OK	BIND[0] $dbname=app_cfg	0.13 ms
+19:42:37.475	127.0.0.1:53212	admin	OK	EXEC[0]	2.87 ms
+19:42:37.911	127.0.0.1:53213	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.13 ms
+19:42:37.911	127.0.0.1:53213	admin	OK	BIND[0] $dbname=app_cfg	0.12 ms
+19:42:37.914	127.0.0.1:53213	admin	REQUEST	EXEC[0]	2.01 ms
+19:42:37.914	127.0.0.1:53213	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.07 ms
+19:42:38.044	127.0.0.1:53215	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.12 ms
+19:42:38.045	127.0.0.1:53215	admin	OK	BIND[0] $dbname=app_cfg	0.14 ms
+19:42:38.048	127.0.0.1:53215	admin	OK	EXEC[0]	2.55 ms
+19:42:38.097	127.0.0.1:53214	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.13 ms
+19:42:38.098	127.0.0.1:53214	admin	OK	BIND[0] $dbname=app_cfg	0.12 ms
+19:42:38.100	127.0.0.1:53214	admin	REQUEST	EXEC[0]	1.89 ms
+19:42:38.100	127.0.0.1:53214	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.07 ms
+19:42:38.218	127.0.0.1:53216	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.13 ms
+19:42:38.219	127.0.0.1:53216	admin	OK	BIND[0] $dbname=app_cfg	0.17 ms
+19:42:38.221	127.0.0.1:53216	admin	OK	EXEC[0]	2.27 ms
+19:42:38.369	127.0.0.1:53217	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.21 ms
+19:42:38.370	127.0.0.1:53217	admin	OK	BIND[0] $dbname=app_cfg	0.12 ms
+19:42:38.372	127.0.0.1:53217	admin	REQUEST	EXEC[0]	1.96 ms
+19:42:38.372	127.0.0.1:53217	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.07 ms
+19:42:38.504	127.0.0.1:53218	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.12 ms
+19:42:38.505	127.0.0.1:53218	admin	OK	BIND[0] $dbname=app_cfg	0.12 ms
+19:42:38.508	127.0.0.1:53218	admin	OK	EXEC[0]	2.8 ms
+19:42:38.686	127.0.0.1:53219	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.13 ms
+19:42:38.687	127.0.0.1:53219	admin	OK	BIND[0] $dbname=app_cfg	0.12 ms
+19:42:38.689	127.0.0.1:53219	admin	REQUEST	EXEC[0]	1.9 ms
+19:42:38.689	127.0.0.1:53219	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.19 ms
+19:42:38.893	127.0.0.1:53220	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.12 ms
+19:42:38.893	127.0.0.1:53220	admin	OK	BIND[0] $dbname=app_cfg	0.15 ms
+19:42:38.896	127.0.0.1:53220	admin	REQUEST	EXEC[0]	1.92 ms
+19:42:38.896	127.0.0.1:53220	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.07 ms
+19:42:39.039	127.0.0.1:53222	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.12 ms
+19:42:39.039	127.0.0.1:53221	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.05 ms
+19:42:39.040	127.0.0.1:53222	admin	OK	BIND[0] $dbname=app_cfg	0.12 ms
+19:42:39.040	127.0.0.1:53221	admin	OK	BIND[0] $dbname=app_cfg	0.1 ms
+19:42:39.044	127.0.0.1:53222	admin	OK	EXEC[0]	3.83 ms
+19:42:39.046	127.0.0.1:53221	admin	OK	EXEC[0]	1.62 ms
+19:42:39.256	127.0.0.1:53223	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	0.16 ms
+19:42:39.256	127.0.0.1:53223	admin	OK	BIND[0] $dbname=app_cfg	0.14 ms
+19:42:39.258	127.0.0.1:53223	admin	REQUEST	EXEC[0]	1.9 ms
+19:42:39.258	127.0.0.1:53223	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.08 ms
+19:42:39.425	127.0.0.1:53224	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.32 ms
+19:42:39.425	127.0.0.1:53224	admin	OK	BIND[0] $dbname=app_cfg	0.11 ms
+19:42:39.427	127.0.0.1:53224	admin	OK	EXEC[0]	2.09 ms

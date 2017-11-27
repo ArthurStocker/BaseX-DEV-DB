@@ -1,0 +1,40 @@
+08:18:43.125	SERVER	admin	OK	Server was stopped (port: 1984).
+14:48:24.617	SERVER	admin	OK	Server was started (port: 1984).
+14:48:26.649	0:0:0:0:0:0:0:1:55957	admin	REQUEST	[GET] http://localhost:8080/
+14:48:29.619	0:0:0:0:0:0:0:1:55957	admin	302		2972.5 ms
+14:48:29.619	0:0:0:0:0:0:0:1:55957	admin	200		0.32 ms
+14:48:29.645	0:0:0:0:0:0:0:1:55957	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:48:29.880	0:0:0:0:0:0:0:1:55957	admin	200		234.98 ms
+14:48:29.925	0:0:0:0:0:0:0:1:55972	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+14:48:30.146	0:0:0:0:0:0:0:1:55972	admin	200		221.84 ms
+14:48:30.887	0:0:0:0:0:0:0:1:55977	admin	REQUEST	[GET] http://localhost:8080/apple-touch-icon-precomposed.png
+14:48:30.987	0:0:0:0:0:0:0:1:55977	admin	404	No function found that matches the request.	100.34 ms
+14:48:30.998	0:0:0:0:0:0:0:1:55977	admin	REQUEST	[GET] http://localhost:8080/apple-touch-icon.png
+14:48:31.086	0:0:0:0:0:0:0:1:55977	admin	404	No function found that matches the request.	88.06 ms
+14:48:31.386	0:0:0:0:0:0:0:1:55979	admin	REQUEST	[GET] http://localhost:8080/
+14:48:31.449	0:0:0:0:0:0:0:1:55979	admin	302		63.12 ms
+14:48:31.449	0:0:0:0:0:0:0:1:55979	admin	200		0.18 ms
+14:48:31.455	0:0:0:0:0:0:0:1:55979	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:48:31.571	0:0:0:0:0:0:0:1:55979	admin	200		116.85 ms
+14:48:31.585	0:0:0:0:0:0:0:1:55977	admin	REQUEST	[GET] http://localhost:8080/apple-touch-icon-precomposed.png
+14:48:31.594	0:0:0:0:0:0:0:1:55981	admin	REQUEST	[GET] http://localhost:8080/favicon.ico
+14:48:31.688	0:0:0:0:0:0:0:1:55981	admin	404	No function found that matches the request.	94.51 ms
+14:48:31.693	0:0:0:0:0:0:0:1:55977	admin	404	No function found that matches the request.	112.02 ms
+14:48:31.706	0:0:0:0:0:0:0:1:55977	admin	REQUEST	[GET] http://localhost:8080/apple-touch-icon.png
+14:48:31.761	0:0:0:0:0:0:0:1:55977	admin	404	No function found that matches the request.	56.12 ms
+14:48:31.769	0:0:0:0:0:0:0:1:55979	admin	REQUEST	[GET] http://localhost:8080/
+14:48:31.834	0:0:0:0:0:0:0:1:55979	admin	302		64.31 ms
+14:48:31.834	0:0:0:0:0:0:0:1:55979	admin	200		0.17 ms
+14:48:31.840	0:0:0:0:0:0:0:1:55979	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:48:31.952	0:0:0:0:0:0:0:1:55979	admin	200		112.17 ms
+14:48:31.964	0:0:0:0:0:0:0:1:55977	admin	REQUEST	[GET] http://localhost:8080/apple-touch-icon-precomposed.png
+14:48:32.008	0:0:0:0:0:0:0:1:55977	admin	404	No function found that matches the request.	43.88 ms
+14:48:32.015	0:0:0:0:0:0:0:1:55977	admin	REQUEST	[GET] http://localhost:8080/apple-touch-icon.png
+14:48:32.091	0:0:0:0:0:0:0:1:55977	admin	404	No function found that matches the request.	76.49 ms
+14:49:10.227	0:0:0:0:0:0:0:1:55997	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:49:10.347	0:0:0:0:0:0:0:1:55997	admin	200		126.69 ms
+14:49:11.178	0:0:0:0:0:0:0:1:56002	admin	REQUEST	[GET] http://localhost:8080/apple-touch-icon-precomposed.png
+14:49:11.237	0:0:0:0:0:0:0:1:56002	admin	404	No function found that matches the request.	59.23 ms
+14:49:11.242	0:0:0:0:0:0:0:1:56002	admin	REQUEST	[GET] http://localhost:8080/apple-touch-icon.png
+14:49:11.290	0:0:0:0:0:0:0:1:56002	admin	404	No function found that matches the request.	47.84 ms
+15:41:52.483	SERVER	admin	OK	Server was stopped (port: 1984).

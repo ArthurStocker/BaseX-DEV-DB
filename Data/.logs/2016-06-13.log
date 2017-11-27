@@ -1,0 +1,6 @@
+16:35:57.824	SERVER	admin	OK	Server was stopped (port: 1984).
+16:36:08.729	SERVER	admin	OK	Server was started (port: 1984).
+16:36:15.576	127.0.0.1:55673	admin	REQUEST	INFO	34.34 ms
+16:36:15.581	127.0.0.1:55673	admin	OK		5.34 ms
+16:36:15.796	127.0.0.1:55674	admin	REQUEST	XQUERY for $rec at $i in (element record { for $db in db:list() for $doc in collection($db) let $item:= element record {element database {$db}, element document {document-uri($doc)}} return $item}/record) return json:serialize(element json {attribute type {"object"}, element {concat("record", xs:string($i))} {attribute type {"object"}, $rec/database, $rec/document}})	5.63 ms
+16:36:16.417	127.0.0.1:55674	admin	OK	Query executed in 620.25 ms.	621.68 ms

@@ -1,0 +1,62 @@
+17:24:42.506	0:0:0:0:0:0:0:1:63155	admin	REQUEST	[GET] http://localhost:8080/.init
+17:24:42.510	0:0:0:0:0:0:0:1:63155	admin	200		9.03 ms
+17:24:44.446	0:0:0:0:0:0:0:1:63155	admin	REQUEST	[GET] http://localhost:8080/.install
+17:24:44.947	0:0:0:0:0:0:0:1:63155	admin	302		501.58 ms
+17:24:44.948	0:0:0:0:0:0:0:1:63155	admin	200		0.07 ms
+17:24:44.959	0:0:0:0:0:0:0:1:63155	admin	REQUEST	[GET] http://localhost:8080/response/?message=Database%20cm%20successfully%20installed%21
+17:24:44.975	0:0:0:0:0:0:0:1:63155	admin	200		16.03 ms
+17:24:53.428	0:0:0:0:0:0:0:1:63155	admin	REQUEST	[GET] http://localhost:8080/.init
+17:24:53.429	0:0:0:0:0:0:0:1:63155	admin	200		0.23 ms
+17:24:53.831	0:0:0:0:0:0:0:1:63155	admin	REQUEST	[GET] http://localhost:8080/.setup
+17:24:54.287	0:0:0:0:0:0:0:1:63155	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm.xqm, 58/17: [XQST0118] Different start and end tag: <cmd>...</cm>.	456.18 ms
+17:25:12.378	0:0:0:0:0:0:0:1:63159	admin	REQUEST	[GET] http://localhost:8080/.setup
+17:25:12.431	0:0:0:0:0:0:0:1:63159	admin	302		53.43 ms
+17:25:12.431	0:0:0:0:0:0:0:1:63159	admin	200		0.07 ms
+17:25:12.447	0:0:0:0:0:0:0:1:63159	admin	REQUEST	[GET] http://localhost:8080/response?message=Database%20cm%20sucessfully%20setup%21
+17:25:12.461	0:0:0:0:0:0:0:1:63159	admin	200		13.89 ms
+20:30:56.720	0:0:0:0:0:0:0:1:63696	admin	REQUEST	[GET] http://localhost:8080/
+20:30:56.775	0:0:0:0:0:0:0:1:63696	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm.xqm, 25/7: [FODC0002] Resource '/Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.html' does not exist.	55.69 ms
+20:30:58.650	0:0:0:0:0:0:0:1:63696	admin	REQUEST	[GET] http://localhost:8080/.install
+20:30:58.703	0:0:0:0:0:0:0:1:63696	admin	302		52.95 ms
+20:30:58.703	0:0:0:0:0:0:0:1:63696	admin	200		0.07 ms
+20:30:58.714	0:0:0:0:0:0:0:1:63696	admin	REQUEST	[GET] http://localhost:8080/response/?message=Database%20cm%20successfully%20installed
+20:30:58.731	0:0:0:0:0:0:0:1:63696	admin	200		17.37 ms
+20:31:06.440	0:0:0:0:0:0:0:1:63696	admin	REQUEST	[GET] http://localhost:8080/.init
+20:31:06.440	0:0:0:0:0:0:0:1:63696	admin	200		0.23 ms
+20:31:06.952	0:0:0:0:0:0:0:1:63696	admin	REQUEST	[GET] http://localhost:8080/.setup
+20:31:07.226	0:0:0:0:0:0:0:1:63696	admin	302		273.57 ms
+20:31:07.226	0:0:0:0:0:0:0:1:63696	admin	200		0.07 ms
+20:31:07.253	0:0:0:0:0:0:0:1:63696	admin	REQUEST	[GET] http://localhost:8080/response?message=Database%20cm%20sucessfully%20setup
+20:31:07.266	0:0:0:0:0:0:0:1:63696	admin	200		13.03 ms
+20:32:34.222	0:0:0:0:0:0:0:1:63713	admin	REQUEST	[GET] http://localhost:8080/.init
+20:32:34.222	0:0:0:0:0:0:0:1:63713	admin	200		0.18 ms
+20:32:35.330	0:0:0:0:0:0:0:1:63713	admin	REQUEST	[GET] http://localhost:8080/.install
+20:32:35.559	0:0:0:0:0:0:0:1:63713	admin	302		229.09 ms
+20:32:35.559	0:0:0:0:0:0:0:1:63713	admin	200		0.07 ms
+20:32:35.570	0:0:0:0:0:0:0:1:63713	admin	REQUEST	[GET] http://localhost:8080/response/?message=Database%20cm%20successfully%20installed
+20:32:35.582	0:0:0:0:0:0:0:1:63713	admin	200		12.04 ms
+20:32:44.211	0:0:0:0:0:0:0:1:63713	admin	REQUEST	[GET] http://localhost:8080/.setup
+20:32:44.232	0:0:0:0:0:0:0:1:63713	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm.xqm, 58/17: [XQST0118] Different start and end tag: <users>...</user>.	21.06 ms
+20:33:08.817	0:0:0:0:0:0:0:1:63733	admin	REQUEST	[GET] http://localhost:8080/.setup
+20:33:08.886	0:0:0:0:0:0:0:1:63733	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm.xqm, 58/17: [XPST0003] Incomplete expression.	69.24 ms
+20:34:08.712	0:0:0:0:0:0:0:1:63748	admin	REQUEST	[GET] http://localhost:8080/.setup
+20:34:08.749	0:0:0:0:0:0:0:1:63748	admin	302		36.99 ms
+20:34:08.749	0:0:0:0:0:0:0:1:63748	admin	200		0.07 ms
+20:34:08.777	0:0:0:0:0:0:0:1:63748	admin	REQUEST	[GET] http://localhost:8080/response?message=Database%20cm%20sucessfully%20setup
+20:34:08.791	0:0:0:0:0:0:0:1:63748	admin	200		13.6 ms
+20:51:05.771	0:0:0:0:0:0:0:1:63828	admin	REQUEST	[GET] http://localhost:8080/.setup
+20:51:05.796	0:0:0:0:0:0:0:1:63828	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm.xqm, 58/17: [FOER0000] Database does not exists: cm.	25.48 ms
+20:51:07.248	0:0:0:0:0:0:0:1:63828	admin	REQUEST	[GET] http://localhost:8080/.init
+20:51:07.248	0:0:0:0:0:0:0:1:63828	admin	200		0.17 ms
+20:51:08.147	0:0:0:0:0:0:0:1:63828	admin	REQUEST	[GET] http://localhost:8080/.install
+20:51:08.358	0:0:0:0:0:0:0:1:63828	admin	302		211.18 ms
+20:51:08.359	0:0:0:0:0:0:0:1:63828	admin	200		0.07 ms
+20:51:08.368	0:0:0:0:0:0:0:1:63828	admin	REQUEST	[GET] http://localhost:8080/response/?message=Database%20cm%20successfully%20installed
+20:51:08.381	0:0:0:0:0:0:0:1:63828	admin	200		13.58 ms
+20:51:14.604	0:0:0:0:0:0:0:1:63828	admin	REQUEST	[GET] http://localhost:8080/
+20:51:14.636	0:0:0:0:0:0:0:1:63828	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm.xqm, 25/7: [bxerr:BXDB0006] Database path 'cm/test.html' yields no documents.	31.97 ms
+20:51:21.822	0:0:0:0:0:0:0:1:63828	admin	REQUEST	[GET] http://localhost:8080/.setup
+20:51:21.858	0:0:0:0:0:0:0:1:63828	admin	302		36.52 ms
+20:51:21.858	0:0:0:0:0:0:0:1:63828	admin	200		0.08 ms
+20:51:21.865	0:0:0:0:0:0:0:1:63828	admin	REQUEST	[GET] http://localhost:8080/response?message=Database%20cm%20sucessfully%20setup
+20:51:21.878	0:0:0:0:0:0:0:1:63828	admin	200		12.43 ms

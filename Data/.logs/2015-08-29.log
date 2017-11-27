@@ -1,0 +1,441 @@
+00:03:01.727	0:0:0:0:0:0:0:1:55959	admin	REQUEST	[GET] http://localhost:8080/cm/install/hh
+00:03:01.772	0:0:0:0:0:0:0:1:55959	admin	200		45.57 ms
+00:03:02.596	0:0:0:0:0:0:0:1:55962	admin	REQUEST	[GET] http://localhost:8080/cm/install/gg
+00:03:02.636	0:0:0:0:0:0:0:1:55962	admin	200		39.96 ms
+00:03:11.170	0:0:0:0:0:0:0:1:55962	admin	REQUEST	[GET] http://localhost:8080/
+00:03:11.194	0:0:0:0:0:0:0:1:55962	admin	302		24.78 ms
+00:03:11.195	0:0:0:0:0:0:0:1:55962	admin	200		0.09 ms
+00:03:11.212	0:0:0:0:0:0:0:1:55962	admin	REQUEST	[GET] http://localhost:8080/cm/app
+00:03:11.271	SERVER	admin	INFO	Missing database. Start database setup procedure.
+00:03:11.271	0:0:0:0:0:0:0:1:55962	admin	302		59.25 ms
+00:03:11.271	0:0:0:0:0:0:0:1:55962	admin	200		0.07 ms
+00:03:11.278	0:0:0:0:0:0:0:1:55962	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:03:11.308	0:0:0:0:0:0:0:1:55962	admin	200		30.34 ms
+00:05:20.468	0:0:0:0:0:0:0:1:55971	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:05:20.503	0:0:0:0:0:0:0:1:55971	admin	200		35.49 ms
+00:05:28.896	0:0:0:0:0:0:0:1:55971	admin	REQUEST	[GET] http://localhost:8080/
+00:05:28.921	0:0:0:0:0:0:0:1:55971	admin	302		26.01 ms
+00:05:28.921	0:0:0:0:0:0:0:1:55971	admin	200		0.08 ms
+00:05:28.938	0:0:0:0:0:0:0:1:55971	admin	REQUEST	[GET] http://localhost:8080/cm/app
+00:05:28.994	SERVER	admin	INFO	Missing database. Start database setup procedure.
+00:05:28.994	0:0:0:0:0:0:0:1:55971	admin	302		56.56 ms
+00:05:28.994	0:0:0:0:0:0:0:1:55971	admin	200		0.26 ms
+00:05:29.008	0:0:0:0:0:0:0:1:55971	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:05:29.053	0:0:0:0:0:0:0:1:55971	admin	200		44.52 ms
+00:05:44.857	0:0:0:0:0:0:0:1:55971	admin	REQUEST	[GET] http://localhost:8080/cm/install/gg
+00:05:44.885	0:0:0:0:0:0:0:1:55971	admin	200		28.4 ms
+00:05:49.826	0:0:0:0:0:0:0:1:55971	admin	REQUEST	[GET] http://localhost:8080/
+00:05:49.847	0:0:0:0:0:0:0:1:55971	admin	302		21.4 ms
+00:05:49.847	0:0:0:0:0:0:0:1:55971	admin	200		0.08 ms
+00:05:49.856	0:0:0:0:0:0:0:1:55971	admin	REQUEST	[GET] http://localhost:8080/cm/app
+00:05:49.910	SERVER	admin	INFO	Missing database. Start database setup procedure.
+00:05:49.910	0:0:0:0:0:0:0:1:55971	admin	302		53.89 ms
+00:05:49.910	0:0:0:0:0:0:0:1:55971	admin	200		0.08 ms
+00:05:49.918	0:0:0:0:0:0:0:1:55971	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:05:49.943	0:0:0:0:0:0:0:1:55971	admin	200		25.84 ms
+00:07:37.337	0:0:0:0:0:0:0:1:56019	admin	REQUEST	[GET] http://localhost:8080/
+00:07:37.355	0:0:0:0:0:0:0:1:56019	admin	302		18.88 ms
+00:07:37.355	0:0:0:0:0:0:0:1:56019	admin	200		0.08 ms
+00:07:37.367	0:0:0:0:0:0:0:1:56019	admin	REQUEST	[GET] http://localhost:8080/cm/app
+00:07:37.437	0:0:0:0:0:0:0:1:56022	admin	REQUEST	[GET] http://localhost:8080/
+00:07:37.480	SERVER	admin	INFO	Missing database. Start database setup procedure.
+00:07:37.480	0:0:0:0:0:0:0:1:56019	admin	302		113.64 ms
+00:07:37.480	0:0:0:0:0:0:0:1:56019	admin	200		0.07 ms
+00:07:37.482	0:0:0:0:0:0:0:1:56022	admin	302		45.53 ms
+00:07:37.482	0:0:0:0:0:0:0:1:56022	admin	200		0.1 ms
+00:07:37.504	0:0:0:0:0:0:0:1:56022	admin	REQUEST	[GET] http://localhost:8080/cm/app
+00:07:37.554	SERVER	admin	INFO	Missing database. Start database setup procedure.
+00:07:37.555	0:0:0:0:0:0:0:1:56022	admin	302		50.72 ms
+00:07:37.555	0:0:0:0:0:0:0:1:56022	admin	200		0.07 ms
+00:07:37.562	0:0:0:0:0:0:0:1:56022	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:07:37.586	0:0:0:0:0:0:0:1:56022	admin	200		24.86 ms
+00:10:11.833	0:0:0:0:0:0:0:1:56029	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:10:11.861	0:0:0:0:0:0:0:1:56029	admin	200		28.08 ms
+00:10:11.987	0:0:0:0:0:0:0:1:56029	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+00:10:12.051	0:0:0:0:0:0:0:1:56029	admin	200		64.18 ms
+00:11:29.560	0:0:0:0:0:0:0:1:56041	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:11:29.595	0:0:0:0:0:0:0:1:56041	admin	200		35.01 ms
+00:11:29.706	0:0:0:0:0:0:0:1:56041	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+00:11:29.782	0:0:0:0:0:0:0:1:56041	admin	200		76.5 ms
+00:12:01.204	0:0:0:0:0:0:0:1:56053	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:12:01.226	0:0:0:0:0:0:0:1:56053	admin	200		22.44 ms
+00:12:01.356	0:0:0:0:0:0:0:1:56053	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+00:12:01.413	0:0:0:0:0:0:0:1:56053	admin	200		56.66 ms
+00:13:36.660	0:0:0:0:0:0:0:1:56058	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:13:36.689	0:0:0:0:0:0:0:1:56058	admin	200		28.9 ms
+00:13:36.808	0:0:0:0:0:0:0:1:56058	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+00:13:36.880	0:0:0:0:0:0:0:1:56058	admin	200		72.9 ms
+00:14:19.342	0:0:0:0:0:0:0:1:56069	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:14:19.373	0:0:0:0:0:0:0:1:56069	admin	200		31.18 ms
+00:14:19.487	0:0:0:0:0:0:0:1:56069	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+00:14:19.536	0:0:0:0:0:0:0:1:56069	admin	200		48.41 ms
+00:15:06.718	0:0:0:0:0:0:0:1:56074	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:15:06.749	0:0:0:0:0:0:0:1:56074	admin	200		30.32 ms
+00:15:06.879	0:0:0:0:0:0:0:1:56074	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+00:15:06.937	0:0:0:0:0:0:0:1:56074	admin	200		58.17 ms
+00:19:06.293	0:0:0:0:0:0:0:1:56094	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:19:06.365	0:0:0:0:0:0:0:1:56094	admin	200		73.15 ms
+00:19:06.493	0:0:0:0:0:0:0:1:56094	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+00:19:06.565	0:0:0:0:0:0:0:1:56094	admin	200		72.93 ms
+00:24:13.673	0:0:0:0:0:0:0:1:56110	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:24:13.706	0:0:0:0:0:0:0:1:56110	admin	200		33.48 ms
+00:24:13.794	0:0:0:0:0:0:0:1:56110	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+00:24:13.831	0:0:0:0:0:0:0:1:56110	admin	200		37.18 ms
+00:24:53.391	0:0:0:0:0:0:0:1:56122	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:24:53.425	0:0:0:0:0:0:0:1:56122	admin	200		34.21 ms
+00:24:53.515	0:0:0:0:0:0:0:1:56122	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+00:24:53.581	0:0:0:0:0:0:0:1:56122	admin	200		65.23 ms
+00:25:21.480	0:0:0:0:0:0:0:1:56122	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:25:21.514	0:0:0:0:0:0:0:1:56122	admin	200		34.57 ms
+00:25:21.607	0:0:0:0:0:0:0:1:56122	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+00:25:21.676	0:0:0:0:0:0:0:1:56122	admin	200		69.38 ms
+00:25:38.365	0:0:0:0:0:0:0:1:56122	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:25:38.398	0:0:0:0:0:0:0:1:56122	admin	200		33.71 ms
+00:25:38.503	0:0:0:0:0:0:0:1:56122	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+00:25:38.538	0:0:0:0:0:0:0:1:56122	admin	200		35.23 ms
+00:26:52.648	0:0:0:0:0:0:0:1:56133	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:26:52.682	0:0:0:0:0:0:0:1:56133	admin	200		34.1 ms
+00:26:52.798	0:0:0:0:0:0:0:1:56133	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+00:26:52.884	0:0:0:0:0:0:0:1:56133	admin	200		86.41 ms
+00:29:04.022	0:0:0:0:0:0:0:1:56238	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:29:04.059	0:0:0:0:0:0:0:1:56238	admin	200		36.74 ms
+00:29:04.225	0:0:0:0:0:0:0:1:56238	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+00:29:04.306	0:0:0:0:0:0:0:1:56238	admin	200		81.66 ms
+00:29:05.937	0:0:0:0:0:0:0:1:56238	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:29:05.967	0:0:0:0:0:0:0:1:56238	admin	200		30.67 ms
+00:29:06.078	0:0:0:0:0:0:0:1:56238	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+00:29:06.130	0:0:0:0:0:0:0:1:56238	admin	200		52.09 ms
+00:29:25.648	0:0:0:0:0:0:0:1:56238	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:29:25.684	0:0:0:0:0:0:0:1:56238	admin	200		36.96 ms
+00:29:25.785	0:0:0:0:0:0:0:1:56238	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+00:29:25.819	0:0:0:0:0:0:0:1:56238	admin	200		33.29 ms
+00:29:59.468	0:0:0:0:0:0:0:1:56263	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:29:59.492	0:0:0:0:0:0:0:1:56263	admin	200		24.01 ms
+00:29:59.619	0:0:0:0:0:0:0:1:56263	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+00:29:59.681	0:0:0:0:0:0:0:1:56263	admin	200		61.42 ms
+00:30:45.138	0:0:0:0:0:0:0:1:56268	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:30:45.161	0:0:0:0:0:0:0:1:56268	admin	200		23.69 ms
+00:30:45.291	0:0:0:0:0:0:0:1:56268	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+00:30:45.334	0:0:0:0:0:0:0:1:56268	admin	200		43.53 ms
+00:31:53.647	0:0:0:0:0:0:0:1:56286	admin	REQUEST	[GET] http://localhost:8080/cm/install/gg
+00:31:53.688	0:0:0:0:0:0:0:1:56286	admin	200		41.04 ms
+00:31:59.301	0:0:0:0:0:0:0:1:56286	admin	REQUEST	[GET] http://localhost:8080/
+00:31:59.322	0:0:0:0:0:0:0:1:56286	admin	302		20.73 ms
+00:31:59.322	0:0:0:0:0:0:0:1:56286	admin	200		0.08 ms
+00:31:59.332	0:0:0:0:0:0:0:1:56286	admin	REQUEST	[GET] http://localhost:8080/cm/app
+00:31:59.390	SERVER	admin	INFO	Missing database. Start database setup procedure.
+00:31:59.390	0:0:0:0:0:0:0:1:56286	admin	302		58.26 ms
+00:31:59.390	0:0:0:0:0:0:0:1:56286	admin	200		0.07 ms
+00:31:59.398	0:0:0:0:0:0:0:1:56286	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:31:59.421	0:0:0:0:0:0:0:1:56286	admin	200		22.6 ms
+00:32:04.994	0:0:0:0:0:0:0:1:56286	admin	REQUEST	[GET] http://localhost:8080/cm/install/gg
+00:32:05.023	0:0:0:0:0:0:0:1:56286	admin	200		29.05 ms
+00:32:05.136	0:0:0:0:0:0:0:1:56286	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+00:32:05.205	0:0:0:0:0:0:0:1:56286	admin	200		69.19 ms
+00:32:06.876	0:0:0:0:0:0:0:1:56286	admin	REQUEST	[GET] http://localhost:8080/
+00:32:06.895	0:0:0:0:0:0:0:1:56286	admin	302		19.55 ms
+00:32:06.895	0:0:0:0:0:0:0:1:56286	admin	200		0.08 ms
+00:32:06.904	0:0:0:0:0:0:0:1:56286	admin	REQUEST	[GET] http://localhost:8080/cm/app
+00:32:06.950	SERVER	admin	INFO	Missing database. Start database setup procedure.
+00:32:06.951	0:0:0:0:0:0:0:1:56286	admin	302		46.14 ms
+00:32:06.951	0:0:0:0:0:0:0:1:56286	admin	200		0.07 ms
+00:32:06.959	0:0:0:0:0:0:0:1:56286	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:32:06.980	0:0:0:0:0:0:0:1:56286	admin	200		20.27 ms
+00:36:38.745	0:0:0:0:0:0:0:1:56312	admin	REQUEST	[GET] http://localhost:8080/
+00:36:38.749	0:0:0:0:0:0:0:1:56312	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/app/main.xqm, 58/44: [XPST0081] No namespace declared for 'Request:method'.	4.0 ms
+00:36:38.921	0:0:0:0:0:0:0:1:56315	admin	REQUEST	[GET] http://localhost:8080/
+00:36:38.926	0:0:0:0:0:0:0:1:56315	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/app/main.xqm, 58/44: [XPST0081] No namespace declared for 'Request:method'.	5.57 ms
+00:37:19.263	0:0:0:0:0:0:0:1:56327	admin	REQUEST	[GET] http://localhost:8080/
+00:37:19.296	0:0:0:0:0:0:0:1:56327	admin	302		33.12 ms
+00:37:19.296	0:0:0:0:0:0:0:1:56327	admin	200		0.09 ms
+00:37:19.313	0:0:0:0:0:0:0:1:56327	admin	REQUEST	[GET] http://localhost:8080/cm/app
+00:37:19.364	SERVER	admin	INFO	Missing database. Start database setup procedure.
+00:37:19.364	0:0:0:0:0:0:0:1:56327	admin	302		51.33 ms
+00:37:19.365	0:0:0:0:0:0:0:1:56327	admin	200		0.08 ms
+00:37:19.372	0:0:0:0:0:0:0:1:56327	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:37:19.398	0:0:0:0:0:0:0:1:56327	admin	200		26.15 ms
+00:37:26.967	0:0:0:0:0:0:0:1:56335	admin	REQUEST	[GET] http://localhost:8080/cm/app/main
+00:37:26.998	0:0:0:0:0:0:0:1:56335	admin	200		30.91 ms
+00:37:27.224	0:0:0:0:0:0:0:1:56337	admin	REQUEST	[GET] http://localhost:8080/cm/app
+00:37:27.272	SERVER	admin	INFO	Missing database. Start database setup procedure.
+00:37:27.272	0:0:0:0:0:0:0:1:56337	admin	302		48.46 ms
+00:37:27.273	0:0:0:0:0:0:0:1:56337	admin	200		0.08 ms
+00:37:27.280	0:0:0:0:0:0:0:1:56337	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:37:27.308	0:0:0:0:0:0:0:1:56337	admin	200		28.7 ms
+00:37:27.785	0:0:0:0:0:0:0:1:56337	admin	REQUEST	[GET] http://localhost:8080/cm/app/main
+00:37:27.811	0:0:0:0:0:0:0:1:56337	admin	200		25.89 ms
+00:37:36.313	0:0:0:0:0:0:0:1:56327	admin	REQUEST	[GET] http://localhost:8080/
+00:37:36.341	0:0:0:0:0:0:0:1:56327	admin	302		27.85 ms
+00:37:36.341	0:0:0:0:0:0:0:1:56327	admin	200		0.08 ms
+00:37:36.350	0:0:0:0:0:0:0:1:56327	admin	REQUEST	[GET] http://localhost:8080/cm/app
+00:37:36.411	SERVER	admin	INFO	Missing database. Start database setup procedure.
+00:37:36.411	0:0:0:0:0:0:0:1:56327	admin	302		61.21 ms
+00:37:36.411	0:0:0:0:0:0:0:1:56327	admin	200		0.1 ms
+00:37:36.419	0:0:0:0:0:0:0:1:56327	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:37:36.446	0:0:0:0:0:0:0:1:56327	admin	200		27.45 ms
+00:41:49.296	0:0:0:0:0:0:0:1:56345	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:41:49.329	0:0:0:0:0:0:0:1:56345	admin	200		32.88 ms
+00:41:54.896	0:0:0:0:0:0:0:1:56345	admin	REQUEST	[GET] http://localhost:8080/
+00:41:54.942	0:0:0:0:0:0:0:1:56345	admin	302		46.23 ms
+00:41:54.942	0:0:0:0:0:0:0:1:56345	admin	200		0.09 ms
+00:41:54.950	0:0:0:0:0:0:0:1:56345	admin	REQUEST	[GET] http://localhost:8080/cm/app
+00:41:55.017	SERVER	admin	INFO	Missing database. Start database setup procedure.
+00:41:55.023	0:0:0:0:0:0:0:1:56345	admin	302		73.17 ms
+00:41:55.023	0:0:0:0:0:0:0:1:56345	admin	200		0.1 ms
+00:41:55.029	0:0:0:0:0:0:0:1:56345	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+00:41:55.062	0:0:0:0:0:0:0:1:56345	admin	200		32.71 ms
+11:01:54.527	SERVER	admin	OK	Server was started (port: 1984).
+11:06:26.278	0:0:0:0:0:0:0:1:50657	admin	REQUEST	[GET] http://localhost:8080/
+11:06:28.026	0:0:0:0:0:0:0:1:50657	admin	302		1750.37 ms
+11:06:28.027	0:0:0:0:0:0:0:1:50657	admin	200		0.35 ms
+11:06:28.039	0:0:0:0:0:0:0:1:50657	admin	REQUEST	[GET] http://localhost:8080/cm/app
+11:06:28.161	SERVER	admin	INFO	Missing database. Start database setup procedure.
+11:06:28.162	0:0:0:0:0:0:0:1:50657	admin	302		122.6 ms
+11:06:28.162	0:0:0:0:0:0:0:1:50657	admin	200		0.15 ms
+11:06:28.171	0:0:0:0:0:0:0:1:50657	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+11:06:28.222	0:0:0:0:0:0:0:1:50657	admin	200		51.42 ms
+11:06:28.387	0:0:0:0:0:0:0:1:50657	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+11:06:28.644	0:0:0:0:0:0:0:1:50657	admin	200		257.14 ms
+11:25:28.235	0:0:0:0:0:0:0:1:50856	admin	REQUEST	[GET] http://localhost:8080/cm/install/.setup
+11:25:28.297	SERVER	admin	INFO	Database setup started.
+11:25:28.429	0:0:0:0:0:0:0:1:50856	admin	302		194.37 ms
+11:25:28.429	0:0:0:0:0:0:0:1:50856	admin	200		0.11 ms
+11:25:28.436	0:0:0:0:0:0:0:1:50856	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=configure
+11:25:28.483	0:0:0:0:0:0:0:1:50856	admin	200		47.28 ms
+11:25:42.519	0:0:0:0:0:0:0:1:50856	admin	REQUEST	[GET] http://localhost:8080/cm/install/.configure
+11:25:42.870	SERVER	admin	INFO	Database setup done!
+11:25:42.898	0:0:0:0:0:0:0:1:50856	admin	302		379.93 ms
+11:25:42.899	0:0:0:0:0:0:0:1:50856	admin	200		0.16 ms
+11:25:42.915	0:0:0:0:0:0:0:1:50856	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=startlogin
+11:25:42.989	0:0:0:0:0:0:0:1:50856	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 37/50: [XPTY0004] Item expected, empty sequence found.	74.14 ms
+11:28:07.691	0:0:0:0:0:0:0:1:50887	admin	REQUEST	[GET] http://localhost:8080/
+11:28:07.728	0:0:0:0:0:0:0:1:50887	admin	302		37.32 ms
+11:28:07.729	0:0:0:0:0:0:0:1:50887	admin	200		0.14 ms
+11:28:07.740	0:0:0:0:0:0:0:1:50887	admin	REQUEST	[GET] http://localhost:8080/cm/app
+11:28:07.799	SERVER	admin	INFO	Missing database. Start database setup procedure.
+11:28:07.799	0:0:0:0:0:0:0:1:50887	admin	302		59.83 ms
+11:28:07.799	0:0:0:0:0:0:0:1:50887	admin	200		0.12 ms
+11:28:07.872	0:0:0:0:0:0:0:1:50887	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+11:28:07.913	0:0:0:0:0:0:0:1:50889	admin	REQUEST	[GET] http://localhost:8080/
+11:28:07.969	0:0:0:0:0:0:0:1:50889	admin	302		56.74 ms
+11:28:07.970	0:0:0:0:0:0:0:1:50889	admin	200		0.13 ms
+11:28:07.972	0:0:0:0:0:0:0:1:50887	admin	200		100.31 ms
+11:28:07.976	0:0:0:0:0:0:0:1:50889	admin	REQUEST	[GET] http://localhost:8080/cm/app
+11:28:08.034	SERVER	admin	INFO	Missing database. Start database setup procedure.
+11:28:08.037	0:0:0:0:0:0:0:1:50889	admin	302		61.5 ms
+11:28:08.038	0:0:0:0:0:0:0:1:50889	admin	200		0.14 ms
+11:28:08.050	0:0:0:0:0:0:0:1:50889	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+11:28:08.078	0:0:0:0:0:0:0:1:50889	admin	200		27.78 ms
+11:28:09.907	0:0:0:0:0:0:0:1:50889	admin	REQUEST	[GET] http://localhost:8080/cm/install/.setup
+11:28:09.940	SERVER	admin	INFO	Database setup started.
+11:28:10.026	0:0:0:0:0:0:0:1:50889	admin	302		119.61 ms
+11:28:10.026	0:0:0:0:0:0:0:1:50889	admin	200		0.31 ms
+11:28:10.036	0:0:0:0:0:0:0:1:50889	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=configure
+11:28:10.062	0:0:0:0:0:0:0:1:50889	admin	200		26.31 ms
+11:28:12.054	0:0:0:0:0:0:0:1:50889	admin	REQUEST	[GET] http://localhost:8080/cm/install/.configure
+11:28:12.142	SERVER	admin	INFO	Database setup done!
+11:28:12.167	0:0:0:0:0:0:0:1:50889	admin	302		115.25 ms
+11:28:12.169	0:0:0:0:0:0:0:1:50889	admin	200		1.41 ms
+11:28:12.179	0:0:0:0:0:0:0:1:50889	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=application
+11:28:12.211	0:0:0:0:0:0:0:1:50889	admin	200		31.64 ms
+11:28:32.267	0:0:0:0:0:0:0:1:50889	admin	REQUEST	[GET] http://localhost:8080/
+11:28:32.330	0:0:0:0:0:0:0:1:50889	admin	302		62.86 ms
+11:28:32.330	0:0:0:0:0:0:0:1:50889	admin	200		0.14 ms
+11:28:32.342	0:0:0:0:0:0:0:1:50889	admin	REQUEST	[GET] http://localhost:8080/cm/app
+11:28:32.441	0:0:0:0:0:0:0:1:50889	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/modules/tmpl.xqm, 189/67: [XPTY0004] Item expected, empty sequence found. Stack Trace: - /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/modules/tmpl.xqm, 27/13	98.83 ms
+14:28:10.985	0:0:0:0:0:0:0:1:53858	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:28:11.203	0:0:0:0:0:0:0:1:53858	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/modules/tmpl.xqm, 189/67: [XPTY0004] Item expected, empty sequence found. Stack Trace: - /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/modules/tmpl.xqm, 27/13	219.0 ms
+14:37:09.638	0:0:0:0:0:0:0:1:53879	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:37:09.660	0:0:0:0:0:0:0:1:53879	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/modules/tmpl.xqm, 189/76: [XPST0003] Expecting ')', found '}'.	22.93 ms
+14:37:38.968	0:0:0:0:0:0:0:1:53879	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:37:39.052	0:0:0:0:0:0:0:1:53879	admin	200		84.56 ms
+14:37:39.168	0:0:0:0:0:0:0:1:53879	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+14:37:39.243	0:0:0:0:0:0:0:1:53879	admin	200		75.34 ms
+14:38:46.738	0:0:0:0:0:0:0:1:53898	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:38:46.813	0:0:0:0:0:0:0:1:53898	admin	200		74.95 ms
+14:38:46.924	0:0:0:0:0:0:0:1:53898	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+14:38:47.003	0:0:0:0:0:0:0:1:53898	admin	200		79.57 ms
+14:39:22.092	0:0:0:0:0:0:0:1:53917	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:39:22.196	SERVER	admin	INFO	Missing database. Start database setup procedure.
+14:39:22.197	0:0:0:0:0:0:0:1:53917	admin	302		105.46 ms
+14:39:22.197	0:0:0:0:0:0:0:1:53917	admin	200		0.16 ms
+14:39:22.207	0:0:0:0:0:0:0:1:53917	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+14:39:22.241	0:0:0:0:0:0:0:1:53917	admin	200		33.93 ms
+14:40:50.884	0:0:0:0:0:0:0:1:53920	admin	REQUEST	[GET] http://localhost:8080/cm/install/.setup
+14:40:50.912	SERVER	admin	INFO	Database setup started.
+14:40:51.026	0:0:0:0:0:0:0:1:53920	admin	302		141.76 ms
+14:40:51.026	0:0:0:0:0:0:0:1:53920	admin	200		0.1 ms
+14:40:51.038	0:0:0:0:0:0:0:1:53920	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=configure
+14:40:51.070	0:0:0:0:0:0:0:1:53920	admin	200		32.71 ms
+14:40:51.962	0:0:0:0:0:0:0:1:53920	admin	REQUEST	[GET] http://localhost:8080/cm/install/.configure
+14:40:52.043	SERVER	admin	INFO	Database setup done!
+14:40:52.055	0:0:0:0:0:0:0:1:53920	admin	302		92.62 ms
+14:40:52.055	0:0:0:0:0:0:0:1:53920	admin	200		0.1 ms
+14:40:52.079	0:0:0:0:0:0:0:1:53920	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=application
+14:40:52.132	0:0:0:0:0:0:0:1:53920	admin	200		52.93 ms
+14:40:53.049	0:0:0:0:0:0:0:1:53920	admin	REQUEST	[GET] http://localhost:8080/
+14:40:53.093	0:0:0:0:0:0:0:1:53920	admin	302		43.76 ms
+14:40:53.093	0:0:0:0:0:0:0:1:53920	admin	200		0.09 ms
+14:40:53.100	0:0:0:0:0:0:0:1:53920	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:40:53.144	0:0:0:0:0:0:0:1:53920	admin	200		43.91 ms
+14:41:24.514	0:0:0:0:0:0:0:1:53923	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:41:24.565	0:0:0:0:0:0:0:1:53923	admin	200		51.06 ms
+14:41:41.252	0:0:0:0:0:0:0:1:53936	admin	REQUEST	[GET] http://localhost:8080/.setup
+14:41:41.272	0:0:0:0:0:0:0:1:53936	admin	404	No function found that matches the request.	20.37 ms
+14:41:41.557	0:0:0:0:0:0:0:1:53936	admin	REQUEST	[GET] http://localhost:8080/.init
+14:41:41.557	0:0:0:0:0:0:0:1:53936	admin	200		0.31 ms
+14:41:48.020	0:0:0:0:0:0:0:1:53923	admin	REQUEST	[GET] http://localhost:8080/
+14:41:48.542	0:0:0:0:0:0:0:1:53923	admin	302		521.96 ms
+14:41:48.542	0:0:0:0:0:0:0:1:53923	admin	200		0.1 ms
+14:41:48.552	0:0:0:0:0:0:0:1:53923	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:41:48.601	0:0:0:0:0:0:0:1:53923	admin	200		49.83 ms
+14:42:07.401	0:0:0:0:0:0:0:1:53923	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:42:07.477	0:0:0:0:0:0:0:1:53923	admin	200		75.41 ms
+14:42:26.780	0:0:0:0:0:0:0:1:53923	admin	REQUEST	[GET] http://localhost:8080/
+14:42:26.834	0:0:0:0:0:0:0:1:53923	admin	302		54.57 ms
+14:42:26.834	0:0:0:0:0:0:0:1:53923	admin	200		0.2 ms
+14:42:26.842	0:0:0:0:0:0:0:1:53923	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:42:26.912	0:0:0:0:0:0:0:1:53923	admin	200		70.38 ms
+14:42:39.015	0:0:0:0:0:0:0:1:53923	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:42:39.074	0:0:0:0:0:0:0:1:53923	admin	200		59.36 ms
+14:42:39.186	0:0:0:0:0:0:0:1:53923	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+14:42:39.251	0:0:0:0:0:0:0:1:53923	admin	200		65.47 ms
+14:43:15.709	0:0:0:0:0:0:0:1:53962	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:43:15.801	SERVER	admin	INFO	Missing database. Start database setup procedure.
+14:43:15.801	0:0:0:0:0:0:0:1:53962	admin	302		92.89 ms
+14:43:15.801	0:0:0:0:0:0:0:1:53962	admin	200		0.08 ms
+14:43:15.809	0:0:0:0:0:0:0:1:53962	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+14:43:15.858	0:0:0:0:0:0:0:1:53962	admin	200		49.22 ms
+14:43:17.781	0:0:0:0:0:0:0:1:53962	admin	REQUEST	[GET] http://localhost:8080/cm/install/.setup
+14:43:17.813	SERVER	admin	INFO	Database setup started.
+14:43:17.905	0:0:0:0:0:0:0:1:53962	admin	302		124.3 ms
+14:43:17.905	0:0:0:0:0:0:0:1:53962	admin	200		0.1 ms
+14:43:17.912	0:0:0:0:0:0:0:1:53962	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=configure
+14:43:17.942	0:0:0:0:0:0:0:1:53962	admin	200		30.22 ms
+14:43:19.321	0:0:0:0:0:0:0:1:53962	admin	REQUEST	[GET] http://localhost:8080/cm/install/.configure
+14:43:19.367	SERVER	admin	INFO	Database setup done!
+14:43:19.393	0:0:0:0:0:0:0:1:53962	admin	302		72.26 ms
+14:43:19.393	0:0:0:0:0:0:0:1:53962	admin	200		0.11 ms
+14:43:19.401	0:0:0:0:0:0:0:1:53962	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=application
+14:43:19.427	0:0:0:0:0:0:0:1:53962	admin	200		25.81 ms
+14:43:39.576	0:0:0:0:0:0:0:1:53962	admin	REQUEST	[GET] http://localhost:8080/
+14:43:39.604	0:0:0:0:0:0:0:1:53962	admin	302		27.3 ms
+14:43:39.604	0:0:0:0:0:0:0:1:53962	admin	200		0.09 ms
+14:43:39.615	0:0:0:0:0:0:0:1:53962	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:43:39.643	0:0:0:0:0:0:0:1:53962	admin	200		28.52 ms
+14:51:18.393	0:0:0:0:0:0:0:1:54000	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:51:18.399	0:0:0:0:0:0:0:1:54000	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 38/3: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	6.19 ms
+14:53:03.463	0:0:0:0:0:0:0:1:54005	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:53:03.469	0:0:0:0:0:0:0:1:54005	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 39/25: [XPST0081] No namespace declared for 'cons:SESSION'.	6.63 ms
+14:53:04.363	0:0:0:0:0:0:0:1:54005	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:53:04.372	0:0:0:0:0:0:0:1:54005	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 39/25: [XPST0081] No namespace declared for 'cons:SESSION'.	9.32 ms
+14:53:22.460	0:0:0:0:0:0:0:1:54005	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:53:22.468	0:0:0:0:0:0:0:1:54005	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 42/1: [XPST0003] Expecting ')', found '}'.	7.45 ms
+14:54:22.233	127.0.0.1:54012	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:54:22.238	127.0.0.1:54012	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 42/1: [XPST0003] Expecting ')', found '}'.	5.39 ms
+14:54:23.650	127.0.0.1:54012	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:54:23.655	127.0.0.1:54012	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 42/1: [XPST0003] Expecting ')', found '}'.	5.43 ms
+14:54:45.725	127.0.0.1:54012	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:54:45.730	127.0.0.1:54012	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 39/25: [XPST0008] Undefined variable $conf:SESSION.	5.8 ms
+14:55:31.214	127.0.0.1:54014	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:55:31.267	127.0.0.1:54014	admin	200		52.52 ms
+14:55:31.347	127.0.0.1:54014	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+14:55:31.418	127.0.0.1:54014	admin	200		71.12 ms
+14:55:34.105	127.0.0.1:54014	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:55:34.154	127.0.0.1:54014	admin	200		49.13 ms
+14:55:34.238	127.0.0.1:54014	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+14:55:34.320	127.0.0.1:54014	admin	200		82.32 ms
+14:55:54.946	127.0.0.1:54014	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:55:55.015	SERVER	admin	INFO	Missing database. Start database setup procedure.
+14:55:55.015	127.0.0.1:54014	admin	302		69.31 ms
+14:55:55.016	127.0.0.1:54014	admin	200		0.13 ms
+14:55:55.023	127.0.0.1:54014	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+14:55:55.049	127.0.0.1:54014	admin	200		26.87 ms
+14:55:56.618	127.0.0.1:54014	admin	REQUEST	[GET] http://localhost:8080/cm/install/.setup
+14:55:56.643	SERVER	admin	INFO	Database setup started.
+14:55:56.719	127.0.0.1:54014	admin	302		101.21 ms
+14:55:56.719	127.0.0.1:54014	admin	200		0.08 ms
+14:55:56.728	127.0.0.1:54014	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=configure
+14:55:56.752	127.0.0.1:54014	admin	200		23.32 ms
+14:55:57.769	127.0.0.1:54014	admin	REQUEST	[GET] http://localhost:8080/cm/install/.configure
+14:55:57.838	SERVER	admin	INFO	Database setup done!
+14:55:57.846	127.0.0.1:54014	admin	302		78.23 ms
+14:55:57.847	127.0.0.1:54014	admin	200		0.23 ms
+14:55:57.864	127.0.0.1:54014	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=application
+14:55:57.902	127.0.0.1:54014	admin	200		37.69 ms
+14:56:00.063	127.0.0.1:54014	admin	REQUEST	[GET] http://localhost:8080/
+14:56:00.091	127.0.0.1:54014	admin	302		28.93 ms
+14:56:00.092	127.0.0.1:54014	admin	200		0.1 ms
+14:56:00.098	127.0.0.1:54014	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:56:02.142	127.0.0.1:54014	admin	200		2044.23 ms
+14:56:21.814	127.0.0.1:54014	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:56:21.862	SERVER	admin	INFO	Missing database. Start database setup procedure.
+14:56:21.862	127.0.0.1:54014	admin	302		48.36 ms
+14:56:21.862	127.0.0.1:54014	admin	200		0.08 ms
+14:56:21.867	127.0.0.1:54014	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=setup
+14:56:21.892	127.0.0.1:54014	admin	200		25.24 ms
+14:56:23.965	127.0.0.1:54014	admin	REQUEST	[GET] http://localhost:8080/cm/install/.setup
+14:56:23.987	SERVER	admin	INFO	Database setup started.
+14:56:24.075	127.0.0.1:54014	admin	302		110.26 ms
+14:56:24.075	127.0.0.1:54014	admin	200		0.26 ms
+14:56:24.082	127.0.0.1:54014	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=configure
+14:56:24.105	127.0.0.1:54014	admin	200		22.82 ms
+14:56:26.518	127.0.0.1:54014	admin	REQUEST	[GET] http://localhost:8080/cm/install/.configure
+14:56:26.559	SERVER	admin	INFO	Database setup done!
+14:56:26.573	127.0.0.1:54014	admin	302		54.93 ms
+14:56:26.573	127.0.0.1:54014	admin	200		0.09 ms
+14:56:26.590	127.0.0.1:54014	admin	REQUEST	[GET] http://localhost:8080/cm/install?name=application
+14:56:26.615	127.0.0.1:54014	admin	200		24.87 ms
+14:56:31.002	127.0.0.1:54014	admin	REQUEST	[GET] http://localhost:8080/
+14:56:31.026	127.0.0.1:54014	admin	302		24.66 ms
+14:56:31.027	127.0.0.1:54014	admin	200		0.1 ms
+14:56:31.034	127.0.0.1:54014	admin	REQUEST	[GET] http://localhost:8080/cm/app
+14:56:31.075	127.0.0.1:54014	admin	200		41.59 ms
+15:17:23.752	127.0.0.1:54096	admin	REQUEST	[GET] http://localhost:8080/
+15:17:23.772	127.0.0.1:54096	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 24/9: [XPST0003] Expecting '}', found 'm'.	20.06 ms
+15:17:25.288	127.0.0.1:54096	admin	REQUEST	[GET] http://localhost:8080/
+15:17:25.299	127.0.0.1:54096	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 24/9: [XPST0003] Expecting '}', found 'm'.	10.73 ms
+15:17:26.032	127.0.0.1:54096	admin	REQUEST	[GET] http://localhost:8080/test
+15:17:26.041	127.0.0.1:54096	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 24/9: [XPST0003] Expecting '}', found 'm'.	8.78 ms
+15:17:39.069	127.0.0.1:54098	admin	REQUEST	[GET] http://localhost:8080/test
+15:17:39.094	127.0.0.1:54098	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 24/10: [XPST0017] Unknown function 'return'.	25.15 ms
+15:17:40.628	127.0.0.1:54098	admin	REQUEST	[GET] http://localhost:8080/test
+15:17:40.641	127.0.0.1:54098	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 24/10: [XPST0017] Unknown function 'return'.	13.28 ms
+15:18:15.239	127.0.0.1:54100	admin	REQUEST	[GET] http://localhost:8080/test
+15:18:15.292	127.0.0.1:54100	admin	200		53.3 ms
+15:19:58.774	127.0.0.1:54109	admin	REQUEST	[GET] http://localhost:8080/test
+15:19:58.796	127.0.0.1:54109	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 30/22: [XPST0003] Expecting ')', found '>'.	22.34 ms
+15:20:29.168	127.0.0.1:54113	admin	REQUEST	[GET] http://localhost:8080/test
+15:20:29.179	127.0.0.1:54113	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 30/21: [XPST0003] Expecting '}', found '>'.	10.89 ms
+15:20:31.156	127.0.0.1:54113	admin	REQUEST	[GET] http://localhost:8080/test
+15:20:31.168	127.0.0.1:54113	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 30/21: [XPST0003] Expecting '}', found '>'.	11.61 ms
+15:20:32.521	127.0.0.1:54113	admin	REQUEST	[GET] http://localhost:8080/test
+15:20:32.541	127.0.0.1:54113	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 30/21: [XPST0003] Expecting '}', found '>'.	20.26 ms
+15:21:31.786	127.0.0.1:54115	admin	REQUEST	[GET] http://localhost:8080/test
+15:21:31.797	127.0.0.1:54115	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 29/2: [XPST0003] Expecting function body.	11.96 ms
+15:21:32.785	127.0.0.1:54115	admin	REQUEST	[GET] http://localhost:8080/test
+15:21:32.799	127.0.0.1:54115	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 29/2: [XPST0003] Expecting function body.	14.62 ms
+15:21:33.870	127.0.0.1:54115	admin	REQUEST	[GET] http://localhost:8080/test
+15:21:33.881	127.0.0.1:54115	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 29/2: [XPST0003] Expecting function body.	11.28 ms
+15:22:52.579	127.0.0.1:54122	admin	REQUEST	[GET] http://localhost:8080/test
+15:22:52.590	127.0.0.1:54122	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 29/15: [XPST0003] Expecting '}', found '>'.	11.28 ms
+15:22:53.499	127.0.0.1:54122	admin	REQUEST	[GET] http://localhost:8080/test
+15:22:53.513	127.0.0.1:54122	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 29/15: [XPST0003] Expecting '}', found '>'.	14.37 ms
+15:25:25.368	127.0.0.1:54132	admin	REQUEST	[GET] http://localhost:8080/test
+15:25:25.386	127.0.0.1:54132	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 30/8: [XPST0003] Expecting '}', found '>'.	17.46 ms
+15:25:26.533	127.0.0.1:54132	admin	REQUEST	[GET] http://localhost:8080/test
+15:25:26.546	127.0.0.1:54132	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 30/8: [XPST0003] Expecting '}', found '>'.	12.66 ms
+15:25:50.962	127.0.0.1:54132	admin	REQUEST	[GET] http://localhost:8080/test
+15:25:50.974	127.0.0.1:54132	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 30/8: [XPST0003] Expecting '}', found '>'.	12.14 ms
+15:25:52.076	127.0.0.1:54132	admin	REQUEST	[GET] http://localhost:8080/test
+15:25:52.088	127.0.0.1:54132	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 30/8: [XPST0003] Expecting '}', found '>'.	12.15 ms
+15:26:10.379	127.0.0.1:54132	admin	REQUEST	[GET] http://localhost:8080/test
+15:26:10.388	127.0.0.1:54132	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 30/8: [XPST0003] Expecting '}', found '>'.	8.92 ms
+15:26:11.166	127.0.0.1:54132	admin	REQUEST	[GET] http://localhost:8080/test
+15:26:11.179	127.0.0.1:54132	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 30/8: [XPST0003] Expecting '}', found '>'.	13.04 ms
+15:26:32.541	127.0.0.1:54132	admin	REQUEST	[GET] http://localhost:8080/test
+15:26:32.552	127.0.0.1:54132	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 30/8: [XPST0003] Expecting '}', found '>'.	11.79 ms
+15:26:33.345	127.0.0.1:54132	admin	REQUEST	[GET] http://localhost:8080/test
+15:26:33.360	127.0.0.1:54132	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 30/8: [XPST0003] Expecting '}', found '>'.	14.9 ms
+15:26:34.012	127.0.0.1:54132	admin	REQUEST	[GET] http://localhost:8080/test
+15:26:34.026	127.0.0.1:54132	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 30/8: [XPST0003] Expecting '}', found '>'.	14.46 ms

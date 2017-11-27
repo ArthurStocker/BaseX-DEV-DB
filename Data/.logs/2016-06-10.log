@@ -1,0 +1,55 @@
+07:05:39.133	127.0.0.1:58393	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) return document-uri($doc)	9.92 ms
+07:05:39.171	127.0.0.1:58393	admin	OK	Query executed in 30.49 ms.	31.45 ms
+07:15:57.889	127.0.0.1:58657	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) return document-uri($doc)	0.59 ms
+07:15:57.928	127.0.0.1:58657	admin	OK	Query executed in 33.49 ms.	39.34 ms
+17:13:04.378	SERVER	admin	OK	Server was stopped (port: 1984).
+17:13:14.010	SERVER	admin	OK	Server was started (port: 1984).
+17:13:59.914	127.0.0.1:62416	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) return document-uri($doc)	221.09 ms
+17:14:00.547	127.0.0.1:62416	admin	OK	Query executed in 631.35 ms.	633.01 ms
+17:14:56.160	127.0.0.1:62418	admin	ERROR	Access denied.	13.02 ms
+17:15:55.253	127.0.0.1:62422	admin	ERROR	Access denied.	1.19 ms
+17:17:44.211	127.0.0.1:62428	admin	ERROR	Access denied.	1.68 ms
+17:20:31.382	127.0.0.1:62434	admin	REQUEST	INFO	0.8 ms
+17:20:31.383	127.0.0.1:62434	admin	OK		1.8 ms
+17:20:31.422	127.0.0.1:62435	admin	ERROR	Access denied.	0.97 ms
+17:20:33.792	127.0.0.1:62436	admin	ERROR	Access denied.	3.47 ms
+17:20:48.195	127.0.0.1:62437	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) return document-uri($doc)	0.83 ms
+17:20:48.219	127.0.0.1:62437	admin	OK	Query executed in 23.62 ms.	24.0 ms
+17:21:13.313	127.0.0.1:62438	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) return document-uri($doc)	0.45 ms
+17:21:13.325	127.0.0.1:62438	admin	OK	Query executed in 11.55 ms.	11.87 ms
+17:21:14.994	127.0.0.1:62439	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) return document-uri($doc)	0.43 ms
+17:21:15.001	127.0.0.1:62439	admin	OK	Query executed in 6.89 ms.	7.23 ms
+17:21:42.837	127.0.0.1:62442	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) return document-uri($doc)	0.41 ms
+17:21:42.848	127.0.0.1:62442	admin	OK	Query executed in 10.82 ms.	11.16 ms
+17:21:44.880	127.0.0.1:62443	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) return document-uri($doc)	0.43 ms
+17:21:44.888	127.0.0.1:62443	admin	OK	Query executed in 8.06 ms.	8.36 ms
+17:42:01.528	127.0.0.1:62567	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) return element database { element name { $db } element file { document-uri($doc) }	0.42 ms
+17:42:01.537	127.0.0.1:62567	admin	ERROR	Stopped at ., 3/48: [XPST0003] Expecting '}', found 'e'.	8.2 ms
+17:42:22.378	127.0.0.1:62570	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) return element database { element name { $db } element file { document-uri($doc) } }	0.48 ms
+17:42:22.379	127.0.0.1:62570	admin	ERROR	Stopped at ., 3/48: [XPST0003] Expecting '}', found 'e'.	0.9 ms
+17:42:23.937	127.0.0.1:62571	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) return element database { element name { $db } element file { document-uri($doc) } }	0.43 ms
+17:42:23.938	127.0.0.1:62571	admin	ERROR	Stopped at ., 3/48: [XPST0003] Expecting '}', found 'e'.	0.82 ms
+17:42:58.690	127.0.0.1:62575	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) return element database { element name { $db }, element file { document-uri($doc) } }	0.54 ms
+17:42:58.773	127.0.0.1:62575	admin	OK	Query executed in 80.78 ms.	83.22 ms
+17:43:46.652	127.0.0.1:62580	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) return element database { element name { $db }, element document { document-uri($doc) } }	0.53 ms
+17:43:46.683	127.0.0.1:62580	admin	OK	Query executed in 30.22 ms.	30.59 ms
+17:44:32.026	127.0.0.1:62584	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) return element document { element database { $db }, element document-uri { document-uri($doc) } }	0.44 ms
+17:44:32.057	127.0.0.1:62584	admin	OK	Query executed in 28.4 ms.	30.73 ms
+17:48:29.682	127.0.0.1:62642	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) return json:serialize(element document { element database { $db }, element document-uri { document-uri($doc) } })	0.42 ms
+17:48:29.723	127.0.0.1:62642	admin	OK	Query executed in 32.99 ms.	40.44 ms
+17:49:03.525	127.0.0.1:62648	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) return json:serialize((element document { element database { $db }, element document-uri { document-uri($doc) } }})	0.41 ms
+17:49:03.527	127.0.0.1:62648	admin	ERROR	Stopped at ., 3/114: [XPST0003] Expecting ')', found '}'.	2.03 ms
+17:49:20.406	127.0.0.1:62649	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) return json:serialize({element document { element database { $db }, element document-uri { document-uri($doc) } }})	0.39 ms
+17:49:20.420	127.0.0.1:62649	admin	ERROR	Stopped at ., 3/23: [XPST0003] Expecting closing bracket: json:serialize.	13.68 ms
+17:49:21.707	127.0.0.1:62650	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) return json:serialize({element document { element database { $db }, element document-uri { document-uri($doc) } }})	0.4 ms
+17:49:21.709	127.0.0.1:62650	admin	ERROR	Stopped at ., 3/23: [XPST0003] Expecting closing bracket: json:serialize.	1.63 ms
+17:50:50.320	127.0.0.1:62658	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) let $a:= element document { element database { $db }, element document-uri { document-uri($doc) } } return json:serialize($a)	0.44 ms
+17:50:50.370	127.0.0.1:62658	admin	OK	Query executed in 49.13 ms.	49.74 ms
+17:51:43.111	127.0.0.1:62663	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) let $a:= element document { element database { $db }, element document-uri { document-uri($doc) } } return json:serialize(<json>{$a}</json>)	0.42 ms
+17:51:43.131	127.0.0.1:62663	admin	ERROR	Stopped at ., 4/22: [bxerr:BXJS0002] JSON serializer: <json> is typed as "string" and cannot be nested.	20.22 ms
+17:51:44.532	127.0.0.1:62664	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) let $a:= element document { element database { $db }, element document-uri { document-uri($doc) } } return json:serialize(<json>{$a}</json>)	0.4 ms
+17:51:44.537	127.0.0.1:62664	admin	ERROR	Stopped at ., 4/22: [bxerr:BXJS0002] JSON serializer: <json> is typed as "string" and cannot be nested.	5.86 ms
+17:52:10.280	127.0.0.1:62668	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) let $a:= element document { element database { $db }, element document-uri { document-uri($doc) } } return json:serialize(<json>{$a}</jsonb>)	0.45 ms
+17:52:10.282	127.0.0.1:62668	admin	ERROR	Stopped at ., 4/41: [XQST0118] Different start and end tag: <json>...</jsonb>.	1.33 ms
+17:52:22.736	127.0.0.1:62669	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) let $a:= element document { element database { $db }, element document-uri { document-uri($doc) } } return json:serialize(<jsonb>{$a}</jsonb>)	0.45 ms
+17:52:22.774	127.0.0.1:62669	admin	OK	Query executed in 36.01 ms.	37.49 ms

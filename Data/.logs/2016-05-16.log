@@ -1,0 +1,170 @@
+11:42:13.107	SERVER	admin	OK	Server was started (port: 1984).
+11:42:39.924	0:0:0:0:0:0:0:1:54962	admin	REQUEST	[GET] http://localhost:8080/
+11:42:42.170	0:0:0:0:0:0:0:1:54962	admin	302		2251.61 ms
+11:42:42.171	0:0:0:0:0:0:0:1:54962	admin	200		0.4 ms
+11:42:42.186	0:0:0:0:0:0:0:1:54962	admin	REQUEST	[GET] http://localhost:8080/cm/app
+11:42:42.315	0:0:0:0:0:0:0:1:54962	admin	200		129.99 ms
+11:42:42.375	0:0:0:0:0:0:0:1:54962	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+11:42:42.573	0:0:0:0:0:0:0:1:54962	admin	200		198.06 ms
+11:42:46.137	0:0:0:0:0:0:0:1:54962	admin	REQUEST	[GET] http://localhost:8080/cm/app
+11:42:46.290	0:0:0:0:0:0:0:1:54962	admin	200		153.37 ms
+11:42:47.160	0:0:0:0:0:0:0:1:54963	admin	REQUEST	[GET] http://localhost:8080/cm/app
+11:42:47.242	0:0:0:0:0:0:0:1:54963	admin	200		82.39 ms
+11:42:50.476	0:0:0:0:0:0:0:1:54964	admin	REQUEST	[GET] http://localhost:8080/cm/test
+11:42:50.538	0:0:0:0:0:0:0:1:54964	admin	404	No function found that matches the request.	62.45 ms
+11:43:01.159	0:0:0:0:0:0:0:1:54963	admin	REQUEST	[GET] http://localhost:8080/test
+11:43:01.203	0:0:0:0:0:0:0:1:54963	admin	200		44.11 ms
+11:43:01.639	0:0:0:0:0:0:0:1:54964	admin	REQUEST	[GET] http://localhost:8080/test
+11:43:01.721	0:0:0:0:0:0:0:1:54964	admin	200		81.38 ms
+12:00:02.143	0:0:0:0:0:0:0:1:55114	admin	REQUEST	[GET] http://localhost:8080/test
+12:00:02.285	0:0:0:0:0:0:0:1:55114	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 39/121: [XPST0017] file:base-dir(): 1 argument supplied.	142.78 ms
+12:00:21.325	0:0:0:0:0:0:0:1:55114	admin	REQUEST	[GET] http://localhost:8080/test
+12:00:21.372	0:0:0:0:0:0:0:1:55114	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 39/121: [XPST0017] file:base-dir(): 1 argument supplied.	47.89 ms
+12:00:56.341	0:0:0:0:0:0:0:1:55122	admin	REQUEST	[GET] http://localhost:8080/test
+12:00:57.285	0:0:0:0:0:0:0:1:55122	admin	200		943.74 ms
+12:01:38.193	0:0:0:0:0:0:0:1:55125	admin	REQUEST	[GET] http://localhost:8080/test
+12:01:38.283	0:0:0:0:0:0:0:1:55125	admin	200		90.36 ms
+12:01:59.003	0:0:0:0:0:0:0:1:55125	admin	REQUEST	[GET] http://localhost:8080/test
+12:01:59.099	0:0:0:0:0:0:0:1:55125	admin	200		96.27 ms
+12:02:16.292	0:0:0:0:0:0:0:1:55125	admin	REQUEST	[GET] http://localhost:8080/test
+12:02:16.409	0:0:0:0:0:0:0:1:55125	admin	200		117.24 ms
+12:02:46.309	0:0:0:0:0:0:0:1:55125	admin	REQUEST	[GET] http://localhost:8080/test
+12:02:46.375	0:0:0:0:0:0:0:1:55125	admin	200		66.19 ms
+12:04:28.028	0:0:0:0:0:0:0:1:55158	admin	REQUEST	[GET] http://localhost:8080/test
+12:04:28.147	0:0:0:0:0:0:0:1:55158	admin	200		120.34 ms
+12:04:43.325	0:0:0:0:0:0:0:1:55158	admin	REQUEST	[GET] http://localhost:8080/test
+12:04:43.425	0:0:0:0:0:0:0:1:55158	admin	200		99.99 ms
+12:04:57.645	0:0:0:0:0:0:0:1:55158	admin	REQUEST	[GET] http://localhost:8080/test
+12:04:57.775	0:0:0:0:0:0:0:1:55158	admin	200		129.62 ms
+12:42:15.412	0:0:0:0:0:0:0:1:55350	admin	REQUEST	[GET] http://localhost:8080/BaseX823/dba/delete?name=factbook&resource=factbook.xml
+12:42:15.501	0:0:0:0:0:0:0:1:55350	admin	404	No function found that matches the request.	89.3 ms
+13:33:54.250	0:0:0:0:0:0:0:1:55782	admin	REQUEST	[GET] http://localhost:8080/test
+13:33:54.301	0:0:0:0:0:0:0:1:55782	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 43/3: [XPST0003] Expecting '}', found '$'.	50.88 ms
+13:34:12.163	0:0:0:0:0:0:0:1:55782	admin	REQUEST	[GET] http://localhost:8080/test
+13:34:12.189	0:0:0:0:0:0:0:1:55782	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 44/7: [XPST0008] Undefined variable $file.	26.35 ms
+13:34:43.027	0:0:0:0:0:0:0:1:55787	admin	REQUEST	[GET] http://localhost:8080/test
+13:34:43.064	0:0:0:0:0:0:0:1:55787	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 45/3: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	36.47 ms
+13:34:53.950	0:0:0:0:0:0:0:1:55787	admin	REQUEST	[GET] http://localhost:8080/test
+13:34:54.145	0:0:0:0:0:0:0:1:55787	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 44/23: [FODC0002] Resource '/Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/ad/bin/default.xml' does not exist.	195.51 ms
+13:35:45.615	0:0:0:0:0:0:0:1:55796	admin	REQUEST	[GET] http://localhost:8080/test
+13:35:46.144	0:0:0:0:0:0:0:1:55796	admin	200		529.6 ms
+13:37:39.276	0:0:0:0:0:0:0:1:55798	admin	REQUEST	[GET] http://localhost:8080/test
+13:37:39.312	0:0:0:0:0:0:0:1:55798	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/21: [XPST0017] Unknown function 'query:eval'; similar: 'xquery:eval'.	36.79 ms
+13:37:56.353	0:0:0:0:0:0:0:1:55798	admin	REQUEST	[GET] http://localhost:8080/test
+13:37:56.513	0:0:0:0:0:0:0:1:55798	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/22: [XPST0003] Empty query.	159.76 ms
+13:40:39.566	0:0:0:0:0:0:0:1:55823	admin	REQUEST	[GET] http://localhost:8080/test
+13:40:39.727	0:0:0:0:0:0:0:1:55823	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/22: [XPST0003] Expecting variable declaration.	160.66 ms
+13:41:36.599	0:0:0:0:0:0:0:1:55827	admin	REQUEST	[GET] http://localhost:8080/test
+13:41:36.760	0:0:0:0:0:0:0:1:55827	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/22: [XPST0003] Expecting variable declaration.	161.47 ms
+13:42:01.756	0:0:0:0:0:0:0:1:55827	admin	REQUEST	[GET] http://localhost:8080/test
+13:42:01.952	0:0:0:0:0:0:0:1:55827	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/22: [XPST0003] Expecting variable declaration.	196.68 ms
+13:42:28.890	0:0:0:0:0:0:0:1:55827	admin	REQUEST	[GET] http://localhost:8080/test
+13:42:28.922	0:0:0:0:0:0:0:1:55827	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 47/1: [XPST0003] Expecting closing bracket for function 'xquery:eval'.	31.91 ms
+13:42:50.275	0:0:0:0:0:0:0:1:55827	admin	REQUEST	[GET] http://localhost:8080/test
+13:42:50.293	0:0:0:0:0:0:0:1:55827	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 48/1: [XPST0003] Expecting closing bracket for function 'xquery:eval'.	18.36 ms
+13:43:30.835	0:0:0:0:0:0:0:1:55849	admin	REQUEST	[GET] http://localhost:8080/test
+13:43:31.021	0:0:0:0:0:0:0:1:55849	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/22: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	185.81 ms
+13:43:58.401	0:0:0:0:0:0:0:1:55849	admin	REQUEST	[GET] http://localhost:8080/test
+13:43:58.560	0:0:0:0:0:0:0:1:55849	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/22: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	158.92 ms
+13:44:17.255	0:0:0:0:0:0:0:1:55849	admin	REQUEST	[GET] http://localhost:8080/test
+13:44:17.409	0:0:0:0:0:0:0:1:55849	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/22: [XPST0003] Unexpected end of query: '$app '.	153.95 ms
+13:46:06.499	0:0:0:0:0:0:0:1:55858	admin	REQUEST	[GET] http://localhost:8080/test
+13:46:06.659	0:0:0:0:0:0:0:1:55858	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/22: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	164.84 ms
+13:46:43.022	0:0:0:0:0:0:0:1:55862	admin	REQUEST	[GET] http://localhost:8080/test
+13:46:43.209	0:0:0:0:0:0:0:1:55862	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/22: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	187.19 ms
+13:47:39.134	0:0:0:0:0:0:0:1:55865	admin	REQUEST	[GET] http://localhost:8080/test
+13:47:39.275	0:0:0:0:0:0:0:1:55865	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/23: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	140.67 ms
+13:47:40.545	0:0:0:0:0:0:0:1:55865	admin	REQUEST	[GET] http://localhost:8080/test
+13:47:40.691	0:0:0:0:0:0:0:1:55865	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/23: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	145.19 ms
+13:49:16.026	0:0:0:0:0:0:0:1:55871	admin	REQUEST	[GET] http://localhost:8080/test
+13:49:16.129	0:0:0:0:0:0:0:1:55871	admin	200		102.99 ms
+13:50:36.664	0:0:0:0:0:0:0:1:55874	admin	REQUEST	[GET] http://localhost:8080/test
+13:50:36.777	0:0:0:0:0:0:0:1:55874	admin	200		112.45 ms
+13:51:46.986	0:0:0:0:0:0:0:1:55878	admin	REQUEST	[GET] http://localhost:8080/test
+13:51:47.147	0:0:0:0:0:0:0:1:55878	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/23: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	163.26 ms
+13:51:59.901	0:0:0:0:0:0:0:1:55878	admin	REQUEST	[GET] http://localhost:8080/test
+13:52:00.079	0:0:0:0:0:0:0:1:55878	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/23: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	178.22 ms
+13:53:48.231	0:0:0:0:0:0:0:1:55891	admin	REQUEST	[GET] http://localhost:8080/test
+13:53:48.303	0:0:0:0:0:0:0:1:55891	admin	200		72.35 ms
+13:54:03.179	0:0:0:0:0:0:0:1:55891	admin	REQUEST	[GET] http://localhost:8080/test
+13:54:03.296	0:0:0:0:0:0:0:1:55891	admin	200		117.29 ms
+13:54:14.634	0:0:0:0:0:0:0:1:55891	admin	REQUEST	[GET] http://localhost:8080/test
+13:54:14.735	0:0:0:0:0:0:0:1:55891	admin	200		101.2 ms
+13:55:02.332	0:0:0:0:0:0:0:1:55894	admin	REQUEST	[GET] http://localhost:8080/test
+13:55:02.425	0:0:0:0:0:0:0:1:55894	admin	200		93.88 ms
+13:55:17.718	0:0:0:0:0:0:0:1:55894	admin	REQUEST	[GET] http://localhost:8080/test
+13:55:17.828	0:0:0:0:0:0:0:1:55894	admin	200		109.5 ms
+13:57:18.573	0:0:0:0:0:0:0:1:55900	admin	REQUEST	[GET] http://localhost:8080/test
+13:57:18.754	0:0:0:0:0:0:0:1:55900	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/23: [XPST0008] Undefined variable $var:file.	181.64 ms
+13:57:46.406	0:0:0:0:0:0:0:1:55900	admin	REQUEST	[GET] http://localhost:8080/test
+13:57:46.544	0:0:0:0:0:0:0:1:55900	admin	200		138.26 ms
+13:59:01.427	0:0:0:0:0:0:0:1:55905	admin	REQUEST	[GET] http://localhost:8080/test
+13:59:01.617	0:0:0:0:0:0:0:1:55905	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/23: [XPST0008] Undefined variable $file.	189.77 ms
+13:59:14.622	0:0:0:0:0:0:0:1:55905	admin	REQUEST	[GET] http://localhost:8080/test
+13:59:14.747	0:0:0:0:0:0:0:1:55905	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/23: [XPST0003] Empty query.	124.74 ms
+13:59:30.788	0:0:0:0:0:0:0:1:55905	admin	REQUEST	[GET] http://localhost:8080/test
+13:59:30.893	0:0:0:0:0:0:0:1:55905	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/22: [XPST0003] Empty query.	105.78 ms
+14:00:07.903	0:0:0:0:0:0:0:1:55912	admin	REQUEST	[GET] http://localhost:8080/test
+14:00:08.019	0:0:0:0:0:0:0:1:55912	admin	200		116.11 ms
+14:00:47.238	0:0:0:0:0:0:0:1:55915	admin	REQUEST	[GET] http://localhost:8080/test
+14:00:47.387	0:0:0:0:0:0:0:1:55915	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/22: [XPST0003] Empty query.	149.27 ms
+14:02:38.371	0:0:0:0:0:0:0:1:55927	admin	REQUEST	[GET] http://localhost:8080/test
+14:02:38.492	0:0:0:0:0:0:0:1:55927	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/22: [XPST0003] Processing instruction has illegal name: 'xml'.	121.19 ms
+14:03:57.944	0:0:0:0:0:0:0:1:55935	admin	REQUEST	[GET] http://localhost:8080/test
+14:03:58.054	0:0:0:0:0:0:0:1:55935	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/22: [XPST0003] Processing instruction has illegal name: 'xml'.	110.97 ms
+14:04:19.126	0:0:0:0:0:0:0:1:55935	admin	REQUEST	[GET] http://localhost:8080/test
+14:04:19.156	0:0:0:0:0:0:0:1:55935	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 44/49: [XPST0017] Unknown function 'file:read-xml'.	30.56 ms
+14:05:26.450	0:0:0:0:0:0:0:1:55989	admin	REQUEST	[GET] http://localhost:8080/test
+14:05:26.593	0:0:0:0:0:0:0:1:55989	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/22: [XPST0003] Empty query.	143.07 ms
+14:06:01.747	0:0:0:0:0:0:0:1:55997	admin	REQUEST	[GET] http://localhost:8080/test
+14:06:01.865	0:0:0:0:0:0:0:1:55997	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/22: [XPDY0002] return: no context value bound.	118.01 ms
+14:06:19.179	0:0:0:0:0:0:0:1:55997	admin	REQUEST	[GET] http://localhost:8080/test
+14:06:19.299	0:0:0:0:0:0:0:1:55997	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/22: [XPST0017] Unknown function 'return'.	120.05 ms
+14:06:50.624	0:0:0:0:0:0:0:1:56000	admin	REQUEST	[GET] http://localhost:8080/test
+14:06:50.726	0:0:0:0:0:0:0:1:56000	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/22: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	102.26 ms
+14:07:11.089	0:0:0:0:0:0:0:1:56000	admin	REQUEST	[GET] http://localhost:8080/test
+14:07:11.188	0:0:0:0:0:0:0:1:56000	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/22: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	98.78 ms
+14:07:28.379	0:0:0:0:0:0:0:1:56000	admin	REQUEST	[GET] http://localhost:8080/cm/install/hh
+14:07:28.450	0:0:0:0:0:0:0:1:56000	admin	200		71.03 ms
+14:07:28.559	0:0:0:0:0:0:0:1:56000	admin	REQUEST	[GET] http://localhost:8080/css?style=default
+14:07:28.629	0:0:0:0:0:0:0:1:56000	admin	200		69.93 ms
+14:09:57.557	0:0:0:0:0:0:0:1:56115	admin	REQUEST	[GET] http://localhost:8080/test
+14:09:57.683	0:0:0:0:0:0:0:1:56115	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/22: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	127.38 ms
+14:09:59.978	0:0:0:0:0:0:0:1:56115	admin	REQUEST	[GET] http://localhost:8080/test
+14:10:00.111	0:0:0:0:0:0:0:1:56115	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/22: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	132.7 ms
+14:10:09.724	0:0:0:0:0:0:0:1:56115	admin	REQUEST	[GET] http://localhost:8080/test
+14:10:09.842	0:0:0:0:0:0:0:1:56115	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 46/22: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	118.46 ms
+14:10:33.437	0:0:0:0:0:0:0:1:56115	admin	REQUEST	[GET] http://localhost:8080/test
+14:10:33.523	0:0:0:0:0:0:0:1:56115	admin	200		86.05 ms
+14:11:14.469	0:0:0:0:0:0:0:1:56121	admin	REQUEST	[GET] http://localhost:8080/test
+14:11:14.552	0:0:0:0:0:0:0:1:56121	admin	200		84.93 ms
+14:11:44.157	0:0:0:0:0:0:0:1:56121	admin	REQUEST	[GET] http://localhost:8080/test
+14:11:44.268	0:0:0:0:0:0:0:1:56121	admin	200		110.93 ms
+14:12:18.781	0:0:0:0:0:0:0:1:56123	admin	REQUEST	[GET] http://localhost:8080/test
+14:12:18.828	0:0:0:0:0:0:0:1:56123	admin	200		47.42 ms
+14:12:38.126	0:0:0:0:0:0:0:1:56123	admin	REQUEST	[GET] http://localhost:8080/test
+14:12:38.234	0:0:0:0:0:0:0:1:56123	admin	200		108.36 ms
+14:13:29.029	0:0:0:0:0:0:0:1:56135	admin	REQUEST	[GET] http://localhost:8080/test
+14:13:29.168	0:0:0:0:0:0:0:1:56135	admin	200		138.39 ms
+14:13:56.148	0:0:0:0:0:0:0:1:56135	admin	REQUEST	[GET] http://localhost:8080/test
+14:13:56.186	0:0:0:0:0:0:0:1:56135	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 48/23: [XPST0003] Expecting valid step, found '|'.	38.43 ms
+14:14:08.017	0:0:0:0:0:0:0:1:56135	admin	REQUEST	[GET] http://localhost:8080/test
+14:14:08.041	0:0:0:0:0:0:0:1:56135	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 48/24: [XPST0003] Expecting valid step, found ')'.	24.75 ms
+14:14:44.512	0:0:0:0:0:0:0:1:56139	admin	REQUEST	[GET] http://localhost:8080/test
+14:14:44.632	0:0:0:0:0:0:0:1:56139	admin	200		120.39 ms
+14:15:25.365	0:0:0:0:0:0:0:1:56141	admin	REQUEST	[GET] http://localhost:8080/test
+14:15:25.392	0:0:0:0:0:0:0:1:56141	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 48/25: [XPST0003] Expecting '}', found '$'.	26.73 ms
+14:15:38.075	0:0:0:0:0:0:0:1:56141	admin	REQUEST	[GET] http://localhost:8080/test
+14:15:38.106	0:0:0:0:0:0:0:1:56141	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 48/25: [XPST0003] Expecting '}', found '{'.	30.89 ms
+14:16:51.027	0:0:0:0:0:0:0:1:56206	admin	REQUEST	[GET] http://localhost:8080/test
+14:16:51.200	0:0:0:0:0:0:0:1:56206	admin	200		174.01 ms
+14:17:35.486	0:0:0:0:0:0:0:1:56208	admin	REQUEST	[GET] http://localhost:8080/test
+14:17:35.567	0:0:0:0:0:0:0:1:56208	admin	200		81.12 ms
+16:15:29.301	0:0:0:0:0:0:0:1:56427	admin	REQUEST	[GET] http://localhost:8080/test
+16:15:29.520	0:0:0:0:0:0:0:1:56427	admin	200		219.46 ms
+16:16:44.447	0:0:0:0:0:0:0:1:56430	admin	REQUEST	[GET] http://localhost:8080/test
+16:16:44.497	0:0:0:0:0:0:0:1:56430	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 54/5: [XPST0003] Expecting '}', found ')'.	50.24 ms
+16:17:18.688	0:0:0:0:0:0:0:1:56432	admin	REQUEST	[GET] http://localhost:8080/test
+16:17:18.823	0:0:0:0:0:0:0:1:56432	admin	200		136.31 ms
+16:38:43.841	0:0:0:0:0:0:0:1:56501	admin	REQUEST	[GET] http://localhost:8080/test
+16:38:43.952	0:0:0:0:0:0:0:1:56501	admin	200		111.69 ms

@@ -1,0 +1,22 @@
+08:59:25.520	0:0:0:0:0:0:0:1:54502	admin	REQUEST	[GET] http://localhost:8080/
+08:59:25.637	0:0:0:0:0:0:0:1:54505	admin	REQUEST	[GET] http://localhost:8080/
+08:59:25.665	0:0:0:0:0:0:0:1:54505	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 13/31: [XQST0048] Declaration bodyDefault does not match the module namespace.	27.65 ms
+08:59:25.705	0:0:0:0:0:0:0:1:54502	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 13/31: [XQST0048] Declaration bodyDefault does not match the module namespace.	191.25 ms
+08:59:26.358	0:0:0:0:0:0:0:1:54509	admin	REQUEST	[GET] http://localhost:8080/favicon.ico
+08:59:26.358	0:0:0:0:0:0:0:1:54508	admin	REQUEST	[GET] http://localhost:8080/apple-touch-icon-precomposed.png
+08:59:26.363	0:0:0:0:0:0:0:1:54509	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 13/31: [XQST0048] Declaration bodyDefault does not match the module namespace.	5.29 ms
+08:59:26.377	0:0:0:0:0:0:0:1:54508	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 13/31: [XQST0048] Declaration bodyDefault does not match the module namespace.	18.98 ms
+08:59:26.407	0:0:0:0:0:0:0:1:54508	admin	REQUEST	[GET] http://localhost:8080/apple-touch-icon.png
+08:59:26.425	0:0:0:0:0:0:0:1:54508	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 13/31: [XQST0048] Declaration bodyDefault does not match the module namespace.	18.45 ms
+08:59:26.908	0:0:0:0:0:0:0:1:54511	admin	REQUEST	[GET] http://localhost:8080/
+08:59:26.913	0:0:0:0:0:0:0:1:54511	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 13/31: [XQST0048] Declaration bodyDefault does not match the module namespace.	5.02 ms
+08:59:27.118	0:0:0:0:0:0:0:1:54511	admin	REQUEST	[GET] http://localhost:8080/favicon.ico
+08:59:27.122	0:0:0:0:0:0:0:1:54511	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 13/31: [XQST0048] Declaration bodyDefault does not match the module namespace.	4.66 ms
+08:59:27.333	0:0:0:0:0:0:0:1:54511	admin	REQUEST	[GET] http://localhost:8080/
+08:59:27.338	0:0:0:0:0:0:0:1:54511	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 13/31: [XQST0048] Declaration bodyDefault does not match the module namespace.	4.69 ms
+08:59:27.465	0:0:0:0:0:0:0:1:54513	admin	REQUEST	[GET] http://localhost:8080/apple-touch-icon-precomposed.png
+08:59:27.471	0:0:0:0:0:0:0:1:54513	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 13/31: [XQST0048] Declaration bodyDefault does not match the module namespace.	6.72 ms
+08:59:27.487	0:0:0:0:0:0:0:1:54513	admin	REQUEST	[GET] http://localhost:8080/apple-touch-icon.png
+08:59:27.493	0:0:0:0:0:0:0:1:54513	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 13/31: [XQST0048] Declaration bodyDefault does not match the module namespace.	6.01 ms
+08:59:57.679	0:0:0:0:0:0:0:1:54522	admin	REQUEST	[GET] http://localhost:8080/
+08:59:57.687	0:0:0:0:0:0:0:1:54522	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/install/inst.xqm, 14/22: [XPST0008] Undefined variable $message.	8.95 ms

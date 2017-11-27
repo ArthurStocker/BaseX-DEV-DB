@@ -1,0 +1,123 @@
+13:42:28.948	SERVER	admin	OK	Server was started (port: 1984).
+13:42:47.800	127.0.0.1:49779	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	6.65 ms
+13:42:47.916	127.0.0.1:49779	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	111.98 ms
+13:42:48.570	127.0.0.1:49779	admin	OK	EXEC[0]	654.08 ms
+14:14:59.783	SERVER	admin	OK	Server was stopped (port: 1984).
+14:50:19.113	SERVER	admin	OK	Server was started (port: 1984).
+14:50:21.129	127.0.0.1:50595	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	6.59 ms
+14:50:56.536	SERVER	admin	OK	Server was stopped (port: 1984).
+14:51:16.580	SERVER	admin	OK	Server was started (port: 1984).
+14:51:18.541	127.0.0.1:50597	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	6.65 ms
+14:51:18.665	127.0.0.1:50597	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	118.13 ms
+14:51:19.303	127.0.0.1:50597	admin	OK	EXEC[0]	637.62 ms
+16:14:01.607	SERVER	admin	ERROR	Server is running or permission was denied.
+16:14:38.365	SERVER	admin	ERROR	Server is running or permission was denied.
+16:14:55.002	SERVER	admin	OK	Server was stopped (port: 1984).
+16:14:59.809	SERVER	admin	OK	Server was started (port: 1984).
+16:15:00.351	SERVER	admin	OK	Server was stopped (port: 1984).
+16:16:04.416	SERVER	admin	OK	Server was started (port: 1984).
+16:16:04.882	SERVER	admin	OK	Server was stopped (port: 1984).
+16:17:15.461	SERVER	admin	OK	Server was started (port: 1984).
+16:17:15.885	SERVER	admin	OK	Server was stopped (port: 1984).
+16:18:14.058	SERVER	admin	OK	Server was started (port: 1984).
+16:18:14.533	SERVER	admin	OK	Server was stopped (port: 1984).
+16:18:39.814	SERVER	admin	OK	Server was started (port: 1984).
+16:18:40.288	SERVER	admin	OK	Server was stopped (port: 1984).
+16:19:15.914	SERVER	admin	OK	Server was started (port: 1984).
+16:19:16.366	SERVER	admin	OK	Server was stopped (port: 1984).
+16:20:10.493	SERVER	admin	OK	Server was started (port: 1984).
+16:20:10.881	SERVER	admin	OK	Server was stopped (port: 1984).
+16:20:40.396	SERVER	admin	OK	Server was started (port: 1984).
+16:20:41.009	SERVER	admin	OK	Server was stopped (port: 1984).
+16:21:16.756	SERVER	admin	OK	Server was started (port: 1984).
+16:21:17.221	SERVER	admin	OK	Server was stopped (port: 1984).
+16:22:16.095	SERVER	admin	OK	Server was started (port: 1984).
+16:22:16.857	SERVER	admin	OK	Server was stopped (port: 1984).
+16:22:58.473	SERVER	admin	OK	Server was started (port: 1984).
+16:22:59.184	127.0.0.1:51554	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	6.48 ms
+16:22:59.312	127.0.0.1:51554	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	124.12 ms
+16:23:00.175	127.0.0.1:51554	admin	OK	EXEC[0]	863.18 ms
+16:23:00.189	SERVER	admin	OK	Server was stopped (port: 1984).
+16:23:46.497	SERVER	admin	OK	Server was started (port: 1984).
+16:23:46.904	SERVER	admin	OK	Server was stopped (port: 1984).
+16:24:21.460	SERVER	admin	OK	Server was started (port: 1984).
+16:24:22.226	127.0.0.1:51562	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	9.73 ms
+16:24:22.387	127.0.0.1:51562	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	156.01 ms
+16:24:23.014	127.0.0.1:51562	admin	OK	EXEC[0]	626.03 ms
+16:24:23.024	SERVER	admin	OK	Server was stopped (port: 1984).
+16:25:07.773	SERVER	admin	OK	Server was started (port: 1984).
+16:25:08.461	127.0.0.1:51564	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	5.54 ms
+16:25:08.593	127.0.0.1:51564	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	129.48 ms
+16:25:09.216	127.0.0.1:51564	admin	OK	EXEC[0]	622.7 ms
+16:25:09.230	SERVER	admin	OK	Server was stopped (port: 1984).
+16:26:31.647	SERVER	admin	OK	Server was started (port: 1984).
+16:26:32.265	127.0.0.1:51569	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	6.38 ms
+16:26:32.380	127.0.0.1:51569	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	112.35 ms
+16:26:32.981	127.0.0.1:51569	admin	OK	EXEC[0]	599.8 ms
+16:26:32.994	SERVER	admin	OK	Server was stopped (port: 1984).
+16:53:57.413	SERVER	admin	OK	Server was started (port: 1984).
+16:59:28.216	SERVER	admin	OK	Server was stopped (port: 1984).
+16:59:50.025	SERVER	admin	OK	Server was started (port: 1984).
+17:01:11.616	SERVER	admin	OK	Server was stopped (port: 1984).
+17:01:26.426	SERVER	admin	OK	Server was started (port: 1984).
+17:09:18.624	SERVER	admin	OK	Server was stopped (port: 1984).
+17:09:23.112	SERVER	admin	OK	Server was started (port: 1984).
+17:11:57.265	SERVER	admin	OK	Server was stopped (port: 1984).
+17:12:14.553	SERVER	admin	OK	Server was started (port: 1984).
+17:13:32.885	SERVER	admin	ERROR	Server is running or permission was denied.
+17:13:46.193	SERVER	admin	OK	Server was stopped (port: 1984).
+17:13:50.214	SERVER	admin	OK	Server was started (port: 1984).
+17:15:26.396	SERVER	admin	OK	Server was stopped (port: 1984).
+17:16:02.051	SERVER	admin	OK	Server was started (port: 1984).
+17:16:51.573	127.0.0.1:51989	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare variable $path as xs:string external; brjx:getRepositories($path)	6.67 ms
+17:16:51.711	127.0.0.1:51989	admin	OK	BIND[0] $path=/	134.6 ms
+17:16:51.867	127.0.0.1:51989	admin	REQUEST	EXEC[0]	154.81 ms
+17:16:51.867	127.0.0.1:51989	admin	ERROR	Stopped at ., 4/9: [XPST0003] Unexpected end of query: 'module namespac...'.	0.25 ms
+17:22:45.642	SERVER	admin	OK	Server was stopped (port: 1984).
+17:22:50.381	SERVER	admin	OK	Server was started (port: 1984).
+17:25:20.842	SERVER	admin	OK	Server was stopped (port: 1984).
+17:25:25.461	SERVER	admin	OK	Server was started (port: 1984).
+17:27:21.473	SERVER	admin	OK	Server was stopped (port: 1984).
+17:27:25.276	SERVER	admin	OK	Server was started (port: 1984).
+17:31:50.773	SERVER	admin	OK	Server was stopped (port: 1984).
+17:31:54.945	SERVER	admin	OK	Server was started (port: 1984).
+17:35:32.204	SERVER	admin	OK	Server was stopped (port: 1984).
+17:36:58.004	SERVER	admin	OK	Server was started (port: 1984).
+17:38:10.928	SERVER	admin	OK	Server was stopped (port: 1984).
+17:38:25.441	SERVER	admin	OK	Server was started (port: 1984).
+17:47:10.013	SERVER	admin	OK	Server was stopped (port: 1984).
+17:47:15.154	SERVER	admin	OK	Server was started (port: 1984).
+17:51:43.007	SERVER	admin	OK	Server was stopped (port: 1984).
+17:51:47.003	SERVER	admin	OK	Server was started (port: 1984).
+17:52:44.862	SERVER	admin	OK	Server was stopped (port: 1984).
+17:52:48.352	SERVER	admin	OK	Server was started (port: 1984).
+17:52:49.975	127.0.0.1:52096	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare variable $path as xs:string external; brjx:getRepositories($path)	6.09 ms
+17:52:50.091	127.0.0.1:52096	admin	OK	BIND[0] $path=/	112.4 ms
+17:52:50.445	127.0.0.1:52096	admin	REQUEST	EXEC[0]	353.46 ms
+17:52:50.445	127.0.0.1:52096	admin	ERROR	Stopped at ., 1/63: [XQST0059] Module not found: http://brjx.stocker-schmid.ch.	0.37 ms
+17:53:01.301	127.0.0.1:52099	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare variable $path as xs:string external; brjx:getRepositories($path)	0.16 ms
+17:53:01.302	127.0.0.1:52099	admin	OK	BIND[0] $path=/	0.17 ms
+17:53:01.303	127.0.0.1:52099	admin	REQUEST	EXEC[0]	1.51 ms
+17:53:01.304	127.0.0.1:52099	admin	ERROR	Stopped at ., 1/63: [XQST0059] Module not found: http://brjx.stocker-schmid.ch.	0.14 ms
+18:01:22.158	SERVER	admin	OK	Server was stopped (port: 1984).
+18:02:06.766	SERVER	admin	OK	Server wurde gestartet (Port: 1984).
+18:02:08.158	127.0.0.1:52156	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare variable $path as xs:string external; brjx:getRepositories($path)	5.47 ms
+18:02:08.249	127.0.0.1:52156	admin	OK	BIND[0] $path=/	87.3 ms
+18:02:09.019	127.0.0.1:52156	admin	OK	EXEC[0]	769.82 ms
+19:51:46.458	SERVER	admin	OK	Server wurde gestoppt (Port: 1984).
+19:51:58.793	SERVER	admin	OK	Server wurde gestartet (Port: 1984).
+19:52:00.044	127.0.0.1:52495	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare variable $path as xs:string external; brjx:getRepositories($path)	6.22 ms
+19:52:00.164	127.0.0.1:52495	admin	OK	BIND[0] $path=/	116.92 ms
+19:52:01.107	127.0.0.1:52495	admin	OK	EXEC[0]	938.63 ms
+19:53:16.459	127.0.0.1:52498	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	0.36 ms
+19:53:16.460	127.0.0.1:52498	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.19 ms
+19:53:16.494	127.0.0.1:52498	admin	OK	EXEC[0]	34.09 ms
+19:54:01.825	SERVER	admin	OK	Server wurde gestoppt (Port: 1984).
+19:55:24.256	SERVER	admin	OK	Server wurde gestartet (Port: 1984).
+19:55:24.731	127.0.0.1:52506	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare variable $path as xs:string external; brjx:getRepositories($path)	5.1 ms
+19:55:24.822	127.0.0.1:52506	admin	OK	BIND[0] $path=/	88.46 ms
+19:55:25.494	127.0.0.1:52506	admin	OK	EXEC[0]	670.41 ms
+19:56:03.631	127.0.0.1:52514	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	0.32 ms
+19:56:03.633	127.0.0.1:52514	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.38 ms
+19:56:03.658	127.0.0.1:52514	admin	OK	EXEC[0]	24.3 ms
+19:56:36.360	SERVER	admin	OK	Server wurde gestoppt (Port: 1984).

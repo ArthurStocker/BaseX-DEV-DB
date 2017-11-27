@@ -1,0 +1,395 @@
+07:18:51.550	127.0.0.1:62093	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	18.3 ms
+07:18:51.591	127.0.0.1:62093	admin	OK	Query executed in 22.13 ms.	24.14 ms
+07:18:51.609	127.0.0.1:62093	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) let $json := element json {attribute type {"object"}, for $n in $database/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } } return json:serialize($json)	0.27 ms
+07:18:51.609	127.0.0.1:62093	admin	OK	BIND[0] $dbname=global_app	0.3 ms
+07:18:51.611	127.0.0.1:62093	admin	OK	BIND[0] $tablename=bin/commands.xml	0.76 ms
+07:18:51.635	127.0.0.1:62093	admin	OK	EXEC[0]	22.96 ms
+07:18:51.653	127.0.0.1:62094	admin	REQUEST	XQUERY json:serialize(element json {attribute type {'array'}, db:open('global_app')/run/level[./rc/text()='boot']/command/*})	0.47 ms
+07:18:51.663	127.0.0.1:62094	admin	OK	Query executed in 9.36 ms.	9.78 ms
+07:18:51.666	127.0.0.1:62094	admin	REQUEST	XQUERY json:serialize(element json {attribute type {'object'}, db:open('global_app')/system/*})	0.91 ms
+07:18:51.670	127.0.0.1:62094	admin	OK	Query executed in 4.15 ms.	4.46 ms
+07:18:51.671	127.0.0.1:62094	admin	REQUEST	XQUERY json:serialize(element json {attribute type {'object'}, db:open('global_app')/global/app/*})	0.36 ms
+07:18:51.675	127.0.0.1:62094	admin	OK	Query executed in 3.41 ms.	3.68 ms
+07:35:17.461	127.0.0.1:62259	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	4.25 ms
+07:35:17.489	127.0.0.1:62259	admin	OK	Query executed in 24.83 ms.	27.41 ms
+07:35:17.505	127.0.0.1:62259	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) let $json := element json {attribute type {"object"}, for $n in $database/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } } return json:serialize($json)	0.33 ms
+07:35:17.506	127.0.0.1:62259	admin	OK	BIND[0] $dbname=global_app	0.43 ms
+07:35:17.506	127.0.0.1:62259	admin	OK	BIND[0] $tablename=bin/commands.xml	0.12 ms
+07:35:17.555	127.0.0.1:62259	admin	OK	EXEC[0]	48.95 ms
+07:35:17.591	127.0.0.1:62260	admin	REQUEST	XQUERY json:serialize(element json {attribute type {'array'}, db:open('global_app')/run/level[./rc/text()='boot']/command/*})	0.53 ms
+07:35:17.601	127.0.0.1:62260	admin	OK	Query executed in 9.6 ms.	9.98 ms
+07:35:17.623	127.0.0.1:62260	admin	REQUEST	XQUERY json:serialize(element json {attribute type {'object'}, db:open('global_app')/system/*})	0.55 ms
+07:35:17.628	127.0.0.1:62260	admin	OK	Query executed in 3.94 ms.	4.25 ms
+07:35:17.652	127.0.0.1:62260	admin	REQUEST	XQUERY json:serialize(element json {attribute type {'object'}, db:open('global_app')/global/app/*})	0.46 ms
+07:35:17.657	127.0.0.1:62260	admin	OK	Query executed in 5.03 ms.	5.42 ms
+07:38:57.030	SERVER	admin	OK	Server was stopped (port: 1984).
+07:39:05.987	SERVER	admin	OK	Server was started (port: 1984).
+07:39:12.066	127.0.0.1:62269	admin	REQUEST	INFO	30.85 ms
+07:39:12.071	127.0.0.1:62269	admin	OK		5.24 ms
+07:39:12.329	127.0.0.1:62270	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	3.91 ms
+07:39:12.831	127.0.0.1:62270	admin	OK	Query executed in 500.02 ms.	507.43 ms
+07:39:12.840	127.0.0.1:62270	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) let $json := element json {attribute type {"object"}, for $n in $database/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } } return json:serialize($json)	1.48 ms
+07:39:12.847	127.0.0.1:62270	admin	OK	BIND[0] $dbname=global_app	5.67 ms
+07:39:12.848	127.0.0.1:62270	admin	OK	BIND[0] $tablename=bin/commands.xml	0.16 ms
+07:39:12.903	127.0.0.1:62270	admin	OK	EXEC[0]	55.11 ms
+07:39:12.911	127.0.0.1:62271	admin	REQUEST	XQUERY json:serialize(element json {attribute type {'array'}, db:open('global_app')/run/level[./rc/text()='boot']/command/*})	0.81 ms
+07:39:12.925	127.0.0.1:62271	admin	OK	Query executed in 13.65 ms.	14.23 ms
+07:39:12.931	127.0.0.1:62271	admin	REQUEST	XQUERY json:serialize(element json {attribute type {'object'}, db:open('global_app')/system/*})	0.46 ms
+07:39:12.935	127.0.0.1:62271	admin	OK	Query executed in 3.73 ms.	4.03 ms
+07:39:12.936	127.0.0.1:62271	admin	REQUEST	XQUERY json:serialize(element json {attribute type {'object'}, db:open('global_app')/global/app/*})	0.37 ms
+07:39:12.939	127.0.0.1:62271	admin	OK	Query executed in 3.09 ms.	3.36 ms
+07:45:08.414	SERVER	admin	OK	Server was stopped (port: 1984).
+07:45:18.156	SERVER	admin	OK	Server was started (port: 1984).
+07:45:24.190	127.0.0.1:62283	admin	REQUEST	INFO	29.21 ms
+07:45:24.196	127.0.0.1:62283	admin	OK		5.45 ms
+07:45:24.593	127.0.0.1:62284	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	3.83 ms
+07:45:25.141	127.0.0.1:62284	admin	OK	Query executed in 547.37 ms.	548.72 ms
+07:45:25.144	127.0.0.1:62284	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) let $json := element json {attribute type {"object"}, for $n in $database/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } } return json:serialize($json)	1.46 ms
+07:45:25.208	127.0.0.1:62284	admin	OK	BIND[0] $dbname=global_app	61.69 ms
+07:45:25.462	127.0.0.1:62284	admin	OK	BIND[0] $tablename=bin/commands.xml	0.23 ms
+07:45:25.568	127.0.0.1:62284	admin	OK	EXEC[0]	105.73 ms
+07:45:25.574	127.0.0.1:62285	admin	REQUEST	XQUERY json:serialize(element json {attribute type {'array'}, db:open('global_app')/run/level[./rc/text()='boot']/command/*})	0.67 ms
+07:45:25.593	127.0.0.1:62285	admin	OK	Query executed in 18.61 ms.	19.11 ms
+07:45:25.594	127.0.0.1:62285	admin	REQUEST	XQUERY json:serialize(element json {attribute type {'object'}, db:open('global_app')/system/*})	0.42 ms
+07:45:25.600	127.0.0.1:62285	admin	OK	Query executed in 5.47 ms.	5.77 ms
+07:45:25.601	127.0.0.1:62285	admin	REQUEST	XQUERY json:serialize(element json {attribute type {'object'}, db:open('global_app')/global/app/*})	0.36 ms
+07:45:25.605	127.0.0.1:62285	admin	OK	Query executed in 3.9 ms.	4.19 ms
+07:45:41.835	127.0.0.1:62286	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	0.45 ms
+07:45:41.844	127.0.0.1:62286	admin	OK	Query executed in 8.65 ms.	9.04 ms
+07:45:41.854	127.0.0.1:62286	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) let $json := element json {attribute type {"object"}, for $n in $database/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } } return json:serialize($json)	0.26 ms
+07:45:41.855	127.0.0.1:62286	admin	OK	BIND[0] $dbname=global_app	0.18 ms
+07:45:41.855	127.0.0.1:62286	admin	OK	BIND[0] $tablename=bin/commands.xml	0.1 ms
+07:45:41.866	127.0.0.1:62286	admin	OK	EXEC[0]	11.46 ms
+07:45:41.898	127.0.0.1:62287	admin	REQUEST	XQUERY json:serialize(element json {attribute type {'array'}, db:open('global_app')/run/level[./rc/text()='boot']/command/*})	0.43 ms
+07:45:41.903	127.0.0.1:62287	admin	OK	Query executed in 4.6 ms.	4.93 ms
+07:45:41.921	127.0.0.1:62287	admin	REQUEST	XQUERY json:serialize(element json {attribute type {'object'}, db:open('global_app')/system/*})	0.42 ms
+07:45:41.929	127.0.0.1:62287	admin	OK	Query executed in 7.13 ms.	7.48 ms
+07:45:41.950	127.0.0.1:62287	admin	REQUEST	XQUERY json:serialize(element json {attribute type {'object'}, db:open('global_app')/global/app/*})	0.47 ms
+07:45:41.952	127.0.0.1:62287	admin	OK	Query executed in 2.63 ms.	2.93 ms
+07:53:30.318	127.0.0.1:62297	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	0.42 ms
+07:53:30.333	127.0.0.1:62297	admin	OK	Query executed in 14.48 ms.	14.87 ms
+07:53:30.333	127.0.0.1:62297	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) let $json := element json {attribute type {"object"}, for $n in $database/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } } return json:serialize($json)	0.16 ms
+07:53:30.334	127.0.0.1:62297	admin	OK	BIND[0] $dbname=global_app	0.16 ms
+07:53:30.334	127.0.0.1:62297	admin	OK	BIND[0] $tablename=bin/commands.xml	0.1 ms
+07:53:30.345	127.0.0.1:62297	admin	OK	EXEC[0]	10.97 ms
+07:53:30.362	127.0.0.1:62298	admin	REQUEST	XQUERY json:serialize(element json {attribute type {'array'}, db:open('global_app')/run/level[./rc/text()='boot']/command/*})	0.49 ms
+07:53:30.366	127.0.0.1:62298	admin	OK	Query executed in 3.1 ms.	3.42 ms
+07:53:30.370	127.0.0.1:62298	admin	REQUEST	XQUERY json:serialize(element json {attribute type {'object'}, db:open('global_app')/system/*})	0.34 ms
+07:53:30.376	127.0.0.1:62298	admin	OK	Query executed in 5.14 ms.	5.48 ms
+07:53:30.376	127.0.0.1:62298	admin	REQUEST	XQUERY json:serialize(element json {attribute type {'object'}, db:open('global_app')/global/app/*})	0.29 ms
+07:53:30.381	127.0.0.1:62298	admin	OK	Query executed in 4.55 ms.	4.83 ms
+15:56:42.284	127.0.0.1:54722	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	2.1 ms
+15:56:42.299	127.0.0.1:54722	admin	OK	Query executed in 8.4 ms.	14.4 ms
+15:56:42.302	127.0.0.1:54722	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) let $json := element json {attribute type {"object"}, for $n in $database/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } } return json:serialize($json)	0.25 ms
+15:56:42.306	127.0.0.1:54722	admin	OK	BIND[0] $dbname=global_app	0.36 ms
+15:56:42.307	127.0.0.1:54722	admin	OK	BIND[0] $tablename=bin/commands.xml	0.14 ms
+15:56:42.317	127.0.0.1:54722	admin	OK	EXEC[0]	9.99 ms
+15:57:23.955	127.0.0.1:54729	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	0.37 ms
+15:57:23.962	127.0.0.1:54729	admin	OK	Query executed in 6.44 ms.	7.21 ms
+15:57:23.986	127.0.0.1:54729	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) let $json := element json {attribute type {"object"}, for $n in $database/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } } return json:serialize($json)	0.22 ms
+15:57:23.987	127.0.0.1:54729	admin	OK	BIND[0] $dbname=global_app	0.15 ms
+15:57:23.987	127.0.0.1:54729	admin	OK	BIND[0] $tablename=bin/commands.xml	0.12 ms
+15:57:24.003	127.0.0.1:54729	admin	OK	EXEC[0]	15.89 ms
+15:57:24.038	127.0.0.1:54730	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/level[./rc/text()='boot']/command/*})	0.21 ms
+15:57:24.040	127.0.0.1:54730	admin	OK	BIND[0] $dbname=global_app	0.22 ms
+15:57:24.045	127.0.0.1:54730	admin	OK	EXEC[0]	4.62 ms
+15:57:24.062	127.0.0.1:54730	admin	OK	QUERY[1] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'object'}, db:open($dbname)/system/*}	3.02 ms
+15:57:24.072	127.0.0.1:54730	admin	OK	BIND[1] $dbname=global_app	0.25 ms
+15:57:24.091	127.0.0.1:54730	admin	REQUEST	EXEC[1]	19.61 ms
+15:57:24.092	127.0.0.1:54730	admin	ERROR	Stopped at ., 1/130: [XPST0003] Expecting closing bracket: json:serialize.	0.13 ms
+15:59:08.899	127.0.0.1:54733	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	0.54 ms
+15:59:08.921	127.0.0.1:54733	admin	OK	Query executed in 20.71 ms.	21.44 ms
+15:59:08.929	127.0.0.1:54733	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) let $json := element json {attribute type {"object"}, for $n in $database/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } } return json:serialize($json)	0.7 ms
+15:59:08.933	127.0.0.1:54733	admin	OK	BIND[0] $dbname=global_app	0.23 ms
+15:59:08.934	127.0.0.1:54733	admin	OK	BIND[0] $tablename=bin/commands.xml	0.13 ms
+15:59:08.953	127.0.0.1:54733	admin	OK	EXEC[0]	19.49 ms
+15:59:09.015	127.0.0.1:54734	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/level[./rc/text()='boot']/command/*})	0.21 ms
+15:59:09.016	127.0.0.1:54734	admin	OK	BIND[0] $dbname=global_app	0.69 ms
+15:59:09.021	127.0.0.1:54734	admin	OK	EXEC[0]	4.44 ms
+15:59:09.044	127.0.0.1:54734	admin	OK	QUERY[1] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'object'}, db:open($dbname)/system/*})	0.23 ms
+15:59:09.045	127.0.0.1:54734	admin	OK	BIND[1] $dbname=global_app	0.15 ms
+15:59:09.049	127.0.0.1:54734	admin	OK	EXEC[1]	4.04 ms
+15:59:09.062	127.0.0.1:54734	admin	OK	QUERY[2] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'object'}, db:open($dbname)/global/app/*})	0.51 ms
+15:59:09.063	127.0.0.1:54734	admin	OK	BIND[2] $dbname=global_app	0.15 ms
+15:59:09.069	127.0.0.1:54734	admin	OK	EXEC[2]	6.55 ms
+15:59:41.104	127.0.0.1:54737	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	0.54 ms
+15:59:41.109	127.0.0.1:54737	admin	OK	Query executed in 4.23 ms.	4.95 ms
+15:59:41.117	127.0.0.1:54737	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) let $json := element json {attribute type {"object"}, for $n in $database/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } } return json:serialize($json)	0.23 ms
+15:59:41.118	127.0.0.1:54737	admin	OK	BIND[0] $dbname=global_app	0.17 ms
+15:59:41.119	127.0.0.1:54737	admin	OK	BIND[0] $tablename=bin/commands.xml	0.11 ms
+15:59:41.129	127.0.0.1:54737	admin	OK	EXEC[0]	10.12 ms
+15:59:41.148	127.0.0.1:54738	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/level[./rc/text()='boot']/command/*})	0.19 ms
+15:59:41.149	127.0.0.1:54738	admin	OK	BIND[0] $dbname=global_app	0.15 ms
+15:59:41.152	127.0.0.1:54738	admin	OK	EXEC[0]	3.33 ms
+15:59:41.155	127.0.0.1:54738	admin	OK	QUERY[1] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'object'}, db:open($dbname)/system/*})	0.12 ms
+15:59:41.169	127.0.0.1:54738	admin	OK	BIND[1] $dbname=global_app	0.26 ms
+15:59:41.172	127.0.0.1:54738	admin	OK	EXEC[1]	2.9 ms
+15:59:41.174	127.0.0.1:54738	admin	OK	QUERY[2] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'object'}, db:open($dbname)/global/app/*})	0.1 ms
+15:59:41.190	127.0.0.1:54738	admin	OK	BIND[2] $dbname=global_app	0.24 ms
+15:59:41.192	127.0.0.1:54738	admin	OK	EXEC[2]	8.08 ms
+16:32:59.714	127.0.0.1:54873	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	3.4 ms
+16:32:59.727	127.0.0.1:54873	admin	OK	Query executed in 6.48 ms.	12.05 ms
+16:32:59.765	127.0.0.1:54873	admin	OK	QUERY[0] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {"object"}, db:open($dbname)/system/*})	0.25 ms
+16:32:59.766	127.0.0.1:54873	admin	OK	BIND[0] $dbname=global_app	0.34 ms
+16:32:59.766	127.0.0.1:54873	admin	OK	BIND[0] $tablename=bin/commands.xml	0.1 ms
+16:32:59.771	127.0.0.1:54873	admin	OK	EXEC[0]	4.3 ms
+16:32:59.803	127.0.0.1:54874	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/level[./rc/text()='boot']/command/*})	1.26 ms
+16:32:59.805	127.0.0.1:54874	admin	OK	BIND[0] $dbname=global_app	0.17 ms
+16:32:59.817	127.0.0.1:54874	admin	OK	EXEC[0]	12.32 ms
+16:32:59.835	127.0.0.1:54874	admin	OK	QUERY[1] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'object'}, db:open($dbname)/system/*})	0.27 ms
+16:32:59.836	127.0.0.1:54874	admin	OK	BIND[1] $dbname=global_app	0.18 ms
+16:32:59.840	127.0.0.1:54874	admin	OK	EXEC[1]	3.13 ms
+16:32:59.856	127.0.0.1:54874	admin	OK	QUERY[2] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'object'}, db:open($dbname)/global/app/*})	0.16 ms
+16:32:59.856	127.0.0.1:54874	admin	OK	BIND[2] $dbname=global_app	0.16 ms
+16:32:59.860	127.0.0.1:54874	admin	OK	EXEC[2]	3.06 ms
+16:33:07.882	127.0.0.1:54881	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	0.38 ms
+16:33:07.885	127.0.0.1:54881	admin	OK	Query executed in 2.58 ms.	2.86 ms
+16:33:07.891	127.0.0.1:54881	admin	OK	QUERY[0] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {"object"}, db:open($dbname)/system/*})	0.18 ms
+16:33:07.891	127.0.0.1:54881	admin	OK	BIND[0] $dbname=global_app	0.13 ms
+16:33:07.891	127.0.0.1:54881	admin	OK	BIND[0] $tablename=bin/commands.xml	0.1 ms
+16:33:07.894	127.0.0.1:54881	admin	OK	EXEC[0]	2.78 ms
+16:33:07.916	127.0.0.1:54882	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/level[./rc/text()='boot']/command/*})	0.22 ms
+16:33:07.917	127.0.0.1:54882	admin	OK	BIND[0] $dbname=global_app	0.14 ms
+16:33:07.923	127.0.0.1:54882	admin	OK	EXEC[0]	5.27 ms
+16:33:07.924	127.0.0.1:54882	admin	OK	QUERY[1] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'object'}, db:open($dbname)/system/*})	0.09 ms
+16:33:07.924	127.0.0.1:54882	admin	OK	BIND[1] $dbname=global_app	0.11 ms
+16:33:07.927	127.0.0.1:54882	admin	OK	EXEC[1]	2.38 ms
+16:33:07.930	127.0.0.1:54882	admin	OK	QUERY[2] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'object'}, db:open($dbname)/global/app/*})	0.12 ms
+16:33:07.930	127.0.0.1:54882	admin	OK	BIND[2] $dbname=global_app	0.12 ms
+16:33:07.935	127.0.0.1:54882	admin	OK	EXEC[2]	2.39 ms
+16:35:05.076	127.0.0.1:54888	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	0.35 ms
+16:35:05.084	127.0.0.1:54888	admin	OK	Query executed in 4.46 ms.	7.9 ms
+16:35:05.091	127.0.0.1:54888	admin	OK	QUERY[0] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {"object"}, db:open($dbname)/system/*})	0.17 ms
+16:35:05.091	127.0.0.1:54888	admin	OK	BIND[0] $dbname=global_app	0.12 ms
+16:35:05.092	127.0.0.1:54888	admin	OK	BIND[0] $tablename=bin/commands.xml	0.12 ms
+16:35:05.097	127.0.0.1:54888	admin	OK	EXEC[0]	5.07 ms
+16:35:05.139	127.0.0.1:54889	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/level[./rc/text()='boot']/command/*})	0.15 ms
+16:35:05.140	127.0.0.1:54889	admin	OK	BIND[0] $dbname=global_app	0.21 ms
+16:35:05.156	127.0.0.1:54889	admin	OK	EXEC[0]	3.2 ms
+16:35:05.173	127.0.0.1:54889	admin	OK	QUERY[1] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'object'}, db:open($dbname)/system/*})	0.27 ms
+16:35:05.174	127.0.0.1:54889	admin	OK	BIND[1] $dbname=global_app	0.2 ms
+16:35:05.186	127.0.0.1:54889	admin	OK	EXEC[1]	11.03 ms
+16:35:05.204	127.0.0.1:54889	admin	OK	QUERY[2] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'object'}, db:open($dbname)/global/app/*})	0.16 ms
+16:35:05.205	127.0.0.1:54889	admin	OK	BIND[2] $dbname=global_app	0.15 ms
+16:35:05.208	127.0.0.1:54889	admin	OK	EXEC[2]	2.78 ms
+17:13:29.885	127.0.0.1:55062	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	0.83 ms
+17:13:29.891	127.0.0.1:55062	admin	OK	Query executed in 5.53 ms.	6.33 ms
+17:13:29.904	127.0.0.1:55062	admin	OK	QUERY[0] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {"object"}, db:open($dbname)/system/*})	0.18 ms
+17:13:29.972	127.0.0.1:55062	admin	OK	BIND[0] $dbname=global_app	14.22 ms
+17:13:29.975	127.0.0.1:55062	admin	OK	BIND[0] $tablename=bin/commands.xml	0.17 ms
+17:13:29.982	127.0.0.1:55062	admin	OK	EXEC[0]	6.77 ms
+17:13:30.004	127.0.0.1:55063	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/level[./rc/text()='boot']/command/*})	0.15 ms
+17:13:30.004	127.0.0.1:55063	admin	OK	BIND[0] $dbname=global_app	0.14 ms
+17:13:30.008	127.0.0.1:55063	admin	OK	EXEC[0]	3.28 ms
+17:13:30.008	127.0.0.1:55063	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/system/*})	0.09 ms
+17:13:30.009	127.0.0.1:55063	admin	OK	BIND[1] $dbname=global_app	0.11 ms
+17:13:30.014	127.0.0.1:55063	admin	OK	EXEC[1]	5.43 ms
+17:13:30.015	127.0.0.1:55063	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/global/app/*})	0.07 ms
+17:13:30.015	127.0.0.1:55063	admin	OK	BIND[2] $dbname=global_app	0.11 ms
+17:13:30.020	127.0.0.1:55063	admin	OK	EXEC[2]	5.41 ms
+17:15:26.957	127.0.0.1:55069	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	0.58 ms
+17:15:26.961	127.0.0.1:55069	admin	OK	Query executed in 2.0 ms.	3.97 ms
+17:15:26.965	127.0.0.1:55069	admin	OK	QUERY[0] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {"object"}, db:open($dbname)/system/*})	0.1 ms
+17:15:26.965	127.0.0.1:55069	admin	OK	BIND[0] $dbname=global_app	0.12 ms
+17:15:26.966	127.0.0.1:55069	admin	OK	BIND[0] $tablename=bin/commands.xml	0.09 ms
+17:15:26.968	127.0.0.1:55069	admin	OK	EXEC[0]	2.22 ms
+17:15:26.974	127.0.0.1:55070	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/level[./rc/text()='boot']/command/*})	0.13 ms
+17:15:26.975	127.0.0.1:55070	admin	OK	BIND[0] $dbname=global_app	0.16 ms
+17:15:26.979	127.0.0.1:55070	admin	OK	EXEC[0]	3.48 ms
+17:15:26.992	127.0.0.1:55070	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/system/*})	0.17 ms
+17:15:26.993	127.0.0.1:55070	admin	OK	BIND[1] $dbname=global_app	0.14 ms
+17:15:26.996	127.0.0.1:55070	admin	OK	EXEC[1]	2.91 ms
+17:15:26.996	127.0.0.1:55070	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/global/app/*})	0.07 ms
+17:15:26.997	127.0.0.1:55070	admin	OK	BIND[2] $dbname=global_app	0.13 ms
+17:15:26.999	127.0.0.1:55070	admin	OK	EXEC[2]	2.58 ms
+17:15:27.000	127.0.0.1:55070	admin	OK	QUERY[3] declare variable $dbname as xs:string external; let $json := element json {attribute type {"object"}, element commands {attribute type {"object"}, for $n in db:open($dbname)/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } }} return json:serialize($json)	0.11 ms
+17:15:27.000	127.0.0.1:55070	admin	OK	BIND[3] $dbname=global_app	0.1 ms
+17:15:27.029	127.0.0.1:55070	admin	OK	EXEC[3]	28.4 ms
+17:25:23.719	127.0.0.1:55646	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	1.26 ms
+17:25:23.727	127.0.0.1:55646	admin	OK	Query executed in 6.1 ms.	7.36 ms
+17:25:23.729	127.0.0.1:55646	admin	OK	QUERY[0] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {"object"}, db:open($dbname)/system/*})	0.14 ms
+17:25:23.730	127.0.0.1:55646	admin	OK	BIND[0] $dbname=global_app	0.18 ms
+17:25:23.730	127.0.0.1:55646	admin	OK	BIND[0] $tablename=bin/commands.xml	0.08 ms
+17:25:23.738	127.0.0.1:55646	admin	OK	EXEC[0]	7.75 ms
+17:25:23.741	127.0.0.1:55647	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/level[./rc/text()='boot']/command/*})	0.12 ms
+17:25:23.741	127.0.0.1:55647	admin	OK	BIND[0] $dbname=global_app	0.13 ms
+17:25:23.745	127.0.0.1:55647	admin	OK	EXEC[0]	3.9 ms
+17:25:23.747	127.0.0.1:55647	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/system/*})	0.11 ms
+17:25:23.755	127.0.0.1:55647	admin	OK	BIND[1] $dbname=global_app	0.23 ms
+17:25:23.758	127.0.0.1:55647	admin	OK	EXEC[1]	3.02 ms
+17:25:23.765	127.0.0.1:55647	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/global/app/*})	0.14 ms
+17:25:23.777	127.0.0.1:55647	admin	OK	BIND[2] $dbname=global_app	0.25 ms
+17:25:23.781	127.0.0.1:55647	admin	OK	EXEC[2]	3.79 ms
+17:25:23.812	127.0.0.1:55647	admin	OK	QUERY[3] declare variable $dbname as xs:string external; let $json := element json {attribute type {"object"}, element commands {attribute type {"object"}, for $n in db:open($dbname)/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } }} return json:serialize($json)	0.18 ms
+17:25:23.813	127.0.0.1:55647	admin	OK	BIND[3] $dbname=global_app	0.15 ms
+17:25:23.827	127.0.0.1:55647	admin	OK	EXEC[3]	13.69 ms
+17:28:16.484	SERVER	admin	OK	Server was stopped (port: 1984).
+17:28:28.019	SERVER	admin	OK	Server was started (port: 1984).
+17:28:36.548	127.0.0.1:55658	admin	REQUEST	INFO	31.12 ms
+17:28:36.554	127.0.0.1:55658	admin	OK		4.99 ms
+17:28:36.825	127.0.0.1:55659	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	3.96 ms
+17:28:37.285	127.0.0.1:55659	admin	OK	Query executed in 458.57 ms.	470.1 ms
+17:28:37.299	127.0.0.1:55659	admin	OK	QUERY[0] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {"object"}, db:open($dbname)/system/*})	2.31 ms
+17:28:37.310	127.0.0.1:55659	admin	OK	BIND[0] $dbname=global_app	10.45 ms
+17:28:37.311	127.0.0.1:55659	admin	OK	BIND[0] $tablename=bin/commands.xml	0.16 ms
+17:28:37.346	127.0.0.1:55659	admin	OK	EXEC[0]	34.1 ms
+17:28:37.354	127.0.0.1:55660	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/level[./rc/text()='boot']/command/*})	0.18 ms
+17:28:37.355	127.0.0.1:55660	admin	OK	BIND[0] $dbname=global_app	0.17 ms
+17:28:37.368	127.0.0.1:55660	admin	OK	EXEC[0]	13.49 ms
+17:28:37.374	127.0.0.1:55660	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/system/*})	0.17 ms
+17:28:37.375	127.0.0.1:55660	admin	OK	BIND[1] $dbname=global_app	0.19 ms
+17:28:37.378	127.0.0.1:55660	admin	OK	EXEC[1]	3.45 ms
+17:28:37.380	127.0.0.1:55660	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/global/app/*})	0.16 ms
+17:28:37.380	127.0.0.1:55660	admin	OK	BIND[2] $dbname=global_app	0.14 ms
+17:28:37.383	127.0.0.1:55660	admin	OK	EXEC[2]	3.08 ms
+17:28:37.384	127.0.0.1:55660	admin	OK	QUERY[3] declare variable $dbname as xs:string external; let $json := element json {attribute type {"object"}, element commands {attribute type {"object"}, for $n in db:open($dbname)/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } }} return json:serialize($json)	0.16 ms
+17:28:37.384	127.0.0.1:55660	admin	OK	BIND[3] $dbname=global_app	0.13 ms
+17:28:37.422	127.0.0.1:55660	admin	OK	EXEC[3]	37.98 ms
+17:58:29.643	127.0.0.1:56621	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	2.31 ms
+17:58:29.669	127.0.0.1:56621	admin	OK	Query executed in 10.92 ms.	25.52 ms
+17:58:29.669	127.0.0.1:56621	admin	OK	QUERY[0] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {"object"}, db:open($dbname)/system/*})	0.15 ms
+17:58:29.670	127.0.0.1:56621	admin	OK	BIND[0] $dbname=global_app	0.28 ms
+17:58:29.670	127.0.0.1:56621	admin	OK	BIND[0] $tablename=bin/commands.xml	0.12 ms
+17:58:29.677	127.0.0.1:56621	admin	OK	EXEC[0]	6.13 ms
+17:58:29.682	127.0.0.1:56622	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/level[./rc/text()='boot']/command/*})	0.23 ms
+17:58:29.682	127.0.0.1:56622	admin	OK	BIND[0] $dbname=global_app	0.16 ms
+17:58:29.694	127.0.0.1:56622	admin	OK	EXEC[0]	11.36 ms
+17:58:29.695	127.0.0.1:56622	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/system/*})	0.13 ms
+17:58:29.695	127.0.0.1:56622	admin	OK	BIND[1] $dbname=global_app	0.16 ms
+17:58:29.727	127.0.0.1:56622	admin	OK	EXEC[1]	31.4 ms
+17:58:29.730	127.0.0.1:56622	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/global/app/*})	0.16 ms
+17:58:29.740	127.0.0.1:56622	admin	OK	BIND[2] $dbname=global_app	0.27 ms
+17:58:29.744	127.0.0.1:56622	admin	OK	EXEC[2]	3.21 ms
+17:58:29.757	127.0.0.1:56622	admin	OK	QUERY[3] declare variable $dbname as xs:string external; let $json := element json {attribute type {"object"}, element commands {attribute type {"object"}, for $n in db:open($dbname)/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } }} return json:serialize($json)	0.9 ms
+17:58:29.758	127.0.0.1:56622	admin	OK	BIND[3] $dbname=global_app	0.16 ms
+17:58:29.781	127.0.0.1:56622	admin	OK	EXEC[3]	23.0 ms
+18:02:18.687	SERVER	admin	OK	Server was stopped (port: 1984).
+18:02:27.768	SERVER	admin	OK	Server was started (port: 1984).
+18:02:37.846	127.0.0.1:56777	admin	REQUEST	INFO	28.01 ms
+18:02:37.852	127.0.0.1:56777	admin	OK		5.76 ms
+18:02:38.201	127.0.0.1:56779	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	3.74 ms
+18:02:38.667	127.0.0.1:56779	admin	OK	Query executed in 453.42 ms.	465.77 ms
+18:02:38.669	127.0.0.1:56779	admin	OK	QUERY[0] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {"object"}, db:open($dbname)/system/*})	1.29 ms
+18:02:38.678	127.0.0.1:56779	admin	OK	BIND[0] $dbname=global_app	6.89 ms
+18:02:38.679	127.0.0.1:56779	admin	OK	BIND[0] $tablename=bin/commands.xml	0.14 ms
+18:02:38.726	127.0.0.1:56779	admin	OK	EXEC[0]	47.2 ms
+18:02:38.730	127.0.0.1:56780	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/level[./rc/text()='boot']/command/*})	0.17 ms
+18:02:38.730	127.0.0.1:56780	admin	OK	BIND[0] $dbname=global_app	0.17 ms
+18:02:38.753	127.0.0.1:56780	admin	OK	EXEC[0]	22.01 ms
+18:02:38.753	127.0.0.1:56780	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/system/*})	0.1 ms
+18:02:38.754	127.0.0.1:56780	admin	OK	BIND[1] $dbname=global_app	0.17 ms
+18:02:38.760	127.0.0.1:56780	admin	OK	EXEC[1]	6.08 ms
+18:02:38.761	127.0.0.1:56780	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/global/app/*})	0.11 ms
+18:02:38.761	127.0.0.1:56780	admin	OK	BIND[2] $dbname=global_app	0.13 ms
+18:02:38.764	127.0.0.1:56780	admin	OK	EXEC[2]	2.99 ms
+18:02:38.771	127.0.0.1:56780	admin	OK	QUERY[3] declare variable $dbname as xs:string external; let $json := element json {attribute type {"object"}, element commands {attribute type {"object"}, for $n in db:open($dbname)/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } }} return json:serialize($json)	0.18 ms
+18:02:38.774	127.0.0.1:56780	admin	OK	BIND[3] $dbname=global_app	0.17 ms
+18:02:38.799	127.0.0.1:56780	admin	OK	EXEC[3]	24.84 ms
+23:27:13.576	127.0.0.1:57340	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	2.07 ms
+23:27:13.586	127.0.0.1:57340	admin	OK	Query executed in 9.25 ms.	10.28 ms
+23:27:13.589	127.0.0.1:57340	admin	OK	QUERY[0] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {"object"}, db:open($dbname)/system/*})	0.41 ms
+23:27:13.590	127.0.0.1:57340	admin	OK	BIND[0] $dbname=global_app	0.26 ms
+23:27:13.591	127.0.0.1:57340	admin	OK	BIND[0] $tablename=bin/commands.xml	0.14 ms
+23:27:13.598	127.0.0.1:57340	admin	OK	EXEC[0]	6.46 ms
+23:27:13.605	127.0.0.1:57341	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/level[./rc/text()='boot']/command/*})	0.17 ms
+23:27:13.606	127.0.0.1:57341	admin	OK	BIND[0] $dbname=global_app	0.17 ms
+23:27:13.611	127.0.0.1:57341	admin	OK	EXEC[0]	4.42 ms
+23:27:13.625	127.0.0.1:57341	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/system/*})	0.22 ms
+23:27:13.625	127.0.0.1:57341	admin	OK	BIND[1] $dbname=global_app	0.14 ms
+23:27:13.629	127.0.0.1:57341	admin	OK	EXEC[1]	8.22 ms
+23:27:13.661	127.0.0.1:57341	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/global/app/*})	0.22 ms
+23:27:13.669	127.0.0.1:57341	admin	OK	BIND[2] $dbname=global_app	0.34 ms
+23:27:13.672	127.0.0.1:57341	admin	OK	EXEC[2]	3.21 ms
+23:27:13.687	127.0.0.1:57341	admin	OK	QUERY[3] declare variable $dbname as xs:string external; let $json := element json {attribute type {"object"}, element commands {attribute type {"object"}, for $n in db:open($dbname)/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } }} return json:serialize($json)	0.32 ms
+23:27:13.689	127.0.0.1:57341	admin	OK	BIND[3] $dbname=global_app	0.18 ms
+23:27:13.710	127.0.0.1:57341	admin	OK	EXEC[3]	20.8 ms
+23:28:20.101	127.0.0.1:57372	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	0.54 ms
+23:28:20.103	127.0.0.1:57372	admin	OK	Query executed in 2.23 ms.	2.53 ms
+23:28:20.105	127.0.0.1:57372	admin	OK	QUERY[0] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {"object"}, db:open($dbname)/system/*})	0.13 ms
+23:28:20.107	127.0.0.1:57372	admin	OK	BIND[0] $dbname=global_app	0.74 ms
+23:28:20.109	127.0.0.1:57372	admin	OK	BIND[0] $tablename=bin/commands.xml	0.13 ms
+23:28:20.115	127.0.0.1:57372	admin	OK	EXEC[0]	6.85 ms
+23:28:20.142	127.0.0.1:57373	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/level[./rc/text()='boot']/command/*})	0.18 ms
+23:28:20.142	127.0.0.1:57373	admin	OK	BIND[0] $dbname=global_app	0.13 ms
+23:28:20.150	127.0.0.1:57373	admin	OK	EXEC[0]	7.72 ms
+23:28:20.151	127.0.0.1:57373	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/system/*})	0.11 ms
+23:28:20.152	127.0.0.1:57373	admin	OK	BIND[1] $dbname=global_app	0.15 ms
+23:28:20.155	127.0.0.1:57373	admin	OK	EXEC[1]	8.67 ms
+23:28:20.162	127.0.0.1:57373	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/global/app/*})	0.38 ms
+23:28:20.163	127.0.0.1:57373	admin	OK	BIND[2] $dbname=global_app	0.35 ms
+23:28:20.167	127.0.0.1:57373	admin	OK	EXEC[2]	2.65 ms
+23:28:20.167	127.0.0.1:57373	admin	OK	QUERY[3] declare variable $dbname as xs:string external; let $json := element json {attribute type {"object"}, element commands {attribute type {"object"}, for $n in db:open($dbname)/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } }} return json:serialize($json)	0.12 ms
+23:28:20.168	127.0.0.1:57373	admin	OK	BIND[3] $dbname=global_app	0.18 ms
+23:28:20.184	127.0.0.1:57373	admin	OK	EXEC[3]	15.71 ms
+23:28:40.767	127.0.0.1:57380	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	8.07 ms
+23:28:40.773	127.0.0.1:57380	admin	OK	Query executed in 5.57 ms.	6.02 ms
+23:28:40.783	127.0.0.1:57380	admin	OK	QUERY[0] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {"object"}, db:open($dbname)/system/*})	0.22 ms
+23:28:40.804	127.0.0.1:57380	admin	OK	BIND[0] $dbname=global_app	0.27 ms
+23:28:40.809	127.0.0.1:57380	admin	OK	BIND[0] $tablename=bin/commands.xml	0.19 ms
+23:28:40.822	127.0.0.1:57380	admin	OK	EXEC[0]	3.66 ms
+23:28:40.852	127.0.0.1:57381	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/level[./rc/text()='boot']/command/*})	0.18 ms
+23:28:40.853	127.0.0.1:57381	admin	OK	BIND[0] $dbname=global_app	0.14 ms
+23:28:40.856	127.0.0.1:57381	admin	OK	EXEC[0]	3.44 ms
+23:28:40.862	127.0.0.1:57381	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/system/*})	0.2 ms
+23:28:40.865	127.0.0.1:57381	admin	OK	BIND[1] $dbname=global_app	0.16 ms
+23:28:40.868	127.0.0.1:57381	admin	OK	EXEC[1]	2.59 ms
+23:28:40.870	127.0.0.1:57381	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/global/app/*})	0.09 ms
+23:28:40.873	127.0.0.1:57381	admin	OK	BIND[2] $dbname=global_app	0.15 ms
+23:28:40.879	127.0.0.1:57381	admin	OK	EXEC[2]	3.13 ms
+23:28:40.883	127.0.0.1:57381	admin	OK	QUERY[3] declare variable $dbname as xs:string external; let $json := element json {attribute type {"object"}, element commands {attribute type {"object"}, for $n in db:open($dbname)/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } }} return json:serialize($json)	0.22 ms
+23:28:40.884	127.0.0.1:57381	admin	OK	BIND[3] $dbname=global_app	0.19 ms
+23:28:40.892	127.0.0.1:57381	admin	OK	EXEC[3]	8.53 ms
+23:28:42.646	127.0.0.1:57383	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	0.47 ms
+23:28:42.654	127.0.0.1:57383	admin	OK	Query executed in 7.36 ms.	7.81 ms
+23:28:42.673	127.0.0.1:57383	admin	OK	QUERY[0] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {"object"}, db:open($dbname)/system/*})	0.28 ms
+23:28:42.681	127.0.0.1:57383	admin	OK	BIND[0] $dbname=global_app	0.27 ms
+23:28:42.687	127.0.0.1:57383	admin	OK	BIND[0] $tablename=bin/commands.xml	0.21 ms
+23:28:42.694	127.0.0.1:57383	admin	OK	EXEC[0]	3.39 ms
+23:28:42.726	127.0.0.1:57384	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/level[./rc/text()='boot']/command/*})	0.15 ms
+23:28:42.729	127.0.0.1:57384	admin	OK	BIND[0] $dbname=global_app	0.18 ms
+23:28:42.734	127.0.0.1:57384	admin	OK	EXEC[0]	4.37 ms
+23:28:42.757	127.0.0.1:57384	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/system/*})	0.17 ms
+23:28:42.758	127.0.0.1:57384	admin	OK	BIND[1] $dbname=global_app	0.14 ms
+23:28:42.775	127.0.0.1:57384	admin	OK	EXEC[1]	17.03 ms
+23:28:42.775	127.0.0.1:57384	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/global/app/*})	0.08 ms
+23:28:42.777	127.0.0.1:57384	admin	OK	BIND[2] $dbname=global_app	1.2 ms
+23:28:42.793	127.0.0.1:57384	admin	OK	EXEC[2]	16.4 ms
+23:28:42.794	127.0.0.1:57384	admin	OK	QUERY[3] declare variable $dbname as xs:string external; let $json := element json {attribute type {"object"}, element commands {attribute type {"object"}, for $n in db:open($dbname)/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } }} return json:serialize($json)	0.13 ms
+23:28:42.794	127.0.0.1:57384	admin	OK	BIND[3] $dbname=global_app	0.13 ms
+23:28:42.815	127.0.0.1:57384	admin	OK	EXEC[3]	20.17 ms
+23:29:32.918	127.0.0.1:57387	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	0.41 ms
+23:29:32.921	127.0.0.1:57387	admin	OK	Query executed in 2.9 ms.	3.24 ms
+23:29:32.936	127.0.0.1:57387	admin	OK	QUERY[0] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {"object"}, db:open($dbname)/system/*})	0.2 ms
+23:29:32.938	127.0.0.1:57387	admin	OK	BIND[0] $dbname=global_app	0.15 ms
+23:29:32.938	127.0.0.1:57387	admin	OK	BIND[0] $tablename=bin/commands.xml	0.08 ms
+23:29:32.942	127.0.0.1:57387	admin	OK	EXEC[0]	2.7 ms
+23:29:32.962	127.0.0.1:57388	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/level[./rc/text()='boot']/command/*})	0.17 ms
+23:29:32.963	127.0.0.1:57388	admin	OK	BIND[0] $dbname=global_app	0.13 ms
+23:29:32.969	127.0.0.1:57388	admin	OK	EXEC[0]	5.61 ms
+23:29:32.983	127.0.0.1:57388	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/system/*})	0.23 ms
+23:29:32.985	127.0.0.1:57388	admin	OK	BIND[1] $dbname=global_app	0.18 ms
+23:29:32.989	127.0.0.1:57388	admin	OK	EXEC[1]	3.87 ms
+23:29:32.997	127.0.0.1:57388	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/global/app/*})	0.19 ms
+23:29:33.003	127.0.0.1:57388	admin	OK	BIND[2] $dbname=global_app	0.59 ms
+23:29:33.007	127.0.0.1:57388	admin	OK	EXEC[2]	2.36 ms
+23:29:33.014	127.0.0.1:57388	admin	OK	QUERY[3] declare variable $dbname as xs:string external; let $json := element json {attribute type {"object"}, element commands {attribute type {"object"}, for $n in db:open($dbname)/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } }} return json:serialize($json)	0.18 ms
+23:29:33.036	127.0.0.1:57388	admin	OK	BIND[3] $dbname=global_app	0.24 ms
+23:29:33.045	127.0.0.1:57388	admin	OK	EXEC[3]	8.33 ms
+23:33:25.705	127.0.0.1:57400	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	0.47 ms
+23:33:25.710	127.0.0.1:57400	admin	OK	Query executed in 4.68 ms.	5.36 ms
+23:33:25.721	127.0.0.1:57400	admin	OK	QUERY[0] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {"object"}, db:open($dbname)/system/*})	0.24 ms
+23:33:25.722	127.0.0.1:57400	admin	OK	BIND[0] $dbname=global_app	0.23 ms
+23:33:25.722	127.0.0.1:57400	admin	OK	BIND[0] $tablename=bin/commands.xml	0.08 ms
+23:33:25.726	127.0.0.1:57400	admin	OK	EXEC[0]	3.76 ms
+23:33:25.729	127.0.0.1:57401	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/level[./rc/text()='boot']/command/*})	0.1 ms
+23:33:25.729	127.0.0.1:57401	admin	OK	BIND[0] $dbname=global_app	0.1 ms
+23:33:25.734	127.0.0.1:57401	admin	OK	EXEC[0]	5.51 ms
+23:33:25.737	127.0.0.1:57401	admin	OK	QUERY[1] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/system/*})	0.21 ms
+23:33:25.738	127.0.0.1:57401	admin	OK	BIND[1] $dbname=global_app	0.14 ms
+23:33:25.740	127.0.0.1:57401	admin	OK	EXEC[1]	2.34 ms
+23:33:25.741	127.0.0.1:57401	admin	OK	QUERY[2] declare variable $dbname as xs:string external; json:serialize(element json {attribute type {'object'}, db:open($dbname)/global/app/*})	0.08 ms
+23:33:25.741	127.0.0.1:57401	admin	OK	BIND[2] $dbname=global_app	0.09 ms
+23:33:25.743	127.0.0.1:57401	admin	OK	EXEC[2]	2.11 ms
+23:33:25.768	127.0.0.1:57401	admin	OK	QUERY[3] declare variable $dbname as xs:string external; let $json := element json {attribute type {"object"}, element commands {attribute type {"object"}, for $n in db:open($dbname)/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } }} return json:serialize($json)	0.17 ms
+23:33:25.768	127.0.0.1:57401	admin	OK	BIND[3] $dbname=global_app	0.28 ms
+23:33:25.779	127.0.0.1:57401	admin	OK	EXEC[3]	9.12 ms

@@ -1,0 +1,22 @@
+17:16:31.805	0:0:0:0:0:0:0:1:52673	admin	REQUEST	[GET] http://localhost:8080/test
+17:16:31.960	0:0:0:0:0:0:0:1:52673	admin	200		162.61 ms
+17:18:12.083	0:0:0:0:0:0:0:1:52689	admin	REQUEST	[GET] http://localhost:8080/test
+17:18:12.175	0:0:0:0:0:0:0:1:52689	admin	200		91.49 ms
+17:19:32.545	0:0:0:0:0:0:0:1:52695	admin	REQUEST	[GET] http://localhost:8080/test
+17:19:32.648	0:0:0:0:0:0:0:1:52695	admin	200		103.53 ms
+19:56:40.516	0:0:0:0:0:0:0:1:53456	admin	REQUEST	[GET] http://localhost:8080/test
+19:56:40.673	0:0:0:0:0:0:0:1:53456	admin	200		165.71 ms
+20:04:40.677	0:0:0:0:0:0:0:1:53587	admin	REQUEST	[GET] http://localhost:8080/test
+20:04:40.720	0:0:0:0:0:0:0:1:53587	admin	200		42.97 ms
+20:05:04.445	0:0:0:0:0:0:0:1:53587	admin	REQUEST	[GET] http://localhost:8080/test
+20:05:04.582	0:0:0:0:0:0:0:1:53587	admin	200		137.61 ms
+20:05:19.843	0:0:0:0:0:0:0:1:53587	admin	REQUEST	[GET] http://localhost:8080/test
+20:05:19.955	0:0:0:0:0:0:0:1:53587	admin	200		111.41 ms
+20:33:46.153	0:0:0:0:0:0:0:1:53876	admin	REQUEST	[GET] http://localhost:8080/test
+20:33:46.184	0:0:0:0:0:0:0:1:53876	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 66/5: [XPST0003] Expecting 'default', found '}'.	31.1 ms
+20:34:28.383	0:0:0:0:0:0:0:1:53880	admin	REQUEST	[GET] http://localhost:8080/test
+20:34:28.460	0:0:0:0:0:0:0:1:53880	admin	200		76.36 ms
+20:57:27.948	0:0:0:0:0:0:0:1:54422	admin	REQUEST	[GET] http://localhost:8080/test
+20:57:28.255	0:0:0:0:0:0:0:1:54422	admin	200		317.47 ms
+20:59:14.799	0:0:0:0:0:0:0:1:54437	admin	REQUEST	[GET] http://localhost:8080/test
+20:59:14.858	0:0:0:0:0:0:0:1:54437	admin	200		59.53 ms

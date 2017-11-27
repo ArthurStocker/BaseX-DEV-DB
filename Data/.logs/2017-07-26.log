@@ -1,0 +1,37 @@
+07:40:40.607	127.0.0.1:56754	admin	OK	QUERY[0] json:serialize(db:system(), map { 'format': 'jsonml' })	5.63 ms
+07:40:40.631	127.0.0.1:56754	admin	OK	EXEC[0]	18.25 ms
+07:42:29.111	127.0.0.1:56757	admin	OK	QUERY[0] json:serialize(db:system(), map { 'format': 'jsonml' })	0.22 ms
+07:42:29.117	127.0.0.1:56757	admin	OK	EXEC[0]	6.0 ms
+07:45:11.173	127.0.0.1:56764	admin	OK	QUERY[0] json:serialize(db:system(), map { 'format': 'json' })	0.2 ms
+07:45:11.190	127.0.0.1:56764	admin	REQUEST	EXEC[0]	16.77 ms
+07:45:11.190	127.0.0.1:56764	admin	ERROR	Gestoppt in ., 1/15: [XPTY0004] Invalid 'format' value 'json'; must be one of: direct,attributes,jsonml,basic,map.	0.12 ms
+07:45:44.921	127.0.0.1:56766	admin	OK	QUERY[0] json:serialize(db:system())	0.23 ms
+07:45:44.938	127.0.0.1:56766	admin	OK	EXEC[0]	15.96 ms
+07:50:37.316	127.0.0.1:56781	admin	OK	QUERY[0] json:serialize(db:system(), map { 'format': 'direct' })	0.25 ms
+07:50:37.322	127.0.0.1:56781	admin	OK	EXEC[0]	5.52 ms
+07:51:36.688	127.0.0.1:56784	admin	OK	QUERY[0] json:serialize(db:system(), map { 'format': 'basic' })	0.21 ms
+07:51:36.692	127.0.0.1:56784	admin	REQUEST	EXEC[0]	3.61 ms
+07:51:36.692	127.0.0.1:56784	admin	ERROR	Gestoppt in ., 1/15: [FOJS0006] Element 'system' has invalid namespace: ''.	0.11 ms
+07:52:13.695	127.0.0.1:56785	admin	OK	QUERY[0] json:serialize(db:system(), map { 'format': 'attributes' })	0.25 ms
+07:52:13.701	127.0.0.1:56785	admin	OK	EXEC[0]	5.58 ms
+07:52:32.321	127.0.0.1:56786	admin	OK	QUERY[0] json:serialize(db:system(), map { 'format': 'map' })	0.26 ms
+07:52:32.327	127.0.0.1:56786	admin	OK	EXEC[0]	5.14 ms
+07:54:13.831	127.0.0.1:56800	admin	OK	QUERY[0] json:serialize(db:system(), map { 'format': 'jsonml' })	0.23 ms
+07:54:13.835	127.0.0.1:56800	admin	OK	EXEC[0]	3.67 ms
+17:05:42.704	127.0.0.1:56813	admin	OK	QUERY[0] json:serialize(db:system()/*, map { 'format': 'jsonml' })	0.26 ms
+17:05:42.726	127.0.0.1:56813	admin	REQUEST	EXEC[0]	21.07 ms
+17:05:42.726	127.0.0.1:56813	admin	ERROR	Gestoppt in ., 1/15: [SERE0023] Only one item can be serialized with JSON.	0.11 ms
+17:06:41.891	127.0.0.1:56816	admin	OK	QUERY[0] json:serialize(db:system(), map { 'format': 'jsonml' })	0.33 ms
+17:06:41.897	127.0.0.1:56816	admin	OK	EXEC[0]	3.68 ms
+17:12:45.909	SERVER	admin	OK	Server wurde gestoppt (Port: 1984).
+17:14:21.812	SERVER	admin	OK	Server wurde gestartet (Port: 1984).
+17:14:31.187	127.0.0.1:56867	admin	OK	QUERY[0] json:serialize(db:system(), map { 'format': 'jsonml' })	3.14 ms
+17:14:31.703	127.0.0.1:56867	admin	OK	EXEC[0]	514.25 ms
+17:14:46.322	SERVER	admin	OK	Server wurde gestoppt (Port: 1984).
+17:15:45.168	SERVER	admin	OK	Server wurde gestartet (Port: 1984).
+17:15:46.765	127.0.0.1:56869	admin	OK	QUERY[0] json:serialize(db:system(), map { 'format': 'jsonml' })	2.75 ms
+17:15:47.162	127.0.0.1:56869	admin	OK	EXEC[0]	395.38 ms
+17:29:38.061	SERVER	admin	OK	Server wurde gestoppt (Port: 1984).
+17:31:03.665	SERVER	admin	OK	Server wurde gestartet (Port: 1984).
+17:31:05.138	127.0.0.1:56878	admin	OK	QUERY[0] json:serialize(db:system(), map { 'format': 'jsonml' })	2.43 ms
+17:31:05.534	127.0.0.1:56878	admin	OK	EXEC[0]	394.8 ms

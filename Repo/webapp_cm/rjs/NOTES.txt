@@ -1,0 +1,1359 @@
+----
+  {
+    "name": "BRjxConnector",
+    "conf": "config/basex.cfg",
+    "tableloader": "json:serialize( element json { attribute type {'array'}, for $db in db:list() for $doc in collection($db) return element _ { attribute type {'object'}, element id {data($doc/*/id)}, element app {tokenize($db, '_')[1]}, element name {$doc/*/name()}, element database {$db}, element document {document-uri($doc)} } })",
+    "moduleloader": "declare variable $dbname as xs:string external;declare variable $tableid as xs:string external;declare variable $modulename as xs:string external;let $database := db:open($dbname) return json:serialize( element json { attribute type {'array'}, for $r in $database/*[./id = $tableid]/records/_ where ($r/name = $modulename and $r/type = 'javascript') return $r })",
+    "ModuleInitCode": "declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/module/*)",
+    "ReplacementRules": "declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/replacementrules/*)",
+    "JavascriptReservedWords": "declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/reservedwords/*)"
+  }
+
+
+---- 
+// retrive Server Properties
+/*
+if (!global.System.BaseXConnector.ServerProperties) {
+  global.System.BaseXConnector.ServerProperties = {};
+  var BaseXServerProperties = client.query('INFO').split('\n');
+
+  for (var property in BaseXServerProperties) {
+    if (!(BaseXServerProperties[property].indexOf(':') == -1)) {
+      global.System.BaseXConnector.ServerProperties[BaseXServerProperties[property].split(':')[0].replace(/ /g,'')] = BaseXServerProperties[property].split(':')[1].replace(/ /g,'');
+    }
+  }
+}
+*/
+
+
+//test.replace(/(.+{"file:\/\/\/).+([^,]"}.+)/, '$1'+ replacement_string + '$2')
+
+
+//"declare variable $dbname as xs:string external;json:serialize(element json {attribute type {'array'}, element _ {db:open($dbname)//*/app/init/text()}})"
+
+//[
+//  {
+//    "name": "GlobalApp",
+//    "ConfDBName": "app_conf",
+//    "RegisteredApplications": "declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)",
+//    "RegisteredActions": "declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)"
+//  }
+//]
+
+
+
+---- MAIN
+var {BRjxEnvironment} = require('./global/environment');
+var {BRjxConnector} = require('./global/connector');
+var {BRjxApp} = require('./global/app');
+
+
+
+/**
+ * extend the global scope with local system object gs
+ */
+var _BRjx = module.singleton("BRjx", function() {
+  return BRjxEnvironment;
+});
+Object.defineProperty(global, "BRjx", {
+  get: function() {
+    return _BRjx;
+  },
+  configurable: true,
+  enumerable: true
+});
+
+BRjx.configuration({debugLevel: 'info', isDebug: true});
+BRjx.init();
+
+
+/**
+ * extend the global scope with local database object db
+ */
+var _BRjxDB = module.singleton("BRjxDB", function() {
+  return BRjxConnector;
+});
+Object.defineProperty(global, "BRjxDB", {
+  get: function() {
+    return _BRjxDB;
+  },
+  configurable: true,
+  enumerable: true
+});
+
+BRjxDB.configuration();
+BRjxDB.init();
+
+
+/**
+ * create the global application object app
+ */
+var _BRjxAPP = module.singleton("BRjxAPP", function() {
+  return BRjxApp;
+});
+Object.defineProperty(global, "BRjxAPP", {
+  get: function() {
+    return _BRjxAPP;
+  },
+  configurable: true,
+  enumerable: true
+});
+
+BRjxAPP.configuration();
+
+
+
+----
+//function (options) { return fun..... } _options.input = input;  console.dir(_options.input);
+
+BRjxAPP.configure('TEST', 
+  function (input, output) {
+    if (!_options.input) _options.input = input; 
+    console.dir(_options.input); 
+    console.log(input); 
+    console.log('FROM TEST'); 
+    _options.input = output; 
+    return 'END OF TEST';
+  }
+);
+
+
+
+  BRjxAPP.init(request);
+
+  
+  
+  console.dir(request.session.data.VCONSOLE);
+  console.dir(VCONSOLE);
+  console.dir(VCHANDLE);
+  
+
+
+  // 1. resolve against actions
+  if (typeof BRjxAPP[request.action] === 'function') {
+    return BRjxAPP[request.action](request);
+  }
+  // 2. return 404 response
+  return response.notFound(request.pathInfo);
+
+
+
+-----
+var lang = require('./lang');
+
+  console.dir('INIT....');
+
+  var test = Class.create({
+
+    initialize: function() {
+    },
+
+    info: function() {
+      console.info('INFO from test.info() ........');
+    }
+  });
+
+  var x = new test();
+  x.info();
+
+
+
+---- APP
+/**
+ * @fileOverview Provides the Template.
+ */
+
+export( 'BRjxApp');
+
+// var {main} = org.template.core.main;
+
+
+/**
+ * The module version string with the major and minor version number.
+ */
+var Version = '0.0.1';
+
+
+/**
+ * An HTTP session object based on top of servlet sessions.
+ * Properties of the session's data object are persisted
+ * between requests of the same client.
+ * @param request a JSGI or servlet request object
+ */
+function ServletSession(request) {
+
+  var data;
+  var volatileData;
+
+  var servletRequest = request instanceof javax.servlet.ServletRequest ? request : request.env.servletRequest;
+
+  function getSession() {
+    return servletRequest.getSession();
+  }
+
+  /**
+   * A container for things to store in this session between requests.
+   */
+  Object.defineProperty(this, "data", {
+    get: function() {
+      if (!data) {
+        // session.data is a JavaAdapter that directly proxies property access
+        // to the attributes in the servlet session object.
+        data = new JavaAdapter(org.mozilla.javascript.NativeObject, {
+          put: function(name, start, value) {
+            getSession().setAttribute(name, value);
+          },
+          get: function(name, start) {
+            if (Object.prototype[name]) {
+             return Object.prototype[name];
+            }
+            return getSession().getAttribute(name);
+          }
+        });
+      }
+      return data;
+    },
+    enumerable: true
+  });
+
+  /**
+   * True if this session was created in the current request.
+   * This can be useful to find out if the client has cookies disabled
+   * for cookie-based sessions.
+   */
+  Object.defineProperty(this, "isNew", {
+    get: function() {
+      return getSession().isNew();
+    },
+    enumerable: true
+  });
+
+  /**
+   * Createtime of the current session.
+   */
+  Object.defineProperty(this, "creationTime", {
+    get: function() {
+      return getSession().getCreationTime();
+    },
+    enumerable: true
+  });
+
+  /**
+   * A time interval in seconds, which the session will be open.
+   * If the interval is exceeded, the session gets invalidated.
+   */
+  Object.defineProperty(this, "maxInactiveInterval", {
+    get: function() {
+      return getSession().getMaxInactiveInterval();
+    },
+    set: function(interval) {
+      return getSession().setMaxInactiveInterval(interval);
+    },
+    enumerable: true
+  });
+
+  /**
+   * Time in Unix epoch milliseconds since the last client access.
+   */
+  Object.defineProperty(this, "lastAccessedTime", {
+    get: function() {
+      return getSession().getLastAccessedTime();
+    },
+    enumerable: true
+  });
+
+  /**
+   * Destroys the current session and any data bound to it.
+   */
+  this.invalidate = function() {
+    getSession().invalidate();
+  };
+
+  // save and reset the volatile session object
+  volatileData = getSession().getAttribute("__volatileData__");
+  getSession().setAttribute("__volatileData__", null);
+
+  /**
+   * A volatile property which survives a HTTP redirect and can be used
+   * for warnings or error messages in forms. After a requests was handled,
+   * the property is reset to null.
+   */
+  Object.defineProperty(this, "volatile", {
+    get: function() {
+      return volatileData;
+    },
+    set: function(value) {
+      getSession().setAttribute("__volatileData__", value);
+    },
+    enumerable: true
+  });
+}
+
+
+/**
+ * Handle application route
+ * @see -
+ * @param {options}
+ * @since 0.0.1
+ * @returns GlobalApp
+ */
+var BRjxApp = new BRjxClass({name: 'BRjxApp', Session: {Create: ServletSession}, CONFDBName: 'BRjx_conf', CONFDBPath: '/*'});
+
+/**
+ * This function provides support for anonymous user sessions.
+ * @see -
+ * @param {request} the request object
+ * @since 0.0.1
+ * @returns -
+ */
+BRjxApp.configure('clientsessions',
+  function(request) {
+    if (BRjx.typeof(_options.Session, 'object')) {
+      var _session;
+
+      /**
+       * A session object for the current request. If no session exists
+       * a new one will be created.
+       * @see ServletSession
+       * @name request.session
+       */
+      Object.defineProperty(request, "session", {
+        get: function() {
+          if (!_session)
+            _session = new _options.Session.Create(request);
+            return _session;
+        },
+        enumerable: true
+      });
+    }
+  }
+);
+
+/**
+ * This function activates the VCONSOLE to handle STDOUT/STDERR via BRjx.
+ * @see -
+ * @param {request}
+ * @since 0.0.1
+ * @returns request.session.data.VCONSOLE
+ */
+BRjxApp.configure('clientvconsole',
+  function(request) {
+    var _VCONSOLE = request.session.data.VCONSOLE || new BRjxVconsole();
+   
+    /**
+     * provides global access to the sessions VCONSOLE
+     */
+    Object.defineProperty(global, "VCONSOLE", {
+      get: function() {
+        return _VCONSOLE.buffer;
+      },
+      configurable: true,
+      enumerable: false
+    });
+
+    /**
+     * provides global access to the sessions VCHANDLE
+     */
+    Object.defineProperty(global, "VCHANDLE", {
+      get: function() {
+        return _VCONSOLE.handle;
+      },
+      configurable: true,
+      enumerable: false
+    });
+
+    /**
+     * provides global access to the sessions VCFLUSH function
+     */
+    Object.defineProperty(global, "VCFLUSH", {
+      get: function() {
+        return _VCONSOLE.flush;
+      },
+      configurable: true,
+      enumerable: false
+    });
+
+    /**
+     *
+     */
+    request.session.data.VCONSOLE = _VCONSOLE;
+  }
+);
+
+/**
+ * This function provides support to handle multiple applications.
+ * @see -
+ * @param 
+ * @since 0.0.1
+ * @returns -
+ */
+BRjxApp.configure('applications',
+  function() {
+
+    /**
+     * A application object for the current app. If no action exists
+     * a new one will be created.
+     * @see -
+     * @name app.'action'
+     */
+    var applications = BRjxDB.query(_options.RegisteredApplications || false, [['$dbname', _options.CONFDBName]]);
+    // save config
+    var fs = require('fs');
+    Object.keys(applications).forEach(function(item ,index) {
+      var path = BRjx.root+'config/'+item+'.cfg';
+      fs.write(path, JSON.stringify(availableapps[item]));
+      fs.touch(path);
+    });
+  }
+);
+
+/**
+ * This function provides support to handle actions.
+ * @see -
+ * @param
+ * @since 0.0.1
+ * @returns -
+ */
+BRjxApp.configure('actions',
+  function() {
+
+    /**
+     * A action object for the current app. If no action exists
+     * a new one will be created.
+     * @see -
+     * @name app.'action'
+     */
+    var actions = BRjxDB.query(_options.RegisteredActions || false, [['$dbname', _options.CONFDBName]]);
+    for (var i = 0; i<actions.length; i++) {
+      if (!self[action[i]]) self[action[i]] = function(request) {
+        var path = request.pathInfo.slice(1).replace(/\//, '_');
+        if (path) {
+          var {Action} = require(BRjx.root+'routes/'+path+'.js');
+          _options.app = this;
+          _options.request = request;
+          return Action(_options);
+       }
+      };
+    };
+  }
+);
+
+/**
+ * This function provides routing to the appropriate action for the current request.
+ * @see -
+ * @param {request} the request object
+ * @since 0.0.1
+ * @returns -
+ */
+BRjxApp.configure('route',
+  function(request) {
+
+    /**
+     * A action object for the current request. If no action exists
+     * a new one will be created.
+     * @see -
+     * @name request.action
+    */
+    Object.defineProperty(request, "action", {
+      get: function() {
+        return this.pathInfo.slice(1).replace(/\//, '_') || 'index';
+      },
+      enumerable: true
+    });
+  }
+);
+
+
+
+---- CONNECTOR
+/**
+ * @fileOverview Provides the BaseX Extension.
+ */
+
+export( 'BRjxConnector');
+
+// var {main} = org.template.core.main;
+var {BRjxClass} = require('./environment');
+
+
+/**
+ * The module version string with the major and minor version number.
+ */
+var Version = '0.0.1';
+
+
+/**
+ * Create a BaseX Connector
+ * @see - 
+ * @param {options}
+ * @since 0.0.1
+ * @returns the ClientSession
+ */
+var BRjxConnector = new BRjxClass({name: 'BRjxConnector', Client: {ID: './basex/client'}});
+
+/**
+ * This function provides support to set custom client module.
+ * @see -
+ * @param {moduleID} the client moduleID 
+ * @since 0.0.1
+ * @returns -
+ */
+BRjxConnector.configure('client',
+  function(options) {
+    if (!BRjx.typeof(options, 'undefined') && !BRjx.typeof(options.Client, 'undefined') && !BRjx.typeof(options.Client.ID, 'undefined') && 
+        !BRjx.typeof(options, 'global') && !BRjx.typeof(options.Client, 'global') && !BRjx.typeof(options.Client.ID, 'global') &&
+        !BRjx.typeof(options.Client.ID, 'string')) {
+      options.Client.ID = './basex/client';
+    }
+    if (!BRjx.typeof(_options.Client, 'object')) {
+      _options.Client = {};
+    }
+    if (!BRjx.typeof(_options.Client.ID, 'string')) {
+      _options.Client.ID = undefined;
+    }
+    if (!BRjx.typeof(_options.Client.Module, 'object') || !BRjx.typeof(_options.Client.Module.query, 'function')) {
+      var {DBClient} = require(options.Client.ID || _options.Client.ID || './basex/client');
+
+      _options.Client.Module = DBClient;
+    }
+    self['query'] = _options.Client.Module.query;
+
+    return _options.Client.Module;
+  }
+);
+
+
+///**
+// * Load Module init code
+// * @see -
+// * @param {}
+// * @since 0.0.1
+// * @returns module code
+// */
+//BRjxConnector.configure('initModule',
+//  function(resource) {
+//    var modulejssource = self.query(_options.App.ModuleInitCode, [['$dbname', _options.App.ConfigDBName]]);
+//    var content = '';
+//    var source = JSON.parse(resource.content);
+//
+//    // find table
+//    var table = this.getTableID(source.table);
+//    if (table.error) throw table.toString();
+//
+//    // load module
+//    var jsExport = 'export(';
+//    var jsSource = '\n';
+//    var moduleExportsDependencies;
+//
+//    var result = getModule();
+//
+//    result.records.forEach(function(item, index) {
+//      // create module code
+//      var jsSource = modulejssource.initCode
+//                     .replace(/{{name}}/g, item.name)
+//                     .replace(/{{version}}/g, item.version)
+//                     .replace(/{{jssource}}/g, jsSource+item.script+'\n');
+//
+//      /**
+//       * TODO:  create availableincludes list in this connector, 
+//       *        create dependency management based on "availableincludes" in gs (GlobalSystem) object,
+//       *        check output and replace item.properties iteration with dependencies
+//       */
+//      //moduleExportsDependencies = this.resolveModuleDependency(jsSource, availableincludes);
+//
+//      item.properties.forEach(function(item, index) {
+//        if (index == 0) {
+//          var sep = "'";
+//        } else {
+//          var sep = ",'";
+//        }
+//        jsExport = jsExport+sep+item+"'";
+//      });
+//    });
+//
+//    jsExport = jsExport+'); ';
+//    content = jsExport+jsSource;
+//
+//    return content;
+//  }
+//);
+//
+///**
+// * Resilve Module dependency
+// * @see -
+// * @param {}
+// * @since 0.0.1
+// * @returns dependencys
+// */
+//BRjxConnector.configure('resolveModuleDependency',
+//  function(jssource, availableincludes) {
+//    var result = new BRjx.result('dependencies');
+//    var records = [{ id: 0, vars: {}, funcs: {}, depends: {} }];
+//
+//    /*
+//    // TODO: get config and use that property JavascriptReservedWords, ConfigDBName
+//    var modulereservedwords = self.query(_options.App.JavascriptReservedWords, [['$dbname', _options.App.ConfigDBName]]); 
+//    */
+//
+//    var onLevel = 0;
+//    var inFunction = false;
+//
+//    jssource.split(/\n/).forEach(
+//      function(item, index) {
+//        if (item.match(/(function\s+\w+\()/) && onLevel == 0) inFunction = true;
+//        if (item.match(/{/) && inFunction) onLevel = onLevel + item.match(/{/).length;
+//        if (item.match(/}/) && inFunction) onLevel = onLevel - item.match(/}/).length;
+//        if (onLevel == 0) inFunction = false;
+//        if (item.match(/^\s*var.*/) && !inFunction) {
+//          item
+//            .match(/^\s*var\s*(.*);?/)[1]
+//            .replace(/;/,'')
+//            .split(/,(?=\s*\w+\s*=)/)
+//            .map(
+//              function(item) { 
+//                return item
+//                  .split(/,(?=\s*\w+\s*$)/)
+//                  .map(
+//                    function(item) { 
+//                      var key = item.split(/=/)[0].trim();
+//                      var value = item.split(/=/)[1] ? item.split(/=/)[1].trim() : '';
+//                      if (key != 'gs' && key != 'Version' && key[0].match(/^[^_|^{]/)) records[0].vars[key]= value;
+//                    }
+//                  );
+//              }
+//            );
+//        }
+//        if (item.match(/^\s*function\s+/) && onLevel == 1) {
+//          var key = item.match(/^\s*function\s+(.+)\((.*)\)/)[1]
+//          var value = item.match(/^\s*function\s+(.+)\((.*)\)/)[2];
+//          key = key ? key.trim() : undefined;
+//          value = value ? value.trim() : '';
+//          if (key[0].match(/^[^_|^{]/)) records[0].funcs[key] = value;
+//        }
+//      }
+//    );
+//
+//    jssource.split(/\n/).forEach(
+//      function(item, index) {
+//        if (item.match(/[\s*|\.|=]\w+\(.*\)/)) { // [\s*|\.|=]
+//          var key = item.match(/[\s*|\.|=](\w+)\((.*)\)(?!:\))/)[1]
+//          var value = ''; //item.match(/[\s*|\.|=](\w+)\((.*)\)(?!:\))/)[2];
+//          key = key ? key.trim() : undefined;
+//          //value = value ? value.trim() : '';
+//          if (key[0].match(/^[^_|^{]/) && !records[0].funcs[key] && availableincludes.indexOf(key) > -1 ) {
+//            //&& modulereservedwords.indexOf(key) === -1
+//            records[0].depends[key] = value;
+//          }
+//        }
+//      }
+//    );
+//    
+//    result.records = records;
+//
+//    console.log(JSON.stringify(result));
+//    
+//    return result;
+//  }
+//);
+//  
+///**
+// * BaseX Connector GetTable
+// * @see -
+// * @param {resource}
+// * @since 0.0.1
+// * @returns tablerecord object
+// */
+//// BaseX Connector GetTable
+//BRjxConnector.configure('getTable',
+//  function(tablename) {
+//    // local variables
+//    var result = new BRjx.result();
+//
+//    // validate table
+//    if (!tablename || (tablename.split('_').length < 2)) {
+//      var app = undefined;
+//      var table = undefined;
+//    } else {
+//      var app = tablename.split('_')[0].toString(); 
+//      var table = tablename.split('_')[1].toString();
+//    } 
+//
+//    // find table or return an error
+//    var _table = undefined;
+//     
+//    // retrive tables
+//    if (app && table) {
+//      result = self.query(_options.BaseXConnector.tableloader);
+//      result.records.forEach(function(item, index) {
+//        if (!_table && (item.app == app) && (item.name == table)) {
+//          _table = item;
+//        }
+//      });
+//
+//      if (_table) {
+//        result.records[0] = _table;
+//      } else {
+//        result.error = 'unknown table: '+table+'!';
+//      }
+//    } else {
+//        result.error = 'invalid tablename: '+table+'!';
+//    }
+//
+//    return result;
+//  }
+//);
+//
+///**
+// * BaseX Connector GetModule
+// * @see -
+// * @param {resource}
+// * @since 0.0.1
+// * @returns -
+// */
+//BRjxConnector.configure('getModule',
+//  function() {
+//    return self.query(_options.BaseXConnector.moduleloader, [['$dbname', table.database],['$tableid', table.id],['$modulename', source.script.name]])
+//  }
+//); 
+
+
+
+---- ENVIRONMENT
+/**
+ * @fileOverview Provides the Template.
+ */
+
+export( 'BRjxClass',
+        'BRjxVconsole',
+        'BRjxEnvironment');
+
+// var {main} = org.template.core.main;
+var {traceHelper, assertHelper} = org.ringojs.util.ScriptUtils;
+var {TermWriter, BOLD, ONRED, ONYELLOW, RESET} = require("ringo/term");
+
+
+/**
+ * The module version string with the major and minor version number.
+ */
+var Version = '0.0.1';
+
+var timers = {};
+var writer = new TermWriter(require('system').stdout);
+var errWriter = new TermWriter(require('system').stderr);
+
+
+/**
+ * Load Modules from the DB (BRjx.require)
+ * @see -
+ * @param {}
+ * @since 0.0.1
+ * @returns a module
+ */
+// Extend require so it redirect to DB Connector when loading sjs Files 
+require.extensions['.sjs'] = function(resource) {
+  return BRjxDB.initModule(resource);
+};
+
+/**
+ * Get Date/Time to prefix log entries.
+ * @see -
+ * @param {}
+ * @since 0.0.1
+ * @returns formated date/time
+ */
+function now() {
+  var now = new Date();
+  var y = now.getFullYear();
+  var m = (now.getMonth().toPaddedString(2)); //Array(3-(now.getMonth().toString().length)).join("0") + 
+  var d = (now.getDate().toPaddedString(2));
+  var H = (now.getHours().toPaddedString(2));
+  var M = (now.getMinutes().toPaddedString(2));
+  var S = (now.getSeconds().toPaddedString(2));
+  var n = (now.getMilliseconds().toPaddedString(3));
+  return y + "-" + m + "-" + d + " " + H + ":" + M + ":" + S + "." + n + ":";
+}
+
+/**
+ * Format message.
+ * @see -
+ * @param {}
+ * @since 0.0.1
+ * @returns formated message
+ */
+function format() {
+  var msg = arguments[0] ? String(arguments[0]) : "";
+  var pattern = /%[sdifo]/;
+  for (var i = 1; i < arguments.length; i++) {
+    msg = pattern.test(msg)
+      ? msg.replace(pattern, String(arguments[i]))
+      : msg + arguments[i];
+  }
+  return msg;
+}
+
+/**
+ * Filter VCONSOLE.
+ * The Message is stored in the VCONSOLE array;
+ * @see -
+ * @param {}
+ * @since 0.0.1
+ * @returns filterd _stdXXX
+ */
+function filter(std, name, message) {
+  // create html code from dump
+  if (message) {
+    std.push({std: name, text: JSON.stringify(message, null, 2)});
+  } else {
+    if (name) {
+      return std.filter(function(item) {
+        return (item.std == name);
+      });
+    } else { 
+      return std;
+    }
+  } 
+}
+
+
+/**
+ * Define BRjxClass
+ * @see -
+ * @param {options}
+ * @since 0.0.1
+ * @returns BRjxClass
+ */
+function BRjxClass(options) {
+  if (!(this instanceof BRjxClass)) {
+    return new BRjxClass(options);
+  }
+
+  // reference to the object
+  var self = this;
+
+  // validate options
+  if (!options) {
+    options = {};
+  }
+
+  // save options
+  var _options = options;
+
+  // variables
+  //var _instVar;
+  var _services = [];
+
+  // functions
+  //this.instFunction = function() {}
+
+
+  /**
+   * typeof()  [typeof Fix]
+   * @see -
+   * @param {}
+   * @since 0.0.1
+   * @returns Boolean/String
+   */
+  this.typeof = function(object, type) {
+    if (type) {
+      return (Object.prototype.toString.call(object).replace(/^\[object |\]$/g, '').toLowerCase() === type);
+    } else {
+      return Object.prototype.toString.call(object).replace(/^\[object |\]$/g, '').toLowerCase();
+    }
+  }
+
+  /**
+   * Return the config
+   * @see -
+   * @param {}
+   * @since 0.0.1
+   * @returns _options
+   */
+  var configuration = this.configuration = function(options) {
+    var config = [];
+    if (options) {
+      Object.keys(_options).forEach(function(item, index) {
+        if (!options[item]) options[item] = _options[item];
+      });
+      Object.keys(options).forEach(function(item, index) {
+        _options[item] = options[item];
+      });
+    }
+    if (_options.conf) {
+      config = JSON.parse(getResource(BRjx.root+_options.conf).content);
+      Object.keys(config.filter(function(item) {return (item.name == _options.name)})[0]).forEach(function(item, index) {
+        _options[item] = config[item];
+      });
+    }
+    return _options;
+  }
+
+  // load config
+  configuration();
+
+
+  /**
+   * This function provides support to configure app services.
+   * @see -
+   * @param {string}
+   * @since 0.0.1
+   * @returns -
+   */
+  this.configure = function(service, handler, insertAsFirstOrBefore) {
+    if (self.typeof(handler , 'function') ) {
+      var fnarray = [];
+      var fndefinition = [];
+
+      fnarray = handler.toString().replace(/^\s+/gm, '').split(/[\r\n]/);
+      fnarray = fnarray.splice(0, fnarray.length-2);
+      fndefinition.push(fnarray[0].replace(/function\s?\((.*)\)\s?{/, '$1'));
+      fndefinition.push(fnarray.splice(1).join(' '));
+
+      self[service] = (new Function('self', '_options', 'return function (' +fndefinition[0] + ') {' + fndefinition[1] + '}'))(self, _options);
+    }
+    if (self.typeof(service, 'string')) {
+      if (!self.typeof(_services, 'array')) {
+        _services = [service];
+      } else {
+        if (!(self.typeof(insertAsFirstOrBefore, 'boolean') && insertAsFirstOrBefore == true) && self.typeof(insertAsFirstOrBefore, 'string')) {
+          _services.splice(arr.indexOf(insertAsFirstOrBefore) < 0 ? arr.length : arr.indexOf(insertAsFirstOrBefore), 0, service);
+        } else if (self.typeof(insertAsFirstOrBefore, 'boolean') && insertAsFirstOrBefore == true) {
+          if (_services.indexOf(service) == -1) _services.splice(0, 0, service);
+        } else if (self.typeof(insertAsFirstOrBefore, 'boolean') && insertAsFirstOrBefore == false) {
+        } else {
+          if (_services.indexOf(service) == -1) _services.push(service);
+        }
+      }
+    }
+  }
+
+  /**
+   * reset Global System object to its defaults
+   * @see -
+   * @param {}
+   * @since 0.0.1
+   * @returns -
+   */
+  this.reset = function() { 
+    _options = options;
+  }
+
+  /**
+   * This function provides app initialization.
+   * @see -
+   * @param {request}
+   * @since 0.0.1
+   * @returns -
+   */
+  this.init = function(request) {
+    if (_services && BRjx.typeof(_services, 'array')) _services.forEach(function(item, index) {
+      self[item](request)
+    }); 
+  }
+}
+
+/**
+ * Define BRjxVconsole
+ * @see -
+ * @param {}
+ * @since 0.0.1
+ * @returns BRjxVconsole
+ */
+function BRjxVconsole() {
+  var buffer;
+  var handle;
+
+  /**
+   *
+   */
+  Object.defineProperty(this, 'buffer', {
+    get: function() {
+      if (!buffer) {
+        buffer = new Array()
+      }
+      return buffer;
+    },
+    configurable: false,
+    enumerable: true
+  });
+
+  /**
+   *
+   */
+  Object.defineProperty(this, 'handle', {
+    get: function() {
+      if (!handle) {
+        handle = Date.now();
+      }
+      return handle;
+    },
+    configurable: false,
+    enumerable: true
+  });
+
+  /**
+   *
+   */
+  Object.defineProperty(this, 'flush', {
+    get: function() {
+      return false;
+    },
+    set: function(value) {
+      buffer.length = 0;
+      return true;
+    },
+    configurable: false,
+    enumerable: true
+  });
+}
+
+
+/**
+ * Define BRjxEnvironment
+ * @see -
+ * @param {options}
+ * @since 0.0.1
+ * @returns BRjxEnvironment
+ */
+var BRjxEnvironment = new BRjxClass({name: 'BRjxEnvironment', debugLevels: ['error', 'warn', 'info'], debugLevel: 'info', isDebug: true});
+
+/**
+ * Set application root directory
+ * @see -
+ * @param {}
+ * @since 0.0.1
+ * @returns -
+ */
+BRjxEnvironment.root = module.directory;
+
+/**
+ * Print to STDOUT.
+ * The Message is stored in the VCONSOLE array;
+ * @see -
+ * @param {}
+ * @since 0.0.1
+ * @returns -
+ */
+BRjxEnvironment.info = traceHelper.bind(null, function() {
+    if (BRjx.configuration().isDebug && (BRjx.configuration().debugLevels.indexOf(BRjx.configuration().debugLevel)+1) >= 3) {
+      var msg = format.apply(null, arguments);
+      var location = format("%s:%d:", this.sourceName(), this.lineNumber());
+      writer.writeln(now() + "INFO:" + location, BOLD, msg, RESET);
+      VCONSOLE.push({std: 'out', text: now() + "INFO:" + location + " " + msg});
+    }
+  }
+);
+
+/**
+ * Print to STDERR.
+ * The Message is stored in the VCONSOLE array;
+ * @see -
+ * @param {}
+ * @since 0.0.1
+ * @returns -
+ */
+BRjxEnvironment.warn = traceHelper.bind(null, function() {
+    if (BRjx.configuration().isDebug && (BRjx.configuration().debugLevels.indexOf(BRjx.configuration().debugLevel)+1) >= 2) {
+      var msg = format.apply(null, arguments);
+      var location = format("%s:%d:", this.sourceName(), this.lineNumber());
+      errWriter.writeln(now() + ONYELLOW + BOLD + "WARN" + RESET + ":" + location, BOLD, msg, RESET);
+      VCONSOLE.push({std: 'err', text: now() + "WARN:" + location + " " + msg});
+    }
+  }
+);
+
+/**
+ * Print to STDERR.
+ * The Message is stored in the VCONSOLE array;
+ * @see -
+ * @param {}
+ * @since 0.0.1
+ * @returns -
+ */
+BRjxEnvironment.error = traceHelper.bind(null, function() {
+    if (BRjx.configuration().isDebug && (BRjx.configuration().debugLevels.indexOf(BRjx.configuration().debugLevel)+1) >= 1) {
+      var msg = format.apply(null, arguments);
+      var location = format("%s:%d:", this.sourceName(), this.lineNumber());
+      errWriter.writeln(now() + ONRED + BOLD + "FAIL" + RESET + ":" + location, BOLD, msg, RESET);
+      VCONSOLE.push({std: 'err', text: now() + "FAIL:" + location + " " + msg});
+    }
+  }
+);
+
+/**
+ * Print to dir.
+ * The Message is stored in the VCONSOLE array;
+ * @see -
+ * @param {}
+ * @since 0.0.1
+ * @returns -
+ */
+BRjxEnvironment.configure('objdump',
+  function(info, obj) {
+    if (_options.isDebug) {
+      console.info(info);
+      console.dir(obj);
+      // TODO: implement dump to VCONSOLE ....
+      /*
+      var replacementrules = BRjxDB.query(_options.App.ReplacementRules, [['$dbname', _options.App.ConfigDBName]]);
+      return filter(VCONSOLE, 'err', format.apply(null, arguments)).map(function(item) {
+        return (function(string, rules) {
+          var result = string;
+          rules.map(function(item) {
+            result=result.replace(new RegExp(item[0], 'g'), item[1]);
+          });
+          return result;
+        })(item, replacementrules.gsDumpRules)
+      });
+      */
+    }
+  }, false
+);
+
+/**
+ * Get STDOUT/STDERR from VCONSOLE.
+ * @see -
+ * @param {}
+ * @since 0.0.1
+ * @returns -
+ */
+BRjxEnvironment.configure('console',
+  function(handle) {
+    return (((handle == 1) || (handle == 'stdout')) ? filter(VCONSOLE, 'out') : ((handle == 2) || (handle == 'stderr')) ? filter(VCONSOLE, 'err') : VCONSOLE);
+  }, false
+);
+
+/**
+ * Get Debug state.
+ * The state is stored in _options.isDebug (default false);
+ * @see -
+ * @param {}
+ * @since 0.0.1
+ * @returns -
+ */
+BRjxEnvironment.configure('isDebug', 
+  function() {
+    return _options.isDebug;
+  }, false
+);
+
+/**
+ * Set Debug ON/OFF.
+ * The state is stored in _options.isDebug (default false);
+ * @see -
+ * @param {}
+ * @since 0.0.1
+ * @returns -
+ */
+BRjxEnvironment.configure('setDebug',
+  function(state, level) {
+    _options.isDebug = (!(!state));
+    if (level) _options.debugLevel = level;
+  }, false
+);
+
+///**
+// *
+// * @see -
+// * @param {}
+// * @since 0.0.1
+// * @returns -
+// */
+//// write config to SJS
+//BRjxEnvironment.configure('require',
+//  function(options) {
+//    var result = this.Object('base');
+//    try {
+//      // load module
+//      var fs = require('fs');
+//      var path = this.root+'scripts/'+options.script.name+'.sjs';
+//      fs.write(path, JSON.stringify(options));
+//      fs.touch(path);
+//      return require(path);
+//    } catch (error) {
+//      return result.error = error;
+//    }
+//  }, false
+//);
+//
+///**
+// * Create new BRjxClass
+// * @see -
+// * @param {options}
+// * @since 0.0.1
+// * @returns new BRjxClass
+// */
+//BRjxEnvironment.configure('Class', 
+//  function() {
+//    return BRjxClass;
+//  }, false
+//);
+//
+///**
+// * Simple Proxy()
+// * @see -
+// * @param {}
+// * @since 0.0.1
+// * @returns new ProxyObject
+// */
+//BRjxEnvironment.configure('proxy', 
+//  function(options) {
+//    var target = new JavaAdapter(org.mozilla.javascript.NativeObject, {
+//      // The "start" argument is here for setters and getters living
+//      // on a prototype, so they know what to use as "this"-object.
+//
+//      object: (options && options.object instanceof Object ? options.object : {}),
+//
+//      put: function(name, start, value) {
+////print('--> '+name+' = '+value);
+//        if (name[0] !== '_'
+//          && options
+//          && options.callbacks
+//          && options.callbacks.set
+//          && typeof options.callbacks.set === 'function'
+//          && options.reservedwords.indexOf(name) < 0)
+//        {
+//          options.callbacks.set(name, start, value, this);
+//        } else {
+//          this.object[name] = value;
+////print('--> '+this.object[name]);
+//        }
+//      },
+//
+//      get: function(name, start) {
+////print('<-- '+name);
+////print('<-- '+JSON.stringify(this.object));
+//        var result;
+//        if (name[0] !== '_'
+//          && options 
+//          && options.callbacks 
+//          && options.callbacks.get 
+//          && typeof options.callbacks.get === 'function'
+//          && options.reservedwords.indexOf(name) < 0)
+//        {
+//          result = options.callbacks.get(name, start, this);
+//        }
+//        if (result) {
+//          return result;
+//        } else if (this.object.hasOwnProperty(name)) {
+////print('<-- '+name+' = '+this.object[name]);
+//          return this.object[name];
+//        } else {
+////print('<-- ERROR');
+//          return options.verbose ? "ERROR - No such property: "+name : undefined;
+//        }
+//      }
+//    });
+//
+//    target.__noSuchMethod__ = function(name, args) {
+//      var result;
+//      if (options
+//          && options.callbacks
+//          && options.callbacks.errorHandler
+//          && typeof options.callbacks.errorHandler === 'function')
+//      {
+//        result = options.callbacks.errorHandler(name, args, this);
+//      }
+//      if (result) {
+//        return result;
+//      } else {
+//        return options.verbose ? "ERROR - No such method: "+name  : undefined;
+//      }
+//    };
+//
+//    return target;
+//  }, false
+//);
+//
+///**
+// * Default Object used for as result object
+// * @see -
+// * @param {}
+// * @since 0.0.1
+// * @returns new ProxyObject
+// */
+//BRjxEnvironment.configure('result', 
+//  function(type, extensions) {
+//    if (!type) type = 'base'; 
+// 
+//    var source = {
+//      object: {
+//        type: type,
+//        error: false,
+//        index: 0,
+//        default: 'id',
+//        records: [{id: ''}],
+//        next: function() {
+//        },
+//        exists: function() {
+//          if(this.records.length > 0 && this.records[this.index] && !this.error) {
+//            return true;
+//          } else {
+//            return false;
+//          }
+//        },
+//        toString: function() {
+//          if (this.records.length >0 && this.records[this.index] && !this.error) {
+//            return this.records[this.index][this.default].toString();
+//          } else {
+//            return this.error.toString();
+//          }
+//        }
+//
+//      },
+//      callbacks: {
+//        set: function(name, start, value, _this) {
+//          if (_this.object.records[_this.object.index].hasOwnProperty(name)) {
+//            _this.object.records[_this.object.index][name] = value;
+//          }
+//        },
+//        get: function(name, start, _this) {
+//          return _this.object.records[_this.object.index][name];
+//        }
+//      },
+//      reservedwords: ['error', 'records']
+//    };
+//
+//    switch (type) {
+//      case 'dependencies':
+//        source.object['hasExports'] = function() {
+//          if (this.records.length > 0
+//              && this.records[this.index]
+//              && (Object.keys(this.records[this.index].vars).length > 0
+//                || Object.keys(this.records[this.index].funcs).length > 0)
+//              && !this.error)
+//          {
+//            return true;
+//          } else {
+//            return false;
+//          }
+//        };
+//        source.object['hasDependencies'] = function() {
+//          if (Object.keys(this.records.length > 0
+//              && this.records[this.index]
+//              && this.records[this.index].depends).length > 0
+//              && !this.error)
+//          {
+//            return true;
+//          } else {
+//            return false;
+//          }
+//        };
+//        break;
+//      case 'base':
+//        break;
+//      default:
+//        if (extension
+//            && extension instanceof Object
+//            && Object.keys(extension).length > 0)
+//        {
+//          Object.keys(extension).forEach(function(item, index) {
+//            source.object[item] = extension[item];
+//          });
+//        } 
+//    }
+//
+//    return new self.proxy(source);
+//  }, false
+//);
+
+

@@ -1,0 +1,152 @@
+11:54:19.403	SERVER	admin	OK	Server was stopped (port: 1984).
+21:34:03.762	SERVER	admin	OK	Server was started (port: 1984).
+21:34:08.682	127.0.0.1:51904	admin	REQUEST	INFO	31.26 ms
+21:34:08.688	127.0.0.1:51904	admin	OK		5.34 ms
+21:34:08.963	127.0.0.1:51905	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	4.05 ms
+21:34:09.446	127.0.0.1:51905	admin	OK	Query executed in 474.75 ms.	484.08 ms
+21:35:28.473	127.0.0.1:51951	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	0.76 ms
+21:35:28.486	127.0.0.1:51951	admin	OK	Query executed in 11.67 ms.	13.26 ms
+21:36:55.874	127.0.0.1:51962	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	1.99 ms
+21:36:55.883	127.0.0.1:51962	admin	OK	Query executed in 8.57 ms.	9.31 ms
+21:36:58.673	127.0.0.1:51964	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	0.43 ms
+21:36:58.682	127.0.0.1:51964	admin	OK	Query executed in 3.95 ms.	8.84 ms
+21:39:15.269	SERVER	admin	OK	Server was stopped (port: 1984).
+21:39:26.122	SERVER	admin	OK	Server was started (port: 1984).
+21:39:40.012	127.0.0.1:51980	admin	REQUEST	INFO	27.6 ms
+21:39:40.019	127.0.0.1:51980	admin	OK		6.66 ms
+21:39:40.300	127.0.0.1:51981	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	3.9 ms
+21:39:40.755	127.0.0.1:51981	admin	OK	Query executed in 453.11 ms.	454.94 ms
+21:44:09.804	127.0.0.1:52014	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	0.8 ms
+21:44:09.813	127.0.0.1:52014	admin	OK	Query executed in 8.17 ms.	8.71 ms
+21:49:09.769	127.0.0.1:52052	admin	REQUEST	INFO	1.06 ms
+21:49:09.771	127.0.0.1:52052	admin	OK		2.53 ms
+21:49:09.823	127.0.0.1:52053	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	0.71 ms
+21:49:09.845	127.0.0.1:52053	admin	OK	Query executed in 21.13 ms.	21.62 ms
+21:49:11.475	127.0.0.1:52057	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	0.7 ms
+21:49:11.484	127.0.0.1:52057	admin	OK	Query executed in 7.88 ms.	8.5 ms
+21:49:40.511	SERVER	admin	OK	Server was stopped (port: 1984).
+21:49:49.027	SERVER	admin	OK	Server was started (port: 1984).
+21:49:58.374	127.0.0.1:52073	admin	REQUEST	INFO	33.59 ms
+21:49:58.382	127.0.0.1:52073	admin	OK		8.16 ms
+21:49:58.665	127.0.0.1:52074	admin	REQUEST	XQUERY undefined	4.6 ms
+21:49:58.856	127.0.0.1:52074	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	191.04 ms
+21:51:08.623	127.0.0.1:52084	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	0.71 ms
+21:51:08.958	127.0.0.1:52084	admin	OK	Query executed in 332.0 ms.	335.37 ms
+21:53:46.354	127.0.0.1:52102	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	0.89 ms
+21:53:46.364	127.0.0.1:52102	admin	OK	Query executed in 8.32 ms.	10.11 ms
+21:54:18.597	127.0.0.1:52106	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	0.53 ms
+21:54:18.604	127.0.0.1:52106	admin	OK	Query executed in 6.73 ms.	7.15 ms
+21:56:35.853	SERVER	admin	OK	Server was stopped (port: 1984).
+21:56:45.005	SERVER	admin	OK	Server was started (port: 1984).
+21:56:54.752	127.0.0.1:52128	admin	REQUEST	INFO	27.9 ms
+21:56:54.758	127.0.0.1:52128	admin	OK		5.21 ms
+21:56:55.051	127.0.0.1:52129	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	4.03 ms
+21:56:55.707	127.0.0.1:52129	admin	OK	Query executed in 654.02 ms.	659.85 ms
+22:01:54.323	127.0.0.1:52183	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	2.82 ms
+22:01:54.351	127.0.0.1:52183	admin	OK	Query executed in 26.47 ms.	27.61 ms
+22:01:54.356	127.0.0.1:52183	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) let $json := element json {attribute type {"object"}, for $n in $database/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } } return json:serialize($json)	2.24 ms
+22:01:54.376	127.0.0.1:52183	admin	OK	BIND[0] $dbname=global_app	17.74 ms
+22:01:54.377	127.0.0.1:52183	admin	OK	BIND[0] $tablename=bin/commands.xml	0.19 ms
+22:01:54.450	127.0.0.1:52183	admin	OK	EXEC[0]	73.38 ms
+22:01:54.456	127.0.0.1:52184	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	0.52 ms
+22:01:54.460	127.0.0.1:52184	admin	OK	Query executed in 3.4 ms.	3.81 ms
+22:01:58.202	127.0.0.1:52185	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	0.44 ms
+22:01:58.208	127.0.0.1:52185	admin	OK	Query executed in 5.9 ms.	6.26 ms
+22:01:58.244	127.0.0.1:52185	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) let $json := element json {attribute type {"object"}, for $n in $database/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } } return json:serialize($json)	0.39 ms
+22:01:58.245	127.0.0.1:52185	admin	OK	BIND[0] $dbname=global_app	0.2 ms
+22:01:58.245	127.0.0.1:52185	admin	OK	BIND[0] $tablename=bin/commands.xml	0.12 ms
+22:01:58.261	127.0.0.1:52185	admin	OK	EXEC[0]	19.78 ms
+22:01:58.275	127.0.0.1:52186	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	0.49 ms
+22:01:58.279	127.0.0.1:52186	admin	OK	Query executed in 3.29 ms.	3.74 ms
+22:02:23.197	127.0.0.1:52190	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	0.47 ms
+22:02:23.203	127.0.0.1:52190	admin	OK	Query executed in 5.29 ms.	5.98 ms
+22:02:23.236	127.0.0.1:52190	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) let $json := element json {attribute type {"object"}, for $n in $database/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } } return json:serialize($json)	0.29 ms
+22:02:23.237	127.0.0.1:52190	admin	OK	BIND[0] $dbname=global_app	0.23 ms
+22:02:23.237	127.0.0.1:52190	admin	OK	BIND[0] $tablename=bin/commands.xml	0.12 ms
+22:02:23.262	127.0.0.1:52190	admin	OK	EXEC[0]	25.68 ms
+22:02:23.270	127.0.0.1:52191	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	0.45 ms
+22:02:23.274	127.0.0.1:52191	admin	OK	Query executed in 3.66 ms.	3.99 ms
+22:02:32.629	SERVER	admin	OK	Server was stopped (port: 1984).
+22:02:46.071	SERVER	admin	OK	Server was started (port: 1984).
+22:02:50.135	127.0.0.1:52203	admin	REQUEST	INFO	29.08 ms
+22:02:50.140	127.0.0.1:52203	admin	OK		5.25 ms
+22:02:50.455	127.0.0.1:52204	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	4.2 ms
+22:02:51.072	127.0.0.1:52204	admin	OK	Query executed in 615.86 ms.	617.1 ms
+22:02:51.074	127.0.0.1:52204	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) let $json := element json {attribute type {"object"}, for $n in $database/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } } return json:serialize($json)	1.33 ms
+22:02:51.084	127.0.0.1:52204	admin	OK	BIND[0] $dbname=global_app	7.68 ms
+22:02:51.084	127.0.0.1:52204	admin	OK	BIND[0] $tablename=bin/commands.xml	0.11 ms
+22:02:51.150	127.0.0.1:52204	admin	OK	EXEC[0]	66.11 ms
+22:02:51.154	127.0.0.1:52205	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	0.58 ms
+22:02:51.158	127.0.0.1:52205	admin	OK	Query executed in 3.13 ms.	3.54 ms
+22:04:02.082	127.0.0.1:52226	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	5.31 ms
+22:04:02.093	127.0.0.1:52226	admin	OK	Query executed in 9.8 ms.	10.8 ms
+22:04:02.118	127.0.0.1:52226	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) let $json := element json {attribute type {"object"}, for $n in $database/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } } return json:serialize($json)	0.34 ms
+22:04:02.119	127.0.0.1:52226	admin	OK	BIND[0] $dbname=global_app	0.37 ms
+22:04:02.119	127.0.0.1:52226	admin	OK	BIND[0] $tablename=bin/commands.xml	0.13 ms
+22:04:02.156	127.0.0.1:52226	admin	OK	EXEC[0]	37.27 ms
+22:04:02.184	127.0.0.1:52227	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	0.61 ms
+22:04:02.189	127.0.0.1:52227	admin	OK	Query executed in 4.38 ms.	4.74 ms
+22:05:20.227	127.0.0.1:52239	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	0.54 ms
+22:05:20.234	127.0.0.1:52239	admin	OK	Query executed in 5.76 ms.	6.46 ms
+22:05:20.237	127.0.0.1:52239	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) let $json := element json {attribute type {"object"}, for $n in $database/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } } return json:serialize($json)	0.21 ms
+22:05:20.237	127.0.0.1:52239	admin	OK	BIND[0] $dbname=global_app	0.19 ms
+22:05:20.240	127.0.0.1:52239	admin	OK	BIND[0] $tablename=bin/commands.xml	0.25 ms
+22:05:20.251	127.0.0.1:52239	admin	OK	EXEC[0]	10.56 ms
+22:05:20.287	127.0.0.1:52240	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	1.14 ms
+22:05:20.291	127.0.0.1:52240	admin	OK	Query executed in 4.25 ms.	4.61 ms
+22:05:20.300	127.0.0.1:52240	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	0.35 ms
+22:05:20.310	127.0.0.1:52240	admin	OK	Query executed in 9.75 ms.	10.12 ms
+22:05:44.840	127.0.0.1:52243	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	0.54 ms
+22:05:44.850	127.0.0.1:52243	admin	OK	Query executed in 9.53 ms.	10.24 ms
+22:05:44.861	127.0.0.1:52243	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) let $json := element json {attribute type {"object"}, for $n in $database/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } } return json:serialize($json)	0.26 ms
+22:05:44.862	127.0.0.1:52243	admin	OK	BIND[0] $dbname=global_app	0.19 ms
+22:05:44.862	127.0.0.1:52243	admin	OK	BIND[0] $tablename=bin/commands.xml	0.11 ms
+22:05:44.915	127.0.0.1:52243	admin	OK	EXEC[0]	52.91 ms
+22:05:44.938	127.0.0.1:52244	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	0.39 ms
+22:05:44.942	127.0.0.1:52244	admin	OK	Query executed in 2.94 ms.	3.26 ms
+22:18:27.648	127.0.0.1:52314	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	2.38 ms
+22:18:27.674	127.0.0.1:52314	admin	OK	Query executed in 24.29 ms.	25.78 ms
+22:18:27.675	127.0.0.1:52314	admin	REQUEST	XQUERY db:open('global_app')/system/method/setSysProperty/text()	0.4 ms
+22:18:27.694	127.0.0.1:52314	admin	OK	Query executed in 19.01 ms.	19.37 ms
+22:18:27.699	127.0.0.1:52315	admin	REQUEST	XQUERY db:open("global_app", "bin/commands.xml")/commands/command[1]/script/text()	0.39 ms
+22:18:27.704	127.0.0.1:52315	admin	OK	Query executed in 4.32 ms.	4.73 ms
+22:18:27.730	127.0.0.1:52315	admin	OK	QUERY[0] declare variable $dbname as xs:string external; declare variable $tablename as xs:string external; let $database := db:open($dbname, $tablename) let $json := element json {attribute type {"object"}, for $n in $database/commands/* return element {$n/name/text()} {attribute type {"object"}, for $c in $n/* return $c } } return json:serialize($json)	0.32 ms
+22:18:27.731	127.0.0.1:52315	admin	OK	BIND[0] $dbname=global_app	0.35 ms
+22:18:27.731	127.0.0.1:52315	admin	OK	BIND[0] $tablename=bin/commands.xml	0.12 ms
+22:18:27.746	127.0.0.1:52315	admin	OK	EXEC[0]	15.01 ms
+22:18:27.786	127.0.0.1:52316	admin	REQUEST	XQUERY json:serialize(element json {attribute type {"object"}, db:open("global_app")/system/*})	0.42 ms
+22:18:27.798	127.0.0.1:52316	admin	OK	Query executed in 11.6 ms.	12.15 ms
+22:19:25.526	127.0.0.1:52329	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	0.58 ms
+22:19:25.535	127.0.0.1:52329	admin	OK	Query executed in 8.65 ms.	9.46 ms
+22:19:25.556	127.0.0.1:52329	admin	REQUEST	XQUERY db:open('global_app')/system/method/setSysProperty/text()	0.44 ms
+22:19:25.569	127.0.0.1:52329	admin	OK	Query executed in 11.9 ms.	12.29 ms
+22:19:25.590	127.0.0.1:52330	admin	REQUEST	XQUERY json:serialize(element json {attribute type {"object"}, db:open("global_app")/system/*})	0.39 ms
+22:19:25.596	127.0.0.1:52330	admin	OK	Query executed in 5.72 ms.	6.15 ms
+22:19:36.747	SERVER	admin	OK	Server was stopped (port: 1984).
+22:19:44.620	SERVER	admin	OK	Server was started (port: 1984).
+22:19:56.749	127.0.0.1:52336	admin	REQUEST	INFO	28.89 ms
+22:19:56.754	127.0.0.1:52336	admin	OK		4.98 ms
+22:19:56.969	127.0.0.1:52337	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	3.91 ms
+22:19:57.459	127.0.0.1:52337	admin	OK	Query executed in 485.26 ms.	490.3 ms
+22:19:57.461	127.0.0.1:52337	admin	REQUEST	XQUERY db:open('global_app')/system/method/setSysProperty/text()	0.61 ms
+22:19:57.475	127.0.0.1:52337	admin	OK	Query executed in 14.05 ms.	14.38 ms
+22:19:57.481	127.0.0.1:52338	admin	REQUEST	XQUERY json:serialize(element json {attribute type {"object"}, db:open("global_app")/system/*})	0.84 ms
+22:19:57.504	127.0.0.1:52338	admin	OK	Query executed in 22.9 ms.	23.57 ms
+22:25:04.788	127.0.0.1:52376	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	0.53 ms
+22:25:04.800	127.0.0.1:52376	admin	OK	Query executed in 9.63 ms.	12.48 ms
+22:25:04.814	127.0.0.1:52376	admin	REQUEST	XQUERY db:open('global_app')/system/method/setSysProperty/text()	0.48 ms
+22:25:04.817	127.0.0.1:52376	admin	OK	Query executed in 2.53 ms.	2.82 ms
+22:25:04.834	127.0.0.1:52376	admin	REQUEST	XQUERY json:serialize(element json {attribute type {"object"}, db:open("global_app")/system/*})	0.41 ms
+22:25:04.838	127.0.0.1:52376	admin	OK	Query executed in 4.12 ms.	4.47 ms
+22:25:16.015	127.0.0.1:52381	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	0.53 ms
+22:25:16.029	127.0.0.1:52381	admin	OK	Query executed in 12.66 ms.	13.1 ms
+22:25:16.042	127.0.0.1:52381	admin	REQUEST	XQUERY db:open('global_app')/system/method/setSysProperty/text()	0.48 ms
+22:25:16.045	127.0.0.1:52381	admin	OK	Query executed in 2.92 ms.	3.77 ms
+22:25:16.082	127.0.0.1:52381	admin	REQUEST	XQUERY json:serialize(element json {attribute type {"object"}, db:open("global_app")/system/*})	0.5 ms
+22:25:16.102	127.0.0.1:52381	admin	OK	Query executed in 20.18 ms.	20.59 ms
+22:27:18.954	127.0.0.1:52392	admin	REQUEST	XQUERY db:open('global_app')/system/method/getSysProperties/text()	0.45 ms
+22:27:18.960	127.0.0.1:52392	admin	OK	Query executed in 6.04 ms.	6.42 ms
+22:27:18.961	127.0.0.1:52392	admin	REQUEST	XQUERY db:open('global_app')/system/method/setSysProperty/text()	0.37 ms
+22:27:18.964	127.0.0.1:52392	admin	OK	Query executed in 3.27 ms.	3.56 ms
+22:27:18.965	127.0.0.1:52392	admin	REQUEST	XQUERY json:serialize(element json {attribute type {"object"}, db:open("global_app")/system/*})	0.36 ms
+22:27:18.970	127.0.0.1:52392	admin	OK	Query executed in 4.5 ms.	4.78 ms

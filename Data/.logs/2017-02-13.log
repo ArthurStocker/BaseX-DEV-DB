@@ -1,0 +1,8 @@
+07:15:59.799	SERVER	admin	OK	Server wurde gestartet (Port: 1984).
+07:29:36.424	127.0.0.1:58488	admin	OK	QUERY[0] json:serialize(element json {attribute type {"object"}, db:open("BRjx_main")/*[id="0d6ef920-7ded-4832-b6ae-e12b9c64c73e"]/*})	4.96 ms
+07:29:36.546	127.0.0.1:58488	admin	OK	BIND[0] name=TEST	117.44 ms
+07:29:37.262	127.0.0.1:58488	admin	OK	EXEC[0]	716.53 ms
+07:33:35.305	127.0.0.1:58499	admin	OK	QUERY[0] json:serialize(element json {attribute type {"object"}, db:open("BRjx_main")/*[id="0d6ef920-7ded-4832-b6ae-e12b9c64c73e"]/*})	0.27 ms
+07:33:35.310	127.0.0.1:58499	admin	OK	BIND[0] name=TEST	0.32 ms
+07:33:35.340	127.0.0.1:58499	admin	OK	EXEC[0]	28.66 ms
+17:41:57.743	SERVER	admin	OK	Server wurde gestoppt (Port: 1984).

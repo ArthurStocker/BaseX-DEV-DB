@@ -1,0 +1,76 @@
+17:05:09.126	SERVER	admin	OK	Server was stopped (port: 1984).
+17:10:00.130	SERVER	admin	OK	Server was started (port: 1984).
+17:10:08.326	0:0:0:0:0:0:0:1:64454	admin	REQUEST	[GET] http://localhost:8080/favicon.ico
+17:10:08.507	0:0:0:0:0:0:0:1:64456	admin	REQUEST	[GET] http://localhost:8080/apple-touch-icon-precomposed.png
+17:10:08.543	0:0:0:0:0:0:0:1:64458	admin	REQUEST	[GET] http://localhost:8080/
+17:10:10.296	0:0:0:0:0:0:0:1:64454	admin	404	No function found that matches the request.	1982.67 ms
+17:10:10.337	0:0:0:0:0:0:0:1:64456	admin	404	No function found that matches the request.	1830.5 ms
+17:10:10.362	0:0:0:0:0:0:0:1:64456	admin	REQUEST	[GET] http://localhost:8080/apple-touch-icon.png
+17:10:10.403	0:0:0:0:0:0:0:1:64456	admin	404	No function found that matches the request.	40.74 ms
+17:10:10.433	0:0:0:0:0:0:0:1:64458	admin	302		1890.2 ms
+17:10:10.433	0:0:0:0:0:0:0:1:64458	admin	200		0.18 ms
+17:10:10.444	0:0:0:0:0:0:0:1:64458	admin	REQUEST	[GET] http://localhost:8080/cm/app
+17:10:10.529	SERVER	admin	INFO	Missing database. Start database setup procedure.
+17:10:10.529	0:0:0:0:0:0:0:1:64458	admin	302		85.97 ms
+17:10:10.529	0:0:0:0:0:0:0:1:64458	admin	200		0.14 ms
+17:10:10.540	0:0:0:0:0:0:0:1:64458	admin	REQUEST	[GET] http://localhost:8080/cm/install?task=setup&message=Missing%20database.%20Please%20setup%20database.&text=Start%20database%20setup&link=install%2F.setup
+17:10:10.586	0:0:0:0:0:0:0:1:64458	admin	200		46.64 ms
+17:10:10.697	0:0:0:0:0:0:0:1:64458	admin	REQUEST	[GET] http://localhost:8080/favicon.ico
+17:10:10.721	0:0:0:0:0:0:0:1:64458	admin	404	No function found that matches the request.	24.31 ms
+17:10:10.924	0:0:0:0:0:0:0:1:64458	admin	REQUEST	[GET] http://localhost:8080/
+17:10:10.958	0:0:0:0:0:0:0:1:64458	admin	302		33.73 ms
+17:10:10.958	0:0:0:0:0:0:0:1:64458	admin	200		0.14 ms
+17:10:10.967	0:0:0:0:0:0:0:1:64458	admin	REQUEST	[GET] http://localhost:8080/cm/app
+17:10:11.032	SERVER	admin	INFO	Missing database. Start database setup procedure.
+17:10:11.032	0:0:0:0:0:0:0:1:64458	admin	302		65.57 ms
+17:10:11.033	0:0:0:0:0:0:0:1:64458	admin	200		0.14 ms
+17:10:11.040	0:0:0:0:0:0:0:1:64458	admin	REQUEST	[GET] http://localhost:8080/cm/install?task=setup&message=Missing%20database.%20Please%20setup%20database.&text=Start%20database%20setup&link=install%2F.setup
+17:10:11.081	0:0:0:0:0:0:0:1:64458	admin	200		40.7 ms
+17:10:11.201	0:0:0:0:0:0:0:1:64460	admin	REQUEST	[GET] http://localhost:8080/apple-touch-icon-precomposed.png
+17:10:11.227	0:0:0:0:0:0:0:1:64460	admin	404	No function found that matches the request.	25.61 ms
+17:10:11.235	0:0:0:0:0:0:0:1:64460	admin	REQUEST	[GET] http://localhost:8080/apple-touch-icon.png
+17:10:11.260	0:0:0:0:0:0:0:1:64460	admin	404	No function found that matches the request.	26.01 ms
+17:10:21.514	SERVER	admin	OK	Server was stopped (port: 1984).
+17:13:44.354	SERVER	admin	OK	Server was started (port: 1984).
+17:52:21.665	SERVER	admin	OK	Server was stopped (port: 1984).
+17:53:02.205	SERVER	admin	OK	Server was started (port: 1984).
+17:56:28.077	SERVER	admin	OK	Server was stopped (port: 1984).
+17:56:50.157	SERVER	admin	OK	Server was started (port: 1984).
+20:12:41.110	0:0:0:0:0:0:0:1:49315	admin	REQUEST	[GET] http://localhost:8080/
+20:12:41.874	0:0:0:0:0:0:0:1:49315	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/common.xqm, 43/2: [XPST0003] No expression allowed in a library module.	771.56 ms
+20:12:44.865	0:0:0:0:0:0:0:1:49335	admin	REQUEST	[GET] http://localhost:8080/test
+20:12:44.934	0:0:0:0:0:0:0:1:49335	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/common.xqm, 43/2: [XPST0003] No expression allowed in a library module.	69.31 ms
+20:14:00.835	0:0:0:0:0:0:0:1:49346	admin	REQUEST	[GET] http://localhost:8080/test
+20:14:00.890	0:0:0:0:0:0:0:1:49346	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/common.xqm, 43/2: [XPST0003] No expression allowed in a library module.	55.37 ms
+20:14:01.921	0:0:0:0:0:0:0:1:49346	admin	REQUEST	[GET] http://localhost:8080/test
+20:14:01.962	0:0:0:0:0:0:0:1:49346	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/common.xqm, 43/2: [XPST0003] No expression allowed in a library module.	41.36 ms
+20:14:02.833	0:0:0:0:0:0:0:1:49346	admin	REQUEST	[GET] http://localhost:8080/test
+20:14:02.892	0:0:0:0:0:0:0:1:49346	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/common.xqm, 43/2: [XPST0003] No expression allowed in a library module.	58.94 ms
+20:14:43.500	0:0:0:0:0:0:0:1:49352	admin	REQUEST	[GET] http://localhost:8080/test
+20:14:43.583	0:0:0:0:0:0:0:1:49352	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/common.xqm, 50/33: [XPST0017] Several implementations found for 'Q{org.apache.poi.xssf.usermodel.XSSFWorkbook}createSheet#0'.	82.99 ms
+20:19:27.291	0:0:0:0:0:0:0:1:49449	admin	REQUEST	[GET] http://localhost:8080/test
+20:19:27.357	0:0:0:0:0:0:0:1:49449	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/common.xqm, 50/33: [XPST0017] Several implementations found for 'Q{org.apache.poi.xssf.usermodel.XSSFWorkbook}createSheet#0'.	65.94 ms
+20:19:30.904	0:0:0:0:0:0:0:1:49449	admin	REQUEST	[GET] http://localhost:8080/test
+20:19:31.007	0:0:0:0:0:0:0:1:49449	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/common.xqm, 50/33: [XPST0017] Several implementations found for 'Q{org.apache.poi.xssf.usermodel.XSSFWorkbook}createSheet#0'.	103.32 ms
+20:20:04.125	0:0:0:0:0:0:0:1:49460	admin	REQUEST	[GET] http://localhost:8080/test
+20:20:04.177	0:0:0:0:0:0:0:1:49460	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/common.xqm, 50/9: [XPST0003] Expecting '}', found 'x'.	52.21 ms
+20:20:29.553	0:0:0:0:0:0:0:1:49460	admin	REQUEST	[GET] http://localhost:8080/test
+20:20:29.612	0:0:0:0:0:0:0:1:49460	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/common.xqm, 50/19: [XPST0017] Several implementations found for 'Q{org.apache.poi.xssf.usermodel.XSSFWorkbook}createSheet#0'.	66.17 ms
+20:20:33.239	0:0:0:0:0:0:0:1:49460	admin	REQUEST	[GET] http://localhost:8080/test
+20:20:33.279	0:0:0:0:0:0:0:1:49460	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/common.xqm, 50/19: [XPST0017] Several implementations found for 'Q{org.apache.poi.xssf.usermodel.XSSFWorkbook}createSheet#0'.	40.26 ms
+20:20:34.026	0:0:0:0:0:0:0:1:49460	admin	REQUEST	[GET] http://localhost:8080/test
+20:20:34.076	0:0:0:0:0:0:0:1:49460	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/common.xqm, 50/19: [XPST0017] Several implementations found for 'Q{org.apache.poi.xssf.usermodel.XSSFWorkbook}createSheet#0'.	49.89 ms
+20:20:34.792	0:0:0:0:0:0:0:1:49460	admin	REQUEST	[GET] http://localhost:8080/test
+20:20:34.818	0:0:0:0:0:0:0:1:49460	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/common.xqm, 50/19: [XPST0017] Several implementations found for 'Q{org.apache.poi.xssf.usermodel.XSSFWorkbook}createSheet#0'.	25.6 ms
+20:20:58.765	0:0:0:0:0:0:0:1:49460	admin	REQUEST	[GET] http://localhost:8080/test
+20:21:01.687	0:0:0:0:0:0:0:1:49460	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/common.xqm, 51/1: [XPDY0002] xlsx: no context value bound. Stack Trace: - /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/common.xqm, 47/12	2921.76 ms
+20:21:49.726	0:0:0:0:0:0:0:1:49480	admin	REQUEST	[GET] http://localhost:8080/test
+20:21:49.772	0:0:0:0:0:0:0:1:49480	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/common.xqm, 50/19: [XPST0017] Java function 'org.apache.poi.xssf.usermodel.XSSFWorkbook:createsheet' not found.	45.49 ms
+20:22:10.218	0:0:0:0:0:0:0:1:49480	admin	REQUEST	[GET] http://localhost:8080/test
+20:22:10.244	0:0:0:0:0:0:0:1:49480	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/common.xqm, 50/19: [XPST0017] Several implementations found for 'Q{org.apache.poi.xssf.usermodel.XSSFWorkbook}createSheet#0'.	25.98 ms
+20:24:57.312	0:0:0:0:0:0:0:1:49516	admin	REQUEST	[GET] http://localhost:8080/test
+20:24:57.346	0:0:0:0:0:0:0:1:49516	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/common.xqm, 50/10: [XPST0003] Expecting ':=', found '='.	33.95 ms
+20:24:58.839	0:0:0:0:0:0:0:1:49516	admin	REQUEST	[GET] http://localhost:8080/test
+20:24:58.854	0:0:0:0:0:0:0:1:49516	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/common.xqm, 50/10: [XPST0003] Expecting ':=', found '='.	15.9 ms
+20:25:14.785	0:0:0:0:0:0:0:1:49516	admin	REQUEST	[GET] http://localhost:8080/test
+20:25:14.802	0:0:0:0:0:0:0:1:49516	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/common.xqm, 50/22: [XPST0017] Java function 'org.apache.poi.xssf.usermodel.XSSFWorkbook:new' not found.	16.38 ms

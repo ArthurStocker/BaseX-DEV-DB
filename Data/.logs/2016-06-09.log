@@ -1,0 +1,48 @@
+07:40:34.296	127.0.0.1:49980	admin	REQUEST	INFO	4.32 ms
+07:40:34.302	127.0.0.1:49980	admin	OK		4.19 ms
+07:40:34.323	127.0.0.1:49981	admin	REQUEST	OPEN app-cm	0.47 ms
+07:40:34.335	127.0.0.1:49981	admin	OK	Database 'app-cm' was opened in 7.78 ms.	11.69 ms
+07:40:34.337	127.0.0.1:49981	admin	REQUEST	XQUERY collection('anyDB')	0.57 ms
+07:40:34.637	127.0.0.1:49981	admin	ERROR	Stopped at ., 1/11: [FODC0002] Resource '/Users/arthur/Downloads/Projects/WEB/_BUILD-DMG/images/image-606498997875076667/Start ManageIT.app/Contents/Java/anyDB' does not exist.	300.36 ms
+07:40:47.810	127.0.0.1:49989	admin	REQUEST	OPEN app-cm	0.38 ms
+07:40:47.813	127.0.0.1:49989	admin	OK	Database 'app-cm' was opened in 3.3 ms.	3.6 ms
+07:40:47.819	127.0.0.1:49989	admin	REQUEST	XQUERY collection('')	0.89 ms
+07:40:47.835	127.0.0.1:49989	admin	OK	Query executed in 14.91 ms.	15.36 ms
+07:43:43.070	127.0.0.1:50031	admin	REQUEST	OPEN app-cm	0.47 ms
+07:43:43.071	127.0.0.1:50031	admin	OK	Database 'app-cm' was opened in 0.07 ms.	0.6 ms
+07:43:43.085	127.0.0.1:50031	admin	REQUEST	XQUERY every $c in collection('') db:name($c)	0.47 ms
+07:43:43.096	127.0.0.1:50031	admin	ERROR	Stopped at ., 2/1: [XPST0003] Expecting 'satisfies', found 'd'.	11.18 ms
+07:44:20.381	127.0.0.1:50040	admin	REQUEST	OPEN app-cm	0.52 ms
+07:44:20.382	127.0.0.1:50040	admin	OK	Database 'app-cm' was opened in 0.06 ms.	0.57 ms
+07:44:20.386	127.0.0.1:50040	admin	REQUEST	XQUERY for $c in collection('') return db:name($c)	0.52 ms
+07:44:20.404	127.0.0.1:50040	admin	OK	Query executed in 18.15 ms.	18.64 ms
+07:44:38.881	127.0.0.1:50043	admin	REQUEST	OPEN app-cm	0.34 ms
+07:44:38.882	127.0.0.1:50043	admin	OK	Database 'app-cm' was opened in 0.08 ms.	0.59 ms
+07:44:38.883	127.0.0.1:50043	admin	REQUEST	XQUERY for $c in collection('') return doc:name($c)	0.29 ms
+07:44:38.884	127.0.0.1:50043	admin	ERROR	Stopped at ., 2/9: [XPST0081] No namespace declared for 'doc:name'.	0.76 ms
+07:50:30.980	127.0.0.1:50285	admin	REQUEST	OPEN app-cm	0.41 ms
+07:50:30.981	127.0.0.1:50285	admin	OK	Database 'app-cm' was opened in 0.06 ms.	0.58 ms
+07:50:30.990	127.0.0.1:50285	admin	REQUEST	XQUERY for $c in collection('') return document-uri($c)	0.77 ms
+07:50:30.993	127.0.0.1:50285	admin	OK	Query executed in 2.42 ms.	2.77 ms
+07:52:01.733	SERVER	admin	OK	Server was stopped (port: 1984).
+07:52:09.664	SERVER	admin	OK	Server was started (port: 1984).
+07:52:17.007	127.0.0.1:50291	admin	REQUEST	INFO	30.36 ms
+07:52:17.013	127.0.0.1:50291	admin	OK		5.44 ms
+07:52:17.033	127.0.0.1:50292	admin	REQUEST	XQUERY for $c in collection('') return document-uri($c)	3.72 ms
+07:52:18.297	127.0.0.1:50292	admin	ERROR	Stopped at ., 1/21: [FODC0002] "/Users/arthur/Downloads/Projects/WEB/_BUILD-DMG/images/image-606498997875076667/Start ManageIT.app/Contents/Java/Jetty-base/work/cm/webapp/__MACOSX/WEB-INF/classes/WEB-INF/._jetty.xml" (Line 1): Content ist nicht zulässig in Prolog.	1263.69 ms
+07:53:45.550	127.0.0.1:50297	admin	REQUEST	XQUERY for $c in collection('')	0.62 ms
+07:53:45.550	127.0.0.1:50297	admin	ERROR	Stopped at ., 1/25: [XPST0003] Incomplete FLWOR expression: expecting 'return'.	0.78 ms
+07:54:03.406	127.0.0.1:50300	admin	REQUEST	XQUERY for $c in collection('') return $c	0.71 ms
+07:54:03.854	127.0.0.1:50300	admin	ERROR	Stopped at ., 1/21: [FODC0002] "/Users/arthur/Downloads/Projects/WEB/_BUILD-DMG/images/image-606498997875076667/Start ManageIT.app/Contents/Java/Jetty-base/work/cm/webapp/__MACOSX/WEB-INF/classes/WEB-INF/._jetty.xml" (Line 1): Content ist nicht zulässig in Prolog.	447.66 ms
+07:54:18.979	127.0.0.1:50301	admin	REQUEST	OPEN app-cm	1.61 ms
+07:54:19.003	127.0.0.1:50301	admin	OK	Database 'app-cm' was opened in 23.46 ms.	24.04 ms
+07:54:19.004	127.0.0.1:50301	admin	REQUEST	XQUERY for $c in collection('') return document-uri($c)	0.39 ms
+07:54:19.022	127.0.0.1:50301	admin	OK	Query executed in 18.12 ms.	18.63 ms
+17:22:54.428	127.0.0.1:54836	admin	REQUEST	XQUERY db:list()	6.6 ms
+17:22:54.455	127.0.0.1:54836	admin	OK	Query executed in 22.08 ms.	25.76 ms
+17:23:44.777	127.0.0.1:54852	admin	REQUEST	XQUERY for $d in db:list() return document-uri($d)	0.7 ms
+17:23:44.785	127.0.0.1:54852	admin	ERROR	Stopped at ., 2/20: [XPTY0004] Cannot cast xs:string to node(): "0589a896-fc52-46f9-b682-730a62c....	8.21 ms
+17:24:39.396	127.0.0.1:54860	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) return document-uri($d)	4.64 ms
+17:24:39.400	127.0.0.1:54860	admin	ERROR	Stopped at ., 3/21: [XPST0008] Undefined variable $d.	4.93 ms
+17:24:56.163	127.0.0.1:54864	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) return document-uri($doc)	0.42 ms
+17:24:56.218	127.0.0.1:54864	admin	OK	Query executed in 54.31 ms.	55.04 ms

@@ -1,0 +1,7 @@
+17:05:33.074	SERVER	admin	OK	Server was started (port: 1984).
+17:05:36.039	0:0:0:0:0:0:0:1:64746	admin	REQUEST	[GET] http://localhost:8080/webdav/
+17:05:36.076	0:0:0:0:0:0:0:1:64746	admin	200		40.08 ms
+17:05:44.286	0:0:0:0:0:0:0:1:64746	admin	REQUEST	[GET] http://localhost:8080/webdav/
+17:05:44.318	0:0:0:0:0:0:0:1:64746	admin	200		31.77 ms
+17:10:17.695	0:0:0:0:0:0:0:1:64876	admin	ERROR	Access denied.	219439.79 ms
+17:10:27.645	SERVER	admin	OK	Server was stopped (port: 1984).

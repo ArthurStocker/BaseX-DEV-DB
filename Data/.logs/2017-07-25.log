@@ -1,0 +1,4 @@
+17:28:16.150	SERVER	admin	OK	Server wurde gestoppt (Port: 1984).
+18:00:12.295	SERVER	admin	OK	Server wurde gestartet (Port: 1984).
+18:03:18.072	127.0.0.1:56020	admin	OK	QUERY[0] db:system()	3.14 ms
+18:03:18.585	127.0.0.1:56020	admin	OK	EXEC[0]	511.48 ms

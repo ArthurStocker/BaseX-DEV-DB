@@ -1,0 +1,75 @@
+11:03:03.652	SERVER	admin	OK	Server was started (port: 1984).
+11:03:04.146	127.0.0.1:50573	admin	OK	QUERY[0] undefined	6.03 ms
+11:03:04.426	127.0.0.1:50573	admin	REQUEST	EXEC[0]	278.09 ms
+11:03:04.426	127.0.0.1:50573	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.16 ms
+11:05:06.506	SERVER	admin	ERROR	Server is running or permission was denied.
+11:05:06.862	127.0.0.1:50582	admin	OK	QUERY[0] undefined	0.14 ms
+11:05:06.865	127.0.0.1:50582	admin	REQUEST	EXEC[0]	0.74 ms
+11:05:06.865	127.0.0.1:50582	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.15 ms
+11:06:11.580	127.0.0.1:50585	admin	OK	QUERY[0] undefined	0.31 ms
+11:06:11.581	127.0.0.1:50585	admin	REQUEST	EXEC[0]	0.8 ms
+11:06:11.581	127.0.0.1:50585	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.12 ms
+11:08:09.341	127.0.0.1:50587	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	0.35 ms
+11:09:59.731	127.0.0.1:50587	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	13.16 ms
+11:10:10.479	127.0.0.1:50587	admin	OK	EXEC[0]	509.7 ms
+11:12:07.163	127.0.0.1:50602	admin	OK	QUERY[0] undefined	0.13 ms
+11:12:07.165	127.0.0.1:50602	admin	REQUEST	EXEC[0]	0.67 ms
+11:12:07.165	127.0.0.1:50602	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.13 ms
+11:13:24.290	127.0.0.1:50604	admin	OK	QUERY[0] undefined	0.14 ms
+11:13:24.291	127.0.0.1:50604	admin	REQUEST	EXEC[0]	0.8 ms
+11:13:24.291	127.0.0.1:50604	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.12 ms
+11:15:04.190	127.0.0.1:50610	admin	OK	QUERY[0] db:list()	0.16 ms
+11:15:04.195	127.0.0.1:50610	admin	OK	EXEC[0]	4.57 ms
+11:16:28.191	127.0.0.1:50614	admin	OK	QUERY[0] db:list()	0.13 ms
+11:16:28.195	127.0.0.1:50614	admin	OK	EXEC[0]	2.29 ms
+11:18:17.754	127.0.0.1:50587	admin	REQUEST	EXEC[0]	2.19 ms
+11:18:17.754	127.0.0.1:50587	admin	ERROR	Stopped at ., 4/18: [XPDY0002] No value assigned to $table.	0.15 ms
+11:19:34.310	127.0.0.1:50624	admin	OK	QUERY[0] db:list()	0.13 ms
+11:19:34.311	127.0.0.1:50624	admin	OK	EXEC[0]	1.07 ms
+11:19:59.530	127.0.0.1:50626	admin	OK	QUERY[0] db:list()	0.16 ms
+11:19:59.532	127.0.0.1:50626	admin	OK	EXEC[0]	1.23 ms
+11:20:11.412	127.0.0.1:50587	admin	REQUEST	EXEC[0]	0.42 ms
+11:20:11.412	127.0.0.1:50587	admin	ERROR	Unknown Query ID: 0	0.2 ms
+11:23:01.876	127.0.0.1:50587	admin	OK	QUERY[1] db:list()	0.18 ms
+11:23:05.629	127.0.0.1:50587	admin	OK	EXEC[1]	1.37 ms
+11:26:08.894	127.0.0.1:50640	admin	OK	QUERY[0] undefined	0.13 ms
+11:26:08.894	127.0.0.1:50640	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.23 ms
+11:26:08.895	127.0.0.1:50640	admin	REQUEST	EXEC[0]	0.57 ms
+11:26:08.895	127.0.0.1:50640	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.1 ms
+11:28:14.797	127.0.0.1:50650	admin	OK	QUERY[0] db:list()	0.21 ms
+11:28:14.798	127.0.0.1:50650	admin	OK	EXEC[0]	1.14 ms
+11:29:13.830	127.0.0.1:50659	admin	OK	QUERY[0] db:list()	0.13 ms
+11:29:13.834	127.0.0.1:50659	admin	OK	EXEC[0]	2.95 ms
+11:31:08.291	127.0.0.1:50666	admin	OK	QUERY[0] db:list()	0.14 ms
+11:31:08.292	127.0.0.1:50666	admin	OK	EXEC[0]	1.08 ms
+11:32:05.673	127.0.0.1:50671	admin	OK	QUERY[0] undefined	0.12 ms
+11:32:05.674	127.0.0.1:50671	admin	REQUEST	EXEC[0]	0.71 ms
+11:32:05.674	127.0.0.1:50671	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.1 ms
+11:33:51.132	127.0.0.1:50675	admin	OK	QUERY[0] undefined	0.12 ms
+11:33:51.133	127.0.0.1:50675	admin	REQUEST	EXEC[0]	0.62 ms
+11:33:51.133	127.0.0.1:50675	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.1 ms
+11:34:01.355	127.0.0.1:50676	admin	OK	QUERY[0] undefined	0.11 ms
+11:34:01.356	127.0.0.1:50676	admin	REQUEST	EXEC[0]	0.54 ms
+11:34:01.356	127.0.0.1:50676	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.09 ms
+11:35:25.101	127.0.0.1:50681	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	0.24 ms
+11:35:25.102	127.0.0.1:50681	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.2 ms
+11:35:25.124	127.0.0.1:50681	admin	OK	EXEC[0]	22.46 ms
+11:43:50.897	127.0.0.1:50731	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	0.3 ms
+11:43:50.898	127.0.0.1:50731	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.24 ms
+11:43:50.922	127.0.0.1:50731	admin	OK	EXEC[0]	23.42 ms
+11:43:55.334	SERVER	admin	OK	Server was stopped (port: 1984).
+11:47:13.521	SERVER	admin	OK	Server was started (port: 1984).
+11:47:55.493	127.0.0.1:50740	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	8.04 ms
+11:47:55.583	127.0.0.1:50740	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	85.41 ms
+11:47:56.137	127.0.0.1:50740	admin	OK	EXEC[0]	552.83 ms
+11:48:05.420	SERVER	admin	OK	Server was stopped (port: 1984).
+11:48:53.638	SERVER	admin	OK	Server was started (port: 1984).
+11:48:54.195	127.0.0.1:50745	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	5.81 ms
+11:48:54.292	127.0.0.1:50745	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	94.42 ms
+11:48:54.801	127.0.0.1:50745	admin	OK	EXEC[0]	508.2 ms
+11:50:53.088	SERVER	admin	OK	Server was stopped (port: 1984).
+11:52:07.186	SERVER	admin	OK	Server was started (port: 1984).
+11:52:07.650	127.0.0.1:50761	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	5.83 ms
+11:52:07.760	127.0.0.1:50761	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	107.4 ms
+11:52:08.278	127.0.0.1:50761	admin	OK	EXEC[0]	517.55 ms
+11:52:37.567	SERVER	admin	OK	Server was stopped (port: 1984).

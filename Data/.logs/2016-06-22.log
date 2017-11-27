@@ -1,0 +1,12 @@
+17:21:13.621	127.0.0.1:53527	admin	REQUEST	INFO	44.68 ms
+17:21:13.629	127.0.0.1:53527	admin	OK		5.8 ms
+17:21:13.975	127.0.0.1:53528	admin	REQUEST	XQUERY db:open('global_app')/system/properties/getSysProperties/text()	5.86 ms
+17:21:14.691	127.0.0.1:53528	admin	OK	Query executed in 714.5 ms.	715.89 ms
+17:21:14.692	127.0.0.1:53528	admin	REQUEST	XQUERY json:serialize(element json {attribute type {"object"}, db:open("global_app")/system/*})	0.73 ms
+17:21:14.711	127.0.0.1:53528	admin	OK	Query executed in 18.61 ms.	18.94 ms
+17:21:14.861	127.0.0.1:53531	admin	REQUEST	INFO	0.42 ms
+17:21:14.863	127.0.0.1:53531	admin	OK		1.95 ms
+17:21:14.872	127.0.0.1:53532	admin	REQUEST	XQUERY db:open('global_app')/system/properties/getSysProperties/text()	0.41 ms
+17:21:14.875	127.0.0.1:53532	admin	OK	Query executed in 2.93 ms.	3.34 ms
+17:21:14.876	127.0.0.1:53532	admin	REQUEST	XQUERY json:serialize(element json {attribute type {"object"}, db:open("global_app")/system/*})	0.31 ms
+17:21:14.879	127.0.0.1:53532	admin	OK	Query executed in 3.24 ms.	3.48 ms

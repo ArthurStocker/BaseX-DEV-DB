@@ -1,0 +1,180 @@
+16:27:02.234	SERVER	admin	OK	Server was started (port: 1984).
+16:36:05.263	SERVER	admin	OK	Server was stopped (port: 1984).
+16:36:54.536	SERVER	admin	OK	Server was started (port: 1984).
+16:39:03.669	SERVER	admin	OK	Server was stopped (port: 1984).
+16:41:17.185	SERVER	admin	OK	Server was started (port: 1984).
+16:42:39.900	127.0.0.1:55484	admin	OK	QUERY[0] undefined	5.88 ms
+18:03:47.423	SERVER	admin	OK	Server was stopped (port: 1984).
+18:04:49.611	SERVER	admin	OK	Server was started (port: 1984).
+18:05:00.483	127.0.0.1:55514	admin	OK	QUERY[0] undefined	6.15 ms
+18:08:03.193	127.0.0.1:55517	admin	OK	QUERY[0] undefined	0.18 ms
+18:10:19.366	SERVER	admin	ERROR	Server is running or permission was denied.
+18:10:19.846	127.0.0.1:55520	admin	OK	QUERY[0] undefined	0.13 ms
+18:12:02.406	SERVER	admin	ERROR	Server is running or permission was denied.
+18:12:02.683	127.0.0.1:55522	admin	OK	QUERY[0] undefined	0.15 ms
+18:12:02.822	127.0.0.1:55522	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	135.38 ms
+18:12:03.002	127.0.0.1:55522	admin	REQUEST	EXEC[0]	179.92 ms
+18:12:03.002	127.0.0.1:55522	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.14 ms
+18:12:44.715	SERVER	admin	OK	Server was stopped (port: 1984).
+18:18:14.255	SERVER	admin	OK	Server was started (port: 1984).
+18:18:14.861	127.0.0.1:55547	admin	OK	QUERY[0] undefined	6.01 ms
+18:18:15.011	127.0.0.1:55547	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	143.86 ms
+18:18:15.205	127.0.0.1:55547	admin	REQUEST	EXEC[0]	193.4 ms
+18:18:15.205	127.0.0.1:55547	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.15 ms
+22:08:40.886	127.0.0.1:56037	admin	OK	QUERY[0] undefined	0.31 ms
+22:08:40.895	127.0.0.1:56037	admin	REQUEST	EXEC[0]	4.01 ms
+22:08:40.896	127.0.0.1:56037	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	1.42 ms
+22:11:31.120	127.0.0.1:56046	admin	OK	QUERY[0] undefined	0.28 ms
+22:11:31.124	127.0.0.1:56046	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	3.84 ms
+22:11:31.133	127.0.0.1:56046	admin	REQUEST	EXEC[0]	1.03 ms
+22:11:31.133	127.0.0.1:56046	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.15 ms
+22:13:01.840	127.0.0.1:56050	admin	OK	QUERY[0] undefined	0.17 ms
+22:13:01.840	127.0.0.1:56050	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.24 ms
+22:13:01.853	127.0.0.1:56050	admin	REQUEST	EXEC[0]	0.84 ms
+22:13:01.853	127.0.0.1:56050	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.15 ms
+22:16:36.118	127.0.0.1:56060	admin	OK	QUERY[0] undefined	0.24 ms
+22:16:36.119	127.0.0.1:56060	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.36 ms
+22:16:36.121	127.0.0.1:56060	admin	REQUEST	EXEC[0]	1.21 ms
+22:16:36.122	127.0.0.1:56060	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.14 ms
+22:21:30.102	127.0.0.1:56092	admin	OK	QUERY[0] undefined	0.29 ms
+22:21:30.103	127.0.0.1:56092	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.35 ms
+22:21:30.104	127.0.0.1:56092	admin	REQUEST	EXEC[0]	1.0 ms
+22:21:30.104	127.0.0.1:56092	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.13 ms
+22:21:30.105	127.0.0.1:56092	admin	REQUEST	INFO[0]	0.12 ms
+22:21:30.105	127.0.0.1:56092	admin	ERROR	Unknown Query ID: 0	0.11 ms
+22:23:37.895	127.0.0.1:56109	admin	OK	QUERY[0] XQUERY undefined	0.25 ms
+22:23:37.896	127.0.0.1:56109	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.37 ms
+22:23:37.901	127.0.0.1:56109	admin	REQUEST	EXEC[0]	5.04 ms
+22:23:37.902	127.0.0.1:56109	admin	ERROR	Stopped at ., 1/9: [XPST0003] Unexpected end of query: 'undefined'.	0.15 ms
+22:25:11.314	127.0.0.1:56118	admin	OK	QUERY[0] undefined	0.38 ms
+22:25:11.315	127.0.0.1:56118	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.45 ms
+22:25:11.316	127.0.0.1:56118	admin	REQUEST	EXEC[0]	0.87 ms
+22:25:11.317	127.0.0.1:56118	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.12 ms
+22:26:41.317	127.0.0.1:56123	admin	OK	QUERY[0] undefined	0.16 ms
+22:26:41.321	127.0.0.1:56123	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.92 ms
+22:26:41.323	127.0.0.1:56123	admin	REQUEST	EXEC[0]	0.66 ms
+22:26:41.323	127.0.0.1:56123	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.12 ms
+22:26:50.440	127.0.0.1:56125	admin	OK	QUERY[0] undefined	0.14 ms
+22:26:50.441	127.0.0.1:56125	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.26 ms
+22:26:50.443	127.0.0.1:56125	admin	REQUEST	EXEC[0]	0.66 ms
+22:26:50.443	127.0.0.1:56125	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.11 ms
+22:33:54.531	127.0.0.1:56186	admin	OK	QUERY[0] undefined	0.38 ms
+22:33:54.532	127.0.0.1:56186	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.37 ms
+22:33:54.533	127.0.0.1:56186	admin	REQUEST	EXEC[0]	1.28 ms
+22:33:54.533	127.0.0.1:56186	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.11 ms
+22:35:37.372	127.0.0.1:56192	admin	OK	QUERY[0] undefined	0.25 ms
+22:35:37.373	127.0.0.1:56192	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.3 ms
+22:35:37.374	127.0.0.1:56192	admin	REQUEST	EXEC[0]	0.85 ms
+22:35:37.374	127.0.0.1:56192	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.11 ms
+22:37:26.339	127.0.0.1:56202	admin	OK	QUERY[0] undefined	0.33 ms
+22:37:26.340	127.0.0.1:56202	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.47 ms
+22:37:26.343	127.0.0.1:56202	admin	REQUEST	EXEC[0]	0.9 ms
+22:37:26.343	127.0.0.1:56202	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.14 ms
+22:40:39.666	127.0.0.1:56211	admin	OK	QUERY[0] undefined	0.32 ms
+22:40:39.668	127.0.0.1:56211	admin	REQUEST	EXEC[0]	1.09 ms
+22:40:39.668	127.0.0.1:56211	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.13 ms
+22:40:57.766	127.0.0.1:56212	admin	OK	QUERY[0] undefined	0.56 ms
+22:40:57.767	127.0.0.1:56212	admin	REQUEST	EXEC[0]	0.72 ms
+22:40:57.767	127.0.0.1:56212	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.1 ms
+22:41:03.896	127.0.0.1:56213	admin	OK	QUERY[0] undefined	0.16 ms
+22:41:03.898	127.0.0.1:56213	admin	REQUEST	EXEC[0]	0.6 ms
+22:41:03.898	127.0.0.1:56213	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.1 ms
+22:41:26.042	SERVER	admin	ERROR	Server is running or permission was denied.
+22:41:39.964	SERVER	admin	OK	Server was stopped (port: 1984).
+22:41:42.303	SERVER	admin	OK	Server was started (port: 1984).
+22:42:07.414	127.0.0.1:56218	admin	OK	QUERY[0] undefined	0.17 ms
+22:42:07.417	127.0.0.1:56218	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.29 ms
+22:42:07.422	127.0.0.1:56218	admin	REQUEST	EXEC[0]	1.38 ms
+22:42:07.422	127.0.0.1:56218	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.14 ms
+22:44:28.363	127.0.0.1:56230	admin	OK	QUERY[0] undefined	0.3 ms
+22:44:28.365	127.0.0.1:56230	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.38 ms
+22:44:28.371	127.0.0.1:56230	admin	REQUEST	EXEC[0]	1.06 ms
+22:44:28.371	127.0.0.1:56230	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.12 ms
+22:45:54.426	127.0.0.1:56235	admin	OK	QUERY[0] undefined	0.13 ms
+22:45:54.426	127.0.0.1:56235	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.13 ms
+22:45:54.427	127.0.0.1:56235	admin	REQUEST	EXEC[0]	0.48 ms
+22:45:54.428	127.0.0.1:56235	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.1 ms
+22:52:50.885	127.0.0.1:56265	admin	OK	QUERY[0] undefined	0.24 ms
+22:52:50.887	127.0.0.1:56265	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.31 ms
+22:52:50.887	127.0.0.1:56265	admin	OK	INFO[0]	0.08 ms
+22:54:05.537	127.0.0.1:56270	admin	OK	QUERY[0] undefined	0.3 ms
+22:54:05.537	127.0.0.1:56270	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.29 ms
+22:54:05.538	127.0.0.1:56270	admin	OK	INFO[0]	0.06 ms
+22:55:56.947	127.0.0.1:56277	admin	OK	QUERY[0] undefined	0.11 ms
+22:55:56.947	127.0.0.1:56277	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.13 ms
+22:57:47.785	127.0.0.1:56280	admin	OK	QUERY[0] undefined	0.28 ms
+22:57:47.790	127.0.0.1:56280	admin	REQUEST	EXEC[0]	1.19 ms
+22:57:47.790	127.0.0.1:56280	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.14 ms
+22:58:31.948	127.0.0.1:56284	admin	OK	QUERY[0] undefined	0.13 ms
+22:58:31.955	127.0.0.1:56284	admin	OK	BIND[0] table=	0.28 ms
+22:58:31.956	127.0.0.1:56284	admin	REQUEST	EXEC[0]	0.7 ms
+22:58:31.956	127.0.0.1:56284	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.09 ms
+22:58:37.376	127.0.0.1:56285	admin	OK	QUERY[0] undefined	0.11 ms
+22:58:37.376	127.0.0.1:56285	admin	OK	BIND[0] table=s	0.12 ms
+22:58:37.377	127.0.0.1:56285	admin	REQUEST	EXEC[0]	0.5 ms
+22:58:37.377	127.0.0.1:56285	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.08 ms
+22:58:42.004	127.0.0.1:56286	admin	OK	QUERY[0] undefined	0.74 ms
+22:58:42.005	127.0.0.1:56286	admin	OK	BIND[0] $table=s	1.02 ms
+22:58:42.006	127.0.0.1:56286	admin	REQUEST	EXEC[0]	0.48 ms
+22:58:42.006	127.0.0.1:56286	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.09 ms
+22:58:51.238	127.0.0.1:56287	admin	OK	QUERY[0] undefined	0.12 ms
+22:58:51.240	127.0.0.1:56287	admin	OK	BIND[0] $table=	0.18 ms
+22:58:51.241	127.0.0.1:56287	admin	REQUEST	EXEC[0]	0.5 ms
+22:58:51.241	127.0.0.1:56287	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.11 ms
+22:58:56.092	127.0.0.1:56288	admin	OK	QUERY[0] undefined	0.14 ms
+22:58:56.096	127.0.0.1:56288	admin	REQUEST	BIND[0]	3.08 ms
+22:58:56.096	127.0.0.1:56288	admin	ERROR	[XPST0003] Invalid name: ''.	0.12 ms
+22:59:22.452	127.0.0.1:56289	admin	OK	QUERY[0] undefined	0.12 ms
+22:59:22.453	127.0.0.1:56289	admin	REQUEST	EXEC[0]	0.92 ms
+22:59:22.453	127.0.0.1:56289	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.16 ms
+22:59:29.034	127.0.0.1:56290	admin	OK	QUERY[0] undefined	0.12 ms
+22:59:29.035	127.0.0.1:56290	admin	REQUEST	EXEC[0]	0.53 ms
+22:59:29.035	127.0.0.1:56290	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.11 ms
+22:59:31.532	127.0.0.1:56291	admin	OK	QUERY[0] undefined	0.12 ms
+22:59:31.533	127.0.0.1:56291	admin	REQUEST	EXEC[0]	0.5 ms
+22:59:31.533	127.0.0.1:56291	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.08 ms
+22:59:36.311	127.0.0.1:56292	admin	OK	QUERY[0] undefined	0.11 ms
+22:59:36.312	127.0.0.1:56292	admin	REQUEST	EXEC[0]	0.56 ms
+22:59:36.312	127.0.0.1:56292	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.09 ms
+22:59:40.104	127.0.0.1:56293	admin	OK	QUERY[0] undefined	0.19 ms
+22:59:40.106	127.0.0.1:56293	admin	REQUEST	EXEC[0]	0.58 ms
+22:59:40.106	127.0.0.1:56293	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.12 ms
+22:59:48.854	127.0.0.1:56294	admin	OK	QUERY[0] undefined	0.11 ms
+22:59:48.857	127.0.0.1:56294	admin	REQUEST	EXEC[0]	0.55 ms
+22:59:48.857	127.0.0.1:56294	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.11 ms
+22:59:53.003	127.0.0.1:56295	admin	OK	QUERY[0] undefined	0.18 ms
+22:59:53.004	127.0.0.1:56295	admin	REQUEST	EXEC[0]	0.77 ms
+22:59:53.005	127.0.0.1:56295	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	3.2 ms
+23:04:12.887	127.0.0.1:56366	admin	OK	QUERY[0] undefined	10.07 ms
+23:04:12.899	127.0.0.1:56366	admin	REQUEST	EXEC[0]	1.21 ms
+23:04:12.899	127.0.0.1:56366	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.15 ms
+23:04:19.431	127.0.0.1:56367	admin	OK	QUERY[0] undefined	0.11 ms
+23:04:19.433	127.0.0.1:56367	admin	REQUEST	EXEC[0]	0.59 ms
+23:04:19.433	127.0.0.1:56367	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.09 ms
+23:05:14.754	127.0.0.1:56383	admin	OK	QUERY[0] undefined	0.23 ms
+23:05:14.755	127.0.0.1:56383	admin	REQUEST	EXEC[0]	0.55 ms
+23:05:14.755	127.0.0.1:56383	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.08 ms
+23:05:26.883	127.0.0.1:56384	admin	OK	QUERY[0] undefined	0.11 ms
+23:05:26.885	127.0.0.1:56384	admin	REQUEST	EXEC[0]	0.85 ms
+23:05:26.885	127.0.0.1:56384	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.13 ms
+23:05:31.835	127.0.0.1:56385	admin	OK	QUERY[0] undefined	0.11 ms
+23:05:31.836	127.0.0.1:56385	admin	REQUEST	EXEC[0]	0.52 ms
+23:05:31.836	127.0.0.1:56385	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.09 ms
+23:07:01.375	127.0.0.1:56390	admin	OK	QUERY[0] undefined	0.5 ms
+23:07:01.376	127.0.0.1:56390	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.35 ms
+23:07:01.382	127.0.0.1:56390	admin	REQUEST	EXEC[0]	0.89 ms
+23:07:01.382	127.0.0.1:56390	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.11 ms
+23:18:42.621	127.0.0.1:56505	admin	REQUEST	INFO	21.5 ms
+23:18:42.657	127.0.0.1:56505	admin	OK		35.48 ms
+23:20:11.068	127.0.0.1:56513	admin	OK	QUERY[0] undefined	0.3 ms
+23:20:11.070	127.0.0.1:56513	admin	REQUEST	EXEC[0]	0.98 ms
+23:20:11.070	127.0.0.1:56513	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.09 ms
+23:20:35.592	127.0.0.1:56515	admin	OK	QUERY[0] undefined	0.11 ms
+23:20:35.593	127.0.0.1:56515	admin	REQUEST	EXEC[0]	0.63 ms
+23:20:35.593	127.0.0.1:56515	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.09 ms
+23:20:53.862	127.0.0.1:56516	admin	OK	QUERY[0] undefined	1.23 ms
+23:20:53.864	127.0.0.1:56516	admin	REQUEST	EXEC[0]	0.59 ms
+23:20:53.864	127.0.0.1:56516	admin	ERROR	Stopped at ., 1/10: [XPDY0002] undefined: no context value bound.	0.08 ms
+23:22:45.456	SERVER	admin	OK	Server was stopped (port: 1984).
+23:27:49.311	SERVER	admin	OK	Server was started (port: 1984).
+23:32:49.602	SERVER	admin	OK	Server was stopped (port: 1984).

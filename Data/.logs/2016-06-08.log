@@ -1,0 +1,18 @@
+07:43:20.578	127.0.0.1:56599	admin	REQUEST	INFO	12.32 ms
+07:43:20.591	127.0.0.1:56599	admin	OK		2.32 ms
+07:43:20.604	127.0.0.1:56600	admin	REQUEST	OPEN app-cm	0.52 ms
+07:43:20.609	127.0.0.1:56600	admin	OK	Database 'app-cm' was opened in 4.58 ms.	4.97 ms
+07:50:39.654	127.0.0.1:57104	admin	REQUEST	OPEN app-cm	3.06 ms
+07:50:39.656	127.0.0.1:57104	admin	OK	Database 'app-cm' was opened in 0.62 ms.	2.02 ms
+07:51:22.732	127.0.0.1:57107	admin	REQUEST	OPEN app-cm	0.48 ms
+07:51:22.733	127.0.0.1:57107	admin	OK	Database 'app-cm' was opened in 0.09 ms.	0.33 ms
+07:53:02.490	127.0.0.1:57130	admin	REQUEST	OPEN app-cm	1.13 ms
+07:53:02.490	127.0.0.1:57130	admin	OK	Database 'app-cm' was opened in 0.08 ms.	0.61 ms
+07:54:59.053	127.0.0.1:57139	admin	REQUEST	INFO	0.54 ms
+07:54:59.055	127.0.0.1:57139	admin	OK		2.06 ms
+07:54:59.099	127.0.0.1:57140	admin	REQUEST	OPEN app-cm	0.52 ms
+07:54:59.100	127.0.0.1:57140	admin	OK	Database 'app-cm' was opened in 0.07 ms.	0.34 ms
+07:55:14.674	127.0.0.1:57144	admin	REQUEST	OPEN app-cm	1.13 ms
+07:55:14.674	127.0.0.1:57144	admin	OK	Database 'app-cm' was opened in 0.06 ms.	0.3 ms
+07:55:14.682	127.0.0.1:57144	admin	REQUEST	XQUERY /cmd/app/@id	5.0 ms
+07:55:14.906	127.0.0.1:57144	admin	OK	Query executed in 218.52 ms.	224.63 ms

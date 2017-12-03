@@ -1,0 +1,12 @@
+<package xmlns="http://cxan.org/ns/package"
+         id="brjx"
+         name="http://brjx.stocker-schmid.ch"
+         version="1.0">
+
+   <author id="astocker">Arthur Stocker</author>
+
+   <category id="tools">Tools</category>
+
+   <tag>stdlib</tag>
+
+</package>

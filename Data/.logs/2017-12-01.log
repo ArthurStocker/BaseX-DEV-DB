@@ -1,0 +1,35 @@
+06:59:12.825	SERVER	admin	OK	Server wurde gestoppt (Port: 1984).
+06:59:30.214	SERVER	admin	OK	Server wurde gestartet (Port: 1984).
+07:01:00.088	SERVER	admin	OK	Server wurde gestoppt (Port: 1984).
+07:01:06.168	SERVER	admin	OK	Server wurde gestartet (Port: 1984).
+07:01:18.186	127.0.0.1:53234	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn where $t/@id = $table where expression - table - end:) (:for $r in $t/*:) (:where expression - record - beginn:)(:where expression - record - end:) return $t (:string, number, boolean, null, object, array:)	7.91 ms
+07:01:18.309	127.0.0.1:53234	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	120.07 ms
+07:01:18.913	127.0.0.1:53234	admin	REQUEST	EXEC[0]	603.77 ms
+07:01:18.914	127.0.0.1:53234	admin	ERROR	[SERE0023] Only one item can be serialized with JSON.	0.22 ms
+07:03:46.137	SERVER	admin	OK	Server wurde gestoppt (Port: 1984).
+07:04:04.086	SERVER	admin	OK	Server wurde gestartet (Port: 1984).
+07:04:08.105	127.0.0.1:53238	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:) where $t/@id = $table (:where expression - table - end:) (:for $r in $t/*:) (:where expression - record - beginn:)(:where expression - record - end:) return $t (:string, number, boolean, null, object, array:)	7.14 ms
+07:04:08.230	127.0.0.1:53238	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	121.3 ms
+07:04:08.806	127.0.0.1:53238	admin	OK	EXEC[0]	575.3 ms
+07:10:51.099	SERVER	admin	OK	Server wurde gestoppt (Port: 1984).
+07:10:56.988	SERVER	admin	OK	Server wurde gestartet (Port: 1984).
+07:10:59.216	127.0.0.1:53244	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:) where $t/@id = $table (:where expression - table - end:) (:for $r in $t/*:) (:where expression - record - beginn:)(:where expression - record - end:) return $t (:string, number, boolean, null, object, array:)	5.68 ms
+07:10:59.305	127.0.0.1:53244	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	83.64 ms
+07:10:59.837	127.0.0.1:53244	admin	OK	EXEC[0]	531.22 ms
+07:11:29.402	SERVER	admin	OK	Server wurde gestoppt (Port: 1984).
+07:11:34.792	SERVER	admin	OK	Server wurde gestartet (Port: 1984).
+07:11:36.432	127.0.0.1:53245	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:) where $t/@id = $table (:where expression - table - end:) (:for $r in $t/*:) (:where expression - record - beginn:)(:where expression - record - end:) return $t (:string, number, boolean, null, object, array:)	5.32 ms
+07:11:36.517	127.0.0.1:53245	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	82.37 ms
+07:11:37.003	127.0.0.1:53245	admin	OK	EXEC[0]	485.26 ms
+07:13:37.315	SERVER	admin	OK	Server wurde gestoppt (Port: 1984).
+17:36:12.704	SERVER	admin	OK	Server wurde gestartet (Port: 1984).
+17:36:14.142	127.0.0.1:53941	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:) where $t/@id = $table (:where expression - table - end:) (:for $r in $t/*:) (:where expression - record - beginn:)(:where expression - record - end:) return $t (:string, number, boolean, null, object, array:)	7.0 ms
+17:36:14.264	127.0.0.1:53941	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	117.99 ms
+17:36:14.830	127.0.0.1:53941	admin	OK	EXEC[0]	566.09 ms
+17:40:17.128	127.0.0.1:53961	admin	OK	QUERY[0]	0.13 ms
+17:40:17.141	127.0.0.1:53961	admin	REQUEST	EXEC[0]	4.79 ms
+17:40:17.142	127.0.0.1:53961	admin	ERROR	Gestoppt in ., 1/1: [XPST0003] Empty query.	0.19 ms
+17:40:37.880	127.0.0.1:53963	admin	OK	QUERY[0]	0.12 ms
+17:40:37.889	127.0.0.1:53963	admin	REQUEST	EXEC[0]	0.29 ms
+17:40:37.889	127.0.0.1:53963	admin	ERROR	Gestoppt in ., 1/1: [XPST0003] Empty query.	0.19 ms
+17:41:27.634	SERVER	admin	OK	Server wurde gestoppt (Port: 1984).

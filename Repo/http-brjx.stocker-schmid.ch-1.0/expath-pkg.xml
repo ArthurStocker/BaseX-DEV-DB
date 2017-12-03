@@ -1,0 +1,14 @@
+<package xmlns="http://expath.org/ns/pkg"
+         name="http://brjx.stocker-schmid.ch"
+         abbrev="brjx"
+         version="1.0"
+         spec="1.0">
+
+   <title>BRjx library</title>
+
+   <xquery>
+      <namespace>http://brjx.stocker-schmid.ch</namespace>
+      <file>brjx.xq</file>
+   </xquery>
+
+</package>

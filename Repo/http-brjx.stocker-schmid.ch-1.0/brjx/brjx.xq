@@ -37,6 +37,7 @@ PASS  * getRepositories : path
 CHECK * getLastModified : path + name
 CHECK * getContent : path + name
 CHECK * getLength : path + name
+      * getName : path --> js only
       */
 
 :) 

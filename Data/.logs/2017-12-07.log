@@ -1,0 +1,16 @@
+07:07:19.708	SERVER	admin	OK	Server wurde gestoppt (Port: 1984).
+07:07:37.030	SERVER	admin	OK	Server wurde gestartet (Port: 1984).
+07:10:28.566	SERVER	admin	OK	Server wurde gestoppt (Port: 1984).
+07:19:38.277	SERVER	admin	OK	Server wurde gestartet (Port: 1984).
+07:36:59.432	SERVER	admin	OK	Server wurde gestoppt (Port: 1984).
+07:37:10.094	SERVER	admin	OK	Server wurde gestartet (Port: 1984).
+07:38:31.738	127.0.0.1:56287	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getRepositories("/")	6.26 ms
+07:38:32.747	127.0.0.1:56287	admin	OK	EXEC[0]	1001.28 ms
+07:39:22.026	127.0.0.1:56289	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getRepositories("/")	0.3 ms
+07:39:22.105	127.0.0.1:56289	admin	OK	EXEC[0]	70.73 ms
+07:39:34.429	127.0.0.1:56290	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getRepositories("/")	0.15 ms
+07:39:34.492	127.0.0.1:56290	admin	OK	EXEC[0]	50.43 ms
+07:39:44.569	127.0.0.1:56291	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getRepositories("/")	0.16 ms
+07:39:44.616	127.0.0.1:56291	admin	OK	EXEC[0]	30.49 ms
+07:39:51.162	127.0.0.1:56292	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getRepositories("/")	0.13 ms
+07:39:51.197	127.0.0.1:56292	admin	OK	EXEC[0]	30.18 ms

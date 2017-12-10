@@ -81,7 +81,7 @@ declare function brjx:getRecords
     for $doc in collection($db)
       for $t in $doc/*
         for $r in $t/*
-          where $r/record/type/text() = "javascript" or $r/record/type/text() = "xquery"
+          where $r/record/type/text() = "js" or $r/record/type/text() = "xq"
             for $f in $r/record/name/text()
               return document-uri($doc)||"/" ||$f||"."||$f/../../type/text()
 };

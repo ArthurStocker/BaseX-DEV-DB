@@ -33,10 +33,11 @@ PASS  * getResources : path
 PASS  * isRepository : path + name == "true"
 PASS  * getRepositories : path
       * needed ? --> getChildRepository : path + name
-      * js only ? --> getParentRepository : path
+      * getParentRepository : path --> js only
 CHECK * getLastModified : path + name
 CHECK * getContent : path + name
 CHECK * getLength : path + name
+      * getName : path --> js only
       */
 
 :) 
@@ -80,9 +81,9 @@ declare function brjx:getRecords
     for $doc in collection($db)
       for $t in $doc/*
         for $r in $t/*
-          where $r/record/type/text() = "javascript" or $r/record/type/text() = "xquery"
+          where $r/record/type/text() = "js" or $r/record/type/text() = "xq"
             for $f in $r/record/name/text()
-              return document-uri($doc)||"/" ||$f||"."||$f/../../type/text()
+              return document-uri($doc)||"/"||$f||"."||$f/../../type/text()
 };
 
 (:~
@@ -234,10 +235,11 @@ declare function brjx:getLength
  : @param   $resource the name of the resource from wich you wish to get the content
  :) 
 declare function brjx:getContent 
-  ( $input as xs:string,
-    $resource as xs:string )   as xs:string {
-  let $path := brjx:stripTrailingSlash($input)
-  return doc($path)//*[./name/text() = tokenize($resource, "\.")[1] and ./type/text() = tokenize($resource, "\.")[2]]/script/text()
+  ( $input as xs:string )   as node() {
+  let $resource := replace($input, "(.*)/([^/].*)$", "$2")
+  let $repository := replace($input, $resource, "")
+  let $path := brjx:stripTrailingSlash($repository)
+  return doc($path)//*[./name/text() = tokenize($resource, "\.")[1] and ./type/text() = tokenize($resource, "\.")[2]](:/script/text():)
 };
 
 (:~

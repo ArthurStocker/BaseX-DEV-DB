@@ -1,4 +1,3 @@
-
 (:~
 
  : --------------------------------
@@ -27,17 +26,19 @@
  : @see     
 
 
-     /** TODO BRjx Api Procedures
+     /** BRjx Api Procedures
 PASS  * isResource : path + name == "true"
 PASS  * getResources : path
 PASS  * isRepository : path + name == "true"
 PASS  * getRepositories : path
-      * needed ? --> getChildRepository : path + name
+      * TODO : needed ? --> getChildRepository : path + name
       * getParentRepository : path --> js only
 CHECK * getLastModified : path + name
 CHECK * getContent : path + name
 CHECK * getLength : path + name
       * getName : path --> js only
+      * isDebug : - --> js only
+      * log : msg --> js only
       */
 
 :) 

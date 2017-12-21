@@ -1,0 +1,173 @@
+18:24:01.311	SERVER	admin	OK	Server was started (port: 1984).
+18:24:01.686	127.0.0.1:57347	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	5.04 ms
+18:24:02.081	127.0.0.1:57347	admin	REQUEST	EXEC[0]	393.62 ms
+18:24:02.082	127.0.0.1:57347	admin	ERROR	Stopped at ., 6/18: [XPDY0002] No value assigned to $table.	0.13 ms
+18:24:02.108	SERVER	admin	OK	Server was stopped (port: 1984).
+18:24:47.890	SERVER	admin	OK	Server was started (port: 1984).
+18:24:48.100	127.0.0.1:57357	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	4.05 ms
+18:24:48.153	127.0.0.1:57357	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	51.84 ms
+18:24:48.449	127.0.0.1:57357	admin	OK	EXEC[0]	294.89 ms
+18:24:48.458	SERVER	admin	OK	Server was stopped (port: 1984).
+18:29:21.608	SERVER	admin	OK	Server was started (port: 1984).
+18:29:21.829	127.0.0.1:57392	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	3.39 ms
+18:29:21.883	127.0.0.1:57392	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	51.86 ms
+18:29:22.173	127.0.0.1:57392	admin	OK	EXEC[0]	289.41 ms
+18:29:22.184	SERVER	admin	OK	Server was stopped (port: 1984).
+18:29:49.883	SERVER	admin	OK	Server was started (port: 1984).
+18:29:49.992	127.0.0.1:57396	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	4.43 ms
+18:29:50.041	127.0.0.1:57396	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	47.55 ms
+18:29:50.328	127.0.0.1:57396	admin	OK	EXEC[0]	286.43 ms
+18:29:50.337	SERVER	admin	OK	Server was stopped (port: 1984).
+18:32:22.312	SERVER	admin	OK	Server was started (port: 1984).
+18:32:22.425	127.0.0.1:57417	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	4.36 ms
+18:32:22.474	127.0.0.1:57417	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	47.1 ms
+18:32:22.768	127.0.0.1:57417	admin	OK	EXEC[0]	293.66 ms
+18:32:22.776	SERVER	admin	ERROR	Server is running or permission was denied.
+18:32:22.795	SERVER	admin	OK	Server was stopped (port: 1984).
+18:33:33.868	SERVER	admin	OK	Server was started (port: 1984).
+18:33:33.992	127.0.0.1:57428	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	4.46 ms
+18:33:34.042	127.0.0.1:57428	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	48.43 ms
+18:33:34.333	127.0.0.1:57428	admin	OK	EXEC[0]	289.66 ms
+18:33:34.407	127.0.0.1:57429	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isRepository("/BRjx_main/bin/modules.xml/")	0.12 ms
+18:33:34.451	127.0.0.1:57429	admin	OK	EXEC[0]	44.16 ms
+18:33:34.509	127.0.0.1:57430	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js.js")	0.1 ms
+18:33:34.527	127.0.0.1:57430	admin	OK	EXEC[0]	17.86 ms
+18:33:34.552	127.0.0.1:57431	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js.json")	0.08 ms
+18:33:34.568	127.0.0.1:57431	admin	OK	EXEC[0]	15.88 ms
+18:33:34.585	127.0.0.1:57432	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js.class")	0.09 ms
+18:33:34.600	127.0.0.1:57432	admin	OK	EXEC[0]	14.8 ms
+18:33:34.622	127.0.0.1:57433	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js/package.json")	0.08 ms
+18:33:34.637	127.0.0.1:57433	admin	OK	EXEC[0]	14.7 ms
+18:33:34.659	127.0.0.1:57434	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js/index.js")	0.09 ms
+18:33:34.672	127.0.0.1:57434	admin	OK	EXEC[0]	12.86 ms
+18:33:34.689	127.0.0.1:57435	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js/index.json")	0.08 ms
+18:33:34.703	127.0.0.1:57435	admin	OK	EXEC[0]	13.53 ms
+18:33:34.725	127.0.0.1:57436	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js/index.class")	0.12 ms
+18:33:34.739	127.0.0.1:57436	admin	OK	EXEC[0]	13.63 ms
+18:33:34.757	127.0.0.1:57437	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js")	0.09 ms
+18:33:34.769	127.0.0.1:57437	admin	OK	EXEC[0]	11.64 ms
+18:33:34.786	127.0.0.1:57438	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js")	0.08 ms
+18:33:34.798	127.0.0.1:57438	admin	OK	EXEC[0]	11.79 ms
+18:33:34.816	127.0.0.1:57439	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js")	0.09 ms
+18:33:34.829	127.0.0.1:57439	admin	OK	EXEC[0]	13.17 ms
+18:33:34.847	127.0.0.1:57440	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; brjx:getContent("/BRjx_main/bin/modules.xml/BRjx.js")	0.09 ms
+18:33:34.868	127.0.0.1:57440	admin	OK	EXEC[0]	21.12 ms
+18:33:34.903	127.0.0.1:57441	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_main/bin/modules.xml/")	0.09 ms
+18:33:34.955	127.0.0.1:57441	admin	OK	EXEC[0]	51.0 ms
+18:33:35.004	127.0.0.1:57442	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection.js")	0.08 ms
+18:33:35.016	127.0.0.1:57442	admin	OK	EXEC[0]	11.07 ms
+18:33:35.064	127.0.0.1:57443	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection.json")	0.1 ms
+18:33:35.076	127.0.0.1:57443	admin	OK	EXEC[0]	11.39 ms
+18:33:35.120	127.0.0.1:57444	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection.class")	0.1 ms
+18:33:35.130	127.0.0.1:57444	admin	OK	EXEC[0]	10.48 ms
+18:33:35.152	127.0.0.1:57445	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/package.json")	0.08 ms
+18:33:35.162	127.0.0.1:57445	admin	OK	EXEC[0]	9.67 ms
+18:33:35.181	127.0.0.1:57446	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection/package.json")	0.08 ms
+18:33:35.191	127.0.0.1:57446	admin	OK	EXEC[0]	9.84 ms
+18:33:35.210	127.0.0.1:57447	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection/index.js")	0.08 ms
+18:33:35.220	127.0.0.1:57447	admin	OK	EXEC[0]	10.09 ms
+18:33:35.239	127.0.0.1:57448	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection/index.json")	0.13 ms
+18:33:35.249	127.0.0.1:57448	admin	OK	EXEC[0]	9.02 ms
+18:33:35.267	127.0.0.1:57449	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection/index.class")	0.09 ms
+18:33:35.278	127.0.0.1:57449	admin	OK	EXEC[0]	10.3 ms
+18:33:35.300	127.0.0.1:57450	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection")	0.08 ms
+18:33:35.310	127.0.0.1:57450	admin	OK	EXEC[0]	9.9 ms
+18:33:35.329	SERVER	admin	OK	Server was stopped (port: 1984).
+18:33:57.543	SERVER	admin	OK	Server was started (port: 1984).
+18:33:57.673	127.0.0.1:57454	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	3.45 ms
+18:33:57.723	127.0.0.1:57454	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	48.59 ms
+18:33:58.019	127.0.0.1:57454	admin	OK	EXEC[0]	295.11 ms
+18:33:58.079	127.0.0.1:57455	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isRepository("/BRjx_main/bin/modules.xml/")	0.12 ms
+18:33:58.121	127.0.0.1:57455	admin	OK	EXEC[0]	41.15 ms
+18:33:58.174	127.0.0.1:57456	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js.js")	0.08 ms
+18:33:58.192	127.0.0.1:57456	admin	OK	EXEC[0]	17.97 ms
+18:33:58.220	127.0.0.1:57457	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js.json")	0.09 ms
+18:33:58.236	127.0.0.1:57457	admin	OK	EXEC[0]	15.68 ms
+18:33:58.252	127.0.0.1:57458	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js.class")	0.09 ms
+18:33:58.266	127.0.0.1:57458	admin	OK	EXEC[0]	14.43 ms
+18:33:58.289	127.0.0.1:57459	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js/package.json")	0.08 ms
+18:33:58.304	127.0.0.1:57459	admin	OK	EXEC[0]	14.89 ms
+18:33:58.324	127.0.0.1:57460	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js/index.js")	0.08 ms
+18:33:58.337	127.0.0.1:57460	admin	OK	EXEC[0]	13.18 ms
+18:33:58.354	127.0.0.1:57461	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js/index.json")	0.08 ms
+18:33:58.369	127.0.0.1:57461	admin	OK	EXEC[0]	14.12 ms
+18:33:58.391	127.0.0.1:57462	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js/index.class")	0.12 ms
+18:33:58.404	127.0.0.1:57462	admin	OK	EXEC[0]	12.91 ms
+18:33:58.421	127.0.0.1:57463	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js")	0.09 ms
+18:33:58.435	127.0.0.1:57463	admin	OK	EXEC[0]	13.32 ms
+18:33:58.452	127.0.0.1:57464	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js")	0.08 ms
+18:33:58.465	127.0.0.1:57464	admin	OK	EXEC[0]	13.63 ms
+18:33:58.483	127.0.0.1:57465	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js")	0.11 ms
+18:33:58.496	127.0.0.1:57465	admin	OK	EXEC[0]	12.68 ms
+18:33:58.513	127.0.0.1:57466	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; brjx:getContent("/BRjx_main/bin/modules.xml/BRjx.js")	0.11 ms
+18:33:58.535	127.0.0.1:57466	admin	OK	EXEC[0]	21.23 ms
+18:33:58.567	127.0.0.1:57467	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_main/bin/modules.xml/")	0.11 ms
+18:33:58.591	127.0.0.1:57467	admin	OK	EXEC[0]	23.34 ms
+18:33:58.629	127.0.0.1:57468	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection.js")	0.08 ms
+18:33:58.641	127.0.0.1:57468	admin	OK	EXEC[0]	10.98 ms
+18:33:58.677	127.0.0.1:57469	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection.json")	0.1 ms
+18:33:58.688	127.0.0.1:57469	admin	OK	EXEC[0]	10.1 ms
+18:33:58.733	127.0.0.1:57470	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection.class")	0.08 ms
+18:33:58.743	127.0.0.1:57470	admin	OK	EXEC[0]	9.53 ms
+18:33:58.765	127.0.0.1:57471	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/package.json")	0.08 ms
+18:33:58.774	127.0.0.1:57471	admin	OK	EXEC[0]	9.39 ms
+18:33:58.795	127.0.0.1:57472	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection/package.json")	1.82 ms
+18:33:58.805	127.0.0.1:57472	admin	OK	EXEC[0]	9.68 ms
+18:33:58.823	127.0.0.1:57473	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection/index.js")	0.08 ms
+18:33:58.834	127.0.0.1:57473	admin	OK	EXEC[0]	10.27 ms
+18:33:58.852	127.0.0.1:57474	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection/index.json")	0.1 ms
+18:33:58.862	127.0.0.1:57474	admin	OK	EXEC[0]	9.52 ms
+18:33:58.881	127.0.0.1:57475	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection/index.class")	0.09 ms
+18:33:58.890	127.0.0.1:57475	admin	OK	EXEC[0]	9.3 ms
+18:33:58.912	127.0.0.1:57476	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection")	0.08 ms
+18:33:58.922	127.0.0.1:57476	admin	OK	EXEC[0]	9.63 ms
+18:33:58.939	SERVER	admin	OK	Server was stopped (port: 1984).
+18:48:42.371	SERVER	admin	OK	Server was started (port: 1984).
+18:48:42.499	127.0.0.1:57648	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	3.84 ms
+18:48:42.553	127.0.0.1:57648	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	51.7 ms
+18:48:42.851	127.0.0.1:57648	admin	OK	EXEC[0]	297.92 ms
+18:48:42.916	127.0.0.1:57649	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isRepository("/BRjx_main/bin/modules.xml/")	0.13 ms
+18:48:42.956	127.0.0.1:57649	admin	OK	EXEC[0]	39.64 ms
+18:48:43.005	127.0.0.1:57650	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js.js")	0.08 ms
+18:48:43.023	127.0.0.1:57650	admin	OK	EXEC[0]	17.82 ms
+18:48:43.048	127.0.0.1:57651	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js.json")	0.08 ms
+18:48:43.064	127.0.0.1:57651	admin	OK	EXEC[0]	15.83 ms
+18:48:43.080	127.0.0.1:57652	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js.class")	0.09 ms
+18:48:43.095	127.0.0.1:57652	admin	OK	EXEC[0]	14.75 ms
+18:48:43.117	127.0.0.1:57653	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js/package.json")	0.08 ms
+18:48:43.132	127.0.0.1:57653	admin	OK	EXEC[0]	14.83 ms
+18:48:43.153	127.0.0.1:57654	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js/index.js")	0.08 ms
+18:48:43.166	127.0.0.1:57654	admin	OK	EXEC[0]	13.44 ms
+18:48:43.183	127.0.0.1:57655	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js/index.json")	0.08 ms
+18:48:43.197	127.0.0.1:57655	admin	OK	EXEC[0]	13.96 ms
+18:48:43.217	127.0.0.1:57656	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js/index.class")	0.12 ms
+18:48:43.229	127.0.0.1:57656	admin	OK	EXEC[0]	12.02 ms
+18:48:43.247	127.0.0.1:57657	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js")	0.08 ms
+18:48:43.259	127.0.0.1:57657	admin	OK	EXEC[0]	12.39 ms
+18:48:43.276	127.0.0.1:57658	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js")	0.09 ms
+18:48:43.288	127.0.0.1:57658	admin	OK	EXEC[0]	12.05 ms
+18:48:43.305	127.0.0.1:57659	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js")	0.09 ms
+18:48:43.318	127.0.0.1:57659	admin	OK	EXEC[0]	12.44 ms
+18:48:43.336	127.0.0.1:57660	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; brjx:getContent("/BRjx_main/bin/modules.xml/BRjx.js")	0.12 ms
+18:48:43.357	127.0.0.1:57660	admin	OK	EXEC[0]	19.91 ms
+18:48:43.384	127.0.0.1:57661	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_main/bin/modules.xml/")	0.11 ms
+18:48:43.404	127.0.0.1:57661	admin	OK	EXEC[0]	19.73 ms
+18:48:43.441	127.0.0.1:57662	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection.js")	0.11 ms
+18:48:43.452	127.0.0.1:57662	admin	OK	EXEC[0]	11.3 ms
+18:48:43.478	127.0.0.1:57663	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection.json")	0.1 ms
+18:48:43.489	127.0.0.1:57663	admin	OK	EXEC[0]	10.58 ms
+18:48:43.536	127.0.0.1:57664	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection.class")	0.08 ms
+18:48:43.546	127.0.0.1:57664	admin	OK	EXEC[0]	9.79 ms
+18:48:43.567	127.0.0.1:57665	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/package.json")	0.09 ms
+18:48:43.577	127.0.0.1:57665	admin	OK	EXEC[0]	9.78 ms
+18:48:43.598	127.0.0.1:57666	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection/package.json")	1.85 ms
+18:48:43.608	127.0.0.1:57666	admin	OK	EXEC[0]	9.53 ms
+18:48:43.626	127.0.0.1:57667	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection/index.js")	0.08 ms
+18:48:43.636	127.0.0.1:57667	admin	OK	EXEC[0]	9.41 ms
+18:48:43.655	127.0.0.1:57668	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection/index.json")	0.11 ms
+18:48:43.666	127.0.0.1:57668	admin	OK	EXEC[0]	10.62 ms
+18:48:43.684	127.0.0.1:57669	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection/index.class")	0.09 ms
+18:48:43.695	127.0.0.1:57669	admin	OK	EXEC[0]	10.5 ms
+18:48:43.718	127.0.0.1:57670	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/basex/connection")	0.11 ms
+18:48:43.727	127.0.0.1:57670	admin	OK	EXEC[0]	8.84 ms
+18:48:43.745	SERVER	admin	OK	Server was stopped (port: 1984).

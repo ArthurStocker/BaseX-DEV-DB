@@ -1,8 +1,0 @@
-17:30:01.701	SERVER	admin	OK	Server was started (port: 1984).
-17:30:11.466	0:0:0:0:0:0:0:1:63731	admin	REQUEST	[GET] http://localhost:8080/jss/test
-17:30:13.702	0:0:0:0:0:0:0:1:63731	admin	404	No function found that matches the request.	2238.22 ms
-17:31:48.418	SERVER	admin	OK	Server was stopped (port: 1984).
-17:31:53.793	SERVER	admin	OK	Server was started (port: 1984).
-19:25:16.429	SERVER	admin	OK	Server was stopped (port: 1984).
-21:55:27.386	SERVER	admin	OK	Server was started (port: 1984).
-21:58:47.890	SERVER	admin	OK	Server was stopped (port: 1984).

@@ -1,2 +1,0 @@
-12:35:19.000	127.0.0.1:65006	admin	REQUEST	XQUERY for $db in db:list() for $doc in collection($db) let $a:= element document { attribute type {'object'}, element database { $db }, element document-uri { document-uri($doc) } } return json:serialize(<json type='object'>{$a}</json>)	10.39 ms
-12:35:19.137	127.0.0.1:65006	admin	OK	Query executed in 127.66 ms.	128.96 ms

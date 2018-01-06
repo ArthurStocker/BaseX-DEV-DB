@@ -1,5 +1,0 @@
-17:58:13.953	SERVER	admin	OK	Server was stopped (port: 1984).
-17:59:10.253	SERVER	admin	OK	Server was started (port: 1984).
-17:59:10.979	127.0.0.1:65211	admin	OK	QUERY[0] declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() for $doc in collection($db) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/records (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	9.11 ms
-17:59:11.237	127.0.0.1:65211	admin	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	252.07 ms
-17:59:12.949	127.0.0.1:65211	admin	OK	EXEC[0]	1711.89 ms

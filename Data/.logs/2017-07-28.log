@@ -1,5 +1,0 @@
-19:36:34.211	127.0.0.1:56878	admin	OK	QUERY[1] json:serialize(declare variable $dbname as xs:string external; declare variable $tableid as xs:string external; let $database := db:open($dbname) let $json := element json {attribute type {"array"}, for $t in $database/* where (:$t/name() = "configs":) $t/id = $tableid (::) for $r in $t/records (:where expression:) for $c in $r/* return $c (:string, number, boolean, null, object, array:) } return $json, map { 'format': 'jsonml' })	6.89 ms
-19:36:34.247	127.0.0.1:56878	admin	OK	BIND[1] $dbname=BRjx_main	24.82 ms
-19:36:34.248	127.0.0.1:56878	admin	OK	BIND[1] $tableid=175c9043-0cc4-4165-bdb1-eb66fc13457f	0.21 ms
-19:36:34.271	127.0.0.1:56878	admin	REQUEST	EXEC[1]	22.45 ms
-19:36:34.271	127.0.0.1:56878	admin	ERROR	Gestoppt in ., 1/24: [XPST0003] Expecting closing bracket: json:serialize.	0.12 ms

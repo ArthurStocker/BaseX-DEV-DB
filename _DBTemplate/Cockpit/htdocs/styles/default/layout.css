@@ -1,0 +1,134 @@
+/*
+ 
+ *  layout.css
+ *  cm
+ *
+ *  Created by Arthur Stocker on 04.08.15.
+ *  Copyright (c) 2014 Arthur Stocker. All rights reserved.
+
+ *
+ *  Default CSS for layout
+ *
+ */
+
+/* layout elements */
+body > div {
+    position: absolute;
+    width: 100%;
+    z-index: 900000;
+}
+header, main, footer {
+    background: white;
+    -webkit-flex: 0 1 auto;
+    flex: 0 1 auto;
+}
+main {
+    display: -webkit-flex;
+    -webkit-flex-flow: row nowrap;
+    display: flex;
+    flex-flow: row nowrap;
+    -webkit-flex: 2 1 auto;
+    flex: 2 1 auto;
+}
+nav, aside, article, section {
+    margin: 10px 5px 10px 5px;
+    padding: 10px;
+    background: white;
+}
+nav {
+    -webkit-flex: 1 1 1%;
+    flex: 1 1 1%;
+}
+aside {
+    -webkit-flex: 2 1 1%;
+    flex: 2 1 1%;
+}
+article {
+    -webkit-flex: 5 1 1%;
+    flex: 5 1 1%;
+}
+section {
+    -webkit-flex: 10 1 1%;
+    flex: 10 1 1%;
+}
+nav ul {
+    padding: 2px 0px 0px 10px;
+    text-align: left;
+}
+nav li {
+    padding: 2px;
+    text-transform: uppercase;
+    list-style: none;
+}
+nav a {
+    color: black;
+    text-decoration: none;
+}
+nav a:focus, nav a:hover, nav a:focus, nav a:hover {
+    color: #2673BF;
+}
+header nav, footer nav {
+    margin: 0px;
+    padding: 0px;
+    background: #F8F8F8;
+    border-top: 1px solid #A0A0A0;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid #A0A0A0;
+}
+header nav div {
+    display: -webkit-flex;
+    -webkit-justify-content: flex-start;
+    display: flex;
+    justify-content: flex-start;
+}
+footer nav div {
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+}
+header nav ul, footer nav ul {
+    padding: 10px;
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+    display: flex;
+    flex-direction: row;
+}
+header nav li, footer nav li {
+    padding: 0px 40px 0px 40px;
+    /*-webkit-flex: 1 1 0;
+    flex: 1 1 0;*/
+}
+header nav li a, footer nav li a {
+    padding: 10px;
+    font-weight: bold;
+}
+header nav li a:focus, header nav li a:hover, footer nav li a:focus, footer nav li a:hover {
+    margin: 0px;
+    padding: 10px;
+    color: black;
+    background: #E8E8E8;
+}
+section nav ul {
+    padding: 10px 40px 10px 0px;
+    display: inline-block;
+    text-align: left;
+}
+section nav li {
+    padding: 2px 0px 2px 0px;
+    display: list-item;
+    text-align: left;
+}
+section nav li a {
+    padding: 0px 10px 0px 10px;
+    text-align: left;
+    font-weight: bold;
+    text-transform: none;
+}
+section nav li a:focus, section nav li a:hover {
+    padding: 0px 10px 0px 10px;
+    color: #2673BF;
+    text-align: left;
+    background: transparent;
+}

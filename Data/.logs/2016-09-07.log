@@ -1,8 +1,0 @@
-19:49:44.206	SERVER	admin	OK	Server was started (port: 1984).
-19:49:48.649	127.0.0.1:57691	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/apps/*)	4.77 ms
-19:49:48.750	127.0.0.1:57691	admin	OK	BIND[0] $dbname=app_cfg	98.71 ms
-19:49:49.200	127.0.0.1:57691	admin	REQUEST	EXEC[0]	449.08 ms
-19:49:49.200	127.0.0.1:57691	admin	ERROR	Stopped at ., 1/62: [SERE0023] Only one item can be serialized with JSON.	0.5 ms
-19:49:49.349	127.0.0.1:57692	admin	OK	QUERY[0] declare variable $dbname as xs:string external;json:serialize(db:open($dbname)/actions/*)	0.18 ms
-19:49:49.350	127.0.0.1:57692	admin	OK	BIND[0] $dbname=app_cfg	0.2 ms
-19:49:49.358	127.0.0.1:57692	admin	OK	EXEC[0]	8.08 ms

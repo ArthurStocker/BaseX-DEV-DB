@@ -1,0 +1,56 @@
+/*
+ 
+ *  flayout.css
+ *  cm
+ *
+ *  Created by Arthur Stocker on 04.08.15.
+ *  Copyright (c) 2014 Arthur Stocker. All rights reserved.
+
+ *
+ *  CSS for flayout
+ *
+ */
+
+/* used in Header, Footer */
+.flyout-view {
+    border: 0px;
+    margin-top: 10px;
+    padding-top: 10px;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+.flyout-area {
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+    -webkit-justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.flyout-view li {
+    list-style: none;
+    text-decoration: none;
+    display: inline-block;
+}
+.flyout-view a, .flyout-view span.note {
+    padding: 10px;
+    color: #A0A0A0;
+    display: inline-block;
+    text-decoration: none;
+}
+.flyout-view a:focus, .flyout-view a:hover {
+    color: #2673BF;
+}
+.flyout-data[data-flayoutposition="left"] {
+    line-height: 50px;
+    vertical-align: middle;
+}
+.flyout-data[data-flayoutposition="center"] {
+    line-height: 50px;
+    vertical-align: middle;
+}
+.flyout-data[data-flayoutposition="right"] {
+    line-height: 50px;
+    vertical-align: middle;
+}

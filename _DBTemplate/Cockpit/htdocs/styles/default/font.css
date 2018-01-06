@@ -1,0 +1,92 @@
+/*
+ 
+ *  font.css
+ *  cm
+ *
+ *  Created by Arthur Stocker on 04.08.15.
+ *  Copyright (c) 2014 Arthur Stocker. All rights reserved.
+
+ *
+ *  Default CSS for fonts
+ *
+ */
+
+/* font definition */
+.special-font-42 {
+    font-size: 42px;
+    font-family:'Libre Baskerville', serif;
+}
+.special-font-36 {
+    font-size: 36px;
+    font-family:'Libre Baskerville', serif;
+}
+.special-font-18 {
+    font-size: 18px;
+    font-family:'Libre Baskerville', serif;
+}
+.special-font-14 {
+    font-size: 14px;
+    font-family:'Libre Baskerville', serif;
+}
+.special-font-12 {
+    font-size: 12px;
+    font-family:'Libre Baskerville', serif;
+}
+.special-font-6 {
+    font-size: 6px;
+    font-family:'Libre Baskerville', serif;
+}
+.italic-font-42bold {
+    color: #2673BF;
+    font-size: 42px;
+    font-style: italic;
+    font-weight: bold;
+}
+.italic-font-36bold {
+    color: #2673BF;
+    font-size: 36px;
+    font-style: italic;
+    font-weight: bold;
+}
+.italic-font-18bold {
+    color: #2673BF;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold;
+}
+.italic-font-14bold {
+    color: #2673BF;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: bold;
+}
+.italic-font-12bold {
+    color: #2673BF;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: bold;
+}
+.italic-font-6bold {
+    color: #2673BF;
+    font-size: 6px;
+    font-style: italic;
+    font-weight: bold;
+}
+.normal-font-42 {
+    font-size: 42px;
+}
+.normal-font-36 {
+    font-size: 36px;
+}
+.normal-font-18 {
+    font-size: 18px;
+}
+.normal-font-14 {
+    font-size: 14px;
+}
+.normal-font-12 {
+    font-size: 12px;
+}
+.normal-font-6 {
+    font-size: 6px;
+}

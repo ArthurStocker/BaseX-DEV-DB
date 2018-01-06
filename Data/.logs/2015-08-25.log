@@ -1,9 +1,0 @@
-17:38:02.467	0:0:0:0:0:0:0:1:62707	admin	REQUEST	[GET] http://localhost:8080/
-17:38:02.801	0:0:0:0:0:0:0:1:62707	admin	302		334.81 ms
-17:38:02.802	0:0:0:0:0:0:0:1:62707	admin	200		0.32 ms
-17:38:02.829	0:0:0:0:0:0:0:1:62707	admin	REQUEST	[GET] http://localhost:8080/cm/app
-17:38:02.932	SERVER	admin	INFO	Missing database. Start database setup procedure.
-17:38:02.933	0:0:0:0:0:0:0:1:62707	admin	302		103.56 ms
-17:38:02.933	0:0:0:0:0:0:0:1:62707	admin	200		0.11 ms
-17:38:02.950	0:0:0:0:0:0:0:1:62707	admin	REQUEST	[GET] http://localhost:8080/cm/install?task=setup&message=Missing%20database.%20Please%20setup%20database.&text=Start%20database%20setup&link=install%2F.setup
-17:38:03.002	0:0:0:0:0:0:0:1:62707	admin	200		52.05 ms

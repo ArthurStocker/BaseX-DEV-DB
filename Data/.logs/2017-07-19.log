@@ -1,5 +1,0 @@
-20:48:37.392	SERVER	admin	OK	Server wurde gestartet (Port: 1984).
-20:54:21.433	127.0.0.1:50868	admin	OK	QUERY[0] INFO	3.11 ms
-20:58:57.176	127.0.0.1:50892	admin	OK	QUERY[0] INFO	0.16 ms
-20:58:57.429	127.0.0.1:50892	admin	REQUEST	EXEC[0]	249.8 ms
-20:58:57.430	127.0.0.1:50892	admin	ERROR	Gestoppt in ., 1/5: [XPDY0002] INFO: no context value bound.	0.95 ms

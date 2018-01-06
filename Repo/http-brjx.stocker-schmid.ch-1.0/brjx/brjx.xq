@@ -81,10 +81,29 @@ declare function brjx:getRecords
   for $db in db:list()
     for $doc in collection($db)
       for $t in $doc/*
-        for $r in $t/*
-          where $r/record/type/text() = "js" or $r/record/type/text() = "xq"
+        let $bundle := replace(document-uri($doc), "(.*)/([^/].*)$", "$2")
+        where $bundle = "app.xml"  or $bundle = "macros.xml" or $bundle = "modules.xml" or $bundle = "components.xml" or $bundle = "boot.xml" or $bundle = "jobs.xml"
+          for $r in $t/*          
             for $f in $r/record/name/text()
-              return document-uri($doc)||"/"||$f||"."||$f/../../type/text()
+              return document-uri($doc)||"/"||$f/../../path/text()||$f||"."||$f/../../type/text()
+};
+
+(:~
+ : Get all bundles 
+ :
+ : @author  Arthur Stocker 
+ : @version 1.0 
+ : @see     http://brjx.stocker-schmid.ch/api/BasexRepository_getBundles.html 
+ : @param   -
+ :) 
+declare function brjx:getBundles
+  ( )   as xs:string* {
+  for $db in db:list()
+    for $doc in collection($db)
+      for $t in $doc/*
+        let $bundle := replace(document-uri($doc), "(.*)/([^/].*)$", "$2")
+        where $bundle = "app.xml"  or $bundle = "macros.xml" or $bundle = "modules.xml" or $bundle = "components.xml" or $bundle = "boot.xml" or $bundle = "jobs.xml"
+          return document-uri($doc) 
 };
 
 (:~
@@ -238,9 +257,12 @@ declare function brjx:getLength
 declare function brjx:getContent 
   ( $input as xs:string )   as node() {
   let $resource := replace($input, "(.*)/([^/].*)$", "$2")
+  let $basename := replace($resource, "\.[^\.]*$", "")
+  let $extension := replace($resource, ".*\.([^\.]*$)", "$1")
   let $repository := replace($input, $resource, "")
-  let $path := brjx:stripTrailingSlash($repository)
-  return doc($path)//*[./name/text() = tokenize($resource, "\.")[1] and ./type/text() = tokenize($resource, "\.")[2]](:/script/text():)
+  let $bundle := replace($repository, "(.*)\.([^\.][^/]*).*$", "$1.$2")
+  let $path := replace($repository, "(.*)\.([^\.][^/]*)/(.*)$", "$3")
+  return doc($bundle)//*[./name/text() = $basename and ./type/text() = $extension and ./path/text() = $path]  (:/script/text():)
 };
 
 (:~
@@ -252,10 +274,27 @@ declare function brjx:getContent
  : @param   $input the path from which you wish to get the last-modified date of the repository or resource
  :          (modified date of a repository or resource is the same as they are stored in the same db)
  :
- : return a value of type long (current-dateTime() - xs:dateTime("1970-01-01T00:00:00-00:00")) div xs:dayTimeDuration('PT0.001S')
+ : return a value of type long. As Javascript cannot represent 64bit Java long we add a _ in front to return a string and remove it in the Java Class before conversion.
  :) 
 declare function brjx:getLastModified 
   ( $input as xs:string )   as xs:string {
-  let $path := brjx:stripTrailingSlash($input)
-  return string((current-dateTime() - xs:dateTime(db:list-details(tokenize($path, "/")[2])[./text() = replace($path, "/" || tokenize($path, "/")[2] || "/", "")]//@modified-date/data())) div xs:dayTimeDuration('PT0.001S'))
+  let $bundle := replace($input, "(.*)\.([^\.][^/]*).*$", "$1.$2")
+  return string((xs:dateTime(db:list-details()[./text() = tokenize($bundle, "/")[2]]//@modified-date/data()) - xs:dateTime('1970-01-01T00:00:00-00:00')) div xs:dayTimeDuration('PT0.001S'))
+};
+
+
+declare function brjx:getModulesLastModified
+  ( )   as element()? { 
+  element {"lastModified"} {
+    max(
+      for $db in db:list()
+        for $doc in collection($db)
+          for $t in $doc/*
+            let $bundle := replace(document-uri($doc), "(.*)/([^/].*)$", "$2")
+            where ($bundle = "modules.xml" or $bundle = "jobs.xml") and not(contains(document-uri($doc), "ui"))
+              for $timeStamp in db:list-details()
+                where $timeStamp/text() = replace(document-uri($doc), "/([^/]*)/([^/].*)$", "$1") 
+                return string((xs:dateTime($timeStamp//@modified-date/data()) - xs:dateTime("1970-01-01T00:00:00-00:00")) div xs:dayTimeDuration("PT0.001S"))
+    )
+  }
 };

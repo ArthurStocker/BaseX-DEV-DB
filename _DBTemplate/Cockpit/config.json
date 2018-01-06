@@ -1,0 +1,437 @@
+{
+    "components": {
+        "message": [
+            {
+                "init": {
+                    "fn": "initMessage",
+                    "item": "",
+                    "parent": ".message-layer",
+                    "delay": 5000,
+                    "fadeOut": 1000
+                },
+                "class": {
+                    "ctrl": "",
+                    "item": ""
+                },
+                "suffix": "message-type-red",                              
+                "insert": "asFirst",
+                "message": "Displaying messages may be turned off by a click on the Message Button at the bottom right. Even if displaying messages is turned off, the messages will be logged to the Journal, accessable at bottom right as well."
+            }
+        ],
+        "window": [
+            {
+                "init": {
+                    "fn": "initWindow",
+                    "item": "",
+                    "parent": ".window-layer"
+                },
+                "class": {
+                    "ctrl": "",
+                    "item": ""
+                },
+                "suffix": "license",                              
+                "insert": "asFirst",
+                "controls": {
+                    "init": {
+                        "fn": "bindAction",
+                        "item": ".window-controls-item",
+                        "parent": ""
+                    },
+                    "class": {
+                        "ctrl": "fa-chevron-down",
+                        "item": "window-controls-item"
+                    },
+                    "suffix": "",                              
+                    "insert": "asFirst",
+                    "groups": {
+                        "window-left": [
+                            {
+                                "text": "",
+                                "mode": "button",
+                                "state": "",
+                                "action": {
+                                    "eh1": {
+                                        "click": "menuaction"
+                                    }
+                                },
+                                "active": "",
+                                "fallow": ""
+                            }
+                        ],
+                        "window-center": [
+                            {
+                                "text": "",
+                                "mode": "button",
+                                "state": "",
+                                "action": {
+                                    "eh1": {
+                                        "click": "menuaction"
+                                    }
+                                },
+                                "active": "",
+                                "fallow": ""
+                            }
+                        ],
+                        "window-right": [
+                            {
+                                "text": "",
+                                "mode": "button",
+                                "state": "",
+                                "action": {
+                                    "eh1": {
+                                        "click": "menuaction"
+                                    },
+                                    "eh2": {
+                                        "click": "closewindow"
+                                    }
+                                },
+                                "active": "fa-times",
+                                "fallow": "fa-times"
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "menu": [
+            {
+                "init": {
+                    "fn": "bindAction",
+                    "item": ".menu-item",
+                    "parent": "main"
+                },
+                "class": {
+                    "ctrl": "fa-chevron-left",
+                    "item": "menu-item"
+                },
+                "insert": "asFirst",
+                "groups": {
+                    "main": [
+                        {
+                            "text": "&nbsp;&nbsp;Data",
+                            "mode": "menu-item",
+                            "state": "active",
+                            "action": {
+                                "eh1": {
+                                    "click": "menuaction"
+                                }
+                            },
+                            "active": "fa-database",
+                            "fallow": "fa-database"
+                        },
+                        {
+                            "text": "&nbsp;&nbsp;Setup",
+                            "mode": "menu-item",
+                            "action": {
+                                "eh1": {
+                                    "click": "menuaction"
+                                }
+                            },
+                            "active": "fa-cog",
+                            "fallow": "fa-cog"
+                        },
+                        {
+                            "text": "&nbsp;&nbsp;Preset's",
+                            "mode": "menu-pulldown",
+                            "type": "context",
+                            "insert": "asLast",
+                            "suffix": "menu-item-pulldown-ctrl menu-item-pulldown-ctrl-closed",
+                            "action": {
+                                "eh1": {
+                                    "click": "menuaction"
+                                },
+                                "eh2": {
+                                    "click": "togglepulldown"
+                                }
+                            },
+                            "state": "fallow",
+                            "active": "fa-chevron-up",
+                             
+                            "fallow": "fa-chevron-down",
+                            "groups": {
+                                "main-presets": [
+                                    {
+                                        "text": "&nbsp;&nbsp;Add",
+                                        "mode": "menu-item",
+                                        "action": {
+                                            "eh1": {
+                                                "click": "menuaction"
+                                            }
+                                        },
+                                        "active": "fa-plus-square-o",
+                                        "fallow": "fa-plus-square-o"
+                                    },
+                                    {
+                                        "text": "&nbsp;&nbsp;Modify",
+                                        "mode": "menu-item",
+                                        "action": {
+                                            "eh1": {
+                                                "click": "menuaction"
+                                            }
+                                        },
+                                        "active": "fa-pencil-square-o",
+                                        "fallow": "fa-pencil-square-o"
+                                    },
+                                    {
+                                        "text": "&nbsp;&nbsp;Delete",
+                                        "mode": "menu-item",
+                                        "action": {
+                                            "eh1": {
+                                                "click": "menuaction"
+                                            }
+                                        },
+                                        "active": "fa-minus-square-o",
+                                        "fallow": "fa-minus-square-o"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "init": {
+                    "fn": "bindAction",
+                    "item": ".menu-item",
+                    "parent": "#persist-view-top .persist-data"
+                },
+                "class": {
+                    "ctrl": "fa-chevron-left",
+                    "item": "menu-item"
+                },
+                "suffix": "horizontally",
+                "insert": "asFirst",
+                "groups": {
+                    "top": [
+                        {
+                            "text": "&nbsp;&nbsp;Cockpit",
+                            "mode": "menu-item",
+                            "action": {
+                                "eh1": {
+                                    "click": "menuaction"
+                                }
+                            },
+                            "active": "fa-keyboard-o",
+                            "fallow": "fa-keyboard-o"
+                        },
+                        {
+                            "text": "&nbsp;&nbsp;X Plane",
+                            "mode": "menu-item",
+                            "action": {
+                                "eh1": {
+                                    "click": "menuaction"
+                                }
+                            },
+                            "active": "fa-plane",
+                            "fallow": "fa-plane"
+                        },
+                        {
+                            "text": "&nbsp;&nbsp;Gauges",
+                            "mode": "menu-pulldown",
+                            "type": "option",
+                            "insert": "asLast",
+                            "suffix": "menu-item-pulldown-ctrl menu-item-pulldown-ctrl-closed",
+                            "action": {
+                                "eh1": {
+                                    "click": "menuaction"
+                                },
+                                "eh2": {
+                                    "click": "togglepulldown"
+                                }
+                            },
+                            "state": "fallow",
+                            "active": "fa-chevron-up",
+                            "fallow": "fa-chevron-down",
+                            "groups": {
+                                "gauges": [
+                                    {
+                                        "text": "&nbsp;&nbsp;Turnslip",
+                                        "mode": "button",
+                                        "action": {
+                                            "eh1": {
+                                                "click": "menuaction"
+                                            }
+                                        },
+                                        "active": "fa-toggle-on",
+                                        "fallow": "fa-toggle-off"
+                                    },
+                                    {
+                                        "text": "&nbsp;&nbsp;Attitude",
+                                        "mode": "button",
+                                        "action": {
+                                            "eh1": {
+                                                "click": "menuaction"
+                                            }
+                                        },
+                                        "active": "fa-toggle-on",
+                                        "fallow": "fa-toggle-off"
+                                    },
+                                    {
+                                        "text": "&nbsp;&nbsp;Speed",
+                                        "mode": "button",
+                                        "action": {
+                                            "eh1": {
+                                                "click": "menuaction"
+                                            }
+                                        },
+                                        "active": "fa-toggle-on",
+                                        "fallow": "fa-toggle-off"
+                                    },
+                                    {
+                                        "text": "&nbsp;&nbsp;Heading",
+                                        "mode": "button",
+                                        "action": {
+                                            "eh1": {
+                                                "click": "menuaction"
+                                            }
+                                        },
+                                        "active": "fa-toggle-on",
+                                        "fallow": "fa-toggle-off"
+                                    },
+                                    {
+                                        "text": "&nbsp;&nbsp;Altitude",
+                                        "mode": "button",
+                                        "action": {
+                                            "eh1": {
+                                                "click": "menuaction"
+                                            }
+                                        },
+                                        "active": "fa-toggle-on",
+                                        "fallow": "fa-toggle-off"
+                                    },
+                                    {
+                                        "text": "&nbsp;&nbsp;Vertical Speed",
+                                        "mode": "button",
+                                        "action": {
+                                            "eh1": {
+                                                "click": "menuaction"
+                                            }
+                                        },
+                                        "active": "fa-toggle-on",
+                                        "fallow": "fa-toggle-off"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "text": "&nbsp;&nbsp;Table",
+                            "mode": "menu-item",
+                            "action": {
+                                "eh1": {
+                                    "click": "menuaction"
+                                }
+                            },
+                            "active": "fa-table",
+                            "fallow": "fa-table"
+                        },
+                        {
+                            "text": "&nbsp;&nbsp;Graphs",
+                            "mode": "menu-item",
+                            "action": {
+                                "eh1": {
+                                    "click": "menuaction"
+                                }
+                            },
+                            "active": "fa-line-chart",
+                            "fallow": "fa-line-chart"
+                        }
+                    ]
+                }
+            },
+            {
+                "init": {
+                    "fn": "bindAction",
+                    "item": ".menu-item",
+                    "parent": "#persist-view-bottom .persist-data"
+                },
+                "class": {
+                    "ctrl": "fa-chevron-left",
+                    "item": "menu-item"
+                },
+                "suffix": "horizontally",                              
+                "insert": "asFirst",
+                "groups": {
+                    "bottom-left": [
+                        {
+                            "text": "&nbsp;&nbsp;Bombardier CRJ-200",
+                            "mode": "menu-item",
+                            "state": "active",
+                            "action": {
+                                "eh1": {
+                                    "click": "menuaction"
+                                }
+                            },
+                            "active": "fa-toggle-on",
+                            "fallow": "fa-toggle-off"
+                        },
+                        {
+                            "text": "&nbsp;&nbsp;Cessna 172",
+                            "mode": "menu-item",
+                            "state": "fallow",
+                            "action": {
+                                "eh1": {
+                                    "click": "menuaction"
+                                }
+                            },
+                            "active": "fa-toggle-on",
+                            "fallow": "fa-toggle-off"
+                        },
+                        {
+                            "text": "&nbsp;&nbsp;Boing 747-400",
+                            "mode": "menu-item",
+                            "state": "fallow",
+                            "action": {
+                                "eh1": {
+                                    "click": "menuaction"
+                                }
+                            },
+                            "active": "fa-toggle-on",
+                            "fallow": "fa-toggle-off"
+                        }
+                    ],
+                    "bottom-right": [
+                        {
+                            "text": "&nbsp;&nbsp;Journal",
+                            "mode": "button",
+                            "state": "fallow",
+                            "action": {
+                                "eh1": {
+                                    "click": "menuaction"
+                                }
+                            },
+                            "active": "fa-history",
+                            "fallow": "fa-history"
+                        },
+                        {
+                            "text": "&nbsp;&nbsp;Messages",
+                            "mode": "button",
+                            "state": "active",
+                            "action": {
+                                "eh1": {
+                                    "click": "menuaction"
+                                }
+                            },
+                            "active": "fa-bell",
+                            "fallow": "fa-bell-slash"
+                        },
+                        {
+                            "text": "&nbsp;&nbsp;Connect",
+                            "mode": "button",
+                            "state": "active",
+                            "action": {
+                                "eh1": {
+                                    "click": "menuaction"
+                                },
+                                "eh2": {
+                                    "click": "connection"
+                                }
+                            },
+                            "active": "fa-check-square-o",
+                            "fallow": "fa-square-o"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

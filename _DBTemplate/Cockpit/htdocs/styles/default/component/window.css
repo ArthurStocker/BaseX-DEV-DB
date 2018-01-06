@@ -1,0 +1,83 @@
+/*
+ 
+ *  window.css
+ *  cm
+ *
+ *  Created by Arthur Stocker on 04.08.15.
+ *  Copyright (c) 2014 Arthur Stocker. All rights reserved.
+
+ *
+ *  CSS for window controls
+ *
+ */
+ 
+/* window container */
+.window-layer {
+}
+
+/* used in window div to display controls */
+.window-view {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    width: 580px;
+    height: 1020px;
+    margin: 0px 0px 0px -290px;
+    background: #F8F8F8;
+    border: 1px solid #A0A094;
+    border-radius: 10px;
+}
+.window-view-closed {
+    display: none;
+}
+.window-area {
+}
+.window-data {
+    position: absolute;
+    top: 25px;
+    bottom: 25px;
+    width: 520px;
+    height: 970px;
+    padding: 0px 30px 0px 30px;
+    overflow: scroll;
+}
+.window-ctrl {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    background: #F8F8F8;
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: 1px solid #A0A094;
+}
+.window-wait {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 46px;
+    height: 36px;
+    margin: -18px 0px 0px -23px;
+}
+.window-controls-view {
+    margin: 0px;
+    padding: 2px 10px 2px 10px;
+    background: transparent;
+}
+.window-controls-area {
+    display: flex;
+    justify-content: space-between;
+}
+.window-controls-data {
+    padding: 2px 5px 2px 5px;
+    display: flex;
+    flex-direction: row;
+}
+.window-controls-ctrl {
+    display: none;
+}
+.window-controls-item {
+    display: inline;
+}
+.window-controls-item:focus, .window-controls-item:hover, .window-controls-item.active {
+    background: #E8E8E8;
+}

@@ -1,0 +1,48 @@
+/*
+ 
+ *  license.css
+ *  cm
+ *
+ *  Created by Arthur Stocker on 04.08.15.
+ *  Copyright (c) 2014 Arthur Stocker. All rights reserved.
+
+ *
+ *  Default CSS for license- elements
+ *
+ */
+
+/* license elements */
+.window-view.license {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    width: 580px;
+    height: 1020px;
+    padding: 0px 0px 0px -290px;
+    background: #d4e6f7;
+    border: 1px solid #2673BF;
+    border-radius: 10px;
+}
+.window-view.license .window-data {
+    position: absolute;
+    top: 25px;
+    bottom: 25px;
+    width: 520px;
+    height: 970px;
+    padding: 0px 30px 0px 30px;
+    font-family: Courier;
+    white-space: pre;
+}
+.window-ctrl {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    background: #d4e6f7;
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: 0px solid #A0A094;
+}
+.window-controls-item:focus, .window-controls-item:hover, .window-controls-item.active {
+    color: #2673BF;
+    background: #d4e6f7;
+}

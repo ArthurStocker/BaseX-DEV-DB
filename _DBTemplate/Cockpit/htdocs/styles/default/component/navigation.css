@@ -1,0 +1,86 @@
+/*
+ 
+ *  navigation.css
+ *  cm
+ *
+ *  Created by Arthur Stocker on 04.08.15.
+ *  Copyright (c) 2014 Arthur Stocker. All rights reserved.
+
+ *
+ *  CSS for navigation
+ *
+ */
+
+/* persistent navigation; Header, Main, Footer */
+aside + .persist-area, section + .persist-area {
+    position: relative;
+}
+.persist-ctrl {
+    position: fixed;
+    visibility: hidden;
+}
+/* context navigation; Main */
+.menu-view {
+    border-right: 1px solid #A0A0A0;
+    /*
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+    -webkit-justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    */
+}
+.menu-ctrl {
+    display: none;
+}
+.menu-item {
+    color: #333333;
+}
+.menu-item:focus, .menu-item:hover, .menu-item.active {
+    color: #2673BF;
+}
+.menu-item-pulldown-ctrl.option:hover, .menu-item-pulldown-ctrl.option:hover {
+    background: #E8E8E8;
+}
+.menu-item-pulldown-ctrl.context:focus, .menu-item-pulldown-ctrl.context:hover {
+    color: #2673BF;
+}
+.menu-item-pulldown-ctrl-closed .menu-pulldown-view {
+    display: none;
+}
+
+
+.menu-pulldown-view {
+    /*position: relative;*/
+}
+.menu-pulldown-view.option {
+    position: absolute;
+    width: 100%;
+    top: 34px;
+    left: 0px;
+    z-index: 999999;
+}
+.menu-pulldown-view.context {
+    margin: 0px;
+    padding: 0px 0px 0px 10px;
+}
+.menu-pulldown-area {
+    /*justify-content: flex-start;*/
+}
+.menu-pulldown-ctrl {
+    display: none;
+}
+/*
+.menu-pulldown-ctrl.option {
+    margin: -10px 30px -10px 30px;
+    padding: 10px 10px 10px 10px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+*/
+
+.horizontally {
+    border-right: 0px;
+}

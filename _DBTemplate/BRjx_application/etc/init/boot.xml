@@ -1,0 +1,610 @@
+<boot id="b318524d-2798-47a7-af99-a213ccbd6ea0">
+  <records>
+    <record id="d2be28f2-b809-40ec-9e6c-fdbc6ba56835">
+      <path>BRjx_loader/</path>
+      <name>main</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+/**
+ * @fileOverview Register the Repositories with the RingoJS Engine while reading the RepoPathes from the BaseX DB on the Server.
+ * @author Arthur Stocker
+ * @version 0.0.1
+ *
+ * @see -
+ * @param {object} Engine
+ * @param {object} Server
+ * @param {object} BaseXClient
+ * @param {object} BaseXQuery
+ * @since 0.0.1
+ * @returns {boolean} success
+ */
+const Logger = require('ringo/logging');
+Logger.setConfig(getResource('config/log4j.properties'), true);
+
+/**
+ * export ( ... )
+ * 
+ * eslint-disable 
+ */
+ export (
+    'Loader'
+);
+/* eslint-enable */
+
+
+/**
+ * const ...
+ */
+const log = Logger.getLogger(module.id);
+
+
+/**
+ * var ...
+ */
+var { Config } = require('basex');
+var Args = require('args');
+
+
+/**
+ * The module version string with the major and minor version number.
+ */
+var version = '0.0.1';
+
+
+/**
+ * default values
+ */
+var config = Config.load(module.resolve('./default.properties'));
+
+
+/**
+ * Create a loader object
+ * @see -
+ * @param {object} Engine
+ * @param {object} Server
+ * @param {object} BaseXClient
+ * @param {object} BaseXQuery
+ * @since 0.0.1
+ * @returns {boolean} success
+ */
+function Loader() {
+    if (!(this instanceof Loader)) {
+        return new Loader(arguments);
+    }
+
+    // local variables
+    var self = this;
+
+    var _parameter = {
+        rc : undefined,
+        context: {},
+        loaded: true
+    };
+
+    // validate arguments
+    var _args = Args([
+        { engine: Args.OBJECT | Args.Required },
+        { server: Args.OBJECT | Args.Required },
+        { client: Args.FUNCTION | Args.Required },
+        { query: Args.FUNCTION | Args.Required }
+    ], arguments);
+
+
+    /**
+     * Get HTTP Server instance.
+     * @see -
+     * @param -
+     * @since 0.0.1
+     * @returns {object} server
+     */
+    Object.defineProperty(self, "server", {
+        get: function() {
+            return _args.server; 
+        },
+        enumerable: true,
+        configurable: false
+    });
+    
+
+    /**
+     * Set the run configuration for the application.
+     * @see -
+     * @param -
+     * @since 0.0.1
+     * @returns {boolean} success
+     */
+    Object.defineProperty(self, "rc", {
+        set: function() {
+            var args = Args([
+                { level: Args.STRING | Args.Required }
+            ], arguments);
+
+            var success = true;
+            var rc = require('./rc/rc' + args.level + '.js');
+
+            _parameter.rc = args.level;
+
+            log.info('RC: set run configuration for application.');
+            if (typeof(rc) == 'function') {
+                var result = rc(config, _args, _parameter);
+
+                success = result.data.success;
+
+                if (!success)
+                    log.error('Error: failed to set run config ' + args.level + ' ! ' + result.error + '.');
+            } else {
+                log.error('Error: failed to set run config ' + args.level + ' ! No rc script defined for this level or script is not a FUNCTION.');
+                success = false;
+            }
+
+            _parameter.loaded = !_parameter.loaded ? _parameter.loaded : success;
+        },
+        enumerable: true,
+        configurable: false
+    });
+    
+
+    /**
+     * Init application environment.
+     * @see -
+     * @param -
+     * @since 0.0.1
+     * @returns {boolean} success
+     */
+    Object.defineProperty(self, "init", {
+        get: function() {
+            var success = true;
+            var init = require('./init/init.js');
+
+            log.info('INIT: init application environment.');
+            if (typeof(init) == 'function') {
+                var result = init(config, _args, _parameter);
+
+                success = result.data.success;
+
+                if (!success)
+                    log.error('Error: init failed ! ' + result.error + '.');
+            } else {
+                log.error('Error: init failed ! No init script defined or script is not a FUNCTION.');
+                success = false;
+            }
+
+            return success;
+        },
+        enumerable: true,
+        configurable: false
+    });
+
+
+    /**
+     * Check if INIT and was successfull.
+     * @see -
+     * @param -
+     * @since 0.0.1
+     * @returns {boolean} success
+     */
+    self.loaded = function() {
+        var args = Args([
+            { level: Args.STRING | Args.Required }
+        ], arguments);
+
+        this.rc = args.level; 
+        _parameter.loaded = !_parameter.loaded ? false : this.init;
+        
+        return _parameter.loaded;
+    }
+
+    return self;
+}
+]]>
+      </script>
+    </record>
+    <record id="474c5522-5067-42a4-a697-fb4b85652aca">
+      <path>BRjx_loader/</path>
+      <name>default</name>
+      <type>properties</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+# BRjx_loader defaults
+
+## application repositories
+repositories                    = brjx:getBundles()
+
+## application defaults
+app                             = true
+app.name                        = BRjx
+app.root                        = /
+app.session                     = true
+app.main.module                 = BRjx_application
+
+## amb defaults
+amb.root                        = /amb
+amb.module                      = BRjx_backend_amb
+
+## evc defaults
+evc.root                        = /evc
+evc.module                      = BRjx_backend_evc
+
+## static content
+static                          = false
+static.root                      = /scripts
+static.source                   = scripts/
+static.allowDirectoryListing    = false
+]]>
+      </script>
+    </record>
+    <record id="2beb2269-aee6-445f-9993-f313a440717d">
+      <path>BRjx_loader/</path>
+      <name>package</name>
+      <type>json</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+{
+    "name": "BRjx_loader",
+    "version": "0.0.1",
+    "description": "BRjx_loader",
+    "keywords": [
+        "basex",
+        "client"
+    ],
+    "homepage": "https://github.com/ArthurStocker/basex-client",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ArthurStocker/basex-client"
+    },
+    "licenses": [{
+        "type": "GNU General Public License 3",
+        "url": "https://www.gnu.org/licenses/gpl-3.0.txt"
+    }],
+    "dependencies": {
+    },
+    "devDependencies": {},
+    "engines": {
+        "ringojs": ">= 1.0.0"
+    },
+    "scripts": {
+        "test": "ringo"
+    },
+    "main": "main.js"
+}
+]]>
+      </script>
+    </record>
+    <record id="f11a4615-3264-414b-a16d-da6b7839bda9">
+      <path>BRjx_loader/rc/</path>
+      <name>rc0</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+/**
+ * @fileOverview Init the Server.
+ * @author Arthur Stocker
+ * @version 0.0.1
+ *
+ * @see -
+ * @param -
+ * @since 0.0.1
+ * @returns {boolean} success
+ */
+const Logger = require('ringo/logging');
+Logger.setConfig(getResource('config/log4j.properties'), true);
+
+/**
+ * export ( ... )
+ * 
+ * eslint-disable 
+ */
+
+/* eslint-enable */
+
+
+/**
+ * const ...
+ */
+const log = Logger.getLogger(module.id);
+
+
+/**
+ * var ...
+ */
+
+
+/**
+ * The module version string with the major and minor version number.
+ */
+var version = '0.0.1';
+
+
+/**
+ * default values
+ */
+
+
+/**
+ *
+ */
+module.exports = function(config, _args, _parameter) {
+    var error = '';
+    var success = true;
+
+
+
+    try {
+        var query = new _args.query();
+        query.convertTo = 'text';
+        query.string = config.get('repositories');
+
+        var client = new _args.client();
+        var result = client.execQuery(query);
+        var repos = result.data.split(' ');
+
+        repos.every(function(repo) {
+            //if (repo.indexOf('_application_data_') == -1) {
+                var _repo = new org.ringojs.repository.DatabaseRepository(repo, _args.client)
+                if (_repo.exists()) {
+                    _args.engine.addRepository(_repo);
+                    success = !success ? false : true;
+                    return success;
+                } else {
+                    error += '\n' + 'Repository not found: ' +repo;
+                    success = false;
+                    return success;
+                }
+            //} else {
+            //    success = !success ? false : true;
+            //    return success;
+            //}
+        });
+    } catch(e) {
+        error = error + '\n' + e;
+        success = false;
+    }
+
+    return { data: { success: success }, error: error };
+};
+]]>
+      </script>
+    </record>
+    <record id="7fbb96eb-64a4-426c-8dd7-98fa41c3a429">
+      <path>BRjx_loader/rc/</path>
+      <name>rc1</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+/**
+ * @fileOverview Init the Server.
+ * @author Arthur Stocker
+ * @version 0.0.1
+ *
+ * @see -
+ * @param -
+ * @since 0.0.1
+ * @returns {boolean} success
+ */
+const Logger = require('ringo/logging');
+Logger.setConfig(getResource('config/log4j.properties'), true);
+
+/**
+ * export ( ... )
+ * 
+ * eslint-disable 
+ */
+
+/* eslint-enable */
+
+
+/**
+ * const ...
+ */
+const log = Logger.getLogger(module.id);
+
+
+/**
+ * var ...
+ */
+
+
+/**
+ * The module version string with the major and minor version number.
+ */
+var version = '0.0.1';
+
+
+/**
+ * default values
+ */
+
+
+/**
+ *
+ */
+module.exports = function(config, _args, _parameter) {
+    var error = '';
+    var success = true;
+
+
+    // code here
+
+    return { data: { success: success }, error: error };
+};
+]]>
+      </script>
+    </record>
+    <record id="f0aa3ee0-6161-4ec6-85a2-ef3abea0a0e4">
+      <path>BRjx_loader/init/</path>
+      <name>init</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+/**
+ * @fileOverview Init the Server.
+ * @author Arthur Stocker
+ * @version 0.0.1
+ *
+ * @see -
+ * @param -
+ * @since 0.0.1
+ * @returns {boolean} success
+ */
+const Logger = require('ringo/logging');
+Logger.setConfig(getResource('config/log4j.properties'), true);
+
+/**
+ * export ( ... )
+ * 
+ * eslint-disable 
+ */
+
+/* eslint-enable */
+
+
+/**
+ * const ...
+ */
+const log = Logger.getLogger(module.id);
+
+
+/**
+ * var ...
+ */
+
+
+/**
+ * The module version string with the major and minor version number.
+ */
+var version = '0.0.1';
+
+
+/**
+ * default values
+ */
+
+
+/**
+ *
+ */
+function ServerSession(config, _args, _parameter) {
+    var error = '';
+    var success = true;
+
+
+    // init session
+    _args.server.enableSessions({
+        'name': config.get('app.name')
+    });
+
+    return { data: { success: success }, error: error };
+}
+
+
+/**
+ *
+ */
+function AppContext(config, _args, _parameter) {
+    var error = '';
+    var success = true;
+
+
+    var app = require(config.get('app.main.module'));
+
+    app.init(_args.client, _args.query);
+
+    // init the application context
+    var context = _args.server.serveApplication(config.get('app.root'), app.main, {
+        'sessions': config.get('app.session')
+    });
+
+    // and add a websocket to it
+    context.addWebSocket(config.get('amb.root'), require(config.get('amb.module')).onConnect, require(config.get('amb.module')).onCreate);
+
+    // and add a eventsource to it
+    context.addEventSource(config.get('evc.root'), require(config.get('evc.module')));
+
+    // save context for later use
+    _parameter.context.app = context;
+
+    return { data: { success: success }, error: error };
+}
+
+
+/**
+ *
+ */
+function StaticContext(config, _args, _parameter) {
+    var error = '';
+    var success = true;
+
+
+    // initialize static file serving
+    var context = _args.server.serveStatic(config.get('static.root'), config.get('static.source'), {
+        'allowDirectoryListing': config.get('static.allowDirectoryListing')
+    });
+
+    // save context for later use
+    _parameter.context.static = context;
+
+    return { data: { success: success }, error: error };
+}
+
+
+/**
+ *
+ */
+module.exports = function(config, _args, _parameter) {
+    var error = '';
+    var success = true;
+
+
+    if (config.get('app.session') == 'true') {
+        var start = new Date();
+        var result = ServerSession(config, _args, _parameter);
+
+        error += result.error;
+        success = !success ? success : result.data.success;
+
+        var elapsed = '' + ((new Date()).getTime() - start.getTime());
+        log.info(Array(8 - elapsed.length).join(' ') + elapsed + 'ms to init server session');
+    }
+
+    if (config.get('app') == 'true') {
+        var start = new Date();
+        var result = AppContext(config, _args, _parameter);
+
+        error += result.error;
+        success = !success ? success : result.data.success;
+
+        var elapsed = '' + ((new Date()).getTime() - start.getTime());
+        log.info(Array(8 - elapsed.length).join(' ') + elapsed + 'ms to init application context');
+    }
+
+    if (config.get('static') == 'true') {
+        var start = new Date();
+        var result = StaticContext(config, _args, _parameter);
+        
+        error += result.error;
+        success = !success ? success : result.data.success;
+
+        var elapsed = '' + ((new Date()).getTime() - start.getTime());
+        log.info(Array(8 - elapsed.length).join(' ') + elapsed + 'ms to init static context');
+    }
+
+    return { data: { success: success }, error: error };
+};
+]]>
+      </script>
+    </record>
+  </records>
+</boot>

@@ -1,0 +1,333 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link href="http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript" src="https://use.fontawesome.com/e2a55cc896.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+        <script type="text/javascript" src="http://linino.local:49088/socket.io/socket.io.js"></script>
+
+        <script type="text/javascript" src="/scripts/public/args.js/Args.js"></script>
+        
+        <script type="text/javascript" src="/scripts/cockpit-client.js"></script>
+        
+        <link href="/styles/default/base.css" rel="stylesheet" type="text/css" />
+        <link href="/styles/default/font.css" rel="stylesheet" type="text/css" />
+        <link href="/styles/default/layout.css" rel="stylesheet" type="text/css" />
+        <link href="/styles/default/component/flayout.css" rel="stylesheet" type="text/css" />
+        <link href="/styles/default/component/navigation.css" rel="stylesheet" type="text/css" />
+        <link href="/styles/default/component/window.css" rel="stylesheet" type="text/css" />
+        <link href="/styles/default/component/message.css" rel="stylesheet" type="text/css" />
+
+        <link href="/styles/license.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript" src="/scripts/default/component/flayout.js"></script>
+        <script type="text/javascript" src="/scripts/default/component/navigation.js"></script>
+    </head>
+    
+    <body>
+        <script type="text/javascript">
+            window.onload = Cockpit('linino.local', '49088');
+        </script>
+        <templates>
+            <template data-template="message-template">
+                <div id="view">
+                    <div id="area">
+                        <div id="wait">
+                            <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div id="data"></div>
+                        <div id="ctrl">
+                            <i id="icon" class="fa fa-times fa-3x" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            <template data-template="window-template">
+                <div id="view">
+                    <div id="area">
+                        <div id="ctrl">
+                            <!-- window-controls-template -->
+                        </div>
+                        <div id="wait">
+                            <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div id="data"></div>
+                    </div>
+                </div>
+            </template>
+            <template data-template="menu-template window-controls-template">
+                <nav id="view">
+                    <div id="area">
+                        <ul id="data">
+                            <!-- menu-item-template -->
+                        </ul>
+                    </div>
+                    <div id="ctrl">
+                        <i id="icon" class="fa " aria-hidden="true"></i>
+                    </div>
+                </nav>
+            </template>
+            <template data-template="menu-item-template">
+                <li id="item" class="" data-uuid="" data-type="" data-unit="" data-mode="" data-state="" data-action='' data-active="" data-fallow="">
+                    <i id="icon" class="fa" aria-hidden="true"></i>
+                </li>
+            </template>
+        </templates>
+        <div class="top-layer"> 
+            <div class="message-layer"></div>
+            <div class="window-layer"></div>
+        </div>
+        <header id="persist-view-top" class="persist-view">
+            <section class="flyout-view">
+                <div class="flyout-area">
+                    <div class="flyout-data" data-flyoutposition="left">
+                         <h1>Manage<span class="special-font-42 italic-font-42bold">it</span><span class="normal-font-18"> cockpit</span></h1>
+                    </div>
+                    <div class="flyout-data" data-flyoutposition="center"></div>
+                    <div class="flyout-data" data-flyoutposition="right"></div>
+                </div>
+                <div class="flyout-ctrl"></div>
+            </section>
+            <div class="persist-area">
+                <div class="persist-data"></div>
+            </div>
+        </header>
+
+        <main id="content-view-center">
+            <section>
+            <!-- -->
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+            <!-- -->
+            </section>
+            <!-- -->
+            <aside>
+                <article></article>
+                <article></article>
+                <article></article>
+                <article></article>
+                <article></article>
+                <article></article>
+            </aside>
+            <!-- -->
+        </main>
+
+        <footer id="persist-view-bottom" class="persist-view">
+            <div class="persist-area">
+                <div class="persist-data"></div>
+            </div>
+            <section class="flyout-view">
+                <div class="flyout-area">
+                    <div class="flyout-data" data-flyoutposition="left">
+                        <ul class="note">
+                            <li>
+                                <a href="#about">Über Manage<span class="special-font-12 italic-font-14bold">it</span><span class="normal-font-6"> cockpit</span></a>
+                            </li>
+                            <li>
+                                <a class="menu-item" href="http://www.gnu.org/licenses/" data-source="http://www.gnu.org/licenses/gpl-3.0.txt" data-target="" data-type="menu" data-unit="license-button" data-mode="button" data-action='{"eh1":{"click":"menuaction"}, "eh2":{"click":"openwindow"}, "eh3":{"click":"showgnulicense"}}' data-active="fa-file-text-o" data-fallow="fa-file-text-o" data-state="">GNU General Public License</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flyout-data" data-flyoutposition="center"></div>
+                    <div class="flyout-data" data-flyoutposition="right">
+                        <ul class="note">
+                            <li><span class="note">Diese Seite wurde zuletzt am <span id="date">DD. MMM YYYY um hh:mm Uhr</span> geändert.</span>
+                                <a href="stocker-schmid.ch">&copy; stocker-schmid.ch</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flyout-ctrl"></div>
+            </section>
+        </footer>
+    </body>
+
+</html>

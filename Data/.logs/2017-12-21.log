@@ -64,3 +64,706 @@
 18:49:14.670	127.0.0.1:49179	admin	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_main/bin/modules.xml/")	0.12 ms
 18:49:14.680	127.0.0.1:49179	admin	OK	EXEC[0]	9.26 ms
 18:49:14.684	SERVER	admin	OK	Server was stopped (port: 1984).
+19:17:52.156	SERVER	admin	OK	Server was started (port: 1984).
+19:17:52.318	127.0.0.1:54530	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; declare variable $table as xs:string external; for $db in db:list() (:where expression - database - beginn:)(:where expression - database - end:) for $doc in collection($db) (:where expression - document - beginn:)(:where expression - document - end:) for $t in $doc/* (:where expression - table - beginn:)where $t/@id = $table(:where expression - table - end:) for $r in $t/* (:where expression - record - beginn:)(:where expression - record - end:) return $r (:string, number, boolean, null, object, array:)	1.3 ms
+19:17:52.338	127.0.0.1:54530	ManageIT	OK	BIND[0] $table=175c9043-0cc4-4165-bdb1-eb66fc13457f	18.23 ms
+19:17:52.601	127.0.0.1:54530	ManageIT	OK	EXEC[0]	262.72 ms
+19:17:52.676	127.0.0.1:54531	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isRepository("/BRjx_main/bin/modules.xml/")	0.14 ms
+19:17:52.716	127.0.0.1:54531	ManageIT	OK	EXEC[0]	39.3 ms
+19:17:52.765	127.0.0.1:54532	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js.js")	0.09 ms
+19:17:52.783	127.0.0.1:54532	ManageIT	OK	EXEC[0]	17.37 ms
+19:17:52.807	127.0.0.1:54533	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js.json")	0.09 ms
+19:17:52.823	127.0.0.1:54533	ManageIT	OK	EXEC[0]	15.79 ms
+19:17:52.840	127.0.0.1:54534	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js.class")	0.09 ms
+19:17:52.855	127.0.0.1:54534	ManageIT	OK	EXEC[0]	14.72 ms
+19:17:52.874	127.0.0.1:54535	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js/package.json")	0.08 ms
+19:17:52.891	127.0.0.1:54535	ManageIT	OK	EXEC[0]	16.71 ms
+19:17:52.913	127.0.0.1:54536	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js/index.js")	0.1 ms
+19:17:52.927	127.0.0.1:54536	ManageIT	OK	EXEC[0]	13.31 ms
+19:17:52.945	127.0.0.1:54537	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js/index.json")	0.09 ms
+19:17:52.959	127.0.0.1:54537	ManageIT	OK	EXEC[0]	13.63 ms
+19:17:52.982	127.0.0.1:54538	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js/index.class")	0.11 ms
+19:17:52.994	127.0.0.1:54538	ManageIT	OK	EXEC[0]	12.13 ms
+19:17:53.014	127.0.0.1:54539	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js")	0.09 ms
+19:17:53.026	127.0.0.1:54539	ManageIT	OK	EXEC[0]	12.06 ms
+19:17:53.045	127.0.0.1:54540	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js")	0.08 ms
+19:17:53.059	127.0.0.1:54540	ManageIT	OK	EXEC[0]	13.28 ms
+19:17:53.077	127.0.0.1:54541	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/modules.xml/BRjx.js")	0.11 ms
+19:17:53.088	127.0.0.1:54541	ManageIT	OK	EXEC[0]	11.23 ms
+19:17:53.107	127.0.0.1:54542	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; brjx:getContent("/BRjx_main/bin/modules.xml/BRjx.js")	0.09 ms
+19:17:53.127	127.0.0.1:54542	ManageIT	OK	EXEC[0]	19.75 ms
+19:17:53.162	127.0.0.1:54543	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_main/bin/modules.xml/")	0.09 ms
+19:17:53.181	127.0.0.1:54543	ManageIT	OK	EXEC[0]	18.67 ms
+19:17:53.211	127.0.0.1:54544	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_main/bin/modules.xml/")	0.09 ms
+19:17:53.220	127.0.0.1:54544	ManageIT	OK	EXEC[0]	9.06 ms
+19:17:53.224	SERVER	admin	OK	Server was stopped (port: 1984).
+19:27:07.593	SERVER	admin	OK	Server was started (port: 1984).
+19:29:03.378	SERVER	admin	OK	Server was stopped (port: 1984).
+19:29:06.555	SERVER	admin	OK	Server was started (port: 1984).
+19:31:59.611	SERVER	admin	OK	Server was stopped (port: 1984).
+19:32:03.785	SERVER	admin	OK	Server was started (port: 1984).
+19:42:14.157	SERVER	admin	OK	Server was stopped (port: 1984).
+19:42:17.822	SERVER	admin	OK	Server was started (port: 1984).
+19:42:17.884	SERVER	admin	OK	Server was stopped (port: 1984).
+19:43:16.089	SERVER	admin	OK	Server was started (port: 1984).
+19:43:16.149	SERVER	admin	OK	Server was stopped (port: 1984).
+19:44:01.455	SERVER	admin	OK	Server was started (port: 1984).
+19:44:01.674	SERVER	admin	OK	Server was stopped (port: 1984).
+19:46:06.824	SERVER	admin	OK	Server was started (port: 1984).
+19:46:07.042	SERVER	admin	OK	Server was stopped (port: 1984).
+19:46:50.271	SERVER	admin	OK	Server was started (port: 1984).
+19:56:55.598	SERVER	admin	OK	Server was stopped (port: 1984).
+20:01:05.834	SERVER	admin	OK	Server was started (port: 1984).
+20:02:08.471	127.0.0.1:62113	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isRepository("/BRjx_conf/apps.xml/")	1.43 ms
+20:02:08.765	127.0.0.1:62113	ManageIT	OK	EXEC[0]	293.31 ms
+20:03:48.239	SERVER	admin	OK	Server was stopped (port: 1984).
+20:04:04.351	SERVER	admin	OK	Server was started (port: 1984).
+20:04:04.730	127.0.0.1:62414	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isRepository("/BRjx_conf/apps.xml/")	1.49 ms
+20:04:05.031	127.0.0.1:62414	ManageIT	OK	EXEC[0]	300.51 ms
+20:09:24.286	127.0.0.1:63308	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isRepository("/BRjx_conf/apps.xml/")	0.13 ms
+20:09:24.312	127.0.0.1:63308	ManageIT	OK	EXEC[0]	25.94 ms
+20:09:40.297	127.0.0.1:63348	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js.js")	0.19 ms
+20:09:40.317	127.0.0.1:63348	ManageIT	OK	EXEC[0]	19.95 ms
+20:09:40.348	127.0.0.1:63349	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js.json")	0.15 ms
+20:09:40.365	127.0.0.1:63349	ManageIT	OK	EXEC[0]	16.69 ms
+20:09:40.387	127.0.0.1:63350	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js.class")	0.1 ms
+20:09:40.403	127.0.0.1:63350	ManageIT	OK	EXEC[0]	16.12 ms
+20:09:40.433	127.0.0.1:63351	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js/package.json")	0.08 ms
+20:09:40.450	127.0.0.1:63351	ManageIT	OK	EXEC[0]	16.58 ms
+20:09:40.475	127.0.0.1:63352	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js/index.js")	0.09 ms
+20:09:40.491	127.0.0.1:63352	ManageIT	OK	EXEC[0]	16.25 ms
+20:09:40.514	127.0.0.1:63353	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js/index.json")	0.11 ms
+20:09:40.531	127.0.0.1:63353	ManageIT	OK	EXEC[0]	17.15 ms
+20:09:40.558	127.0.0.1:63354	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js/index.class")	0.1 ms
+20:09:40.574	127.0.0.1:63354	ManageIT	OK	EXEC[0]	15.91 ms
+20:09:40.601	127.0.0.1:63355	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js")	0.1 ms
+20:09:40.617	127.0.0.1:63355	ManageIT	OK	EXEC[0]	15.34 ms
+20:09:40.640	127.0.0.1:63356	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js")	0.11 ms
+20:09:40.657	127.0.0.1:63356	ManageIT	OK	EXEC[0]	16.12 ms
+20:09:40.676	127.0.0.1:63357	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js")	0.11 ms
+20:09:40.692	127.0.0.1:63357	ManageIT	OK	EXEC[0]	15.35 ms
+20:09:40.715	127.0.0.1:63358	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; brjx:getContent("/BRjx_conf/apps.xml/BRjx.js")	0.09 ms
+20:09:40.741	127.0.0.1:63358	ManageIT	OK	EXEC[0]	25.2 ms
+20:09:40.789	127.0.0.1:63359	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_conf/apps.xml/")	0.12 ms
+20:09:40.811	127.0.0.1:63359	ManageIT	OK	EXEC[0]	21.73 ms
+20:09:40.863	127.0.0.1:63360	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.js")	0.13 ms
+20:09:40.876	127.0.0.1:63360	ManageIT	OK	EXEC[0]	13.02 ms
+20:09:40.920	127.0.0.1:63361	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.json")	0.11 ms
+20:09:40.933	127.0.0.1:63361	ManageIT	OK	EXEC[0]	12.42 ms
+20:09:40.966	127.0.0.1:63362	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.class")	0.1 ms
+20:09:40.980	127.0.0.1:63362	ManageIT	OK	EXEC[0]	13.83 ms
+20:09:41.017	127.0.0.1:63363	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.js")	0.14 ms
+20:09:41.028	127.0.0.1:63363	ManageIT	OK	EXEC[0]	10.14 ms
+20:09:41.049	127.0.0.1:63364	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.json")	0.1 ms
+20:09:41.058	127.0.0.1:63364	ManageIT	OK	EXEC[0]	9.64 ms
+20:09:41.082	127.0.0.1:63365	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.class")	0.08 ms
+20:09:41.095	127.0.0.1:63365	ManageIT	OK	EXEC[0]	13.1 ms
+20:09:41.219	127.0.0.1:63366	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_conf/apps.xml/")	0.1 ms
+20:09:41.228	127.0.0.1:63366	ManageIT	OK	EXEC[0]	8.09 ms
+20:09:41.257	127.0.0.1:63367	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_conf/apps.xml/")	0.11 ms
+20:09:41.268	127.0.0.1:63367	ManageIT	OK	EXEC[0]	10.33 ms
+20:20:39.879	SERVER	admin	OK	Server was stopped (port: 1984).
+20:20:46.775	SERVER	admin	OK	Server was started (port: 1984).
+20:20:46.786	SERVER	admin	OK	Server was stopped (port: 1984).
+20:22:27.040	SERVER	admin	OK	Server was started (port: 1984).
+20:22:27.123	127.0.0.1:65098	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isRepository("/BRjx_conf/apps.xml/")	1.26 ms
+20:22:27.410	127.0.0.1:65098	ManageIT	OK	EXEC[0]	286.46 ms
+20:22:27.489	127.0.0.1:65099	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js.js")	0.11 ms
+20:22:27.514	127.0.0.1:65099	ManageIT	OK	EXEC[0]	25.5 ms
+20:22:27.568	127.0.0.1:65100	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js.json")	0.15 ms
+20:22:27.594	127.0.0.1:65100	ManageIT	OK	EXEC[0]	26.03 ms
+20:22:27.623	127.0.0.1:65101	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js.class")	0.11 ms
+20:22:27.641	127.0.0.1:65101	ManageIT	OK	EXEC[0]	17.79 ms
+20:22:27.670	127.0.0.1:65102	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js/package.json")	0.09 ms
+20:22:27.687	127.0.0.1:65102	ManageIT	OK	EXEC[0]	16.84 ms
+20:22:27.713	127.0.0.1:65103	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js/index.js")	0.09 ms
+20:22:27.729	127.0.0.1:65103	ManageIT	OK	EXEC[0]	15.71 ms
+20:22:27.759	127.0.0.1:65108	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js/index.json")	0.09 ms
+20:22:27.772	127.0.0.1:65108	ManageIT	OK	EXEC[0]	13.17 ms
+20:22:27.796	127.0.0.1:65109	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js/index.class")	0.09 ms
+20:22:27.813	127.0.0.1:65109	ManageIT	OK	EXEC[0]	16.41 ms
+20:22:27.839	127.0.0.1:65110	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js")	0.12 ms
+20:22:27.852	127.0.0.1:65110	ManageIT	OK	EXEC[0]	12.71 ms
+20:22:27.878	127.0.0.1:65111	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js")	0.12 ms
+20:22:27.893	127.0.0.1:65111	ManageIT	OK	EXEC[0]	14.08 ms
+20:22:27.916	127.0.0.1:65112	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js")	0.09 ms
+20:22:27.930	127.0.0.1:65112	ManageIT	OK	EXEC[0]	13.79 ms
+20:22:27.955	127.0.0.1:65113	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; brjx:getContent("/BRjx_conf/apps.xml/BRjx.js")	0.12 ms
+20:22:27.979	127.0.0.1:65113	ManageIT	OK	EXEC[0]	23.36 ms
+20:22:28.029	127.0.0.1:65114	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_conf/apps.xml/")	0.08 ms
+20:22:28.050	127.0.0.1:65114	ManageIT	OK	EXEC[0]	20.29 ms
+20:22:28.093	127.0.0.1:65115	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.js")	0.14 ms
+20:22:28.110	127.0.0.1:65115	ManageIT	OK	EXEC[0]	15.97 ms
+20:22:28.148	127.0.0.1:65116	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.json")	0.08 ms
+20:22:28.161	127.0.0.1:65116	ManageIT	OK	EXEC[0]	13.48 ms
+20:22:28.193	127.0.0.1:65117	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.class")	0.11 ms
+20:22:28.212	127.0.0.1:65117	ManageIT	OK	EXEC[0]	18.83 ms
+20:22:28.265	127.0.0.1:65118	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.js")	0.11 ms
+20:22:28.277	127.0.0.1:65118	ManageIT	OK	EXEC[0]	11.46 ms
+20:22:28.302	127.0.0.1:65119	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.json")	0.12 ms
+20:22:28.315	127.0.0.1:65119	ManageIT	OK	EXEC[0]	12.9 ms
+20:22:28.339	127.0.0.1:65120	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.class")	0.09 ms
+20:22:28.353	127.0.0.1:65120	ManageIT	OK	EXEC[0]	14.24 ms
+20:22:28.479	127.0.0.1:65121	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_conf/apps.xml/")	0.11 ms
+20:22:28.488	127.0.0.1:65121	ManageIT	OK	EXEC[0]	9.1 ms
+20:22:28.593	127.0.0.1:65122	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.js")	0.09 ms
+20:22:28.604	127.0.0.1:65122	ManageIT	OK	EXEC[0]	10.96 ms
+20:22:28.631	127.0.0.1:65123	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.json")	0.09 ms
+20:22:28.642	127.0.0.1:65123	ManageIT	OK	EXEC[0]	10.76 ms
+20:22:28.669	127.0.0.1:65124	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.class")	0.16 ms
+20:22:28.682	127.0.0.1:65124	ManageIT	OK	EXEC[0]	12.6 ms
+20:22:28.715	127.0.0.1:65125	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/package.json")	0.1 ms
+20:22:28.727	127.0.0.1:65125	ManageIT	OK	EXEC[0]	12.46 ms
+20:22:28.760	127.0.0.1:65126	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.js")	0.12 ms
+20:22:28.773	127.0.0.1:65126	ManageIT	OK	EXEC[0]	12.21 ms
+20:22:28.800	127.0.0.1:65127	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.json")	0.18 ms
+20:22:28.812	127.0.0.1:65127	ManageIT	OK	EXEC[0]	11.91 ms
+20:22:28.840	127.0.0.1:65128	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.class")	0.11 ms
+20:22:28.852	127.0.0.1:65128	ManageIT	OK	EXEC[0]	11.63 ms
+20:22:28.881	127.0.0.1:65129	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.js")	0.11 ms
+20:22:28.892	127.0.0.1:65129	ManageIT	OK	EXEC[0]	11.08 ms
+20:22:28.916	127.0.0.1:65130	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.json")	0.1 ms
+20:22:28.928	127.0.0.1:65130	ManageIT	OK	EXEC[0]	12.4 ms
+20:22:28.953	127.0.0.1:65131	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.class")	0.1 ms
+20:22:28.962	127.0.0.1:65131	ManageIT	OK	EXEC[0]	8.69 ms
+20:22:28.986	127.0.0.1:65136	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.js")	0.09 ms
+20:22:28.999	127.0.0.1:65136	ManageIT	OK	EXEC[0]	12.66 ms
+20:22:29.024	127.0.0.1:65137	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.json")	0.1 ms
+20:22:29.033	127.0.0.1:65137	ManageIT	OK	EXEC[0]	8.81 ms
+20:22:29.057	127.0.0.1:65138	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.class")	0.08 ms
+20:22:29.069	127.0.0.1:65138	ManageIT	OK	EXEC[0]	12.42 ms
+20:22:29.095	127.0.0.1:65139	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.js")	0.09 ms
+20:22:29.105	127.0.0.1:65139	ManageIT	OK	EXEC[0]	9.58 ms
+20:22:29.132	127.0.0.1:65140	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.json")	0.08 ms
+20:22:29.144	127.0.0.1:65140	ManageIT	OK	EXEC[0]	11.27 ms
+20:22:29.168	127.0.0.1:65141	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.class")	0.09 ms
+20:22:29.179	127.0.0.1:65141	ManageIT	OK	EXEC[0]	10.93 ms
+20:22:29.205	127.0.0.1:65142	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/package.json")	0.1 ms
+20:22:29.216	127.0.0.1:65142	ManageIT	OK	EXEC[0]	10.87 ms
+20:22:29.241	127.0.0.1:65143	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.js")	0.09 ms
+20:22:29.252	127.0.0.1:65143	ManageIT	OK	EXEC[0]	10.1 ms
+20:22:29.279	127.0.0.1:65144	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.json")	0.1 ms
+20:22:29.288	127.0.0.1:65144	ManageIT	OK	EXEC[0]	9.39 ms
+20:22:29.313	127.0.0.1:65145	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.class")	0.1 ms
+20:22:29.325	127.0.0.1:65145	ManageIT	OK	EXEC[0]	11.1 ms
+20:22:29.378	127.0.0.1:65146	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js.js")	0.09 ms
+20:22:29.387	127.0.0.1:65146	ManageIT	OK	EXEC[0]	9.13 ms
+20:22:29.415	127.0.0.1:65147	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js.json")	0.09 ms
+20:22:29.425	127.0.0.1:65147	ManageIT	OK	EXEC[0]	10.35 ms
+20:22:29.455	127.0.0.1:65148	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js.class")	0.12 ms
+20:22:29.468	127.0.0.1:65148	ManageIT	OK	EXEC[0]	12.81 ms
+20:22:29.496	127.0.0.1:65149	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js/package.json")	0.09 ms
+20:22:29.506	127.0.0.1:65149	ManageIT	OK	EXEC[0]	9.94 ms
+20:22:29.539	127.0.0.1:65150	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js/index.js")	0.09 ms
+20:22:29.548	127.0.0.1:65150	ManageIT	OK	EXEC[0]	9.0 ms
+20:22:29.576	127.0.0.1:65151	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js/index.json")	0.09 ms
+20:22:29.586	127.0.0.1:65151	ManageIT	OK	EXEC[0]	9.75 ms
+20:22:29.612	127.0.0.1:65152	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js/index.class")	0.09 ms
+20:22:29.623	127.0.0.1:65152	ManageIT	OK	EXEC[0]	10.8 ms
+20:22:29.651	127.0.0.1:65153	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.js")	0.08 ms
+20:22:29.660	127.0.0.1:65153	ManageIT	OK	EXEC[0]	9.29 ms
+20:22:29.686	127.0.0.1:65154	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.json")	0.1 ms
+20:22:29.695	127.0.0.1:65154	ManageIT	OK	EXEC[0]	8.97 ms
+20:22:29.722	127.0.0.1:65155	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.class")	0.09 ms
+20:22:29.732	127.0.0.1:65155	ManageIT	OK	EXEC[0]	9.89 ms
+20:22:29.759	127.0.0.1:65156	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.js")	0.09 ms
+20:22:29.768	127.0.0.1:65156	ManageIT	OK	EXEC[0]	9.07 ms
+20:22:29.796	127.0.0.1:65157	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.json")	0.1 ms
+20:22:29.806	127.0.0.1:65157	ManageIT	OK	EXEC[0]	9.03 ms
+20:22:29.831	127.0.0.1:65158	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.class")	0.08 ms
+20:22:29.839	127.0.0.1:65158	ManageIT	OK	EXEC[0]	8.59 ms
+20:22:30.191	127.0.0.1:65159	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_conf/apps.xml/")	0.11 ms
+20:22:30.202	127.0.0.1:65159	ManageIT	OK	EXEC[0]	10.2 ms
+20:22:42.943	127.0.0.1:65194	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/html/default.html")	0.1 ms
+20:22:42.953	127.0.0.1:65194	ManageIT	OK	EXEC[0]	9.92 ms
+20:22:43.284	127.0.0.1:65199	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/html/default.html")	0.13 ms
+20:22:43.294	127.0.0.1:65199	ManageIT	OK	EXEC[0]	10.59 ms
+20:22:59.873	SERVER	admin	OK	Server was stopped (port: 1984).
+20:28:57.140	SERVER	admin	OK	Server was started (port: 1984).
+20:28:57.212	127.0.0.1:49881	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isRepository("/BRjx_conf/apps.xml/")	1.27 ms
+20:28:57.492	127.0.0.1:49881	ManageIT	OK	EXEC[0]	278.8 ms
+20:28:57.561	127.0.0.1:49882	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js.js")	0.16 ms
+20:28:57.583	127.0.0.1:49882	ManageIT	OK	EXEC[0]	21.63 ms
+20:28:57.638	127.0.0.1:49883	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js.json")	0.09 ms
+20:28:57.655	127.0.0.1:49883	ManageIT	OK	EXEC[0]	16.93 ms
+20:28:57.680	127.0.0.1:49884	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js.class")	0.09 ms
+20:28:57.695	127.0.0.1:49884	ManageIT	OK	EXEC[0]	14.78 ms
+20:28:57.717	127.0.0.1:49885	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js/package.json")	0.11 ms
+20:28:57.733	127.0.0.1:49885	ManageIT	OK	EXEC[0]	15.43 ms
+20:28:57.755	127.0.0.1:49886	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js/index.js")	0.08 ms
+20:28:57.769	127.0.0.1:49886	ManageIT	OK	EXEC[0]	14.09 ms
+20:28:57.791	127.0.0.1:49887	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js/index.json")	0.08 ms
+20:28:57.805	127.0.0.1:49887	ManageIT	OK	EXEC[0]	14.29 ms
+20:28:57.824	127.0.0.1:49892	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js/index.class")	0.09 ms
+20:28:57.838	127.0.0.1:49892	ManageIT	OK	EXEC[0]	13.91 ms
+20:28:57.864	127.0.0.1:49893	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js")	0.09 ms
+20:28:57.877	127.0.0.1:49893	ManageIT	OK	EXEC[0]	12.49 ms
+20:28:57.895	127.0.0.1:49894	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js")	0.09 ms
+20:28:57.907	127.0.0.1:49894	ManageIT	OK	EXEC[0]	12.32 ms
+20:28:57.926	127.0.0.1:49895	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js")	0.12 ms
+20:28:57.939	127.0.0.1:49895	ManageIT	OK	EXEC[0]	12.96 ms
+20:28:57.958	127.0.0.1:49896	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; brjx:getContent("/BRjx_conf/apps.xml/BRjx.js")	0.08 ms
+20:28:57.981	127.0.0.1:49896	ManageIT	OK	EXEC[0]	22.79 ms
+20:28:58.013	127.0.0.1:49897	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_conf/apps.xml/")	0.08 ms
+20:28:58.035	127.0.0.1:49897	ManageIT	OK	EXEC[0]	22.44 ms
+20:28:58.083	127.0.0.1:49898	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.js")	0.11 ms
+20:28:58.095	127.0.0.1:49898	ManageIT	OK	EXEC[0]	11.7 ms
+20:28:58.121	127.0.0.1:49899	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.json")	0.11 ms
+20:28:58.133	127.0.0.1:49899	ManageIT	OK	EXEC[0]	11.53 ms
+20:28:58.160	127.0.0.1:49900	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.class")	0.08 ms
+20:28:58.171	127.0.0.1:49900	ManageIT	OK	EXEC[0]	10.76 ms
+20:28:58.218	127.0.0.1:49901	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.js")	0.08 ms
+20:28:58.228	127.0.0.1:49901	ManageIT	OK	EXEC[0]	10.04 ms
+20:28:58.249	127.0.0.1:49902	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.json")	0.12 ms
+20:28:58.260	127.0.0.1:49902	ManageIT	OK	EXEC[0]	11.02 ms
+20:28:58.282	127.0.0.1:49903	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.class")	0.12 ms
+20:28:58.291	127.0.0.1:49903	ManageIT	OK	EXEC[0]	9.4 ms
+20:28:58.398	127.0.0.1:49904	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_conf/apps.xml/")	0.11 ms
+20:28:58.406	127.0.0.1:49904	ManageIT	OK	EXEC[0]	8.32 ms
+20:28:58.505	127.0.0.1:49905	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.js")	0.12 ms
+20:28:58.516	127.0.0.1:49905	ManageIT	OK	EXEC[0]	10.58 ms
+20:28:58.540	127.0.0.1:49906	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.json")	0.11 ms
+20:28:58.550	127.0.0.1:49906	ManageIT	OK	EXEC[0]	9.88 ms
+20:28:58.573	127.0.0.1:49907	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.class")	0.12 ms
+20:28:58.584	127.0.0.1:49907	ManageIT	OK	EXEC[0]	10.99 ms
+20:28:58.612	127.0.0.1:49908	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/package.json")	0.11 ms
+20:28:58.621	127.0.0.1:49908	ManageIT	OK	EXEC[0]	9.39 ms
+20:28:58.644	127.0.0.1:49909	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.js")	0.11 ms
+20:28:58.655	127.0.0.1:49909	ManageIT	OK	EXEC[0]	10.49 ms
+20:28:58.678	127.0.0.1:49910	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.json")	0.11 ms
+20:28:58.687	127.0.0.1:49910	ManageIT	OK	EXEC[0]	8.52 ms
+20:28:58.710	127.0.0.1:49911	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.class")	0.07 ms
+20:28:58.720	127.0.0.1:49911	ManageIT	OK	EXEC[0]	9.71 ms
+20:28:58.750	127.0.0.1:49912	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.js")	0.07 ms
+20:28:58.759	127.0.0.1:49912	ManageIT	OK	EXEC[0]	8.81 ms
+20:28:58.784	127.0.0.1:49913	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.json")	0.09 ms
+20:28:58.793	127.0.0.1:49913	ManageIT	OK	EXEC[0]	7.9 ms
+20:28:58.815	127.0.0.1:49918	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.class")	0.08 ms
+20:28:58.824	127.0.0.1:49918	ManageIT	OK	EXEC[0]	8.18 ms
+20:28:58.846	127.0.0.1:49919	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.js")	0.07 ms
+20:28:58.854	127.0.0.1:49919	ManageIT	OK	EXEC[0]	8.14 ms
+20:28:58.877	127.0.0.1:49920	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.json")	0.09 ms
+20:28:58.887	127.0.0.1:49920	ManageIT	OK	EXEC[0]	9.71 ms
+20:28:58.912	127.0.0.1:49921	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.class")	0.08 ms
+20:28:58.922	127.0.0.1:49921	ManageIT	OK	EXEC[0]	9.85 ms
+20:28:58.944	127.0.0.1:49922	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.js")	0.09 ms
+20:28:58.953	127.0.0.1:49922	ManageIT	OK	EXEC[0]	7.92 ms
+20:28:58.974	127.0.0.1:49923	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.json")	0.08 ms
+20:28:58.983	127.0.0.1:49923	ManageIT	OK	EXEC[0]	7.89 ms
+20:28:59.004	127.0.0.1:49924	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.class")	0.07 ms
+20:28:59.011	127.0.0.1:49924	ManageIT	OK	EXEC[0]	7.21 ms
+20:28:59.033	127.0.0.1:49925	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/package.json")	0.08 ms
+20:28:59.042	127.0.0.1:49925	ManageIT	OK	EXEC[0]	9.39 ms
+20:28:59.064	127.0.0.1:49926	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.js")	0.07 ms
+20:28:59.072	127.0.0.1:49926	ManageIT	OK	EXEC[0]	7.91 ms
+20:28:59.094	127.0.0.1:49927	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.json")	0.11 ms
+20:28:59.101	127.0.0.1:49927	ManageIT	OK	EXEC[0]	7.6 ms
+20:28:59.123	127.0.0.1:49928	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.class")	0.07 ms
+20:28:59.130	127.0.0.1:49928	ManageIT	OK	EXEC[0]	7.59 ms
+20:28:59.174	127.0.0.1:49929	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js.js")	0.08 ms
+20:28:59.183	127.0.0.1:49929	ManageIT	OK	EXEC[0]	8.58 ms
+20:28:59.212	127.0.0.1:49930	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js.json")	0.09 ms
+20:28:59.220	127.0.0.1:49930	ManageIT	OK	EXEC[0]	7.94 ms
+20:28:59.248	127.0.0.1:49931	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js.class")	0.09 ms
+20:28:59.257	127.0.0.1:49931	ManageIT	OK	EXEC[0]	9.17 ms
+20:28:59.284	127.0.0.1:49932	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js/package.json")	0.07 ms
+20:28:59.292	127.0.0.1:49932	ManageIT	OK	EXEC[0]	7.62 ms
+20:28:59.321	127.0.0.1:49933	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js/index.js")	0.07 ms
+20:28:59.328	127.0.0.1:49933	ManageIT	OK	EXEC[0]	7.32 ms
+20:28:59.352	127.0.0.1:49934	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js/index.json")	0.08 ms
+20:28:59.360	127.0.0.1:49934	ManageIT	OK	EXEC[0]	7.38 ms
+20:28:59.386	127.0.0.1:49935	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js/index.class")	0.08 ms
+20:28:59.395	127.0.0.1:49935	ManageIT	OK	EXEC[0]	7.99 ms
+20:28:59.428	127.0.0.1:49936	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.js")	0.08 ms
+20:28:59.437	127.0.0.1:49936	ManageIT	OK	EXEC[0]	8.52 ms
+20:28:59.460	127.0.0.1:49937	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.json")	0.07 ms
+20:28:59.469	127.0.0.1:49937	ManageIT	OK	EXEC[0]	7.95 ms
+20:28:59.493	127.0.0.1:49938	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.class")	0.08 ms
+20:28:59.500	127.0.0.1:49938	ManageIT	OK	EXEC[0]	7.23 ms
+20:28:59.525	127.0.0.1:49939	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.js")	0.08 ms
+20:28:59.533	127.0.0.1:49939	ManageIT	OK	EXEC[0]	7.28 ms
+20:28:59.558	127.0.0.1:49940	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.json")	0.09 ms
+20:28:59.565	127.0.0.1:49940	ManageIT	OK	EXEC[0]	7.54 ms
+20:28:59.590	127.0.0.1:49941	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.class")	0.08 ms
+20:28:59.598	127.0.0.1:49941	ManageIT	OK	EXEC[0]	7.51 ms
+20:28:59.897	127.0.0.1:49946	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_conf/apps.xml/")	0.07 ms
+20:28:59.904	127.0.0.1:49946	ManageIT	OK	EXEC[0]	6.76 ms
+20:29:12.333	127.0.0.1:50003	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/html/default.html")	0.08 ms
+20:29:12.343	127.0.0.1:50003	ManageIT	OK	EXEC[0]	9.29 ms
+20:29:12.618	127.0.0.1:50004	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/html/default.html")	0.28 ms
+20:29:12.628	127.0.0.1:50004	ManageIT	OK	EXEC[0]	10.11 ms
+20:30:40.215	SERVER	admin	OK	Server was stopped (port: 1984).
+20:30:43.601	SERVER	admin	OK	Server was started (port: 1984).
+20:30:43.680	127.0.0.1:50366	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isRepository("/BRjx_conf/apps.xml/")	1.43 ms
+20:30:43.965	127.0.0.1:50366	ManageIT	OK	EXEC[0]	284.07 ms
+20:30:44.036	127.0.0.1:50371	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js.js")	0.1 ms
+20:30:44.057	127.0.0.1:50371	ManageIT	OK	EXEC[0]	20.83 ms
+20:30:44.112	127.0.0.1:50372	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js.json")	0.09 ms
+20:30:44.129	127.0.0.1:50372	ManageIT	OK	EXEC[0]	16.91 ms
+20:30:44.154	127.0.0.1:50373	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js.class")	0.09 ms
+20:30:44.170	127.0.0.1:50373	ManageIT	OK	EXEC[0]	15.81 ms
+20:30:44.192	127.0.0.1:50374	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js/package.json")	0.1 ms
+20:30:44.208	127.0.0.1:50374	ManageIT	OK	EXEC[0]	15.25 ms
+20:30:44.229	127.0.0.1:50375	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js/index.js")	0.08 ms
+20:30:44.244	127.0.0.1:50375	ManageIT	OK	EXEC[0]	14.31 ms
+20:30:44.268	127.0.0.1:50376	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js/index.json")	0.08 ms
+20:30:44.282	127.0.0.1:50376	ManageIT	OK	EXEC[0]	13.35 ms
+20:30:44.301	127.0.0.1:50377	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js/index.class")	0.09 ms
+20:30:44.314	127.0.0.1:50377	ManageIT	OK	EXEC[0]	13.75 ms
+20:30:44.341	127.0.0.1:50378	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js")	0.08 ms
+20:30:44.353	127.0.0.1:50378	ManageIT	OK	EXEC[0]	11.67 ms
+20:30:44.371	127.0.0.1:50379	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js")	0.11 ms
+20:30:44.384	127.0.0.1:50379	ManageIT	OK	EXEC[0]	12.21 ms
+20:30:44.404	127.0.0.1:50380	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js")	0.12 ms
+20:30:44.417	127.0.0.1:50380	ManageIT	OK	EXEC[0]	13.21 ms
+20:30:44.436	127.0.0.1:50381	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; brjx:getContent("/BRjx_conf/apps.xml/BRjx.js")	0.09 ms
+20:30:44.458	127.0.0.1:50381	ManageIT	OK	EXEC[0]	22.56 ms
+20:30:44.492	127.0.0.1:50382	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_conf/apps.xml/")	0.09 ms
+20:30:44.516	127.0.0.1:50382	ManageIT	OK	EXEC[0]	22.9 ms
+20:30:44.551	127.0.0.1:50383	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.js")	0.09 ms
+20:30:44.563	127.0.0.1:50383	ManageIT	OK	EXEC[0]	11.8 ms
+20:30:44.587	127.0.0.1:50384	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.json")	0.08 ms
+20:30:44.598	127.0.0.1:50384	ManageIT	OK	EXEC[0]	11.2 ms
+20:30:44.629	127.0.0.1:50385	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.class")	0.08 ms
+20:30:44.640	127.0.0.1:50385	ManageIT	OK	EXEC[0]	10.57 ms
+20:30:44.689	127.0.0.1:50386	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.js")	0.08 ms
+20:30:44.699	127.0.0.1:50386	ManageIT	OK	EXEC[0]	9.84 ms
+20:30:44.721	127.0.0.1:50387	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.json")	0.09 ms
+20:30:44.732	127.0.0.1:50387	ManageIT	OK	EXEC[0]	11.4 ms
+20:30:44.754	127.0.0.1:50388	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.class")	0.09 ms
+20:30:44.764	127.0.0.1:50388	ManageIT	OK	EXEC[0]	10.01 ms
+20:30:44.868	127.0.0.1:50393	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_conf/apps.xml/")	0.08 ms
+20:30:44.876	127.0.0.1:50393	ManageIT	OK	EXEC[0]	7.39 ms
+20:30:44.977	127.0.0.1:50394	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.js")	0.09 ms
+20:30:44.987	127.0.0.1:50394	ManageIT	OK	EXEC[0]	9.81 ms
+20:30:45.010	127.0.0.1:50395	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.json")	0.12 ms
+20:30:45.020	127.0.0.1:50395	ManageIT	OK	EXEC[0]	9.08 ms
+20:30:45.045	127.0.0.1:50396	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.class")	0.09 ms
+20:30:45.054	127.0.0.1:50396	ManageIT	OK	EXEC[0]	8.8 ms
+20:30:45.080	127.0.0.1:50397	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/package.json")	0.09 ms
+20:30:45.089	127.0.0.1:50397	ManageIT	OK	EXEC[0]	8.84 ms
+20:30:45.111	127.0.0.1:50398	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.js")	0.08 ms
+20:30:45.121	127.0.0.1:50398	ManageIT	OK	EXEC[0]	9.74 ms
+20:30:45.144	127.0.0.1:50399	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.json")	0.11 ms
+20:30:45.153	127.0.0.1:50399	ManageIT	OK	EXEC[0]	8.78 ms
+20:30:45.176	127.0.0.1:50400	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.class")	0.1 ms
+20:30:45.185	127.0.0.1:50400	ManageIT	OK	EXEC[0]	9.08 ms
+20:30:45.214	127.0.0.1:50401	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.js")	0.08 ms
+20:30:45.223	127.0.0.1:50401	ManageIT	OK	EXEC[0]	8.87 ms
+20:30:45.248	127.0.0.1:50402	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.json")	0.11 ms
+20:30:45.257	127.0.0.1:50402	ManageIT	OK	EXEC[0]	8.58 ms
+20:30:45.279	127.0.0.1:50403	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.class")	0.08 ms
+20:30:45.288	127.0.0.1:50403	ManageIT	OK	EXEC[0]	8.36 ms
+20:30:45.312	127.0.0.1:50404	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.js")	0.07 ms
+20:30:45.321	127.0.0.1:50404	ManageIT	OK	EXEC[0]	8.52 ms
+20:30:45.346	127.0.0.1:50405	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.json")	0.07 ms
+20:30:45.355	127.0.0.1:50405	ManageIT	OK	EXEC[0]	7.96 ms
+20:30:45.379	127.0.0.1:50406	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.class")	0.07 ms
+20:30:45.388	127.0.0.1:50406	ManageIT	OK	EXEC[0]	8.36 ms
+20:30:45.414	127.0.0.1:50407	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.js")	0.08 ms
+20:30:45.423	127.0.0.1:50407	ManageIT	OK	EXEC[0]	8.27 ms
+20:30:45.452	127.0.0.1:50408	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.json")	0.11 ms
+20:30:45.460	127.0.0.1:50408	ManageIT	OK	EXEC[0]	8.07 ms
+20:30:45.490	127.0.0.1:50409	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.class")	0.08 ms
+20:30:45.499	127.0.0.1:50409	ManageIT	OK	EXEC[0]	8.34 ms
+20:30:45.523	127.0.0.1:50410	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/package.json")	0.08 ms
+20:30:45.531	127.0.0.1:50410	ManageIT	OK	EXEC[0]	8.38 ms
+20:30:45.554	127.0.0.1:50411	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.js")	0.07 ms
+20:30:45.564	127.0.0.1:50411	ManageIT	OK	EXEC[0]	9.85 ms
+20:30:45.586	127.0.0.1:50412	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.json")	0.07 ms
+20:30:45.593	127.0.0.1:50412	ManageIT	OK	EXEC[0]	7.37 ms
+20:30:45.615	127.0.0.1:50413	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.class")	0.07 ms
+20:30:45.624	127.0.0.1:50413	ManageIT	OK	EXEC[0]	8.34 ms
+20:30:45.665	127.0.0.1:50414	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js.js")	0.08 ms
+20:30:45.676	127.0.0.1:50414	ManageIT	OK	EXEC[0]	10.7 ms
+20:30:45.700	127.0.0.1:50415	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js.json")	0.12 ms
+20:30:45.707	127.0.0.1:50415	ManageIT	OK	EXEC[0]	7.59 ms
+20:30:45.730	127.0.0.1:50416	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js.class")	0.12 ms
+20:30:45.739	127.0.0.1:50416	ManageIT	OK	EXEC[0]	8.46 ms
+20:30:45.763	127.0.0.1:50417	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js/package.json")	0.08 ms
+20:30:45.773	127.0.0.1:50417	ManageIT	OK	EXEC[0]	9.6 ms
+20:30:45.797	127.0.0.1:50422	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js/index.js")	0.09 ms
+20:30:45.806	127.0.0.1:50422	ManageIT	OK	EXEC[0]	8.68 ms
+20:30:45.830	127.0.0.1:50423	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js/index.json")	0.09 ms
+20:30:45.839	127.0.0.1:50423	ManageIT	OK	EXEC[0]	9.05 ms
+20:30:45.862	127.0.0.1:50424	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js/index.class")	0.08 ms
+20:30:45.870	127.0.0.1:50424	ManageIT	OK	EXEC[0]	7.59 ms
+20:30:45.897	127.0.0.1:50425	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.js")	0.08 ms
+20:30:45.905	127.0.0.1:50425	ManageIT	OK	EXEC[0]	7.58 ms
+20:30:45.931	127.0.0.1:50426	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.json")	0.07 ms
+20:30:45.939	127.0.0.1:50426	ManageIT	OK	EXEC[0]	7.56 ms
+20:30:45.964	127.0.0.1:50427	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.class")	0.07 ms
+20:30:45.971	127.0.0.1:50427	ManageIT	OK	EXEC[0]	7.0 ms
+20:30:45.999	127.0.0.1:50428	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.js")	0.08 ms
+20:30:46.007	127.0.0.1:50428	ManageIT	OK	EXEC[0]	7.46 ms
+20:30:46.032	127.0.0.1:50429	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.json")	0.07 ms
+20:30:46.040	127.0.0.1:50429	ManageIT	OK	EXEC[0]	7.9 ms
+20:30:46.065	127.0.0.1:50430	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.class")	0.07 ms
+20:30:46.072	127.0.0.1:50430	ManageIT	OK	EXEC[0]	7.28 ms
+20:30:46.372	127.0.0.1:50431	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_conf/apps.xml/")	0.08 ms
+20:30:46.379	127.0.0.1:50431	ManageIT	OK	EXEC[0]	6.87 ms
+20:30:51.420	127.0.0.1:50458	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/ringo/jsgi/html/default.html")	0.1 ms
+20:30:51.429	127.0.0.1:50458	ManageIT	OK	EXEC[0]	9.31 ms
+20:30:51.699	127.0.0.1:50459	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/ringo/jsgi/html/default.html")	0.1 ms
+20:30:51.711	127.0.0.1:50459	ManageIT	OK	EXEC[0]	11.77 ms
+20:33:04.757	SERVER	admin	OK	Server was stopped (port: 1984).
+20:33:08.544	SERVER	admin	OK	Server was started (port: 1984).
+20:33:08.635	127.0.0.1:50899	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isRepository("/BRjx_conf/apps.xml/")	1.92 ms
+20:33:08.990	127.0.0.1:50899	ManageIT	OK	EXEC[0]	354.06 ms
+20:33:09.061	127.0.0.1:50900	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js.js")	0.15 ms
+20:33:09.087	127.0.0.1:50900	ManageIT	OK	EXEC[0]	25.44 ms
+20:33:09.152	127.0.0.1:50901	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js.json")	0.11 ms
+20:33:09.178	127.0.0.1:50901	ManageIT	OK	EXEC[0]	26.12 ms
+20:33:09.210	127.0.0.1:50906	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js.class")	0.12 ms
+20:33:09.231	127.0.0.1:50906	ManageIT	OK	EXEC[0]	20.25 ms
+20:33:09.256	127.0.0.1:50907	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js/package.json")	0.11 ms
+20:33:09.275	127.0.0.1:50907	ManageIT	OK	EXEC[0]	19.06 ms
+20:33:09.300	127.0.0.1:50908	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js/index.js")	0.09 ms
+20:33:09.314	127.0.0.1:50908	ManageIT	OK	EXEC[0]	14.32 ms
+20:33:09.335	127.0.0.1:50909	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js/index.json")	0.09 ms
+20:33:09.349	127.0.0.1:50909	ManageIT	OK	EXEC[0]	13.78 ms
+20:33:09.368	127.0.0.1:50910	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js/index.class")	0.09 ms
+20:33:09.382	127.0.0.1:50910	ManageIT	OK	EXEC[0]	13.97 ms
+20:33:09.403	127.0.0.1:50911	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js")	0.11 ms
+20:33:09.416	127.0.0.1:50911	ManageIT	OK	EXEC[0]	12.47 ms
+20:33:09.435	127.0.0.1:50912	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js")	0.09 ms
+20:33:09.448	127.0.0.1:50912	ManageIT	OK	EXEC[0]	12.55 ms
+20:33:09.467	127.0.0.1:50913	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/BRjx.js")	0.1 ms
+20:33:09.479	127.0.0.1:50913	ManageIT	OK	EXEC[0]	11.44 ms
+20:33:09.497	127.0.0.1:50914	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; brjx:getContent("/BRjx_conf/apps.xml/BRjx.js")	0.09 ms
+20:33:09.517	127.0.0.1:50914	ManageIT	OK	EXEC[0]	19.77 ms
+20:33:09.555	127.0.0.1:50915	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_conf/apps.xml/")	0.11 ms
+20:33:09.574	127.0.0.1:50915	ManageIT	OK	EXEC[0]	18.66 ms
+20:33:09.606	127.0.0.1:50916	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.js")	0.09 ms
+20:33:09.618	127.0.0.1:50916	ManageIT	OK	EXEC[0]	11.51 ms
+20:33:09.646	127.0.0.1:50917	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.json")	0.08 ms
+20:33:09.657	127.0.0.1:50917	ManageIT	OK	EXEC[0]	10.83 ms
+20:33:09.684	127.0.0.1:50918	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.class")	0.14 ms
+20:33:09.696	127.0.0.1:50918	ManageIT	OK	EXEC[0]	11.58 ms
+20:33:09.742	127.0.0.1:50919	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.js")	0.08 ms
+20:33:09.752	127.0.0.1:50919	ManageIT	OK	EXEC[0]	10.14 ms
+20:33:09.772	127.0.0.1:50920	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.json")	0.09 ms
+20:33:09.783	127.0.0.1:50920	ManageIT	OK	EXEC[0]	10.17 ms
+20:33:09.804	127.0.0.1:50921	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.class")	0.08 ms
+20:33:09.814	127.0.0.1:50921	ManageIT	OK	EXEC[0]	9.62 ms
+20:33:09.915	127.0.0.1:50922	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_conf/apps.xml/")	0.08 ms
+20:33:09.924	127.0.0.1:50922	ManageIT	OK	EXEC[0]	8.39 ms
+20:33:10.023	127.0.0.1:50923	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.js")	0.1 ms
+20:33:10.032	127.0.0.1:50923	ManageIT	OK	EXEC[0]	9.33 ms
+20:33:10.056	127.0.0.1:50924	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.json")	0.12 ms
+20:33:10.067	127.0.0.1:50924	ManageIT	OK	EXEC[0]	10.74 ms
+20:33:10.092	127.0.0.1:50925	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.class")	0.09 ms
+20:33:10.101	127.0.0.1:50925	ManageIT	OK	EXEC[0]	8.77 ms
+20:33:10.130	127.0.0.1:50926	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/package.json")	0.09 ms
+20:33:10.140	127.0.0.1:50926	ManageIT	OK	EXEC[0]	9.05 ms
+20:33:10.165	127.0.0.1:50927	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.js")	0.13 ms
+20:33:10.176	127.0.0.1:50927	ManageIT	OK	EXEC[0]	11.12 ms
+20:33:10.205	127.0.0.1:50928	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.json")	0.12 ms
+20:33:10.215	127.0.0.1:50928	ManageIT	OK	EXEC[0]	9.66 ms
+20:33:10.239	127.0.0.1:50929	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.class")	0.08 ms
+20:33:10.249	127.0.0.1:50929	ManageIT	OK	EXEC[0]	9.14 ms
+20:33:10.276	127.0.0.1:50930	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.js")	0.08 ms
+20:33:10.285	127.0.0.1:50930	ManageIT	OK	EXEC[0]	8.68 ms
+20:33:10.311	127.0.0.1:50931	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.json")	0.09 ms
+20:33:10.320	127.0.0.1:50931	ManageIT	OK	EXEC[0]	8.75 ms
+20:33:10.342	127.0.0.1:50932	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.class")	0.09 ms
+20:33:10.351	127.0.0.1:50932	ManageIT	OK	EXEC[0]	8.46 ms
+20:33:10.374	127.0.0.1:50933	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.js")	0.1 ms
+20:33:10.382	127.0.0.1:50933	ManageIT	OK	EXEC[0]	8.09 ms
+20:33:10.406	127.0.0.1:50934	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.json")	0.07 ms
+20:33:10.415	127.0.0.1:50934	ManageIT	OK	EXEC[0]	8.34 ms
+20:33:10.437	127.0.0.1:50935	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.class")	0.08 ms
+20:33:10.445	127.0.0.1:50935	ManageIT	OK	EXEC[0]	7.74 ms
+20:33:10.470	127.0.0.1:50936	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.js")	0.08 ms
+20:33:10.479	127.0.0.1:50936	ManageIT	OK	EXEC[0]	8.68 ms
+20:33:10.500	127.0.0.1:50937	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.json")	0.17 ms
+20:33:10.508	127.0.0.1:50937	ManageIT	OK	EXEC[0]	8.21 ms
+20:33:10.531	127.0.0.1:50938	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js.class")	0.11 ms
+20:33:10.539	127.0.0.1:50938	ManageIT	OK	EXEC[0]	8.3 ms
+20:33:10.560	127.0.0.1:50939	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/package.json")	0.07 ms
+20:33:10.568	127.0.0.1:50939	ManageIT	OK	EXEC[0]	7.93 ms
+20:33:10.590	127.0.0.1:50940	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.js")	0.1 ms
+20:33:10.600	127.0.0.1:50940	ManageIT	OK	EXEC[0]	9.11 ms
+20:33:10.621	127.0.0.1:50941	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.json")	0.08 ms
+20:33:10.630	127.0.0.1:50941	ManageIT	OK	EXEC[0]	8.1 ms
+20:33:10.651	127.0.0.1:50942	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/websocket.js/index.class")	0.08 ms
+20:33:10.661	127.0.0.1:50942	ManageIT	OK	EXEC[0]	9.22 ms
+20:33:10.703	127.0.0.1:50943	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js.js")	0.1 ms
+20:33:10.715	127.0.0.1:50943	ManageIT	OK	EXEC[0]	9.56 ms
+20:33:10.738	127.0.0.1:50948	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js.json")	0.1 ms
+20:33:10.746	127.0.0.1:50948	ManageIT	OK	EXEC[0]	8.02 ms
+20:33:10.770	127.0.0.1:50949	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js.class")	0.11 ms
+20:33:10.782	127.0.0.1:50949	ManageIT	OK	EXEC[0]	11.45 ms
+20:33:10.807	127.0.0.1:50950	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js/package.json")	0.16 ms
+20:33:10.816	127.0.0.1:50950	ManageIT	OK	EXEC[0]	8.94 ms
+20:33:10.841	127.0.0.1:50951	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js/index.js")	0.14 ms
+20:33:10.849	127.0.0.1:50951	ManageIT	OK	EXEC[0]	8.09 ms
+20:33:10.875	127.0.0.1:50952	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js/index.json")	0.07 ms
+20:33:10.883	127.0.0.1:50952	ManageIT	OK	EXEC[0]	8.41 ms
+20:33:10.908	127.0.0.1:50953	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/manageit/examples/eventsource.js/index.class")	0.09 ms
+20:33:10.918	127.0.0.1:50953	ManageIT	OK	EXEC[0]	9.33 ms
+20:33:10.947	127.0.0.1:50954	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.js")	0.08 ms
+20:33:10.956	127.0.0.1:50954	ManageIT	OK	EXEC[0]	8.92 ms
+20:33:10.982	127.0.0.1:50955	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.json")	0.09 ms
+20:33:10.992	127.0.0.1:50955	ManageIT	OK	EXEC[0]	9.53 ms
+20:33:11.016	127.0.0.1:50956	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/gestalt.class")	0.09 ms
+20:33:11.025	127.0.0.1:50956	ManageIT	OK	EXEC[0]	8.54 ms
+20:33:11.049	127.0.0.1:50957	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.js")	0.07 ms
+20:33:11.057	127.0.0.1:50957	ManageIT	OK	EXEC[0]	8.07 ms
+20:33:11.081	127.0.0.1:50958	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.json")	0.09 ms
+20:33:11.090	127.0.0.1:50958	ManageIT	OK	EXEC[0]	9.2 ms
+20:33:11.114	127.0.0.1:50959	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_conf/apps.xml/args.class")	0.08 ms
+20:33:11.123	127.0.0.1:50959	ManageIT	OK	EXEC[0]	8.08 ms
+20:33:11.487	127.0.0.1:50960	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_conf/apps.xml/")	0.07 ms
+20:33:11.497	127.0.0.1:50960	ManageIT	OK	EXEC[0]	9.64 ms
+20:44:54.839	SERVER	admin	OK	Server was stopped (port: 1984).
+20:51:17.496	SERVER	admin	OK	Server was started (port: 1984).
+20:51:17.568	127.0.0.1:53902	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isRepository("/BRjx_main/")	1.25 ms
+20:51:17.854	127.0.0.1:53902	ManageIT	OK	EXEC[0]	285.38 ms
+20:51:17.932	127.0.0.1:53907	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/BRjx.js.js")	0.09 ms
+20:51:17.952	127.0.0.1:53907	ManageIT	OK	EXEC[0]	19.74 ms
+20:51:18.011	127.0.0.1:53908	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/BRjx.js.json")	0.09 ms
+20:51:18.028	127.0.0.1:53908	ManageIT	OK	EXEC[0]	16.53 ms
+20:51:18.054	127.0.0.1:53909	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/BRjx.js.class")	0.09 ms
+20:51:18.069	127.0.0.1:53909	ManageIT	OK	EXEC[0]	15.11 ms
+20:51:18.094	127.0.0.1:53910	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/BRjx.js/package.json")	0.08 ms
+20:51:18.109	127.0.0.1:53910	ManageIT	OK	EXEC[0]	14.57 ms
+20:51:18.132	127.0.0.1:53911	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/BRjx.js/index.js")	0.08 ms
+20:51:18.147	127.0.0.1:53911	ManageIT	OK	EXEC[0]	14.66 ms
+20:51:18.168	127.0.0.1:53912	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/BRjx.js/index.json")	0.08 ms
+20:51:18.181	127.0.0.1:53912	ManageIT	OK	EXEC[0]	12.86 ms
+20:51:18.201	127.0.0.1:53913	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/BRjx.js/index.class")	0.09 ms
+20:51:18.214	127.0.0.1:53913	ManageIT	OK	EXEC[0]	13.22 ms
+20:51:18.236	127.0.0.1:53914	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/BRjx.js")	0.09 ms
+20:51:18.249	127.0.0.1:53914	ManageIT	OK	EXEC[0]	12.53 ms
+20:51:18.252	SERVER	admin	OK	Server was stopped (port: 1984).
+20:51:37.135	SERVER	admin	OK	Server was started (port: 1984).
+20:51:37.214	127.0.0.1:53970	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isRepository("/BRjx_main/bin/app.xml/")	1.23 ms
+20:51:37.502	127.0.0.1:53970	ManageIT	OK	EXEC[0]	287.66 ms
+20:51:37.574	127.0.0.1:53971	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/BRjx.js.js")	0.16 ms
+20:51:37.598	127.0.0.1:53971	ManageIT	OK	EXEC[0]	23.16 ms
+20:51:37.653	127.0.0.1:53972	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/BRjx.js.json")	0.11 ms
+20:51:37.674	127.0.0.1:53972	ManageIT	OK	EXEC[0]	20.38 ms
+20:51:37.700	127.0.0.1:53973	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/BRjx.js.class")	0.09 ms
+20:51:37.716	127.0.0.1:53973	ManageIT	OK	EXEC[0]	15.11 ms
+20:51:37.738	127.0.0.1:53974	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/BRjx.js/package.json")	0.09 ms
+20:51:37.755	127.0.0.1:53974	ManageIT	OK	EXEC[0]	17.02 ms
+20:51:37.777	127.0.0.1:53975	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/BRjx.js/index.js")	0.1 ms
+20:51:37.792	127.0.0.1:53975	ManageIT	OK	EXEC[0]	15.15 ms
+20:51:37.817	127.0.0.1:53976	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/BRjx.js/index.json")	0.09 ms
+20:51:37.829	127.0.0.1:53976	ManageIT	OK	EXEC[0]	12.67 ms
+20:51:37.849	127.0.0.1:53977	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/BRjx.js/index.class")	0.09 ms
+20:51:37.863	127.0.0.1:53977	ManageIT	OK	EXEC[0]	13.51 ms
+20:51:37.889	127.0.0.1:53978	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/BRjx.js")	0.11 ms
+20:51:37.901	127.0.0.1:53978	ManageIT	OK	EXEC[0]	12.51 ms
+20:51:37.905	SERVER	admin	OK	Server was stopped (port: 1984).
+20:58:19.607	SERVER	admin	OK	Server was started (port: 1984).
+20:58:19.683	127.0.0.1:54787	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isRepository("/BRjx_main/bin/app.xml/")	1.21 ms
+20:58:19.963	127.0.0.1:54787	ManageIT	OK	EXEC[0]	280.05 ms
+20:58:20.033	127.0.0.1:54788	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/BRjx.js.js")	0.16 ms
+20:58:20.053	127.0.0.1:54788	ManageIT	OK	EXEC[0]	19.69 ms
+20:58:20.108	127.0.0.1:54789	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/BRjx.js.json")	0.1 ms
+20:58:20.124	127.0.0.1:54789	ManageIT	OK	EXEC[0]	15.95 ms
+20:58:20.148	127.0.0.1:54790	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/BRjx.js.class")	0.09 ms
+20:58:20.163	127.0.0.1:54790	ManageIT	OK	EXEC[0]	14.84 ms
+20:58:20.184	127.0.0.1:54791	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/BRjx.js/package.json")	0.08 ms
+20:58:20.199	127.0.0.1:54791	ManageIT	OK	EXEC[0]	13.99 ms
+20:58:20.220	127.0.0.1:54792	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/BRjx.js/index.js")	0.08 ms
+20:58:20.234	127.0.0.1:54792	ManageIT	OK	EXEC[0]	14.04 ms
+20:58:20.256	127.0.0.1:54793	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/BRjx.js/index.json")	0.09 ms
+20:58:20.268	127.0.0.1:54793	ManageIT	OK	EXEC[0]	12.59 ms
+20:58:20.286	127.0.0.1:54794	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/BRjx.js/index.class")	0.09 ms
+20:58:20.300	127.0.0.1:54794	ManageIT	OK	EXEC[0]	13.19 ms
+20:58:20.322	127.0.0.1:54795	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/BRjx.js")	0.09 ms
+20:58:20.333	127.0.0.1:54795	ManageIT	OK	EXEC[0]	11.11 ms
+20:58:20.353	127.0.0.1:54796	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/BRjx.js")	0.08 ms
+20:58:20.364	127.0.0.1:54796	ManageIT	OK	EXEC[0]	10.99 ms
+20:58:20.384	127.0.0.1:54797	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/BRjx.js")	0.1 ms
+20:58:20.394	127.0.0.1:54797	ManageIT	OK	EXEC[0]	10.55 ms
+20:58:20.413	127.0.0.1:54798	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "json"; declare option output:json "format=jsonml"; brjx:getContent("/BRjx_main/bin/app.xml/BRjx.js")	0.11 ms
+20:58:20.438	127.0.0.1:54798	ManageIT	OK	EXEC[0]	24.84 ms
+20:58:20.471	127.0.0.1:54799	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_main/bin/app.xml/")	0.11 ms
+20:58:20.492	127.0.0.1:54799	ManageIT	OK	EXEC[0]	21.3 ms
+20:58:20.525	127.0.0.1:54800	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/gestalt.js")	0.09 ms
+20:58:20.535	127.0.0.1:54800	ManageIT	OK	EXEC[0]	10.38 ms
+20:58:20.558	127.0.0.1:54801	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/gestalt.json")	0.11 ms
+20:58:20.571	127.0.0.1:54801	ManageIT	OK	EXEC[0]	10.61 ms
+20:58:20.598	127.0.0.1:54802	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/gestalt.class")	0.09 ms
+20:58:20.608	127.0.0.1:54802	ManageIT	OK	EXEC[0]	9.77 ms
+20:58:20.655	127.0.0.1:54803	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/args.js")	0.1 ms
+20:58:20.664	127.0.0.1:54803	ManageIT	OK	EXEC[0]	8.81 ms
+20:58:20.685	127.0.0.1:54804	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/args.json")	0.08 ms
+20:58:20.694	127.0.0.1:54804	ManageIT	OK	EXEC[0]	8.78 ms
+20:58:20.714	127.0.0.1:54805	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/args.class")	0.1 ms
+20:58:20.723	127.0.0.1:54805	ManageIT	OK	EXEC[0]	9.19 ms
+20:58:20.830	127.0.0.1:54806	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_main/bin/app.xml/")	0.11 ms
+20:58:20.839	127.0.0.1:54806	ManageIT	OK	EXEC[0]	9.01 ms
+20:58:20.937	127.0.0.1:54807	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/manageit/examples/websocket.js.js")	0.12 ms
+20:58:20.947	127.0.0.1:54807	ManageIT	OK	EXEC[0]	9.16 ms
+20:58:20.972	127.0.0.1:54808	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/manageit/examples/websocket.js.json")	0.09 ms
+20:58:20.980	127.0.0.1:54808	ManageIT	OK	EXEC[0]	8.43 ms
+20:58:21.005	127.0.0.1:54809	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/manageit/examples/websocket.js.class")	0.15 ms
+20:58:21.014	127.0.0.1:54809	ManageIT	OK	EXEC[0]	8.36 ms
+20:58:21.041	127.0.0.1:54810	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/manageit/examples/websocket.js/package.json")	0.1 ms
+20:58:21.049	127.0.0.1:54810	ManageIT	OK	EXEC[0]	8.16 ms
+20:58:21.075	127.0.0.1:54811	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/manageit/examples/websocket.js/index.js")	0.1 ms
+20:58:21.084	127.0.0.1:54811	ManageIT	OK	EXEC[0]	8.84 ms
+20:58:21.108	127.0.0.1:54812	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/manageit/examples/websocket.js/index.json")	0.07 ms
+20:58:21.116	127.0.0.1:54812	ManageIT	OK	EXEC[0]	8.12 ms
+20:58:21.142	127.0.0.1:54813	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/manageit/examples/websocket.js/index.class")	0.08 ms
+20:58:21.150	127.0.0.1:54813	ManageIT	OK	EXEC[0]	7.97 ms
+20:58:21.180	127.0.0.1:54814	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/gestalt.js")	0.07 ms
+20:58:21.189	127.0.0.1:54814	ManageIT	OK	EXEC[0]	8.18 ms
+20:58:21.216	127.0.0.1:54815	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/gestalt.json")	0.08 ms
+20:58:21.225	127.0.0.1:54815	ManageIT	OK	EXEC[0]	8.93 ms
+20:58:21.248	127.0.0.1:54816	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/gestalt.class")	0.07 ms
+20:58:21.258	127.0.0.1:54816	ManageIT	OK	EXEC[0]	9.43 ms
+20:58:21.284	127.0.0.1:54817	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/args.js")	0.07 ms
+20:58:21.293	127.0.0.1:54817	ManageIT	OK	EXEC[0]	8.86 ms
+20:58:21.319	127.0.0.1:54818	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/args.json")	0.08 ms
+20:58:21.330	127.0.0.1:54818	ManageIT	OK	EXEC[0]	10.7 ms
+20:58:21.351	127.0.0.1:54819	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/args.class")	0.1 ms
+20:58:21.359	127.0.0.1:54819	ManageIT	OK	EXEC[0]	8.31 ms
+20:58:21.381	127.0.0.1:54820	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/manageit/examples/websocket.js.js")	0.07 ms
+20:58:21.390	127.0.0.1:54820	ManageIT	OK	EXEC[0]	7.89 ms
+20:58:21.411	127.0.0.1:54821	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/manageit/examples/websocket.js.json")	0.1 ms
+20:58:21.418	127.0.0.1:54821	ManageIT	OK	EXEC[0]	7.26 ms
+20:58:21.440	127.0.0.1:54822	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/manageit/examples/websocket.js.class")	0.08 ms
+20:58:21.449	127.0.0.1:54822	ManageIT	OK	EXEC[0]	8.76 ms
+20:58:21.471	127.0.0.1:54823	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/manageit/examples/websocket.js/package.json")	0.1 ms
+20:58:21.479	127.0.0.1:54823	ManageIT	OK	EXEC[0]	7.9 ms
+20:58:21.501	127.0.0.1:54824	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/manageit/examples/websocket.js/index.js")	0.08 ms
+20:58:21.509	127.0.0.1:54824	ManageIT	OK	EXEC[0]	7.51 ms
+20:58:21.531	127.0.0.1:54825	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/manageit/examples/websocket.js/index.json")	0.08 ms
+20:58:21.538	127.0.0.1:54825	ManageIT	OK	EXEC[0]	7.15 ms
+20:58:21.559	127.0.0.1:54826	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/manageit/examples/websocket.js/index.class")	0.1 ms
+20:58:21.567	127.0.0.1:54826	ManageIT	OK	EXEC[0]	7.45 ms
+20:58:21.610	127.0.0.1:54827	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/manageit/examples/eventsource.js.js")	0.07 ms
+20:58:21.622	127.0.0.1:54827	ManageIT	OK	EXEC[0]	11.91 ms
+20:58:21.646	127.0.0.1:54828	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/manageit/examples/eventsource.js.json")	0.1 ms
+20:58:21.655	127.0.0.1:54828	ManageIT	OK	EXEC[0]	8.37 ms
+20:58:21.679	127.0.0.1:54829	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/manageit/examples/eventsource.js.class")	0.11 ms
+20:58:21.687	127.0.0.1:54829	ManageIT	OK	EXEC[0]	8.21 ms
+20:58:21.714	127.0.0.1:54830	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/manageit/examples/eventsource.js/package.json")	0.09 ms
+20:58:21.723	127.0.0.1:54830	ManageIT	OK	EXEC[0]	8.79 ms
+20:58:21.747	127.0.0.1:54831	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/manageit/examples/eventsource.js/index.js")	0.1 ms
+20:58:21.755	127.0.0.1:54831	ManageIT	OK	EXEC[0]	8.14 ms
+20:58:21.782	127.0.0.1:54832	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/manageit/examples/eventsource.js/index.json")	0.07 ms
+20:58:21.790	127.0.0.1:54832	ManageIT	OK	EXEC[0]	8.13 ms
+20:58:21.812	127.0.0.1:54833	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/manageit/examples/eventsource.js/index.class")	0.08 ms
+20:58:21.821	127.0.0.1:54833	ManageIT	OK	EXEC[0]	8.64 ms
+20:58:21.850	127.0.0.1:54834	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/gestalt.js")	0.07 ms
+20:58:21.858	127.0.0.1:54834	ManageIT	OK	EXEC[0]	7.02 ms
+20:58:21.883	127.0.0.1:54839	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/gestalt.json")	0.07 ms
+20:58:21.891	127.0.0.1:54839	ManageIT	OK	EXEC[0]	7.31 ms
+20:58:21.919	127.0.0.1:54840	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/gestalt.class")	0.12 ms
+20:58:21.927	127.0.0.1:54840	ManageIT	OK	EXEC[0]	8.17 ms
+20:58:21.952	127.0.0.1:54841	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/args.js")	0.08 ms
+20:58:21.961	127.0.0.1:54841	ManageIT	OK	EXEC[0]	8.58 ms
+20:58:21.985	127.0.0.1:54842	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/args.json")	0.08 ms
+20:58:21.992	127.0.0.1:54842	ManageIT	OK	EXEC[0]	7.38 ms
+20:58:22.015	127.0.0.1:54843	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:isResource("/BRjx_main/bin/app.xml/args.class")	0.07 ms
+20:58:22.023	127.0.0.1:54843	ManageIT	OK	EXEC[0]	7.51 ms
+20:58:22.342	127.0.0.1:54844	ManageIT	OK	QUERY[0] import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare namespace output = "http://www.w3.org/2010/xslt-xquery-serialization"; declare option output:method "text"; brjx:getLastModified("/BRjx_main/bin/app.xml/")	0.07 ms
+20:58:22.350	127.0.0.1:54844	ManageIT	OK	EXEC[0]	7.74 ms
+20:58:37.174	SERVER	admin	OK	Server was stopped (port: 1984).

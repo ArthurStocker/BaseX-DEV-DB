@@ -1,0 +1,11 @@
+{
+  "name": "cockpit",
+  "version": "0.0.1",
+  "description": "X Plane Cockpit",
+  "author": {
+    "name": "Arthur Stocker"
+  },
+  "dependencies": {
+      "node-static": "*"
+  }
+}

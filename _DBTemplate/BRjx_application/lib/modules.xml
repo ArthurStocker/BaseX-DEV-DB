@@ -1,0 +1,571 @@
+<modules id="939ecfeb-9bae-42d4-a9c1-e8237f5252bf">
+  <records>
+  
+    <record id="10539c73-90bc-4a7f-ac97-41e65e7a247b">
+      <path>BRjx_router/</path>
+      <name>main</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+/**
+ * @fileOverview ...
+ * @author Arthur Stocker
+ * @version 0.0.1
+ */
+
+
+/**
+ * export ( ... )
+ * 
+ * eslint-disable 
+ */
+export (
+    'Router'
+);
+/* eslint-enable */
+
+
+/**
+ * const ...
+ */
+
+
+/**
+ * var ...
+ */
+
+
+/**
+ * The module version string with the major and minor version number.
+ */
+var version = '0.0.1';
+
+
+/**
+ * default values
+ */
+
+
+/**
+ * Create a Router object
+ * @see -
+ * @param -
+ * @since 0.0.1
+ * @returns {object} Router
+ */
+function Router(log) {
+    if (!(this instanceof Router)) {
+        return new Router(log);
+    }
+
+    // local variables
+    var self = this;
+
+
+    /**
+     * ...
+     * @see -
+     * @param -
+     * @since 0.0.1
+     * @returns -
+     */
+    Object.defineProperty(self, 'cacheManager', {
+        value: function(checkCache, cache, interval) {
+            self.cacheWatcher = setInterval(function() {
+                var startHandler = (new Date()).getTime();
+                var lastModified = checkCache();
+                
+                if (cache.lastModified != lastModified) {
+                    log.debug('Cache is older then Database.  Database last modified ' + lastModified + ', Cache last modified ' + cache.lastModified + ', refresh cache.');
+
+                    self.refreshCache(cache);
+                    cache.refreshed = true;
+                    cache.lastModified = lastModified;
+
+                    let elapsed = '' + ((new Date()).getTime() - startHandler);
+                    log.debug(Array(8 - elapsed.length).join(' ') + elapsed + 'ms refreshCache');
+
+                    cache.emit('refreshed');
+                }
+            }, interval || 5000);
+        },
+        enumerable: true,
+        configurable: false
+    });
+
+    /**
+     * ...
+     * @see -
+     * @param -
+     * @since 0.0.1
+     * @returns -
+     */
+    Object.defineProperty(self, 'refreshCache', {
+        value: function(cache) {
+            (function(cache) {
+
+log.debug('Cache modules');
+include('BRjx_plugin');
+
+                log.debug('Cache mountpoints');
+                cache.mountpoints = {
+                    "GET": {
+                        "/": function(session) {
+                            return ['static', ['BRjx_frontend/test.html', 'text/html']];
+                        },
+                        "/dump": function(session) {
+                            /**
+                            * dump request
+                            */
+                            function dump(item, space) {
+                                if (typeof(item) == 'string' || typeof(item) == 'number')
+                                    session.debug(space + item);
+                                if (typeof(item) == 'object') {
+                                    var keys = Object.keys(item)
+                                    for (var k in keys) {
+                                        session.debug(space + keys[k]+' -> ');
+                                        if ( keys[k].indexOf('servlet') == -1) dump(item[keys[k]], space +' ');
+                                    }
+                                } 
+                            }
+
+                            dump(request, '');
+
+                            Test();
+
+                            return ['static', ['BRjx_frontend/test.html', 'text/html']];                
+                        },
+                        "/test": function(session) {
+                            return ['static', ['BRjx_frontend/test.html', 'text/html']];
+                        },
+                        "/cache": function(session) {
+                            self.reload();
+                            return ['html', ['Router reloaded!']];
+                        },
+                        "/scripts": function(session) {
+                            var mime = '';
+                            var path = session.getRequestPath;
+                            var extension = path.replace(/.*\.([^\.]*$)/,'$1');
+
+                            if (extension == 'css') {
+                                mime = 'text/css';
+                            } else {
+                                mime = 'application/javascript';
+                            }
+
+                            return ['static', [path.replace(/./, ''), mime]];
+                        }
+                    }
+                };
+            }).apply({},[cache]);
+        },
+        enumerable: true,
+        configurable: false
+    });
+
+
+    /**
+     * ...
+     * @see -
+     * @param -
+     * @since 0.0.1
+     * @returns -
+     */
+    Object.defineProperty(self, 'dispatch', {
+        value: function(cache, session) {
+            let path = session.getRequestPath.replace(/(\/[^\/]*).*$/, '$1');
+
+            return cache.mountpoints[session.getRequestMethod][path](session);
+        },
+        enumerable: true,
+        configurable: false
+    });
+
+
+    return self;
+}
+]]>
+      </script>
+    </record>
+    <record id="4df4d93c-099c-471f-b036-64069594dfe6">
+      <path>BRjx_router/</path>
+      <name>package</name>
+      <type>json</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+{
+    "name": "BRjx_router",
+    "version": "0.0.1",
+    "description": "BRjx_router",
+    "keywords": [
+        "BRjx",
+        "Router"
+    ],
+    "homepage": "https://github.com/ArthurStocker/basex-client",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ArthurStocker/basex-client"
+    },
+    "licenses": [{
+        "type": "GNU General Public License 3",
+        "url": "https://www.gnu.org/licenses/gpl-3.0.txt"
+    }],
+    "dependencies": {
+    },
+    "devDependencies": {},
+    "engines": {
+        "ringojs": ">= 1.0.0"
+    },
+    "scripts": {
+        "test": "ringo"
+    },
+    "main": "main.js"
+}
+]]>
+      </script>
+    </record>
+    <record id="d34801a7-5c79-4d4f-8df8-63577834bba1">
+      <path>BRjx_record/</path>
+      <name>main</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+export ('BRjxRecord');
+
+/**
+ * Provides the BaseXClient.
+ */
+var {BaseXClient} = require('basex/client');
+
+/**
+ * Create a BRjxRecord object
+ * @param {options}
+ * @since: 0.0.1
+ * @returns -
+ */
+function BRjxRecord(table, options) {
+  if (!(this instanceof BRjxRecord)) {
+    return new BRjxRecord(table, options);
+  }
+
+  // validate table
+  table = gs.getTableID(table);
+
+  // validate options
+  if (!options) {
+    options = {};
+  }
+
+  // set self to this
+  var self = this;
+
+  // save table
+  var propertytable = table;
+
+  // save options
+  var propertyoptions = options;
+
+  // the BaseX client instance
+  var propertyclient = new BaseXClient(options);
+
+  // the Query array
+  var propertyquery = [new BRjxQuery(options)];
+
+  // the Query result
+  var propertyresult = {
+                  records: [],
+                  error: undefined,
+                  index: 0,
+                  BRjxRecord: self,
+                  next: BRjxRecord.next,
+                  hasNext: BRjxRecord.hasNext,
+                  toString: BRjxRecord.toString
+                };
+
+  /**
+   * Get the Application's configuration.
+   * The Config is Stored in the global.System object;
+   * @see -
+   * @param {}
+   * @since: 0.0.1
+   * @returns -
+   */
+  this.getConfig = function(app) {
+    if (!global.System.BRjx) {
+      global.System.BRjx = {};
+      global.System.BRjx[app] = {};
+      var client = new BaseXClient();
+
+      if (!client.openSession().error) {
+        try {
+          var boot = JSON.parse(getResource(gs.root+'config/'+app+'.cfg').content);
+          var query = client.openSession().query(boot)
+              query.bind('$dbname', app+'propertyapp');
+          var init = JSON.parse(query.execute());
+              init.forEach(function(item, index) {
+            var query = client.openSession().query(item)
+                query.bind('$dbname', app+'propertyapp');
+            var result = JSON.parse(query.execute());
+                result.forEach(function(item, index) {
+              var query = client.openSession().query(item);
+                  query.bind('$dbname', app+'propertyapp');
+              var command = JSON.parse(query.execute());
+                  Object.keys(command).forEach(function(item, index) { 
+                    global.System.BRjx[app][item] = command[item];
+              });
+            });
+          });
+        } catch (error) {
+          gs.debug('BRjxRecord.module.js/BRjxRecord.getConfig():error>'+error);
+        }
+
+      }
+      client.closeSession();
+    }
+  };
+
+  /**
+   * Build the WHERE EXPRESSION
+   * The WHERE EXPRESSION to use in the XQuery
+   * when collecting data from the Database.
+   * @param {}
+   * @since: 0.0.1
+   * @returns WHERE EXPRESSION as string
+   */
+  function buildWhereExpression() {
+    var xquery = 'where (';
+    propertyquery.forEach(function(item, index) {
+      if (index > 0) xquery = xquery+' or (';
+      item.query.forEach(function(item, index) {
+        if (index > 0) xquery = xquery+' and ';
+        item.forEach(function(item, index) {
+          if (index == 0) xquery = xquery+global.System.BRjx.main.properties.recordVar+item;
+          if (index == 1) xquery = xquery+' '+item;
+          if (index == 2) xquery = xquery+' "'+item+'"';
+        });
+      });
+      xquery = xquery+')';
+    });
+    return xquery;
+  }
+
+
+  /**
+   * Build the first Query term
+   * The Query is the WHERE clause in the XQuery
+   * when collecting data from the Database.
+   * @see #bin/commands.xml in the DB
+   * @param {key, operator, value}
+   * @since: 0.0.1
+   * @returns -
+   */
+  this.addQuery = function(key, operator, value) {
+    propertyquery[0].addQuery(key, operator, value);
+  };
+
+  /**
+   * Build an additional Query term
+   * The additional TERM of the QUERY properties array
+   * will be compiled as OR expression.
+   * @see #bin/commands.xml in the DB
+   * @param {key, operator, value}
+   * @since: 0.0.1
+   * @returns new BRjxQuery object
+   */
+  this.addOrCondition = function(key, operator, value) {
+    propertyquery.push(new BRjxQuery(options));
+    propertyquery[propertyquery.length-1].addQuery(key, operator, value);
+    return propertyquery[propertyquery.length-1];
+  };
+
+  /**
+   * Execute the Query term
+   * @see -
+   * @param -
+   * @since: 0.0.1
+   * @returns new propertyresult object
+   */
+  this.query = function() {
+    // run garbage collector first
+    gc();
+
+    if(!propertytable.error) {
+      var properties = [];
+      properties.push(propertytable.record.database.toString());
+      properties.push(propertytable.toString());
+    } else {
+      propertyresult.error = propertytable.toString();
+      return propertyresult;
+    }
+
+    if (!propertyclient.openSession().error) {
+      try {
+        // get record
+        var query = propertyclient.openSession().query(global.System.BRjx.main.commands.getRecords.script.replace(/\(:where expression:\)/,buildWhereExpression()));  
+        global.System.BRjx.main.commands.getRecords.properties.forEach(function(item, index) {
+          query.bind(item, properties[index]);
+        });
+        propertyresult.records = JSON.parse(query.execute());
+      } catch (error) {
+        gs.debug('BRjxRecord.module/BRjxRecord.query():error>'+error);
+      }
+    } else {
+      gs.debug('BRjxRecord.module/BRjxRecord.query():client.openSession().error>'+client.openSession().error);
+    }
+    propertyclient.openSession().close();
+
+    return propertyresult;
+  };
+
+  /**
+   * Return next record in propertyresult if it has any
+   * @see -
+   * @param -
+   * @since: 0.0.1
+   * @returns new propertyresult object
+   */
+  this.next = function() {
+    if (this.hasNext) {
+      this.propertyresult.index++;
+      return this.propertyresult.records[this.propertyresult.index-1];
+    } else {
+      return null;
+    }
+  };
+
+  /**
+   * Check if there is a next record in propertyresult
+   * @see -
+   * @param -
+   * @since: 0.0.1
+   * @returns new propertyresult object
+   */
+  this.hasNext = function() {
+    if((this.propertyresult.records.length > 0) && (this.propertyresult.index+1 < this.propertyresult.records.length)) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  /**
+   * return all records of propertyresult
+   * @see -
+   * @param -
+   * @since: 0.0.1
+   * @returns new propertyresult object
+   */
+  this.toString = function() {
+    if (this.hasNext) {
+      return this.propertyresult.records.toString();
+    } else {
+      return this.propertyresult.error.toString();
+    }
+  };
+
+  // get config
+  this.getConfig(propertytable.record.app);
+}
+
+/**
+ * Create a BRjxQuery object 
+ * @param {options}
+ * @since: 0.0.1
+ * @returns - 
+ */
+function BRjxQuery(options) {
+  if (!(this instanceof BRjxQuery)) {
+    return new BRjxQuery(options);
+  }
+
+  // validate optons
+  if (!options) {
+    options = {};
+  }
+
+  // save options
+  var propertyoptions = options;
+
+  // the Query array
+  this.query = new Array();
+
+  /**
+   * All elements in the QUERY property of this
+   * object will be compiled to an AND expression.
+   * @param {key, operator, value} 
+   * @since: 0.0.1
+   * @returns -
+   */
+  this.addQuery = function(key, operator, value) {
+    if (global.System.BRjx.main.properties.operators.indexOf(operator) == -1) {
+      this.query.push([key, '=', operator]);
+    } else {
+      this.query.push([key, operator, value]);
+    }
+  };
+}]]>
+      </script>
+    </record>
+    <record id="4f7691db-c569-4128-93a6-8df959821bc3">
+      <path>BRjx_record/</path>
+      <name>default</name>
+      <type>properties</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+# BRjx_record defaults
+
+## properties
+recordVar                     = $r/
+operators                     = ['=','>;','<','>=','<=','!=','STARTSWITH','CONTAINS','IN','ENDSWITH','DOES NOT CONTAIN','NOT IN','INSTANCEOF'] 
+]]>
+      </script>
+    </record>
+    <record id="30b6a870-17b2-4de4-ba30-255bc04cb580">
+      <path>BRjx_record/</path>
+      <name>package</name>
+      <type>json</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+{
+    "name": "BRjx_record",
+    "version": "0.0.1",
+    "description": "BRjx_record",
+    "keywords": [
+        "basex",
+        "client"
+    ],
+    "homepage": "https://github.com/ArthurStocker/basex-client",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ArthurStocker/basex-client"
+    },
+    "licenses": [{
+        "type": "GNU General Public License 3",
+        "url": "https://www.gnu.org/licenses/gpl-3.0.txt"
+    }],
+    "dependencies": {
+    },
+    "devDependencies": {},
+    "engines": {
+        "ringojs": ">= 1.0.0"
+    },
+    "scripts": {
+        "test": "ringo"
+    },
+    "main": "main.js"
+}
+]]>
+      </script>
+    </record>
+  </records>
+</modules>

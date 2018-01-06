@@ -1,8 +1,0 @@
-17:24:34.535	0:0:0:0:0:0:0:1:60470	admin	REQUEST	[GET] http://localhost:8080/test
-17:24:34.736	0:0:0:0:0:0:0:1:60470	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 38/12: [XPST0003] Expecting return value.	207.95 ms
-17:25:20.400	0:0:0:0:0:0:0:1:60474	admin	REQUEST	[GET] http://localhost:8080/test
-17:25:20.420	0:0:0:0:0:0:0:1:60474	admin	400	Stopped at /Users/arthur/Library/Application Support/BaseX/Repo/webapp_cm/cm/test.xqm, 38/12: [XPST0003] Expecting return value.	20.11 ms
-17:25:31.547	0:0:0:0:0:0:0:1:60474	admin	REQUEST	[GET] http://localhost:8080/test
-17:25:31.681	0:0:0:0:0:0:0:1:60474	admin	200		134.45 ms
-17:26:06.564	127.0.0.1:60477	admin	REQUEST	[GET] http://localhost:8080/test
-17:26:06.630	127.0.0.1:60477	admin	200		66.31 ms

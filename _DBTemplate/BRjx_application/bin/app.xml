@@ -1,7 +1,7 @@
 <app id="3f657ec4-b620-4883-a7f3-0d49ab7ba43c">
   <records>
-    <record id="eb1af7ea-8aee-40b0-a718-0166121dd3c3">
-      <path>BRjx_application/</path>
+    <record id="10539c73-90bc-4a7f-ac97-41e65e7a247b">
+      <path>BRjx_router/</path>
       <name>main</name>
       <type>js</type>
       <version>0.0.1</version>
@@ -9,26 +9,10 @@
       <script>
 <![CDATA[
 /**
- * @fileOverview Provides access to the BaseX Server.
+ * @fileOverview ...
  * @author Arthur Stocker
  * @version 0.0.1
  */
-const Logger = require('ringo/logging');
-Logger.setConfig(getResource('config/log4j.properties'), true);
-
-
-/**
- * config ...
- */
-var { Config } = require('basex')
-var Args = require('args');
-var config = Config.load(module.resolve('./default.properties'));
-
-
-/**
- * include ...
- */
-include(config.get('main.handlers'));
 
 
 /**
@@ -36,9 +20,8 @@ include(config.get('main.handlers'));
  * 
  * eslint-disable 
  */
-export(
-    'init',
-    'main'
+export (
+    'Router'
 );
 /* eslint-enable */
 
@@ -46,17 +29,11 @@ export(
 /**
  * const ...
  */
-const log = require('ringo/logging').getLogger(module.id);
 
 
 /**
  * var ...
  */
-var { EventEmitter } = require('ringo/events')
-var { Session } = require('BRjx_library');
-var router = new Router(log);
-var BaseXClient;
-var BaseXQuery;
 
 
 /**
@@ -68,128 +45,178 @@ var version = '0.0.1';
 /**
  * default values
  */
-var cache = {
-    refreshed: false,
-    mountpoints: {},
-    lastModified: '0'
-};
 
 
 /**
- * Helper function
+ * Create a Router object
+ * @see -
+ * @param -
+ * @since 0.0.1
+ * @returns {object} Router
  */
-function checkCache() {
-    var client = new BaseXClient();
-    var query = new BaseXQuery();
-
-    query.string = 'brjx:getModulesLastModified()';
-
-    return client.execQuery(query).data[1];
-}
-
-/**
- * Initialization
- */
-function init(client, query) {
-    BaseXClient = client;
-    BaseXQuery = query;
-
-    EventEmitter.call(cache);
-
-    cache.addListener('refreshed', function() {
-        log.debug('Cache refreshed reload Router !');
-        let startHandler = (new Date()).getTime();
-
-        include(config.get('main.handlers'));
-        router = new Router(log);
-
-        let elapsed = '' + ((new Date()).getTime() - startHandler);
-        log.debug(Array(8 - elapsed.length).join(' ') + elapsed + 'ms reloadRouter');
-    });
-
-    router.refreshCache(cache);
-    cache.lastModified = checkCache();
-    
-    router.cacheManager(checkCache, cache);
-
-}
-
-/**
- * Application
- */
-function main(request) {
-    /**
-     * var ...
-     */
-    var timeing = '\n\n';
-
-
-    /**
-     * loadSession ...
-     */
-    var session = new Session(request);
-    var startHandler = session.getRequestTimeStamp;
-
-    elapsed = '' + ((new Date()).getTime() - startHandler);
-    timeing += Array(8 - elapsed.length).join(' ') + elapsed + 'ms loadSession\n';
-
-    log.warn('SESSION ID > ' + session.id);
-
-
-    /**
-     * cache was refreshed ...
-     */
-    if (cache.refreshed) {
-        cache.refreshed = false;
+function Router(log) {
+    if (!(this instanceof Router)) {
+        return new Router(log);
     }
 
-
-    /**
-     * dispatch ...
-     */
-    let handler = router.dispatch(cache, session);
-
-    elapsed = '' + ((new Date()).getTime() - startHandler);
-    timeing += Array(8 - elapsed.length).join(' ') + elapsed + 'ms dispatchRequest\n';
-
-
-    let content = session.getResponse[handler[0]].apply(session.getResponse, handler[1]);
+    // local variables
+    var self = this;
 
 
     /**
-     * handleRequest ...
+     * ...
+     * @see -
+     * @param -
+     * @since 0.0.1
+     * @returns -
      */
-    elapsed = '' + ((new Date()).getTime() - startHandler);
-    //timeing += Array(110).join('─') + '\n';
-    timeing += Array(8 - elapsed.length).join(' ') + elapsed + 'ms handleRequest\n'
-    timeing += Array(11).join(' ') + '{ path: "' + request.pathInfo + '" }\n';
-    //timeing += Array(110).join('═') + '\n';
+    Object.defineProperty(self, 'cacheManager', {
+        value: function(cacheHandler, cache, interval) {
+            if (!cacheHandler || !cache)
+                return;
 
-    log.debug(timeing);
+            self.cacheWatcher = setInterval(function() {
+                var startHandler = (new Date()).getTime();
+                var lastModified = cacheHandler.getModulesLastModified();
+                
+                if (cache.lastModified * 1 < lastModified * 1 || cache.lastModified * 1 + 600000 < startHandler) {
+                    log.info('Cache is older then Database.  Database last modified ' + lastModified + ', Cache last modified ' + cache.lastModified + ', refresh cache.');
+
+                    self.refreshCache(cacheHandler, cache);
+                    cache.refreshed = true;
+                    cache.lastModified = lastModified * 1 + 600000 > startHandler ? lastModified * 1 + 10000 : startHandler;
+
+                    let elapsed = '' + ((new Date()).getTime() - startHandler);
+                    log.info(Array(8 - elapsed.length).join(' ') + elapsed + 'ms refreshCache');
+
+                    cache.emit('refreshed');
+                }
+            }, interval || 5000);
+        },
+        enumerable: true,
+        configurable: false
+    });
+
+    /**
+     * ...
+     * @see -
+     * @param -
+     * @since 0.0.1
+     * @returns -
+     */
+    Object.defineProperty(self, 'refreshCache', {
+        value: function(cacheHandler, cache) {
+            if (!cacheHandler || !cache)
+                return;
+
+            (function(cacheHandler, cache) {
+                log.info('Cache modules');
+include('BRjx_plugin');
+
+                log.info('Cache mountpoints');
+                cache._mountpoints = {};
+                (function(mountpoints) {
+                    let cacheItems = cacheHandler.getCacheItems();
+                    let mountpointHandlers = cacheItems.filter(function(item, index, array) {
+                        if (({}).toString.call(item).replace(/.*\s(.*)\]/, '$1') == 'Array') {
+                            console.log('-- ' + item[0]);
+                            return item[0] == 'mountpoints';
+                        } else {
+                            return false;
+                        }
+                    });
+                    mountpointHandlers[0].forEach(function(item) {
+                        if (({}).toString.call(item).replace(/.*\s(.*)\]/, '$1') == 'Array')
+                            console.log('++ ' + item[1]);
+                            //include(item[1]);
+                    }); 
+                    console.log('>> '+JSON.stringify(mountpointHandlers[0]));
+                    console.log('!! '+JSON.stringify(this));
+                })(cache._mountpoints);
+                cache.mountpoints = {
+                    "GET": {
+                        "/": function(session) {
+                            return ['static', ['BRjx_frontend/test.html', 'text/html']];
+                        },
+                        "/dump": function(session) {
+                            /**
+                             * dump request
+                             */
+                            function dump(item, space) {
+                                if (typeof(item) == 'string' || typeof(item) == 'number')
+                                    session.debug(space + item);
+                                if (typeof(item) == 'object') {
+                                    var keys = Object.keys(item)
+                                    for (var k in keys) {
+                                        session.debug(space + keys[k]+' -> ');
+                                        if ( keys[k].indexOf('servlet') == -1) dump(item[keys[k]], space +' ');
+                                    }
+                                } 
+                            }
+
+                            dump(session.getRequest, '');
+
+                            session.debug(''+JSON.stringify(cache) + ' - ' + JSON.stringify(Object.keys(cache.mountpoints.GET)) + ' - ' + module.id);
+
+                            Test();
+
+                            return ['static', ['BRjx_frontend/test.html', 'text/html']];                
+                        },
+                        "/test": function(session) {
+                            return ['static', ['BRjx_frontend/test.html', 'text/html']];
+                        },
+                        "/cache": function(session) {
+                            cache.lastModified = 0;
+                            //cache.emit('refreshed');
+                            return ['html', ['Router reloaded!']];
+                        },
+                        "/scripts": function(session) {
+                            var mime = '';
+                            var path = session.getRequestPath;
+                            var extension = path.replace(/.*\.([^\.]*$)/,'$1');
+
+                            if (extension == 'css') {
+                                mime = 'text/css';
+                            } else {
+                                mime = 'application/javascript';
+                            }
+
+                            return ['static', [path.replace(/./, ''), mime]];
+                        }
+                    }
+                };
+            }).apply({},[cacheHandler, cache]);
+        },
+        enumerable: true,
+        configurable: false
+    });
 
 
-    return content;
-};
+    /**
+     * ...
+     * @see -
+     * @param -
+     * @since 0.0.1
+     * @returns -
+     */
+    Object.defineProperty(self, 'dispatch', {
+        value: function(cache, session) {
+            let path = session.getRequestPath.replace(/(\/[^\/]*).*$/, '$1');
+
+            return cache.mountpoints[session.getRequestMethod][path](session);
+        },
+        enumerable: true,
+        configurable: false
+    });
+
+
+    return self;
+}
 ]]>
       </script>
     </record>
-    <record id="9dfdf1e8-0e1a-4cb4-886c-60d625f6fb63">
-      <path>BRjx_application/</path>
-      <name>default</name>
-      <type>properties</type>
-      <version>0.0.1</version>
-      <properties type="array"/>
-      <script>
-<![CDATA[
-# BRjx_application defaults
-
-## properties
-main.handlers                   = BRjx_router
-]]>
-      </script>
-    </record>
-    <record id="5a333db1-7eb0-4123-8a20-eec3830471e8">
-      <path>BRjx_application/</path>
+    <record id="4df4d93c-099c-471f-b036-64069594dfe6">
+      <path>BRjx_router/</path>
       <name>package</name>
       <type>json</type>
       <version>0.0.1</version>
@@ -197,12 +224,12 @@ main.handlers                   = BRjx_router
       <script>
 <![CDATA[
 {
-    "name": "BRjx_application",
+    "name": "BRjx_router",
     "version": "0.0.1",
-    "description": "BRjx_application",
+    "description": "BRjx_router",
     "keywords": [
         "BRjx",
-        "Application"
+        "Router"
     ],
     "homepage": "https://github.com/ArthurStocker/basex-client",
     "repository": {
@@ -525,6 +552,16 @@ function Session() {
 
 
     /**
+     * Request 
+     */
+    Object.defineProperty(this, "getRequest", {
+        get: function() {
+            return _args.request;
+        },
+        enumerable: true
+    });
+
+    /**
      * TimeStamp of the Request
      */
     Object.defineProperty(this, "getRequestTimeStamp", {
@@ -592,7 +629,6 @@ function Session() {
         enumerable: true
     });
 
-
     /**
      * Warper for log functions 
      */
@@ -644,6 +680,245 @@ function Session() {
     "keywords": [
         "basex",
         "client"
+    ],
+    "homepage": "https://github.com/ArthurStocker/basex-client",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ArthurStocker/basex-client"
+    },
+    "licenses": [{
+        "type": "GNU General Public License 3",
+        "url": "https://www.gnu.org/licenses/gpl-3.0.txt"
+    }],
+    "dependencies": {
+    },
+    "devDependencies": {},
+    "engines": {
+        "ringojs": ">= 1.0.0"
+    },
+    "scripts": {
+        "test": "ringo"
+    },
+    "main": "main.js"
+}
+]]>
+      </script>
+    </record>
+    <record id="eb1af7ea-8aee-40b0-a718-0166121dd3c3">
+      <path>BRjx_application/</path>
+      <name>main</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+/**
+ * @fileOverview Provides access to the BaseX Server.
+ * @author Arthur Stocker
+ * @version 0.0.1
+ */
+const Logger = require('ringo/logging');
+Logger.setConfig(getResource('config/log4j.properties'), true);
+
+
+/**
+ * config ...
+ */
+var { Config } = require('basex')
+var Args = require('args');
+var config = Config.load(module.resolve('./default.properties'));
+
+
+/**
+ * export ( ... )
+ * 
+ * eslint-disable 
+ */
+export(
+    'init',
+    'main'
+);
+/* eslint-enable */
+
+
+/**
+ * const ...
+ */
+const log = require('ringo/logging').getLogger(module.id);
+
+
+/**
+ * var ...
+ */
+var { EventEmitter } = require('ringo/events')
+var { Session } = require('BRjx_library');
+var BaseXClient;
+var BaseXQuery;
+
+
+/**
+ * The module version string with the major and minor version number.
+ */
+var version = '0.0.1';
+
+
+/**
+ * default values
+ */
+var $ = module.singleton('$', function() {
+    return {};
+});
+var cache = module.singleton('cache', function() {
+    return {
+        refreshed: false,
+        mountpoints: {},
+        lastModified: 0
+    };
+});
+
+
+/**
+ * Helper function
+ */
+//
+function reloadRouter() {
+    include(config.get('main.handlers'));
+    $.router = new Router(log);
+    $.router.cacheManager({  getCacheItems: getCacheItems, getModulesLastModified: getModulesLastModified }, cache);
+}
+//
+function getCacheItems() {
+    var client = new BaseXClient();
+    var query = new BaseXQuery();
+
+    query.string = config.get('main.getCacheItems');;
+
+    return client.execQuery(query).data;
+}
+//
+function getModulesLastModified() {
+    var client = new BaseXClient();
+    var query = new BaseXQuery();
+
+    query.string = config.get('main.getModulesLastModified');
+
+    return client.execQuery(query).data[1];
+}
+
+/**
+ * Initialization
+ */
+function init(client, query) {
+    BaseXClient = client;
+    BaseXQuery = query;
+
+    EventEmitter.call(cache);
+
+    cache.addListener('refreshed', function() {
+        log.info('Cache refreshed reload Router !');
+        let startHandler = (new Date()).getTime();
+
+        reloadRouter();
+
+        let elapsed = '' + ((new Date()).getTime() - startHandler);
+        log.info(Array(8 - elapsed.length).join(' ') + elapsed + 'ms reloadRouter');
+    });
+
+    reloadRouter();
+}
+
+/**
+ * Application
+ */
+function main(request) {
+    /**
+     * var ...
+     */
+    var timeing = '\n\n';
+    var elapsed = 0;
+
+
+    /**
+     * loadSession ...
+     */
+    var session = new Session(request);
+    var startHandler = session.getRequestTimeStamp;
+
+    elapsed = '' + ((new Date()).getTime() - startHandler);
+    timeing += Array(8 - elapsed.length).join(' ') + elapsed + 'ms loadSession\n';
+
+    log.warn('SESSION ID > ' + session.id);
+
+
+    /**
+     * cache was refreshed ...
+     */
+    if (cache.refreshed) {
+        cache.refreshed = false;
+    }
+
+
+    /**
+     * dispatch ...
+     */
+    let handler = $.router.dispatch(cache, session);
+
+    elapsed = '' + ((new Date()).getTime() - startHandler);
+    timeing += Array(8 - elapsed.length).join(' ') + elapsed + 'ms dispatchRequest\n';
+
+
+    let content = session.getResponse[handler[0]].apply(session.getResponse, handler[1]);
+
+
+    /**
+     * handleRequest ...
+     */
+    elapsed = '' + ((new Date()).getTime() - startHandler);
+    //timeing += Array(110).join('─') + '\n';
+    timeing += Array(8 - elapsed.length).join(' ') + elapsed + 'ms handleRequest\n'
+    timeing += Array(11).join(' ') + '{ path: "' + request.pathInfo + '" }\n';
+    //timeing += Array(110).join('═') + '\n';
+
+    log.debug(timeing);
+
+
+    return content;
+};
+]]>
+      </script>
+    </record>
+    <record id="9dfdf1e8-0e1a-4cb4-886c-60d625f6fb63">
+      <path>BRjx_application/</path>
+      <name>default</name>
+      <type>properties</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+# BRjx_application defaults
+
+## properties
+main.handlers                   = BRjx_router
+main.getCacheItems              = brjx:getCacheItems()
+main.getModulesLastModified     = brjx:getModulesLastModified()
+]]>
+      </script>
+    </record>
+    <record id="5a333db1-7eb0-4123-8a20-eec3830471e8">
+      <path>BRjx_application/</path>
+      <name>package</name>
+      <type>json</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+{
+    "name": "BRjx_application",
+    "version": "0.0.1",
+    "description": "BRjx_application",
+    "keywords": [
+        "BRjx",
+        "Application"
     ],
     "homepage": "https://github.com/ArthurStocker/basex-client",
     "repository": {

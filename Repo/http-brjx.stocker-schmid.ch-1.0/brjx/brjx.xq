@@ -44,6 +44,13 @@ CHECK * getLength : path + name
 :) 
 module namespace  brjx = "http://brjx.stocker-schmid.ch" ;
  
+declare variable $brjx:SystemServerClient := ("boot.xml", "app.xml", "jobs.xml", "macros.xml", "modules.xml", "mountpoints.xml", "components.xml", "scripts.xml");
+declare variable $brjx:SystemServer := ("boot.xml", "app.xml", "jobs.xml", "macros.xml", "modules.xml", "mountpoints.xml");
+declare variable $brjx:System := ("boot.xml", "app.xml", "macros.xml");
+declare variable $brjx:Server := ("jobs.xml", "modules.xml", "mountpoints.xml");
+declare variable $brjx:Client := ("components.xml", "scripts.xml");
+declare variable $brjx:Cache := ("components.xml", "scripts.xml", "mountpoints.xml");
+
 
 (:~
  : Strip trailing slash 
@@ -69,23 +76,20 @@ declare function brjx:stripTrailingSlash
 };
 
 (:~
- : Get all records 
+ : Get all documents    $bundle = "app.xml"  or $bundle = "macros.xml" or $bundle = "modules.xml" or $bundle = "components.xml" or $bundle = "boot.xml" or $bundle = "jobs.xml"
  :
  : @author  Arthur Stocker 
  : @version 1.0 
- : @see     http://brjx.stocker-schmid.ch/api/BasexRepository_getRecords.html 
+ : @see     http://brjx.stocker-schmid.ch/api/BasexRepository_getBundles.html 
  : @param   -
  :) 
-declare function brjx:getRecords
-  ( )   as xs:string* {
+declare function brjx:getDocs
+  ( $list as item()* )   as node()* {
   for $db in db:list()
     for $doc in collection($db)
-      for $t in $doc/*
-        let $bundle := replace(document-uri($doc), "(.*)/([^/].*)$", "$2")
-        where $bundle = "app.xml"  or $bundle = "macros.xml" or $bundle = "modules.xml" or $bundle = "components.xml" or $bundle = "boot.xml" or $bundle = "jobs.xml"
-          for $r in $t/*          
-            for $f in $r/record/name/text()
-              return document-uri($doc)||"/"||$f/../../path/text()||$f||"."||$f/../../type/text()
+      let $bundle := replace(document-uri($doc), "(.*)/([^/].*)$", "$2")
+      where $bundle = $list
+        return $doc
 };
 
 (:~
@@ -98,12 +102,25 @@ declare function brjx:getRecords
  :) 
 declare function brjx:getBundles
   ( )   as xs:string* {
-  for $db in db:list()
-    for $doc in collection($db)
-      for $t in $doc/*
-        let $bundle := replace(document-uri($doc), "(.*)/([^/].*)$", "$2")
-        where $bundle = "app.xml"  or $bundle = "macros.xml" or $bundle = "modules.xml" or $bundle = "components.xml" or $bundle = "boot.xml" or $bundle = "jobs.xml"
-          return document-uri($doc) 
+  for $doc in brjx:getDocs($brjx:SystemServerClient)
+    return document-uri($doc) 
+};
+
+(:~
+ : Get all records 
+ :
+ : @author  Arthur Stocker 
+ : @version 1.0 
+ : @see     http://brjx.stocker-schmid.ch/api/BasexRepository_getRecords.html 
+ : @param   -
+ :) 
+declare function brjx:getRecords
+  ( )   as xs:string* {
+  for $doc in brjx:getDocs($brjx:SystemServerClient) 
+    for $t in $doc/*
+      for $r in $t/*          
+        for $f in $r/record/name/text()
+          return document-uri($doc)||"/"||$f/../../path/text()||$f||"."||$f/../../type/text()
 };
 
 (:~
@@ -287,14 +304,24 @@ declare function brjx:getModulesLastModified
   ( )   as element()? { 
   element {"lastModified"} {
     max(
-      for $db in db:list()
-        for $doc in collection($db)
-          for $t in $doc/*
-            let $bundle := replace(document-uri($doc), "(.*)/([^/].*)$", "$2")
-            where ($bundle = "modules.xml" or $bundle = "jobs.xml") and not(contains(document-uri($doc), "ui"))
-              for $timeStamp in db:list-details()
-                where $timeStamp/text() = replace(document-uri($doc), "/([^/]*)/([^/].*)$", "$1") 
-                return string((xs:dateTime($timeStamp//@modified-date/data()) - xs:dateTime("1970-01-01T00:00:00-00:00")) div xs:dayTimeDuration("PT0.001S"))
+      for $doc in brjx:getDocs($brjx:Server)
+        for $timeStamp in db:list-details()
+          where $timeStamp/text() = replace(document-uri($doc), "/([^/]*)/([^/].*)$", "$1") 
+          return string((xs:dateTime($timeStamp//@modified-date/data()) - xs:dateTime("1970-01-01T00:00:00-00:00")) div xs:dayTimeDuration("PT0.001S"))
     )
+  }
+};
+
+declare function brjx:getCacheItems
+  ( )   as element()? { 
+  element {"cache"} {
+    for $doc in brjx:getDocs($brjx:Cache)
+      let $class := replace(document-uri($doc), "(.*)/([^/][^\.]*)(.*)$", "$2")
+      group by $class
+      order by $class
+      return element {$class} {
+          for $i in $doc//*[name() = "script"]/..
+            return element {"path"} {$i/path/text() || $i/name/text() || "." || $i/type/text()}
+      }
   }
 };

@@ -1,0 +1,62 @@
+<modules id="9df4c329-cb85-4fb5-bfa8-abc5d6e9ed2a">
+  <records>
+
+    <record id="10539c73-90bc-4a7f-ac97-41e65e7a247b">
+      <path>BRjx_plugin/</path>
+      <name>main</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+export( 'Test' );
+function Test() {
+    var hallo;
+    console.log('>>>>>>>>>>>>');
+    console.log(Object.keys(this));
+    console.log('<<<<<<<<<<<<');
+}
+]]>
+      </script>
+    </record>
+    <record id="2661e626-0bae-42aa-9202-92abeb21be9d">
+      <path>BRjx_plugin/</path>
+      <name>package</name>
+      <type>json</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+{
+    "name": "BRjx_plugin",
+    "version": "0.0.1",
+    "description": "BRjx_plugin",
+    "keywords": [
+        "BRjx"
+    ],
+    "homepage": "https://github.com/ArthurStocker/basex-client",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ArthurStocker/basex-client"
+    },
+    "licenses": [{
+        "type": "GNU General Public License 3",
+        "url": "https://www.gnu.org/licenses/gpl-3.0.txt"
+    }],
+    "dependencies": {
+    },
+    "devDependencies": {},
+    "engines": {
+        "ringojs": ">= 1.0.0"
+    },
+    "scripts": {
+        "test": "ringo"
+    },
+    "main": "main.js"
+}
+]]>
+      </script>
+    </record>
+
+  </records>
+</modules>

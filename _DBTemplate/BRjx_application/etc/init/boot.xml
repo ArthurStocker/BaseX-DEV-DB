@@ -133,10 +133,10 @@ function Loader() {
 
                 success = result.data.success;
 
-                if (!success)
-                    log.error('Error: failed to set run config ' + args.level + ' ! ' + result.error + '.');
+                if (result.error)
+                    log.warn('Failed to successfully set runtime configuration ' + args.level + ' !\n' + result.error + '\n');
             } else {
-                log.error('Error: failed to set run config ' + args.level + ' ! No rc script defined for this level or script is not a FUNCTION.');
+                log.error('Failed to set set runtime configuration ' + args.level + ' ! No rc script defined for this level or script is not a FUNCTION.');
                 success = false;
             }
 
@@ -165,10 +165,10 @@ function Loader() {
 
                 success = result.data.success;
 
-                if (!success)
-                    log.error('Error: init failed ! ' + result.error + '.');
+                if (result.error)
+                    log.error('Failed to initialize the application environment ! ' + result.error + '.');
             } else {
-                log.error('Error: init failed ! No init script defined or script is not a FUNCTION.');
+                log.error('Failed to initialize the application environment ! No init script defined or script is not a FUNCTION.');
                 success = false;
             }
 
@@ -348,7 +348,7 @@ module.exports = function(config, _args, _parameter) {
         var repos = result.data.split(' ');
 
         repos.every(function(repo) {
-            //if (repo.indexOf('_application_data_') == -1) {
+            //if (repo.indexOf('_application_data') == -1) {
                 var _repo = new org.ringojs.repository.DatabaseRepository(repo, _args.client)
                 if (_repo.exists()) {
                     _args.engine.addRepository(_repo);
@@ -356,7 +356,7 @@ module.exports = function(config, _args, _parameter) {
                     return success;
                 } else {
                     error += '\n' + 'Repository not found: ' +repo;
-                    success = false;
+                    success = !success ? false : true;
                     return success;
                 }
             //} else {

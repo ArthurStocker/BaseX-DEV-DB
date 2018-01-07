@@ -1,0 +1,40 @@
+<mountpoints id="9df4c329-cb85-4fb5-bfa8-abc5d6e9ed2a">
+  <records>
+
+    <record id="10539c73-90bc-4a7f-ac97-41e65e7a247b">
+      <path>BRjx_mountpoints/</path>
+      <name></name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+module.exports[module.id] = {
+    method: 'GET',
+    handler: function(session) {
+        return ['static', ['BRjx_frontend/test.html', 'text/html']];
+    }
+}
+]]>
+      </script>
+    </record>
+    <record id="2661e626-0bae-42aa-9202-92abeb21be9d">
+      <path>BRjx_mountpoints/</path>
+      <name>demo</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+module.exports[module.id] = {
+    method: 'GET',
+    handler: function(session) {
+        console.log('!!!!!!!!!!!!!!');
+    }
+}
+]]>
+      </script>
+    </record>
+
+  </records>
+</mountpoints>

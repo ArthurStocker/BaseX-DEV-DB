@@ -71,7 +71,7 @@ json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/reco
 ]]>
       </script>
     </record>
-    <record id="d2be28f2-b809-40ec-9e6c-fdbc6ba56835">
+    <record id="8d4aecee-9f7b-432c-a283-e9fb2d520f76">
       <path></path>
       <name>script1</name>
       <type>xq</type>
@@ -97,7 +97,7 @@ json:serialize(element json {attribute type {'object'}, db:open($dbname)/main/ap
 ]]>
       </script>
     </record>
-    <record id="cdb2ef22-f8aa-4134-8126-d91970994b9b">
+    <record id="bacf60d5-fae7-4b97-aabb-b8a4782e8d12">
       <path></path>
       <name>script3</name>
       <type>xq</type>

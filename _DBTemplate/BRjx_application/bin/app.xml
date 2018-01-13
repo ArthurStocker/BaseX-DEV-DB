@@ -80,7 +80,7 @@ function Router(log) {
                 var lastModified = cacheHandler.getModulesLastModified();
                 
                 if (cache.lastModified * 1 < lastModified * 1 || cache.lastModified * 1 + 600000 < startHandler) {
-                    log.info('Cache is older then Database.  Database last modified ' + lastModified + ', Cache last modified ' + cache.lastModified + ', refresh cache.');
+                    log.info('Cache is to old or older then Database.  Database last modified ' + lastModified + ', Cache last modified ' + cache.lastModified + ', refresh cache.');
 
                     self.refreshCache(cacheHandler, cache);
                     cache.refreshed = true;
@@ -90,7 +90,10 @@ function Router(log) {
                     log.info(Array(8 - elapsed.length).join(' ') + elapsed + 'ms refreshCache');
 
                     cache.emit('refreshed');
+                } else {
+                    log.debug('Cache is still valid. No refresh needed.');
                 }
+                cache.watchdog = (new Date()).getTime();
             }, interval || 5000);
         },
         enumerable: true,
@@ -125,12 +128,13 @@ include('BRjx_plugin');
                             return false;
                         }
                     });
-                    mountpointHandlers[0].forEach(function(item) {
-                        if (({}).toString.call(item).replace(/.*\s(.*)\]/, '$1') == 'Array')
-                            console.log('++ ' + item[1]);
-                            //include(item[1]);
-                    }); 
                     console.log('>> '+JSON.stringify(mountpointHandlers[0]));
+                    mountpointHandlers[0].forEach(function(item) {
+                        if (({}).toString.call(item).replace(/.*\s(.*)\]/, '$1') == 'Array') {
+                            console.log('++ ' + item[1]);
+                            include(''+item[1]);
+                        }
+                    }); 
                     console.log('!! '+JSON.stringify(this));
                 })(cache._mountpoints);
                 cache.mountpoints = {
@@ -166,9 +170,8 @@ include('BRjx_plugin');
                             return ['static', ['BRjx_frontend/test.html', 'text/html']];
                         },
                         "/cache": function(session) {
-                            cache.lastModified = 0;
-                            //cache.emit('refreshed');
-                            return ['html', ['Router reloaded!']];
+                            cache.watchdog = 0;
+                            return this["/"](session);
                         },
                         "/scripts": function(session) {
                             var mime = '';
@@ -203,7 +206,11 @@ include('BRjx_plugin');
         value: function(cache, session) {
             let path = session.getRequestPath.replace(/(\/[^\/]*).*$/, '$1');
 
-            return cache.mountpoints[session.getRequestMethod][path](session);
+            if (typeof cache.mountpoints[session.getRequestMethod][path] != 'function') {
+                return ['notFound'];
+            } else {
+                return cache.mountpoints[session.getRequestMethod][path](session);
+            }
         },
         enumerable: true,
         configurable: false
@@ -296,7 +303,7 @@ export (
 /**
  * const ...
  */
-const { Session } = require("./session.js");
+const { Session } = require("./session"); //.js
 const log = require("ringo/logging").getLogger(module.id);
 
 
@@ -825,6 +832,15 @@ function init(client, query) {
     });
 
     reloadRouter();
+
+    let watchdog = setInterval(function() {
+        if (cache.watchdog * 1 + 30000 < (new Date()).getTime()) {
+            log.warn('Router crashed. Restart Router.');
+            reloadRouter();
+        } else {
+            log.debug('Router running.');
+        }
+    }, 30000);
 }
 
 /**

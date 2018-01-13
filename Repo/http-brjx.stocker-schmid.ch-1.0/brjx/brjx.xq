@@ -37,8 +37,6 @@ CHECK * getLastModified : path + name
 CHECK * getContent : path + name
 CHECK * getLength : path + name
       * getName : path --> js only
-      * isDebug : - --> js only
-      * log : msg --> js only
       */
 
 :) 
@@ -49,7 +47,8 @@ declare variable $brjx:SystemServer := ("boot.xml", "app.xml", "jobs.xml", "macr
 declare variable $brjx:System := ("boot.xml", "app.xml", "macros.xml");
 declare variable $brjx:Server := ("jobs.xml", "modules.xml", "mountpoints.xml");
 declare variable $brjx:Client := ("components.xml", "scripts.xml");
-declare variable $brjx:Cache := ("components.xml", "scripts.xml", "mountpoints.xml");
+declare variable $brjx:Cache := ("mountpoints.xml");
+declare variable $brjx:pkg := ("/BRjx_packages");
 
 
 (:~
@@ -119,8 +118,8 @@ declare function brjx:getRecords
   for $doc in brjx:getDocs($brjx:SystemServerClient) 
     for $t in $doc/*
       for $r in $t/*          
-        for $f in $r/record/name/text()
-          return document-uri($doc)||"/"||$f/../../path/text()||$f||"."||$f/../../type/text()
+        for $f in $r/record
+          return (: document-uri($doc) :) $brjx:pkg||"/"||$f/path/text()||$f/name/text()||"."||$f/type/text()
 };
 
 (:~
@@ -254,12 +253,16 @@ declare function brjx:getRepositories
  : @see     http://brjx.stocker-schmid.ch/api/BasexRepository_getLength.html 
  : @param   $input the path from which you wish to get the repository 
  : @param   $resource the name of the resource from wich you wish to get the length
- :) 
+ :)
 declare function brjx:getLength 
-  ( $input as xs:string,
-    $resource as xs:string )   as xs:string {
+  ( $input as xs:string )   as xs:string {
   let $path := brjx:stripTrailingSlash($input)
-  return string(string-length(doc($path)//*[./name/text() = tokenize($resource, "\.")[1] and ./type/text() = tokenize($resource, "\.")[2]]/script))
+  let $repository := replace($path, "(.*)/([^/].*)$", "$1/")
+  let $resource := replace($path, "(.*)/([^/].*)$", "$2")
+  for $doc in brjx:getDocs($brjx:SystemServerClient)
+    for $r in $doc//*/record
+      where $r[./path/text() = replace($repository, $brjx:pkg || "/", "") and ./name/text() = tokenize($resource, "\.")[1] and ./type/text() = tokenize($resource, "\.")[2]]
+        return string(string-length($r/script))
 };
 
 (:~
@@ -270,16 +273,16 @@ declare function brjx:getLength
  : @see     http://brjx.stocker-schmid.ch/api/BasexRepository_getContent.html 
  : @param   $input the path from which you wish to get the repository 
  : @param   $resource the name of the resource from wich you wish to get the content
- :) 
-declare function brjx:getContent 
+ :)
+declare function brjx:getContent
   ( $input as xs:string )   as node() {
-  let $resource := replace($input, "(.*)/([^/].*)$", "$2")
-  let $basename := replace($resource, "\.[^\.]*$", "")
-  let $extension := replace($resource, ".*\.([^\.]*$)", "$1")
-  let $repository := replace($input, $resource, "")
-  let $bundle := replace($repository, "(.*)\.([^\.][^/]*).*$", "$1.$2")
-  let $path := replace($repository, "(.*)\.([^\.][^/]*)/(.*)$", "$3")
-  return doc($bundle)//*[./name/text() = $basename and ./type/text() = $extension and ./path/text() = $path]  (:/script/text():)
+  let $path := brjx:stripTrailingSlash($input)
+  let $repository := replace($path, "(.*)/([^/].*)$", "$1/")
+  let $resource := replace($path, "(.*)/([^/].*)$", "$2")
+  for $doc in brjx:getDocs($brjx:SystemServerClient)
+    for $r in $doc//*/record
+      where $r[./path/text() = replace($repository, $brjx:pkg || "/", "") and ./name/text() = tokenize($resource, "\.")[1] and ./type/text() = tokenize($resource, "\.")[2]]
+        return $r
 };
 
 (:~
@@ -293,10 +296,16 @@ declare function brjx:getContent
  :
  : return a value of type long. As Javascript cannot represent 64bit Java long we add a _ in front to return a string and remove it in the Java Class before conversion.
  :) 
-declare function brjx:getLastModified 
+ declare function brjx:getLastModified 
   ( $input as xs:string )   as xs:string {
-  let $bundle := replace($input, "(.*)\.([^\.][^/]*).*$", "$1.$2")
-  return string((xs:dateTime(db:list-details()[./text() = tokenize($bundle, "/")[2]]//@modified-date/data()) - xs:dateTime('1970-01-01T00:00:00-00:00')) div xs:dayTimeDuration('PT0.001S'))
+  let $path := brjx:stripTrailingSlash($input)
+  let $repository := replace($path, "(.*)/([^/].*)$", "$1/")
+  let $resource := replace($path, "(.*)/([^/].*)$", "$2")
+  for $doc in brjx:getDocs($brjx:SystemServerClient)
+    for $r in $doc//*/record
+      let $bundle := replace(document-uri($doc), "(.*)\.([^\.][^/]*).*$", "$1.$2")
+      where $r[./path/text() = replace($repository, $brjx:pkg || "/", "") and ./name/text() = tokenize($resource, "\.")[1] and ./type/text() = tokenize($resource, "\.")[2]]
+        return string((xs:dateTime(db:list-details()[./text() = tokenize($bundle, "/")[2]]//@modified-date/data()) - xs:dateTime('1970-01-01T00:00:00-00:00')) div xs:dayTimeDuration('PT0.001S'))
 };
 
 
@@ -312,6 +321,7 @@ declare function brjx:getModulesLastModified
   }
 };
 
+
 declare function brjx:getCacheItems
   ( )   as element()? { 
   element {"cache"} {
@@ -320,8 +330,8 @@ declare function brjx:getCacheItems
       group by $class
       order by $class
       return element {$class} {
-          for $i in $doc//*[name() = "script"]/..
-            return element {"path"} {$i/path/text() || $i/name/text() || "." || $i/type/text()}
+          for $f in $doc//*[name() = "script"]/..
+            return element {"path"} {$f/path/text() || $f/name/text() || "." || $f/type/text()}
       }
   }
 };

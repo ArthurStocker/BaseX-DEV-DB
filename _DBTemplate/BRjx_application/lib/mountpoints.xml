@@ -1,9 +1,9 @@
 <mountpoints id="9df4c329-cb85-4fb5-bfa8-abc5d6e9ed2a">
   <records>
 
-    <record id="10539c73-90bc-4a7f-ac97-41e65e7a247b">
+    <record id="431142a7-700e-466c-afa2-dcc4b810fe74">
       <path>BRjx_mountpoints/</path>
-      <name></name>
+      <name>index</name>
       <type>js</type>
       <version>0.0.1</version>
       <properties type="array"/>

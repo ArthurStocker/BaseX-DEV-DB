@@ -123,7 +123,7 @@ function Loader() {
             ], arguments);
 
             var success = true;
-            var rc = require('./rc/rc' + args.level + '.js');
+            var rc = require('./rc/rc' + args.level); // + '.js'
 
             _parameter.rc = args.level;
 
@@ -157,7 +157,7 @@ function Loader() {
     Object.defineProperty(self, "init", {
         get: function() {
             var success = true;
-            var init = require('./init/init.js');
+            var init = require('./init/init'); //.js
 
             log.info('INIT: init application environment.');
             if (typeof(init) == 'function') {

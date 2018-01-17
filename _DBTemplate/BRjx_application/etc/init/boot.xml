@@ -337,8 +337,8 @@ module.exports = function(config, _args, _parameter) {
     var success = true;
 
 
-
     try {
+        /*
         var query = new _args.query();
         query.convertTo = 'text';
         query.string = config.get('repositories');
@@ -364,6 +364,7 @@ module.exports = function(config, _args, _parameter) {
             //    return success;
             //}
         });
+        */
     } catch(e) {
         error = error + '\n' + e;
         success = false;

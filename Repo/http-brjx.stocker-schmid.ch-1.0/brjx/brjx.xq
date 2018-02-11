@@ -308,7 +308,14 @@ declare function brjx:getContent
   for $doc in brjx:getDocs($brjx:SystemServerClient)
     let $bundle := replace(document-uri($doc), "(.*)\.([^\.][^/]*).*$", "$1.$2")
     where $doc//*/record[./path/text() = replace($repository, $brjx:pkg, "") ]
+      (:
       return string((xs:dateTime(db:list-details()[./text() = tokenize($bundle, "/")[2]]//@modified-date/data()) - xs:dateTime('1970-01-01T00:00:00-00:00')) div xs:dayTimeDuration('PT0.001S'))
+      :)
+      for $r in $doc//*/record
+      where $r[./path/text() = replace($repository, $brjx:pkg, "") and ./name/text() = replace($resource, "(.*)\.([^\.]*)", "$1") and ./type/text() = replace($resource, "(.*)\.([^\.]*)", "$2")]
+      return if ($r/@update) 
+        then ( string((xs:dateTime($r/@update/data()) - xs:dateTime('1970-01-01T00:00:00-00:00')) div xs:dayTimeDuration('PT0.001S')) )
+        else ( string((xs:dateTime(db:list-details()[./text() = tokenize($bundle, "/")[2]]//@modified-date/data()) - xs:dateTime('1970-01-01T00:00:00-00:00')) div xs:dayTimeDuration('PT0.001S')) )
 };
 
 

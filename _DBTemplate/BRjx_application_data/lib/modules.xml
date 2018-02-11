@@ -2,7 +2,7 @@
   <records>
 
     <record id="3f74cb92-a6f6-4053-8f55-54e3fa45c9f4">
-      <path>BRjx_plugin/</path>
+      <path>BRjx_plugins/</path>
       <name>main</name>
       <type>js</type>
       <version>0.0.1</version>
@@ -20,7 +20,7 @@ function Test() {
       </script>
     </record>
     <record id="2661e626-0bae-42aa-9202-92abeb21be9d">
-      <path>BRjx_plugin/</path>
+      <path>BRjx_plugins/</path>
       <name>package</name>
       <type>json</type>
       <version>0.0.1</version>
@@ -28,9 +28,9 @@ function Test() {
       <script>
 <![CDATA[
 {
-    "name": "BRjx_plugin",
+    "name": "BRjx_plugins",
     "version": "0.0.1",
-    "description": "BRjx_plugin",
+    "description": "BRjx_plugins",
     "keywords": [
         "BRjx"
     ],

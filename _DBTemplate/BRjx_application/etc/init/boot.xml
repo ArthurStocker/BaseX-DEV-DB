@@ -157,7 +157,7 @@ function Loader() {
     Object.defineProperty(self, "init", {
         get: function() {
             var success = true;
-            var init = require('./init/init'); //.js
+            var init = require('./init/system'); //.js
 
             log.info('INIT: init application environment.');
             if (typeof(init) == 'function') {
@@ -219,8 +219,8 @@ repositories                    = brjx:getBundles()
 app                             = true
 app.name                        = BRjx
 app.root                        = /
+app.module                      = BRjx_application
 app.session                     = true
-app.main.module                 = BRjx_application
 
 ## amb defaults
 amb.root                        = /amb
@@ -232,7 +232,7 @@ evc.module                      = BRjx_backend_evc
 
 ## static content
 static                          = false
-static.root                      = /scripts
+static.root                     = /scripts
 static.source                   = scripts/
 static.allowDirectoryListing    = false
 ]]>
@@ -338,33 +338,7 @@ module.exports = function(config, _args, _parameter) {
 
 
     try {
-        /*
-        var query = new _args.query();
-        query.convertTo = 'text';
-        query.string = config.get('repositories');
 
-        var client = new _args.client();
-        var result = client.execQuery(query);
-        var repos = result.data.split(' ');
-
-        repos.every(function(repo) {
-            //if (repo.indexOf('_application_data') == -1) {
-                var _repo = new org.ringojs.repository.DatabaseRepository(repo, _args.client)
-                if (_repo.exists()) {
-                    _args.engine.addRepository(_repo);
-                    success = !success ? false : true;
-                    return success;
-                } else {
-                    error += '\n' + 'Repository not found: ' +repo;
-                    success = !success ? false : true;
-                    return success;
-                }
-            //} else {
-            //    success = !success ? false : true;
-            //    return success;
-            //}
-        });
-        */
     } catch(e) {
         error = error + '\n' + e;
         success = false;
@@ -444,7 +418,7 @@ module.exports = function(config, _args, _parameter) {
     </record>
     <record id="f0aa3ee0-6161-4ec6-85a2-ef3abea0a0e4">
       <path>BRjx_loader/init/</path>
-      <name>init</name>
+      <name>system</name>
       <type>js</type>
       <version>0.0.1</version>
       <properties type="array"/>
@@ -519,12 +493,12 @@ function AppContext(config, _args, _parameter) {
     var success = true;
 
 
-    var app = require(config.get('app.main.module'));
+    var app = require(config.get('app.module'));
 
-    app.init(_args.client, _args.query);
+    app.core(_args.client, _args.query);
 
     // init the application context
-    var context = _args.server.serveApplication(config.get('app.root'), app.main, {
+    var context = _args.server.serveApplication(config.get('app.root'), app.handler, {
         'sessions': config.get('app.session')
     });
 

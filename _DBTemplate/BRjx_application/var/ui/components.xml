@@ -3,7 +3,7 @@
     <record id="462b4f80-de05-42c0-b363-9a3c0dc3c008">
       <path>BRjx_frontend/</path>
       <name>default</name>
-      <type>layout</type>
+      <type>xq</type>
       <version>0.0.1</version>
       <properties type="array">
         <class>base</class>
@@ -17,13 +17,16 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <meta charset="utf-8">
-      {{> links}}
-      {{> scripts}}
-      <title>{{{title}}}</title>
+      <meta charset="UTF-8">
+      <link href="http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic" rel="stylesheet" type="text/css" />
+
+      <script type="text/javascript" src="https://use.fontawesome.com/e2a55cc896.js"></script>
+      <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+      <title></title>
    </head>
    <body>
-      {{> body}}
+
    </body>
 </html>
 ]]>

@@ -2,7 +2,7 @@
   <records>
     <record id="10539c73-90bc-4a7f-ac97-41e65e7a247b">
       <path>BRjx_router/</path>
-      <name>main</name>
+      <name>router</name>
       <type>js</type>
       <version>0.0.1</version>
       <properties type="array"/>
@@ -16,12 +16,19 @@
 
 
 /**
+ * config ...
+ */
+var { Config } = require('basex')
+var config = Config.load(module.resolve('./default.properties'));
+
+
+/**
  * export ( ... )
  * 
  * eslint-disable 
  */
 export (
-    'Router'
+    'dispatch'
 );
 /* eslint-enable */
 
@@ -48,126 +55,35 @@ var version = '0.0.1';
 
 
 /**
- * Create a Router object
+ * Method dispach
  * @see -
  * @param -
  * @since 0.0.1
- * @returns {object} Router
+ * @returns {array} response parameter
  */
-function Router(log) {
-    if (!(this instanceof Router)) {
-        return new Router(log);
+function dispatch(cache, session) {
+    let path = session.getRequestPath.replace(/(\/[^\/]*).*$/, '$1');
+
+    if (typeof cache.mountpoints[session.getRequestMethod][path] != 'function') {
+        return ['notFound'];
+    } else {
+        return cache.mountpoints[session.getRequestMethod][path](session);
     }
-
-    // local variables
-    var self = this;
-
-    /**
-     * ...
-     * @see -
-     * @param -
-     * @since 0.0.1
-     * @returns -
-     */
-    Object.defineProperty(self, 'cacheManager', {
-        value: function(cacheHandler, cache, interval) {
-            if (!cacheHandler || !cache)
-                return;
-
-            self.cacheWatcher = setInterval(function() {
-                var startHandler = (new Date()).getTime();
-                var lastModified = cacheHandler.getModulesLastModified();
-                
-                if (cache.lastModified * 1 < lastModified * 1 || cache.lastModified * 1 + 600000 < startHandler || cache.watchdog == 0) {
-                    log.info('Cache is to old or older then Database.  Database last modified ' + lastModified + ', Cache last modified ' + cache.lastModified + ', refresh cache.');
-
-                    self.refreshCache(cacheHandler, cache);
-                    cache.refreshed = true;
-                    cache.lastModified = lastModified * 1 + 600000 > startHandler ? lastModified * 1 + 10000 : startHandler;
-
-                    let elapsed = '' + ((new Date()).getTime() - startHandler);
-                    log.info(Array(8 - elapsed.length).join(' ') + elapsed + 'ms refreshCache');
-
-                    cache.emit('refreshed');
-                } else {
-                    log.debug('Cache is still valid. No refresh needed.');
-                }
-                cache.watchdog = (new Date()).getTime();
-            }, interval || 5000);
-        },
-        enumerable: true,
-        configurable: false
-    });
-
-    /**
-     * ...
-     * @see -
-     * @param -
-     * @since 0.0.1
-     * @returns -
-     */
-    Object.defineProperty(self, 'refreshCache', {
-        value: function(cacheHandler, cache) {
-            if (!cacheHandler || !cache)
-                return;
-
-            gc();
-            (function(cacheHandler, cache) {
-                log.info('Load modules');
-                include('BRjx_plugin');
-
-                log.info('Cache mountpoints');
-                cache.mountpoints = {};
-                let cacheItems = cacheHandler.getCacheItems();
-                let mountpointHandlers = cacheItems.filter(function(item, index, array) {
-                    if (({}).toString.call(item).replace(/.*\s(.*)\]/, '$1') == 'Array') {
-                        return item[0] == 'mountpoints';
-                    } else {
-                        return false;
-                    }
-                });
-                mountpointHandlers[0].forEach(function(item) {
-                    if (({}).toString.call(item).replace(/.*\s(.*)\]/, '$1') == 'Array') {
-                        log.info('Mount: '+item[1].replace(/([^\/]*)(\/[^\.]*)(.*)/, '$2').replace('index', ''));
-                        include(''+item[1]);
-                        let mountpoint = this[item[1].replace(/([^\.]*)(.*)/, '$1')];
-                        if (!cache.mountpoints[mountpoint.method])
-                            cache.mountpoints[mountpoint.method] = {};
-                        let handler = mountpoint.handler.toSource().replace(/^\([^\(]*\(([^\)]*)\) {(.*)}\)$/, '$1ﬁ$2').split('ﬁ');
-                        cache.mountpoints[mountpoint.method][item[1].replace(/([^\/]*)(\/[^\.]*)(.*)/, '$2').replace('index', '')] = new Function(handler[0], handler[1]);
-                    }
-                });
-            }).apply({}, [cacheHandler, cache]);
-        },
-        enumerable: true,
-        configurable: false
-    });
-
-
-    /**
-     * ...
-     * @see -
-     * @param -
-     * @since 0.0.1
-     * @returns -
-     */
-    Object.defineProperty(self, 'dispatch', {
-        value: function(cache, session) {
-            let path = session.getRequestPath.replace(/(\/[^\/]*).*$/, '$1');
-
-            if (typeof cache.mountpoints[session.getRequestMethod][path] != 'function') {
-                return ['notFound'];
-            } else {
-                return cache.mountpoints[session.getRequestMethod][path](session);
-            }
-        },
-        enumerable: true,
-        configurable: false
-    });
-
-
-    return self;
 }
+]]>
+      </script>
+    </record>
+    <record id="651614b1-282c-473e-82ec-6869f91d424e">
+      <path>BRjx_router/</path>
+      <name>default</name>
+      <type>properties</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+# BRjx_router defaults
+
+## properties
 ]]>
       </script>
     </record>
@@ -205,7 +121,622 @@ function Router(log) {
     "scripts": {
         "test": "ringo"
     },
-    "main": "main.js"
+    "main": "router.js"
+}
+]]>
+      </script>
+    </record>
+    <record id="2a5eb1c1-50dd-451f-9b21-b9156456b7cd" create="2018-01-01T00:00:00.000Z" read="2018-01-22T05:56:53.000Z" update="2018-01-22T05:56:53.000Z" delete="">
+      <path>BRjx_workers/lib/</path>
+      <name>mounter</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+/**
+ * @fileOverview ...
+ * @author Arthur Stocker
+ * @version 0.0.1
+ */
+
+
+/**
+ * config ...
+ */
+var { Config } = require('basex')
+var config = Config.load(module.resolve('../default.properties'));
+
+
+/**
+ * export ( ... )
+ * 
+ * eslint-disable 
+ */
+
+/* eslint-enable */
+
+
+/**
+ * const ...
+ */
+
+
+/**
+ * var ...
+ */
+var watchdogID;
+
+
+/**
+ * The module version string with the major and minor version number.
+ */
+var version = '0.0.1';
+
+
+/**
+ * default values
+ */
+var type = module.id.replace(/.*\/(\w*\b)$/, '$1');
+
+
+/**
+ * Create a Worker interface
+ * @see -
+ * @param -
+ * @since 0.0.1
+ * @returns {event}
+ */
+var onmessage = function(event) {
+    var { brjx } = event.data;
+
+    if (brjx.cache.data.workers[type]) {
+        watchdogID = setInterval(function() {
+            var startHandler = (new Date()).getTime();
+
+            brjx.cache.data.workers[type].watchdog = (new Date()).getTime();
+        }, config.get('watchdog.interval') * 1 || 2500);
+
+        brjx.debug('Worker ' + type + ' registered');
+    }
+};
+
+/**
+ * ...
+ * @see -
+ * @param -
+ * @since 0.0.1
+ * @returns -
+ */
+function getCacheItems() {
+    var client = new options.BaseXClient();
+    var query = new options.BaseXQuery();
+
+    query.string = config.get('main.getCacheItems');
+
+    return client.execQuery(query).data;
+}
+    
+/**
+ * ...
+ * @see -
+ * @param -
+ * @since 0.0.1
+ * @returns -
+ */
+function getLastModified() {
+    var client = new options.BaseXClient();
+    var query = new options.BaseXQuery();
+
+    query.string = config.get('main.getLastModified');
+
+    return client.execQuery(query).data[1];
+}
+
+/**
+ * ...
+ * @see -
+ * @param -
+ * @since 0.0.1
+ * @returns -
+ */
+function observe(subject, interval) {
+    if (!subject)
+        return;
+
+    self.observer = setInterval(function() {
+        var startHandler = (new Date()).getTime();
+        var lastModified = self.getLastModified();
+        
+        if (subject.lastModified * 1 < lastModified * 1 || subject.lastModified * 1 + (config.get('watchdog.timeout') * 1 || 600000) < startHandler || subject.watchdog == 0) {
+            log.info('Cache is to old or older then Database.  Database last modified ' + lastModified + ', Cache last modified ' + cache.lastModified + ', refresh cache.');
+
+            self.refreshSubject(subject);
+            subject.lastModified = lastModified * 1 + (config.get('watchdog.timeout') * 1 || 600000) > startHandler ? lastModified * 1 + 10000 : startHandler;
+
+            let elapsed = '' + ((new Date()).getTime() - startHandler);
+            log.info(Array(8 - elapsed.length).join(' ') + elapsed + 'ms refreshCache');
+
+            subject.emit('refreshed');
+        } else {
+            log.debug('Cache is still valid. No refresh needed.');
+        }
+        subject.watchdog = (new Date()).getTime();
+    }, config.get('watchdog.interval') * 1 || 2500);
+}
+
+/**
+ * ...
+ * @see -
+ * @param -
+ * @since 0.0.1
+ * @returns -
+ */
+function refreshSubject(subject) {
+    if (!subject)
+        return;
+
+    (function(subject) {
+        log.info('Load modules');
+        include('BRjx_plugin');
+
+        log.info('Cache mountpoints');
+        subject.mountpoints = {};
+        let cacheItems = self.getCacheItems();
+        let mountpointHandlers = cacheItems.filter(function(item, index, array) {
+            if (({}).toString.call(item).replace(/.*\s(.*)\]/, '$1') == 'Array') {
+                return item[0] == 'mountpoints';
+            } else {
+                return false;
+            }
+        });
+        mountpointHandlers[0].forEach(function(item) {
+            if (({}).toString.call(item).replace(/.*\s(.*)\]/, '$1') == 'Array') {
+                log.info('Mount: '+item[1].replace(/([^\/]*)(\/[^\.]*)(.*)/, '$2').replace('index', ''));
+                include(''+item[1]);
+                let mountpoint = this[item[1].replace(/([^\.]*)(.*)/, '$1')];
+                if (!subject.mountpoints[mountpoint.method])
+                    subject.mountpoints[mountpoint.method] = {};
+                let handler = mountpoint.handler.toSource().replace(/^\([^\(]*\(([^\)]*)\) {(.*)}\)$/, '$1ﬁ$2').split('ﬁ');
+                subject.mountpoints[mountpoint.method][item[1].replace(/([^\/]*)(\/[^\.]*)(.*)/, '$2').replace('index', '')] = new Function(handler[0], handler[1]);
+            }
+        });
+    }).apply({}, [subject]);
+}
+
+
+/**
+ * ...
+ * @see -
+ * @param -
+ * @since 0.0.1
+ * @returns -
+ */
+function dispatch(cache, session) {
+    let path = session.getRequestPath.replace(/(\/[^\/]*).*$/, '$1');
+
+    if (typeof cache.mountpoints[session.getRequestMethod][path] != 'function') {
+        return ['notFound'];
+    } else {
+        return cache.mountpoints[session.getRequestMethod][path](session);
+    }
+}
+]]>
+      </script>
+    </record>
+    <record id="ea3a70dd-60a7-47ac-b986-bd6a11dca7d9" create="2018-01-01T00:00:00.000Z" read="2018-01-22T05:56:53.000Z" update="2018-01-22T05:56:53.000Z" delete="">
+      <path>BRjx_workers/lib/</path>
+      <name>monitor</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+/**
+ * @fileOverview ...
+ * @author Arthur Stocker
+ * @version 0.0.1
+ */
+
+
+/**
+ * config ...
+ */
+var { Config } = require('basex')
+var config = Config.load(module.resolve('../default.properties'));
+
+
+/**
+ * export ( ... )
+ * 
+ * eslint-disable 
+ */
+
+/* eslint-enable */
+
+
+/**
+ * const ...
+ */
+
+
+/**
+ * var ...
+ */
+var watchdogID;
+
+
+/**
+ * The module version string with the major and minor version number.
+ */
+var version = '0.0.1';
+
+
+/**
+ * default values
+ */
+var type = module.id.replace(/.*\/(\w*\b)$/, '$1');
+
+
+/**
+ * Create a Worker interface
+ * @see -
+ * @param -
+ * @since 0.0.1
+ * @returns {event}
+ */
+var onmessage = function(event) {
+    var { brjx } = event.data;
+
+    if (brjx.cache.data.workers[type]) {
+        watchdogID = setInterval(function() {
+            var startHandler = (new Date()).getTime();
+
+            brjx.cache.data.workers[type].watchdog = (new Date()).getTime();
+        }, config.get('watchdog.interval') * 1 || 2500);
+
+        brjx.debug('Worker ' + type + ' registered');
+    }
+};
+
+/**
+ * ...
+ * @see -
+ * @param -
+ * @since 0.0.1
+ * @returns -
+ */
+function getCacheItems() {
+    var client = new options.BaseXClient();
+    var query = new options.BaseXQuery();
+
+    query.string = config.get('main.getCacheItems');
+
+    return client.execQuery(query).data;
+}
+    
+/**
+ * ...
+ * @see -
+ * @param -
+ * @since 0.0.1
+ * @returns -
+ */
+function getLastModified() {
+    var client = new options.BaseXClient();
+    var query = new options.BaseXQuery();
+
+    query.string = config.get('main.getLastModified');
+
+    return client.execQuery(query).data[1];
+}
+
+/**
+ * ...
+ * @see -
+ * @param -
+ * @since 0.0.1
+ * @returns -
+ */
+function observe(subject, interval) {
+    if (!subject)
+        return;
+
+    self.observer = setInterval(function() {
+        var startHandler = (new Date()).getTime();
+        var lastModified = self.getLastModified();
+        
+        if (subject.lastModified * 1 < lastModified * 1 || subject.lastModified * 1 + (config.get('watchdog.timeout') * 1 || 600000) < startHandler || subject.watchdog == 0) {
+            log.info('Cache is to old or older then Database.  Database last modified ' + lastModified + ', Cache last modified ' + cache.lastModified + ', refresh cache.');
+
+            self.refreshSubject(subject);
+            subject.lastModified = lastModified * 1 + (config.get('watchdog.timeout') * 1 || 600000) > startHandler ? lastModified * 1 + 10000 : startHandler;
+
+            let elapsed = '' + ((new Date()).getTime() - startHandler);
+            log.info(Array(8 - elapsed.length).join(' ') + elapsed + 'ms refreshCache');
+
+            subject.emit('refreshed');
+        } else {
+            log.debug('Cache is still valid. No refresh needed.');
+        }
+        subject.watchdog = (new Date()).getTime();
+    }, config.get('watchdog.interval') * 1 || 2500);
+}
+
+/**
+ * ...
+ * @see -
+ * @param -
+ * @since 0.0.1
+ * @returns -
+ */
+function refreshSubject(subject) {
+    if (!subject)
+        return;
+
+    (function(subject) {
+        log.info('Load modules');
+        include('BRjx_plugin');
+
+        log.info('Cache mountpoints');
+        subject.mountpoints = {};
+        let cacheItems = self.getCacheItems();
+        let mountpointHandlers = cacheItems.filter(function(item, index, array) {
+            if (({}).toString.call(item).replace(/.*\s(.*)\]/, '$1') == 'Array') {
+                return item[0] == 'mountpoints';
+            } else {
+                return false;
+            }
+        });
+        mountpointHandlers[0].forEach(function(item) {
+            if (({}).toString.call(item).replace(/.*\s(.*)\]/, '$1') == 'Array') {
+                log.info('Mount: '+item[1].replace(/([^\/]*)(\/[^\.]*)(.*)/, '$2').replace('index', ''));
+                include(''+item[1]);
+                let mountpoint = this[item[1].replace(/([^\.]*)(.*)/, '$1')];
+                if (!subject.mountpoints[mountpoint.method])
+                    subject.mountpoints[mountpoint.method] = {};
+                let handler = mountpoint.handler.toSource().replace(/^\([^\(]*\(([^\)]*)\) {(.*)}\)$/, '$1ﬁ$2').split('ﬁ');
+                subject.mountpoints[mountpoint.method][item[1].replace(/([^\/]*)(\/[^\.]*)(.*)/, '$2').replace('index', '')] = new Function(handler[0], handler[1]);
+            }
+        });
+    }).apply({}, [subject]);
+}
+
+
+/**
+ * ...
+ * @see -
+ * @param -
+ * @since 0.0.1
+ * @returns -
+ */
+function dispatch(cache, session) {
+    let path = session.getRequestPath.replace(/(\/[^\/]*).*$/, '$1');
+
+    if (typeof cache.mountpoints[session.getRequestMethod][path] != 'function') {
+        return ['notFound'];
+    } else {
+        return cache.mountpoints[session.getRequestMethod][path](session);
+    }
+}
+]]>
+      </script>
+    </record>
+    <record id="e4ae1256-a2a3-49b7-ab51-1c0fc615b7a5">
+      <path>BRjx_workers/</path>
+      <name>launcher</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+/**
+ * @fileOverview ...
+ * @author Arthur Stocker
+ * @version 0.0.1
+ */
+
+
+/**
+ * config ...
+ */
+var { Config } = require('basex')
+var config = Config.load(module.resolve('./default.properties'));
+
+
+/**
+ * export ( ... )
+ * 
+ * eslint-disable 
+ */
+export (
+    'Launcher'
+);
+/* eslint-enable */
+
+
+/**
+ * const ...
+ */
+const { Worker } = require("ringo/worker");
+
+
+/**
+ * var ...
+ */
+
+
+/**
+ * The module version string with the major and minor version number.
+ */
+var version = '0.0.1';
+
+
+/**
+ * default values
+ */
+
+
+/**
+ * Create a Launcher object
+ * @see -
+ * @param -
+ * @since 0.0.1
+ * @returns {object} Launcher object
+ */
+function Launcher(brjx) {
+    if (!(this instanceof Launcher)) {
+        return new Launcher(brjx);
+    }
+
+    // local variables
+    var self = this;
+
+
+    if (({}).toString.call(brjx).replace(/.*\s(.*)\]/, '$1') != 'Object')
+        return {};
+    if (({}).toString.call(brjx.cache).replace(/.*\s(.*)\]/, '$1') != 'Object')
+        return {};
+
+
+/**
+ *
+ *
+ *
+    brjx.cache.addListener('refreshed', function() {
+        log.info('Cache refreshed, reload Worker !');
+        let startHandler = (new Date()).getTime();
+
+        reloadWorkers();
+
+        let elapsed = '' + ((new Date()).getTime() - startHandler);
+        log.info(Array(8 - elapsed.length).join(' ') + elapsed + 'ms reload Workers');
+    });
+*/
+
+    /**
+     * ...
+     * @see -
+     * @param -
+     * @since 0.0.1
+     * @returns -
+     */
+    Object.defineProperty(self, 'watchdog', {
+        value: function() {
+            if (({}).toString.call(brjx.cache).replace(/.*\s(.*)\]/, '$1') != 'Object')
+                return;
+
+            self.watchdogID = setInterval(function() {
+                var startHandler = (new Date()).getTime();
+
+                var repo = new org.ringojs.repository.DatabaseRepository(config.get('workers.repo'), brjx.BaseXClient);
+                                
+                var resources = repo.resources;
+
+                for (var i in resources) {
+                    if (!brjx.cache.data.workers)
+                        brjx.cache.data.workers = {};
+                    var type = resources[i].name.replace(/([^\.]*).*/, '$1');
+                    var lastModified = resources[i].lastModified();
+                    if (
+                        !brjx.cache.data.workers[type] ||
+                        brjx.cache.data.workers[type].watchdog * 1 + (config.get('watchdog.interval') * 2 || 5000) < startHandler ||
+                        brjx.cache.data.workers[type].lastModified * 1 != lastModified
+                       ) {
+                        brjx.debug('Load Worker ' + type + ' from ./lib/' + resources[i].name + ' ' + module.resolve('./lib/' + resources[i].name));
+                        brjx.cache.emit('reload', type);
+                        brjx.cache.data.workers[type] = new Worker(module.resolve('./lib/' + resources[i].name));
+                        brjx.cache.data.workers[type].lastModified = lastModified;
+                        brjx.cache.data.workers[type].postMessage({brjx: brjx}, true);
+                        brjx.cache.emit('reloaded', type);
+                        brjx.debug('Loaded Worker ' + type);
+                    } else {
+                        brjx.debug('Worker ' + type + ' running');
+                    }
+                }
+
+                brjx.cache.watchdog = (new Date()).getTime();
+
+            }, config.get('watchdog.interval') * 1 || 2500);
+        },
+        enumerable: true,
+        configurable: false
+    });
+
+    /**
+     * ...
+     * @see -
+     * @param -
+     * @since 0.0.1
+     * @returns -
+     */
+    Object.defineProperty(self, 'getWorkers', {
+        value: function() {
+
+        },
+        enumerable: true,
+        configurable: false
+    });
+
+
+    return self;
+}
+]]>
+      </script>
+    </record>
+    <record id="173067f2-4be3-4ab5-8833-cbebd5e260f1">
+      <path>BRjx_workers/</path>
+      <name>default</name>
+      <type>properties</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+# BRjx_workers defaults
+
+## properties
+watchdog.interval               = 2500
+watchdog.timeout                = 600000
+
+workers.repo                    = /BRjx_packages/BRjx_workers/lib/
+]]>
+      </script>
+    </record>
+    <record id="4b7b3b4c-8c3c-40b3-a160-62218917955a">
+      <path>BRjx_workers/</path>
+      <name>package</name>
+      <type>json</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+{
+    "name": "BRjx_workers",
+    "version": "0.0.1",
+    "description": "BRjx_workers",
+    "keywords": [
+        "BRjx",
+        "Worker"
+    ],
+    "homepage": "https://github.com/ArthurStocker/basex-client",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ArthurStocker/basex-client"
+    },
+    "licenses": [{
+        "type": "GNU General Public License 3",
+        "url": "https://www.gnu.org/licenses/gpl-3.0.txt"
+    }],
+    "dependencies": {
+    },
+    "devDependencies": {},
+    "engines": {
+        "ringojs": ">= 1.0.0"
+    },
+    "scripts": {
+        "test": "ringo"
+    },
+    "main": "launcher.js"
 }
 ]]>
       </script>
@@ -252,7 +783,7 @@ export (
 /**
  * const ...
  */
-const { Session } = require("./session"); //.js
+const { Session } = require("./session");
 const log = require("ringo/logging").getLogger(module.id);
 
 
@@ -286,8 +817,6 @@ var version = '0.0.1';
  * @author Arthur Stocker
  * @version 0.0.1
  */
-const Logger = require('ringo/logging');
-Logger.setConfig(getResource('config/log4j.properties'), true);
 
 
 /**
@@ -317,7 +846,6 @@ export (
 /**
  * const ...
  */
-const log = Logger.getLogger(module.id);
 
 
 /**
@@ -566,43 +1094,7 @@ function Session() {
             return response;
         },
         enumerable: true
-    });
-
-
-    //
-    //
-    // Logger properties
-    //
-    //
-
-    /**
-     * Logger 
-     */
-    Object.defineProperty(this, "getLogger", {
-        get: function() {
-            return Logger;
-        },
-        enumerable: true
-    });
-
-    /**
-     * Warper for log functions 
-     */
-    Object.keys(log).forEach(function(item, index, array) {
-        Object.defineProperty(self, item, {
-            get: function() {
-                return log[item];
-            },
-            set: function() {
-                var args = Args([
-                    { listener: Args.FUNCTION | Args.Required }
-                ], arguments);
-                log.addListener(item, listener);
-            },
-            enumerable: true,
-            configurable: false
-        });
-    });          
+    });         
 }
 ]]>
       </script>
@@ -691,8 +1183,8 @@ var config = Config.load(module.resolve('./default.properties'));
  * eslint-disable 
  */
 export(
-    'init',
-    'main'
+    'core',
+    'handler'
 );
 /* eslint-enable */
 
@@ -708,8 +1200,7 @@ const log = require('ringo/logging').getLogger(module.id);
  */
 var { EventEmitter } = require('ringo/events')
 var { Session } = require('BRjx_library');
-var BaseXClient;
-var BaseXQuery;
+var watchdog;
 
 
 /**
@@ -721,81 +1212,106 @@ var version = '0.0.1';
 /**
  * default values
  */
-var $ = module.singleton('$', function() {
+var brjx = module.singleton('brjx', function() {
     return {};
 });
 var cache = module.singleton('cache', function() {
     return {
-        refreshed: false,
-        mountpoints: {},
-        lastModified: 0
+        data: {},
+        watchdog: 0,
+        lastModified: 0,
     };
 });
 
 
 /**
- * Helper function
+ * Create
  */
-//
-function reloadRouter() {
-    include(config.get('main.handlers'));
-    $.router = new Router(log);
-    $.router.cacheManager({  getCacheItems: getCacheItems, getModulesLastModified: getModulesLastModified }, cache);
-}
-//
-function getCacheItems() {
-    var client = new BaseXClient();
-    var query = new BaseXQuery();
-
-    query.string = config.get('main.getCacheItems');;
-
-    return client.execQuery(query).data;
-}
-//
-function getModulesLastModified() {
-    var client = new BaseXClient();
-    var query = new BaseXQuery();
-
-    query.string = config.get('main.getModulesLastModified');
-
-    return client.execQuery(query).data[1];
+function create() {
 }
 
 /**
- * Initialization
+ * Destroy
  */
-function init(client, query) {
-    BaseXClient = client;
-    BaseXQuery = query;
-
-    EventEmitter.call(cache);
-
-    cache.addListener('refreshed', function() {
-        log.info('Cache refreshed reload Router !');
-        let startHandler = (new Date()).getTime();
-
-        reloadRouter();
-
-        let elapsed = '' + ((new Date()).getTime() - startHandler);
-        log.info(Array(8 - elapsed.length).join(' ') + elapsed + 'ms reloadRouter');
-    });
-
-    reloadRouter();
-
-    let watchdog = setInterval(function() {
-        if (cache.watchdog * 1 + 30000 < (new Date()).getTime()) {
-            log.warn('Router crashed. Restart Router.');
-            reloadRouter();
-        } else {
-            log.debug('Router running.');
-        }
-    }, 30000);
+function destroy() {
 }
+
 
 /**
  * Application
  */
-function main(request) {
+function core(client, query) {
+    brjx['BaseXClient'] = client;
+    brjx['BaseXQuery'] = query;
+
+    /**
+     * Logger 
+     */
+    Object.defineProperty(brjx, "Logger", {
+        get: function() {
+            return Logger;
+        },
+        enumerable: true
+    });
+
+    brjx['cache'] = cache;
+
+    /**
+     * Wraper for log functions 
+     */
+    Object.keys(log).forEach(function(item, index, array) {
+        Object.defineProperty(brjx, item, {
+            get: function() {
+                return log[item];
+            },
+            set: function() {
+                var args = Args([
+                    { listener: Args.FUNCTION | Args.Required }
+                ], arguments);
+                log.addListener(item, listener);
+            },
+            enumerable: true,
+            configurable: false
+        });
+    }); 
+
+    EventEmitter.call(brjx.cache);
+
+    watchdog = setInterval(function() {
+        var startHandler = (new Date()).getTime();
+
+        var repo = new org.ringojs.repository.DatabaseRepository(config.get('launcher.repo'), brjx.BaseXClient);
+        var resources = repo.resources;
+
+        for (var i in resources) {
+            let resource = repo.resources[i];
+            if (!!repo.resources[i].name.match(/\.js$/)) {
+                var lastModified = repo.resources[i].lastModified();
+
+                if (
+                    brjx.cache.watchdog * 1 + (config.get('watchdog.interval') * 2 || 5000) < startHandler ||
+                    brjx.cache.lastModified * 1 != lastModified
+                ) {
+                    gc();
+                    log.warn('Restart Launcher');
+                    brjx.cache.emit('refresh');
+                    brjx.cache.lastModified = lastModified;                 
+                    let { Launcher } = require(config.get('main.launcher'))
+                    let launcher = new Launcher(brjx);
+                    launcher.watchdog();
+                    brjx.cache.emit('refreshed');
+                } else {
+                    log.debug('Launcher running');
+                }
+            }
+        }
+    }, config.get('watchdog.interval') * 1 || 2500);
+}
+
+/**
+ * Request Handler
+ */
+function handler(request) {
     /**
      * var ...
      */
@@ -812,21 +1328,13 @@ function main(request) {
     elapsed = '' + ((new Date()).getTime() - startHandler);
     timeing += Array(8 - elapsed.length).join(' ') + elapsed + 'ms loadSession\n';
 
-    log.warn('SESSION ID > ' + session.id);
-
-
-    /**
-     * cache was refreshed ...
-     */
-    if (cache.refreshed) {
-        cache.refreshed = false;
-    }
+    session.warn('SESSION ID > ' + session.id);
 
 
     /**
      * dispatch ...
      */
-    let handler = $.router.dispatch(cache, session);
+    let handler = require(config.get('main.router')).dispatch(brjx, session);
 
     elapsed = '' + ((new Date()).getTime() - startHandler);
     timeing += Array(8 - elapsed.length).join(' ') + elapsed + 'ms dispatchRequest\n';
@@ -839,12 +1347,10 @@ function main(request) {
      * handleRequest ...
      */
     elapsed = '' + ((new Date()).getTime() - startHandler);
-    //timeing += Array(110).join('─') + '\n';
     timeing += Array(8 - elapsed.length).join(' ') + elapsed + 'ms handleRequest\n'
     timeing += Array(11).join(' ') + '{ path: "' + request.pathInfo + '" }\n';
-    //timeing += Array(110).join('═') + '\n';
 
-    log.debug(timeing);
+    session.debug(timeing);
 
 
     return content;
@@ -863,9 +1369,13 @@ function main(request) {
 # BRjx_application defaults
 
 ## properties
-main.handlers                   = BRjx_router
-main.getCacheItems              = brjx:getCacheItems()
-main.getModulesLastModified     = brjx:getModulesLastModified()
+main.launcher                   = BRjx_workers
+main.router                     = BRjx_router
+
+watchdog.interval               = 2500
+watchdog.timeout                = 5000
+
+launcher.repo                   = /BRjx_packages/BRjx_workers/
 ]]>
       </script>
     </record>

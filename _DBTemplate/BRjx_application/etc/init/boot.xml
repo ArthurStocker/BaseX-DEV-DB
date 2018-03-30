@@ -21,8 +21,6 @@
  * @since 0.0.1
  * @returns {boolean} success
  */
-const Logger = require('ringo/logging');
-Logger.setConfig(getResource('config/log4j.properties'), true);
 
 /**
  * export ( ... )
@@ -34,11 +32,9 @@ Logger.setConfig(getResource('config/log4j.properties'), true);
 );
 /* eslint-enable */
 
-
 /**
  * const ...
  */
-const log = Logger.getLogger(module.id);
 
 
 /**
@@ -127,16 +123,16 @@ function Loader() {
 
             _parameter.rc = args.level;
 
-            log.info('RC: set run configuration for application.');
+            bs.info(module, 'RC: set run configuration for application.');
             if (typeof(rc) == 'function') {
                 var result = rc(config, _args, _parameter);
 
                 success = result.data.success;
 
                 if (result.error)
-                    log.warn('Failed to successfully set runtime configuration ' + args.level + ' !\n' + result.error + '\n');
+                    bs.warn(module, 'Failed to successfully set runtime configuration ' + args.level + ' !\n' + result.error + '\n');
             } else {
-                log.error('Failed to set set runtime configuration ' + args.level + ' ! No rc script defined for this level or script is not a FUNCTION.');
+                bs.error(module, 'Failed to set set runtime configuration ' + args.level + ' ! No rc script defined for this level or script is not a FUNCTION.');
                 success = false;
             }
 
@@ -159,16 +155,16 @@ function Loader() {
             var success = true;
             var init = require('./init/system'); //.js
 
-            log.info('INIT: init application environment.');
+            bs.info(module, 'INIT: init application environment.');
             if (typeof(init) == 'function') {
                 var result = init(config, _args, _parameter);
 
                 success = result.data.success;
 
                 if (result.error)
-                    log.error('Failed to initialize the application environment ! ' + result.error + '.');
+                    bs.error(module, 'Failed to initialize the application environment ! ' + result.error + '.');
             } else {
-                log.error('Failed to initialize the application environment ! No init script defined or script is not a FUNCTION.');
+                bs.error(module, 'Failed to initialize the application environment ! No init script defined or script is not a FUNCTION.');
                 success = false;
             }
 
@@ -186,7 +182,7 @@ function Loader() {
      * @since 0.0.1
      * @returns {boolean} success
      */
-    self.loaded = function() {
+    self.load = function() {
         var args = Args([
             { level: Args.STRING | Args.Required }
         ], arguments);
@@ -295,8 +291,6 @@ static.allowDirectoryListing    = false
  * @since 0.0.1
  * @returns {boolean} success
  */
-const Logger = require('ringo/logging');
-Logger.setConfig(getResource('config/log4j.properties'), true);
 
 /**
  * export ( ... )
@@ -310,7 +304,6 @@ Logger.setConfig(getResource('config/log4j.properties'), true);
 /**
  * const ...
  */
-const log = Logger.getLogger(module.id);
 
 
 /**
@@ -367,8 +360,6 @@ module.exports = function(config, _args, _parameter) {
  * @since 0.0.1
  * @returns {boolean} success
  */
-const Logger = require('ringo/logging');
-Logger.setConfig(getResource('config/log4j.properties'), true);
 
 /**
  * export ( ... )
@@ -382,7 +373,6 @@ Logger.setConfig(getResource('config/log4j.properties'), true);
 /**
  * const ...
  */
-const log = Logger.getLogger(module.id);
 
 
 /**
@@ -434,8 +424,6 @@ module.exports = function(config, _args, _parameter) {
  * @since 0.0.1
  * @returns {boolean} success
  */
-const Logger = require('ringo/logging');
-Logger.setConfig(getResource('config/log4j.properties'), true);
 
 /**
  * export ( ... )
@@ -449,7 +437,6 @@ Logger.setConfig(getResource('config/log4j.properties'), true);
 /**
  * const ...
  */
-const log = Logger.getLogger(module.id);
 
 
 /**
@@ -551,7 +538,7 @@ module.exports = function(config, _args, _parameter) {
         success = !success ? success : result.data.success;
 
         var elapsed = '' + ((new Date()).getTime() - start.getTime());
-        log.info(Array(8 - elapsed.length).join(' ') + elapsed + 'ms to init server session');
+        bs.info(module, Array(8 - elapsed.length).join(' ') + elapsed + 'ms to init server session');
     }
 
     if (config.get('app') == 'true') {
@@ -562,7 +549,7 @@ module.exports = function(config, _args, _parameter) {
         success = !success ? success : result.data.success;
 
         var elapsed = '' + ((new Date()).getTime() - start.getTime());
-        log.info(Array(8 - elapsed.length).join(' ') + elapsed + 'ms to init application context');
+        bs.info(module, Array(8 - elapsed.length).join(' ') + elapsed + 'ms to init application context');
     }
 
     if (config.get('static') == 'true') {
@@ -573,7 +560,7 @@ module.exports = function(config, _args, _parameter) {
         success = !success ? success : result.data.success;
 
         var elapsed = '' + ((new Date()).getTime() - start.getTime());
-        log.info(Array(8 - elapsed.length).join(' ') + elapsed + 'ms to init static context');
+        bs.info(module, Array(8 - elapsed.length).join(' ') + elapsed + 'ms to init static context');
     }
 
     return { data: { success: success }, error: error };

@@ -1268,7 +1268,7 @@ function core(client, query) {
                 var args = Args([
                     { listener: Args.FUNCTION | Args.Required }
                 ], arguments);
-                log.addListener(item, listener);
+                log.addListener(item, args.listener);
             },
             enumerable: true,
             configurable: false

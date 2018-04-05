@@ -13,8 +13,8 @@
       <hash>bf681ced0399e1d61e3af6241ec1dbc0</hash>
     </password>
     <password algorithm="salted-sha256">
-      <salt>252655871053300</salt>
-      <hash>9a3178a57999c67c1216c166b6474621f41218f971908656d8f6626e036021e8</hash>
+      <salt>25974662384694</salt>
+      <hash>9ae586712cac1325348147cbb1e7fe1488438357c83c3ef8922afcb9634e3aa8</hash>
     </password>
     <database pattern="BRjx_*" permission="read"/>
   </user>

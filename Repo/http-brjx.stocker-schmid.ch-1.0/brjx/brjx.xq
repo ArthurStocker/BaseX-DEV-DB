@@ -42,7 +42,7 @@ CHECK * getLength : path + name
 :) 
 module namespace  brjx = "http://brjx.stocker-schmid.ch" ;
  
-declare variable $brjx:SystemServerClient := ("boot.xml", "app.xml", "jobs.xml", "macros.xml", "modules.xml", "mountpoints.xml", "components.xml", "scripts.xml");
+declare variable $brjx:SystemServerClient := ("boot.xml", "rc.xml", "app.xml", "jobs.xml", "macros.xml", "modules.xml", "mountpoints.xml", "components.xml", "scripts.xml");
 declare variable $brjx:SystemServer := ("boot.xml", "app.xml", "jobs.xml", "macros.xml", "modules.xml", "mountpoints.xml");
 declare variable $brjx:System := ("boot.xml", "app.xml", "macros.xml");
 declare variable $brjx:Server := ("jobs.xml", "modules.xml", "mountpoints.xml");

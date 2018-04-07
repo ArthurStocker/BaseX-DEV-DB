@@ -1,0 +1,986 @@
+<rds id="3f657ec4-b620-4883-a7f3-0d49ab7ba43c">
+  <records>
+    <record id="58a3d309-3e74-4eea-b392-a6568915dd27">
+      <path>BRjx_library/</path>
+      <name>main</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+/**
+ * @fileOverview Provides access to the BaseX Server.
+ * @author Arthur Stocker
+ * @version 0.0.1
+ */
+
+
+/**
+ * config ...
+ */
+brjx.config.merge(module.resolve('./default.properties'));
+
+
+/**
+ * include ...
+ */
+ 
+ 
+/**
+ * export ( ... )
+ * 
+ * eslint-disable 
+ */
+export (
+    'Session'
+);
+/* eslint-enable */
+
+
+/**
+ * const ...
+ */
+const { Session } = require("./session");
+const log = Logger.getLogger(module.id);
+
+
+/**
+ * var ...
+ */
+
+
+/**
+ * default values
+ */
+]]>
+      </script>
+    </record>
+    <record id="5810c8da-63f6-49f2-8df8-0505db51edf1">
+      <path>BRjx_library/</path>
+      <name>session</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+/**
+ * @fileOverview Provides the Session Object.
+ * @author Arthur Stocker
+ * @version 0.0.1
+ */
+
+
+/**
+ * config ...
+ */
+brjx.config.merge(module.resolve('./default.properties'));
+
+
+/**
+ * include ...
+ */
+
+
+/**
+ * export ( ... )
+ * 
+ * eslint-disable 
+ */
+export (
+    'Session'
+);
+/* eslint-enable */
+
+
+/**
+ * const ...
+ */
+const log = Logger.getLogger(module.id);
+
+
+/**
+ * var ...
+ */
+var response = require('ringo/jsgi/response');
+
+
+/**
+ * default values
+ */
+
+
+/**
+ * An HTTP session object based on top of servlet sessions.
+ * Properties of the session's data object are persisted
+ * between requests of the same client.
+ * @class ServletSession
+ *
+ * @property {object} data - A container for things to store in this session between requests.
+ *
+ * @see - 
+ * @since 0.0.1
+ * @param {request} request - A JSGI or servlet request object.
+ * @returns -
+ */
+function Session() {
+    if (!(this instanceof Session)) {
+        return new Session(arguments);
+    }
+
+    // local variables
+    var self = this;
+
+
+    // validate arguments
+    var _args = Args([
+        { request: Args.OBJECT | Args.Required }
+    ], arguments);
+
+
+    var data;
+    var volatileData;
+    var servletRequest = _args.request instanceof javax.servlet.ServletRequest ? _args.request :
+        _args.request instanceof org.eclipse.jetty.websocket.servlet.ServletUpgradeRequest ? _args.request.getHttpServletRequest() :
+        _args.request instanceof org.eclipse.jetty.websocket.common.WebSocketSession ? _args.request.getUpgradeRequest().getHttpServletRequest() :
+        _args.request.env.servletRequest;
+
+
+
+    function getSession() {
+        return servletRequest.getSession();
+    }
+
+
+    //
+    //
+    // Session properties
+    //
+    //
+
+
+    /**
+     * A container for things to store in this session between requests.
+     * @see -
+     * @param -
+     * @since 0.0.1
+     * @returns {string} sessionAttribute
+     */
+    Object.defineProperty(this, "data", {
+        get: function() {
+            if (!data) {
+                // session.data is a JavaAdapter that directly proxies property access
+                // to the attributes in the servlet session object.
+                data = new JavaAdapter(org.mozilla.javascript.NativeObject, {
+                    put: function(name, start, value) {
+                        getSession().setAttribute(name, value);
+                    },
+                    get: function(name, start) {
+                        if (Object.prototype[name]) {
+                            return Object.prototype[name];
+                        }
+                        return getSession().getAttribute(name);
+                    }
+                });
+            }
+            return data;
+        },
+        enumerable: true
+    });
+
+    /**
+     * The Session ID 
+     */
+    Object.defineProperty(this, "id", {
+        get: function() {
+            var id = getSession().getId();
+            return id;
+        },
+        enumerable: true
+    });
+
+
+    /**
+     * True if this session was created in the current request.
+     * This can be useful to find out if the client has cookies disabled
+     * for cookie-based sessions.
+     */
+    Object.defineProperty(this, "isNew", {
+        get: function() {
+            return getSession().isNew();
+        },
+        enumerable: true
+    });
+
+    /**
+     * Createtime of the current session.
+     */
+    Object.defineProperty(this, "creationTime", {
+        get: function() {
+            return getSession().getCreationTime();
+        },
+        enumerable: true
+    });
+
+    /**
+     * A time interval in seconds, which the session will be open.
+     * If the interval is exceeded, the session gets invalidated.
+     */
+    Object.defineProperty(this, "maxInactiveInterval", {
+        get: function() {
+            return getSession().getMaxInactiveInterval();
+        },
+        set: function(interval) {
+            return getSession().setMaxInactiveInterval(interval);
+        },
+        enumerable: true
+    });
+
+    /**
+     * Time in Unix epoch milliseconds since the last client access.
+     */
+    Object.defineProperty(this, "lastAccessedTime", {
+        get: function() {
+            return getSession().getLastAccessedTime();
+        },
+        enumerable: true
+    });
+
+    /**
+     * Destroys the current session and any data bound to it.
+     */
+    this.invalidate = function() {
+        getSession().invalidate();
+    };
+
+    // save and reset the volatile session object
+    volatileData = getSession().getAttribute("__volatileData__");
+    getSession().setAttribute("__volatileData__", null);
+
+    /**
+     * A volatile property which survives a HTTP redirect and can be used
+     * for warnings or error messages in forms. After a requests was handled,
+     * the property is reset to null.
+     */
+    Object.defineProperty(this, "volatile", {
+        get: function() {
+            return volatileData;
+        },
+        set: function(value) {
+            getSession().setAttribute("__volatileData__", value);
+        },
+        enumerable: true
+    });
+
+
+    //
+    //
+    // Request properties
+    //
+    //
+
+
+    /**
+     * Request 
+     */
+    Object.defineProperty(this, "getRequest", {
+        get: function() {
+            return _args.request;
+        },
+        enumerable: true
+    });
+
+    /**
+     * TimeStamp of the Request
+     */
+    Object.defineProperty(this, "getRequestTimeStamp", {
+        get: function() {
+            var timeStamp = servletRequest.getTimeStamp();
+            return timeStamp;
+        },
+        enumerable: true
+    });
+
+    /**
+     * Method of the Request
+     */
+    Object.defineProperty(this, "getRequestMethod", {
+        get: function() {
+            var method = _args.request.method;
+            return method;
+        },
+        enumerable: true
+    });
+
+    /**
+     * Path of the Request
+     */
+    Object.defineProperty(this, "getRequestPath", {
+        get: function() {
+            var path = _args.request.pathInfo;
+            return path;
+        },
+        enumerable: true
+    });
+
+
+    //
+    //
+    // Response properties
+    //
+    //
+
+
+    /**
+     * Response 
+     */
+    Object.defineProperty(this, "getResponse", {
+        get: function() {
+            return response;
+        },
+        enumerable: true
+    });         
+}
+]]>
+      </script>
+    </record>
+    <record id="cc5c4890-c91f-4bf7-a1f9-27fc756ebc72">
+      <path>BRjx_library/</path>
+      <name>default</name>
+      <type>properties</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+# BRjx_library defaults
+
+## properties
+]]>
+      </script>
+    </record>
+    <record id="7d708d1e-073a-47e6-a32a-d542bd8c15e2">
+      <path>BRjx_library/</path>
+      <name>package</name>
+      <type>json</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+{
+    "name": "BRjx_Library",
+    "version": "0.0.1",
+    "description": "BRjx_Library",
+    "keywords": [
+        "basex",
+        "client"
+    ],
+    "homepage": "https://github.com/ArthurStocker/basex-client",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ArthurStocker/basex-client"
+    },
+    "licenses": [{
+        "type": "GNU General Public License 3",
+        "url": "https://www.gnu.org/licenses/gpl-3.0.txt"
+    }],
+    "dependencies": {
+    },
+    "devDependencies": {},
+    "engines": {
+        "ringojs": ">= 1.0.0"
+    },
+    "scripts": {
+        "test": "ringo"
+    },
+    "main": "main.js"
+}
+]]>
+      </script>
+    </record>
+    <record id="eb1af7ea-8aee-40b0-a718-0166121dd3c3">
+      <path>BRjx_backend_rds/</path>
+      <name>main</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+/**
+ * @fileOverview Provides access to the BaseX Server.
+ * @author Arthur Stocker
+ * @version 0.0.1
+ */
+
+
+/**
+ * config ...
+ */
+brjx.config.merge(module.resolve('./default.properties'));
+
+
+/**
+ * export ( ... )
+ * 
+ * eslint-disable 
+ */
+
+/* eslint-enable */
+
+
+/**
+ * const ...
+ */
+const log = Logger.getLogger(module.id);
+
+
+/**
+ * var ...
+ */
+var { Session } = require(brjx.config.get('library.repo'));
+
+
+/**
+ * default values
+ */
+
+
+// request handler
+exports.app = function(request) {
+    /**
+     * var ...
+     */
+    var handler;
+
+
+    /**
+     * loadSession ...
+     */
+    var session = new Session(request);
+    var startHandler = new BRjxTimer(session.getRequestTimeStamp);
+
+    log.warn('SESSION ID > ' + session.id);
+
+    startHandler.interval('loadSession');
+
+
+    /**
+     * dispatch ...
+     */
+    let path = session.getRequestPath.replace(/(\/[^\/]*).*$/, '$1');
+
+    var mountpoint = path == '/' ? '/index' : path;
+    var mountpointhandler = require('BRjx_application' + mountpoint + '.js');
+    if (typeof mountpointhandler[session.getRequestMethod] != 'function') {
+        handler = ['notFound'];
+    } else {
+        handler = mountpointhandler[session.getRequestMethod](session);
+    }
+
+    startHandler.interval('dispatchRequest');
+
+
+    /**
+     * handleRequest ...
+     */
+    let content = session.getResponse[handler[0]].apply(session.getResponse, handler[1]);
+
+    log.debug(startHandler.stop('handleRequest', '{ path: "' + request.pathInfo + '" }'));
+
+
+    return content;
+};
+]]>
+      </script>
+    </record>
+    <record id="9dfdf1e8-0e1a-4cb4-886c-60d625f6fb63">
+      <path>BRjx_backend_rds/</path>
+      <name>default</name>
+      <type>properties</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+# BRjx_backend_rds defaults
+
+## properties
+library.repo                    = BRjx_library
+]]>
+      </script>
+    </record>
+    <record id="5a333db1-7eb0-4123-8a20-eec3830471e8">
+      <path>BRjx_backend_rds/</path>
+      <name>package</name>
+      <type>json</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+{
+    "name": "BRjx_backend_rds",
+    "version": "0.0.1",
+    "description": "BRjx_backend_rds",
+    "keywords": [
+        "BRjx",
+        "Request Dispatching Service"
+    ],
+    "homepage": "https://github.com/ArthurStocker/basex-client",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ArthurStocker/basex-client"
+    },
+    "licenses": [{
+        "type": "GNU General Public License 3",
+        "url": "https://www.gnu.org/licenses/gpl-3.0.txt"
+    }],
+    "dependencies": {
+    },
+    "devDependencies": {},
+    "engines": {
+        "ringojs": ">= 1.0.0"
+    },
+    "scripts": {
+        "test": "ringo"
+    },
+    "main": "main.js"
+}
+]]>
+      </script>
+    </record>
+    <record id="9a0694cf-0685-41f3-ad73-74b22880ef6b">
+      <path>BRjx_backend_amb/</path>
+      <name>main</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+/**
+ * @fileOverview Provides access to the BaseX Server.
+ */
+
+
+/**
+ * config ...
+ */
+brjx.config.merge(module.resolve('./default.properties'));
+
+
+/**
+ * include ...
+ */
+
+
+/**
+ * export ( ... )
+ * 
+ * eslint-disable 
+ */
+
+/* eslint-enable */
+
+
+/**
+ * const ...
+ */
+const log = Logger.getLogger(module.id);
+
+
+/**
+ * var ...
+ */
+var { Session } = require('BRjx_library');
+
+
+/**
+ * default values
+ */
+var ambConnections = module.singleton('ambConnections', function() {
+    return [];
+});
+var arrays = require('ringo/utils/arrays');
+
+
+// onAMBConnect
+module.exports = {
+    'onConnect': function(socket, session) {
+        var _session = new Session(session);
+        log.debug('SESSION ID - [onConnect] > ' + _session.id);
+
+        ambConnections.push(socket);
+        socket.addListener('text', function(message) {
+            ambConnections.forEach(function(socket) {
+                socket.send(message);
+            });
+            var session = new Session(socket.session);
+            log.info('Sending message to AMB client with SessionID: ' + session.id);
+        });
+        socket.addListener('close', function() {
+            arrays.remove(ambConnections, socket);
+            log.info('Closing AMB connection, ' + ambConnections.length + ' remaining');
+        });
+    },
+    'onCreate': function(request, response) {
+        var session = new Session(request);
+        log.debug('SESSION ID - [onCreate] > ' + session.id);
+        return true;
+    }
+};
+]]>
+      </script>
+    </record>
+    <record id="e54512ae-9945-4c84-9709-e5142f37f7d1">
+      <path>BRjx_backend_amb/</path>
+      <name>default</name>
+      <type>properties</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+# BRjx_backend_amb defaults
+
+## properties
+]]>
+      </script>
+    </record>
+    <record id="6751b35d-c477-4bd9-87d4-86270225501c">
+      <path>BRjx_backend_amb/</path>
+      <name>package</name>
+      <type>json</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+{
+    "name": "BRjx_backend_amb",
+    "version": "0.0.1",
+    "description": "BRjx_backend_amb",
+    "keywords": [
+        "basex",
+        "client"
+    ],
+    "homepage": "https://github.com/ArthurStocker/basex-client",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ArthurStocker/basex-client"
+    },
+    "licenses": [{
+        "type": "GNU General Public License 3",
+        "url": "https://www.gnu.org/licenses/gpl-3.0.txt"
+    }],
+    "dependencies": {
+    },
+    "devDependencies": {},
+    "engines": {
+        "ringojs": ">= 1.0.0"
+    },
+    "scripts": {
+        "test": "ringo"
+    },
+    "main": "main.js"
+}
+]]>
+      </script>
+    </record>
+  </records>
+    <records>
+    <record id="c5d5fe35-47c6-48a8-b812-b9212dc988f0">
+      <path>BRjx_backend_evc/</path>
+      <name>main</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+/**
+ * @fileOverview Provides access to the BaseX Server.
+ */
+
+
+/**
+ * config ...
+ */
+brjx.config.merge(module.resolve('./default.properties'));
+
+
+/**
+ * include ...
+ */
+
+
+/**
+ * export ( ... )
+ * 
+ * eslint-disable 
+ */
+
+/* eslint-enable */
+
+
+/**
+ * const ...
+ */
+const log = Logger.getLogger(module.id);
+
+
+/**
+ * var ...
+ */
+var { Session } = require('BRjx_library');
+
+
+/**
+ * default values
+ */
+var evcConnections = module.singleton('evcConnections', function() {
+    return [];
+});
+var arrays = require('ringo/utils/arrays');
+
+
+// onESConnect
+module.exports = function(source, request) {
+    var session = new Session(request);
+
+    evcConnections.push(source);
+    log.info('Opening EVC connection, ' + evcConnections.length + ' open');
+    source.session = session;
+    source.addListener('close', function() {
+        arrays.remove(evcConnections, source);
+        log.debug('SESSION ID - [onConnect] > ' + source.session.id);
+        log.info('Closing EVC connection, ' + evcConnections.length + ' remaining');
+    });
+    source.close();
+};
+
+
+function doPing() {
+    if (evcConnections.length)
+        log.debug('Sending ping to all ', evcConnections.length, ' EVC clients');
+
+    evcConnections.forEach(function(source) {
+        try {
+            source.data('Ping ' + new Date());
+        } catch (e) {
+            log.error(e);
+            arrays.remove(evcConnections, source);
+        }
+    });
+}
+
+setInterval(doPing, 2 * 1000);
+]]>
+      </script>
+    </record>
+    <record id="3a1975e8-a7ee-45d7-b919-cc5ad1019e64">
+      <path>BRjx_backend_evc/</path>
+      <name>default</name>
+      <type>properties</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+# BRjx_backend_evc defaults
+
+## properties
+]]>
+      </script>
+    </record>
+    <record id="c9b8ce1f-9be2-4ed9-89b5-f3ecfeb1fd9c">
+      <path>BRjx_backend_evc/</path>
+      <name>package</name>
+      <type>json</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+{
+    "name": "BRjx_backend_evc",
+    "version": "0.0.1",
+    "description": "BRjx_backend_evc",
+    "keywords": [
+        "basex",
+        "client"
+    ],
+    "homepage": "https://github.com/ArthurStocker/basex-client",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ArthurStocker/basex-client"
+    },
+    "licenses": [{
+        "type": "GNU General Public License 3",
+        "url": "https://www.gnu.org/licenses/gpl-3.0.txt"
+    }],
+    "dependencies": {
+    },
+    "devDependencies": {},
+    "engines": {
+        "ringojs": ">= 1.0.0"
+    },
+    "scripts": {
+        "test": "ringo"
+    },
+    "main": "main.js"
+}
+]]>
+      </script>
+    </record>
+    <record id="d65fa37b-c3c4-4f5d-8d02-acd1249734d0">
+      <path>BRjx_test/</path>
+      <name>main</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array">
+        <property>JSfn</property>
+        <property>JSclass</property>
+      </properties>
+      <script>
+<![CDATA[
+/**
+ * @fileOverview Provides test calasses to access the scrpts on the BaseX Server.
+ * @author Arthur Stocker
+ * @version 0.0.1
+ */
+
+
+/**
+ * config ...
+ */
+brjx.config.merge(module.resolve('./default.properties'));
+
+
+/**
+ * include ...
+ */
+
+
+/**
+ * export ( ... )
+ * 
+ * eslint-disable 
+ */
+export (
+    'JSclass'
+);
+/* eslint-enable */
+
+
+/**
+ * const ...
+ */
+const log = Logger.getLogger(module.id);
+
+
+/**
+ * var ...
+ */
+
+
+/**
+ * default values
+ */
+
+
+/**
+ * JSfn function
+ * @param {message}
+ * @since: 0.0.1
+ * @returns STRING
+ */
+function JSfn(message) {
+  return brjx.config.get('test.string') + ' ' + message; 
+}
+
+/**
+ * Create a JSclass 
+ * @param {options}
+ * @since: 0.0.1
+ * @returns OBJECT
+ */
+function JSclass(options) {
+  if (!(this instanceof JSclass)) {
+    return new JSclass(options);
+  }
+  
+  // validate options
+  if (!options) {
+    options = {};
+  }
+
+  // save options
+  var propertyoptions = options;
+
+  // object stuff
+
+  // instance variable
+  // ex.: var propertyinstVar;
+  
+  /**
+   * Get String.
+   * The Config is Stored in the global.Application.system object;
+   * @see -
+   * @param {message}
+   * @since: 0.0.1
+   * @returns STRING
+   */
+  this.getString = function(message) {
+    return JSfn(message);
+  }
+}
+]]>
+      </script>
+    </record>
+    <record id="04dbd91e-ccb9-4b49-b120-a74c353d8c98">
+      <path>BRjx_test/</path>
+      <name>default</name>
+      <type>properties</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+# BRjx_test defaults
+
+## properties
+test.string                     = FROM BRjx_test -- it`s working :
+]]>
+      </script>
+    </record>
+    <record id="a6008487-474e-4d00-bea7-46cb21f83837">
+      <path>BRjx_test/</path>
+      <name>package</name>
+      <type>json</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+{
+    "name": "BRjx_Test",
+    "version": "0.0.1",
+    "description": "Access the BaseX Database from Javascript",
+    "keywords": [
+        "basex",
+        "client"
+    ],
+    "homepage": "https://github.com/ArthurStocker/basex-client",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ArthurStocker/basex-client"
+    },
+    "licenses": [{
+        "type": "GNU General Public License 3",
+        "url": "https://www.gnu.org/licenses/gpl-3.0.txt"
+    }],
+    "dependencies": {
+    },
+    "devDependencies": {},
+    "engines": {
+        "ringojs": ">= 1.0.0"
+    },
+    "scripts": {
+        "test": "ringo"
+    },
+    "main": "main.js"
+}
+]]>
+      </script>
+    </record>
+  </records>
+</rds>

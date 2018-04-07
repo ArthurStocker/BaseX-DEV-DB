@@ -1,0 +1,11 @@
+<acl id="84ad8dcc-ec08-4c77-9258-ae33a5f602e6">
+  <records>
+    <record id="ac4f667e-bc0a-4f64-827b-861e626caca7">
+      <object/>
+      <read/>
+      <write/>
+      <update/>
+      <delete/>
+    </record>
+  </records>
+</acl>

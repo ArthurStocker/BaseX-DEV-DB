@@ -1,0 +1,16 @@
+<jobs id="ade2144c-79c7-4aaf-a914-60e9dc0d0521">
+  <records>
+    <record id="91c354df-6baa-4604-a9f1-0802d4315b44">
+      <path></path>
+      <name>job1</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+console.log('job 1');
+]]>
+      </script>
+    </record>
+  </records>
+</jobs>

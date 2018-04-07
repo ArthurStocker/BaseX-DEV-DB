@@ -1,0 +1,123 @@
+<applications id="9df4c329-cb85-4fb5-bfa8-abc5d6e9ed2a">
+  <records>
+
+    <record id="431142a7-700e-466c-afa2-dcc4b810fe74">
+      <path>BRjx_application/</path>
+      <name>index</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+exports.GET = function(session) {
+        return ['static', ['BRjx_frontend/test.html', 'text/html']];
+    };
+]]>
+      </script>
+    </record>
+    <record id="9fdafd87-2b34-4a59-b68e-6f1b1e5f8303">
+      <path>BRjx_demo/</path>
+      <name>demo</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+exports.GET = function(session) {
+        return ['static', ['BRjx_frontend/test.html', 'text/html']];
+    };
+]]>
+      </script>
+    </record>
+    <record id="245335e5-0ea1-4315-95ae-8d778caff926">
+      <path>BRjx_application/</path>
+      <name>scripts</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+exports.GET = function(session) {
+        var mime = '';
+        var path = session.getRequestPath;
+        var extension = path.replace(/.*\.([^\.]*$)/,'$1');
+
+        if (extension == 'css') {
+            mime = 'text/css';
+        } else {
+            mime = 'application/javascript';
+        }
+
+        return ['static', [path.replace(/./, ''), mime]];
+    };
+]]>
+      </script>
+    </record>
+    <record id="785b22ec-6b40-445f-92e7-5cf5c3e7d088">
+      <path>BRjx_application/</path>
+      <name>cache</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+exports.GET = function(session) {
+        cache.watchdog = 0;
+        return this['/'](session);
+    };
+]]>
+      </script>
+    </record>
+    <record id="271af332-1b6a-475b-90d9-790820b6d042">
+      <path>BRjx_application/</path>
+      <name>dump</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+exports.GET = function(session) {
+      /**
+       * dump request
+       */
+      function dump(item, space) {
+          if (typeof(item) == 'string' || typeof(item) == 'number')
+              session.debug(space + item);
+          if (typeof(item) == 'object') {
+              var keys = Object.keys(item)
+              for (var k in keys) {
+                  session.debug(space + keys[k]+' -> ');
+                  if ( keys[k].indexOf('servlet') == -1) dump(item[keys[k]], space +' ');
+              }
+          } 
+      }
+
+      dump(session.getRequest, '');
+
+      //session.debug(''+JSON.stringify(cache) + ' - ' + JSON.stringify(Object.keys(cache.mountpoints.GET)) + ' - ' + module.id);
+
+      Test();
+      session.debug('== ' + JSON.stringify(Object.keys(this)));
+
+      return this['/'](session);                
+  };
+]]>
+      </script>
+    </record>
+    <record id="2661e626-0bae-42aa-9202-92abeb21be9d">
+      <path>BRjx_application/</path>
+      <name>test</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+exports.GET = function(session) {
+        return ['static', ['BRjx_frontend/test.html', 'text/html']];
+    };
+]]>
+      </script>
+    </record>
+
+  </records>
+</applications>

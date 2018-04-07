@@ -1,0 +1,604 @@
+<boot id="b318524d-2798-47a7-af99-a213ccbd6ea0">
+  <records>
+    <record id="d2be28f2-b809-40ec-9e6c-fdbc6ba56835">
+      <path>BRjx_loader/</path>
+      <name>main</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+/**
+ * @fileOverview Register the Repositories with the RingoJS Engine while reading the RepoPathes from the BaseX DB on the Server.
+ * @author Arthur Stocker
+ * @version 0.0.1
+ */
+Logger.setConfig(getResource(brjx.config.get('logger.config')), true);
+
+/**
+ * export ( ... )
+ * 
+ * eslint-disable 
+ */
+
+/* eslint-enable */
+
+
+/**
+ * const ...
+ */
+const log = Logger.getLogger(module.id);
+
+
+/**
+ * var ...
+ */
+
+
+/**
+ * default values
+ */
+
+
+/**
+ * Create a loader object
+ * @see -
+ * @since 0.0.1
+ * @returns {boolean} success
+ */
+function Loader() {
+    if (!(this instanceof Loader)) {
+        return new Loader(arguments);
+    }
+
+    // local variables
+    var self = this;
+    
+
+    /**
+     * Set the run configuration for the application.
+     * @see -
+     * @param -
+     * @since 0.0.1
+     * @returns {boolean} success
+     */
+    Object.defineProperty(self, "rc", {
+        set: function() {
+            var args = Args([
+                { level: Args.STRING | Args.Required }
+            ], arguments);
+
+            var success = true;
+            var rc = require('./rc/rc' + args.level); // + '.js'
+
+            brjx.cache.rc = args.level;
+
+            log.info('RC: set run configuration for application.');
+            if (typeof(rc) == 'function') {
+                var result = rc();
+
+                success = result.data.success;
+
+                if (result.error)
+                    log.warn('Failed to successfully set runtime configuration ' + args.level + ' !\n' + result.error + '\n');
+            } else {
+                log.error('Failed to set set runtime configuration ' + args.level + ' ! No rc script defined for this level or script is not a FUNCTION.');
+                success = false;
+            }
+
+            brjx.cache.initialized = !brjx.cache.initialized ? brjx.cache.initialized : success;
+        },
+        enumerable: true,
+        configurable: false
+    });
+    
+
+    /**
+     * Init application environment.
+     * @see -
+     * @param -
+     * @since 0.0.1
+     * @returns {boolean} success
+     */
+    Object.defineProperty(self, "init", {
+        get: function() {
+            var success = true;
+            var init = require('./init/system'); //.js
+
+            log.info('INIT: init application environment.');
+            if (typeof(init) == 'function') {
+                var result = init();
+
+                success = result.data.success;
+
+                if (result.error)
+                    log.error('Failed to initialize the application environment ! ' + result.error + '.');
+            } else {
+                log.error('Failed to initialize the application environment ! No init script defined or script is not a FUNCTION.');
+                success = false;
+            }
+
+            return success;
+        },
+        enumerable: true,
+        configurable: false
+    });
+
+
+    /**
+     * Check if INIT and was successfull.
+     * @see -
+     * @param -
+     * @since 0.0.1
+     * @returns {boolean} success
+     */
+    self.load = function() {
+        var args = Args([
+            { level: Args.STRING | Args.Required }
+        ], arguments);
+
+        this.rc = args.level; 
+        brjx.cache.initialized = !brjx.cache.initialized ? false : this.init;
+        
+        return brjx.cache.initialized;
+    }
+
+    return self;
+}
+
+// main
+if (require.main === module && !(typeof JettyServer == 'undefined')) {
+    // load BRjx
+    var loader = new Loader();
+
+    if (loader.load(brjx.config.get('runlevel'))) {
+        log.info('Server loaded, request dispatching service running.');
+    } else
+        log.error('Error while loading!\n\tFailed to set runlevel. Check Loader-Script in the DB.');
+} else
+    console.error('please start server with bootscript:\n\tringo -b packages/basex/boot/protocol.js -b packages/basex/boot/driver.js -b packages/brjx/boot/backend.js -b packages/brjx/boot/middleware.js -b packages/brjx/boot/sandbox.js -b packages/brjx/boot/globals.js -D manageit.basex.config=/packages/basex/config/client.properties -D manageit.brjx.config=/packages/brjx/config/brjx.properties -D manageit.brjx.test=false brjx/main');
+]]>
+      </script>
+    </record>
+    <record id="474c5522-5067-42a4-a697-fb4b85652aca">
+      <path>BRjx_loader/</path>
+      <name>default</name>
+      <type>properties</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+# BRjx_loader defaults
+
+## boot config
+runlevel                                = 0
+runscript                               = BRjx_loader/main.js
+
+## logger config
+logger.config                           = BRjx_loader/log4j.properties
+
+## application defaults
+rds                                     = true
+rds.name                                = BRjx
+rds.root                                = /
+rds.module                              = BRjx_backend_rds
+rds.session                             = true
+
+## amb defaults
+amb                                     = true
+amb.root                                = /amb
+amb.module                              = BRjx_backend_amb
+
+## evc defaults
+evc                                     = true
+evc.root                                = /evc
+evc.module                              = BRjx_backend_evc
+
+## static content
+static                                  = false
+static.root                             = /scripts
+static.source                           = scripts/
+static.allowDirectoryListing            = false
+
+## workers repo
+workers.repo                            = BRjx_workers
+
+## watchdog defaults
+watchdog.interval                       = 2500
+watchdog.launcher.timeout               = 5000
+]]>
+      </script>
+    </record>
+    <record id="27b1c752-25e3-41b5-ae13-07c7068c604c">
+      <path>BRjx_loader/</path>
+      <name>jetty</name>
+      <type>properties</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+# JettyServer defaults
+
+## jetty server and port
+jetty.server.name                       = localhost
+jetty.server.http.port                  = 8080
+jetty.server.https.port                 = 8443
+
+## jetty server ssl defaults
+jetty.server.ssl.keystore               = /Users/arthur/Downloads/Projects/WEB/_APPDEVData/ManageIT/packages/brjx/config/keystore
+jetty.server.ssl.keystore.password      = secret
+jetty.server.ssl.keymanager.password    = secret
+]]>
+      </script>
+    </record>
+    <record id="083aee14-8d52-4734-95eb-4d6d68734f2b">
+      <path>BRjx_loader/</path>
+      <name>log4j</name>
+      <type>properties</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+log4j.reset = true
+log4j.rootLogger = INFO, console
+
+log4j.appender.console = org.apache.log4j.ConsoleAppender
+log4j.appender.console.layout = org.apache.log4j.PatternLayout
+log4j.appender.console.layout.ConversionPattern = %-4r [%t] %-5p %c %x - %m%n
+
+# Hint: set categories for module names you're working on to DEBUG level, e.g.:
+# log4j.category.main = DEBUG
+# log4j.category.moduledir.modulename = DEBUG
+# log4j.category.ringo.httpserver = DEBUG
+# log4j.category.ringo.httpclient = DEBUG
+
+
+## BaseX Package 
+ log4j.category.basex.main = WARN 
+# log4j.category.basex.lib.query = DEBUG
+ log4j.category.basex.lib.client = WARN
+# log4j.category.basex.lib.converter = DEBUG
+# log4j.category.basex.lib.procedure = DEBUG
+# log4j.category.basex.lib.credentials = DEBUG
+# log4j.category.basex.lib.store = DEBUG
+# log4j.category.basex.lib.config = DEBUG
+# log4j.category.basex.lib.common = DEBUG
+
+## Scripts from the DB
+
+## BRjx loader package
+ log4j.category.BRjx_loader.main = DEBUG
+ log4j.category.BRjx_loader.rc.rc0 = DEBUG
+ log4j.category.BRjx_loader.rc.rc1 = DEBUG
+ log4j.category.BRjx_loader.init.system = DEBUG
+
+## BRjx workers package
+ log4j.category.BRjx_workers.launcher = DEBUG
+ log4j.category.BRjx_workers.lib.mounter = DEBUG
+ log4j.category.BRjx_workers.lib.monitor = DEBUG
+
+## BRjx application library package
+ log4j.category.BRjx_library.session = DEBUG
+
+## BRjx main application package 
+ log4j.category.BRjx_backend_rds.main = DEBUG
+
+## BRjx application backend amb package
+# log4j.category.BRjx_backend_amb.main = DEBUG
+
+## BRjx application backend amb package
+# log4j.category.BRjx_backend_evc.main = DEBUG
+]]>
+      </script>
+    </record>
+    <record id="2beb2269-aee6-445f-9993-f313a440717d">
+      <path>BRjx_loader/</path>
+      <name>package</name>
+      <type>json</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+{
+    "name": "BRjx_loader",
+    "version": "0.0.1",
+    "description": "BRjx_loader",
+    "keywords": [
+        "basex",
+        "client"
+    ],
+    "homepage": "https://github.com/ArthurStocker/basex-client",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ArthurStocker/basex-client"
+    },
+    "licenses": [{
+        "type": "GNU General Public License 3",
+        "url": "https://www.gnu.org/licenses/gpl-3.0.txt"
+    }],
+    "dependencies": {
+    },
+    "devDependencies": {},
+    "engines": {
+        "ringojs": ">= 1.0.0"
+    },
+    "scripts": {
+        "test": "ringo"
+    },
+    "main": "main.js"
+}
+]]>
+      </script>
+    </record>
+    <record id="f11a4615-3264-414b-a16d-da6b7839bda9">
+      <path>BRjx_loader/rc/</path>
+      <name>rc0</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+/**
+ * @fileOverview Init the Server.
+ * @author Arthur Stocker
+ * @version 0.0.1
+ *
+ * @see -
+ * @param -
+ * @since 0.0.1
+ * @returns {boolean} success
+ */
+
+/**
+ * export ( ... )
+ * 
+ * eslint-disable 
+ */
+
+/* eslint-enable */
+
+
+/**
+ * const ...
+ */
+const log = Logger.getLogger(module.id);
+
+
+/**
+ * var ...
+ */
+
+
+/**
+ * default values
+ */
+var { EventEmitter } = require('ringo/events');
+var watchdog;
+
+
+/**
+ *
+ */
+module.exports = function() {
+    var error = '';
+    var success = true;
+
+
+    try {
+        EventEmitter.call(brjx.cache);
+
+        let Launcher = require(brjx.config.get('workers.repo')).Launcher;
+        let launcher = new Launcher();
+        let resource = getResource(launcher.id);
+        launcher.watchdog();
+
+        watchdog = setInterval(function() {
+            var startHandler = (new Date()).getTime();
+            var lastModified = resource.lastModified();
+
+            if (
+                brjx.cache.watchdog * 1 + (brjx.config.get('watchdog.interval') * 2 || 5000) < startHandler ||
+                brjx.cache.lastModified * 1 != lastModified
+            ) {
+                gc();
+                log.warn('Restart Launcher from ' + module.resolve('./' + resources[i].name));
+                brjx.cache.emit('worker-restart', 'launcher');
+                brjx.cache.lastModified = lastModified;                 
+                let Launcher = require(brjx.config.get('workers.repo')).Launcher;
+                let launcher = new Launcher();
+                let resource = getResource(launcher.id);
+                launcher.watchdog();
+                brjx.cache.emit('worker-started', 'launcher');
+                log.warn('Started Launcher from ' + module.resolve('./' + resources[i].name));
+            } else {
+                log.debug('Launcher running');
+            }
+                
+            
+        }, brjx.config.get('watchdog.interval') * 1 || 2500);
+    } catch(e) {
+        error = error + '\n' + e;
+        success = false;
+    }
+
+    return { data: { success: success }, error: error };
+};
+]]>
+      </script>
+    </record>
+    <record id="7fbb96eb-64a4-426c-8dd7-98fa41c3a429">
+      <path>BRjx_loader/rc/</path>
+      <name>rc1</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+/**
+ * @fileOverview Init the Server.
+ * @author Arthur Stocker
+ * @version 0.0.1
+ *
+ * @see -
+ * @param -
+ * @since 0.0.1
+ * @returns {boolean} success
+ */
+
+/**
+ * export ( ... )
+ * 
+ * eslint-disable 
+ */
+
+/* eslint-enable */
+
+
+/**
+ * const ...
+ */
+const log = Logger.getLogger(module.id);
+
+
+/**
+ * var ...
+ */
+
+
+/**
+ * default values
+ */
+
+
+/**
+ *
+ */
+module.exports = function() {
+    var error = '';
+    var success = true;
+
+
+    // code here
+
+
+    return { data: { success: success }, error: error };
+};
+]]>
+      </script>
+    </record>
+    <record id="f0aa3ee0-6161-4ec6-85a2-ef3abea0a0e4">
+      <path>BRjx_loader/init/</path>
+      <name>system</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties type="array"/>
+      <script>
+<![CDATA[
+/**
+ * @fileOverview Init the Server.
+ * @author Arthur Stocker
+ * @version 0.0.1
+ *
+ * @see -
+ * @param -
+ * @since 0.0.1
+ * @returns {boolean} success
+ */
+
+
+/**
+ * export ( ... )
+ * 
+ * eslint-disable 
+ */
+
+/* eslint-enable */
+
+
+/**
+ * const ...
+ */
+const log = Logger.getLogger(module.id);
+
+
+/**
+ * var ...
+ */
+var jettyconfig = BaseXConfig('BRjx_loader/jetty.properties');
+
+
+/**
+ * default values
+ */
+module.exports = function() {
+    var error = '';
+    var success = true;
+
+        var jettyServer = new JettyServer();
+
+        // shutdownhook
+        require('ringo/engine').addShutdownHook(function() {
+            jettyServer.jetty.stop();
+            jettyServer.jetty.destroy();
+        });
+
+
+        // https listener
+        jettyServer.createHttpsListener({
+            'port': jettyconfig.get('jetty.server.https.port'),
+            'keyStore': jettyconfig.get('jetty.server.ssl.keystore'),
+            'keyStorePassword': jettyconfig.get('jetty.server.ssl.keystore.password'),
+            'keyManagerPassword': jettyconfig.get('jetty.server.ssl.keymanager.password')
+        });
+
+        // http listener
+        jettyServer.createHttpListener({
+            'port': jettyconfig.get('jetty.server.http.port')
+        });
+
+
+        // init session
+        if (brjx.config.get('rds.session') == 'true') {
+            jettyServer.enableSessions({
+                'name': brjx.config.get('rds.name')
+            });
+        }
+
+
+        // init the application context
+        if (brjx.config.get('rds') == 'true') {
+            var context = jettyServer.serveApplication(brjx.config.get('rds.root'), brjx.config.get('rds.module'), { 
+                'sessions': brjx.config.get('rds.session')
+            });
+
+            // and add a websocket to it
+            context.addWebSocket(brjx.config.get('amb.root'), require(brjx.config.get('amb.module')).onConnect, require(brjx.config.get('amb.module')).onCreate);
+
+            // and add a eventsource to it
+            context.addEventSource(brjx.config.get('evc.root'), require(brjx.config.get('evc.module')));
+
+            // save context for later use
+            brjx.cache.context.ards = context;
+        }
+
+
+        // initialize static file serving
+        if (brjx.config.get('static') == 'true') {
+            var context = jettyServer.serveStatic(brjx.config.get('static.root'), brjx.config.get('static.source'), {
+                'allowDirectoryListing': brjx.config.get('static.allowDirectoryListing')
+            });
+
+            // save context for later use
+            brjx.cache.context.static = context;
+        }
+
+        // start
+        jettyServer.jetty.start();
+
+    return { data: { success: success }, error: error };
+};
+]]>
+      </script>
+    </record>
+  </records>
+</boot>

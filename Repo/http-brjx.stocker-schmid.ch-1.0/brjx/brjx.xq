@@ -42,12 +42,12 @@ CHECK * getLength : path + name
 :) 
 module namespace  brjx = "http://brjx.stocker-schmid.ch" ;
  
-declare variable $brjx:SystemServerClient := ("boot.xml", "rc.xml", "app.xml", "jobs.xml", "macros.xml", "modules.xml", "mountpoints.xml", "components.xml", "scripts.xml");
-declare variable $brjx:SystemServer := ("boot.xml", "app.xml", "jobs.xml", "macros.xml", "modules.xml", "mountpoints.xml");
-declare variable $brjx:System := ("boot.xml", "app.xml", "macros.xml");
-declare variable $brjx:Server := ("jobs.xml", "modules.xml", "mountpoints.xml");
+declare variable $brjx:SystemServerClient := ("boot.xml", "rc.xml", "rds.xml", "jobs.xml", "macros.xml", "modules.xml", "applications.xml", "components.xml", "scripts.xml");
+declare variable $brjx:SystemServer := ("boot.xml", "rds.xml", "jobs.xml", "macros.xml", "modules.xml", "applications.xml");
+declare variable $brjx:System := ("boot.xml", "rds.xml", "macros.xml");
+declare variable $brjx:Server := ("jobs.xml", "modules.xml", "applications.xml");
 declare variable $brjx:Client := ("components.xml", "scripts.xml");
-declare variable $brjx:Cache := ("mountpoints.xml");
+declare variable $brjx:Cache := ("applications.xml");
 declare variable $brjx:pkg := ("/BRjx_packages/");
 
 
@@ -340,8 +340,11 @@ declare function brjx:getCacheItems
       group by $class
       order by $class
       return element {$class} {
+        for $a in distinct-values(
           for $f in $doc//*[name() = "script"]/..
-            return element {"path"} {$f/path/text() || $f/name/text() || "." || $f/type/text()}
+            return  replace($f/path/text(), "([^/]*)/(.*)$", "$1")
+        )
+          return element {"application"} {$a}
       }
   }
 };

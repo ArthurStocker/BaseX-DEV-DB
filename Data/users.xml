@@ -16,7 +16,7 @@
       <salt>25974662384694</salt>
       <hash>9ae586712cac1325348147cbb1e7fe1488438357c83c3ef8922afcb9634e3aa8</hash>
     </password>
-    <database pattern="BRjx_*" permission="read"/>
+    <database pattern="BRjx*" permission="read"/>
   </user>
   <info/>
 </users>

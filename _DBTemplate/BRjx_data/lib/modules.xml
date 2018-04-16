@@ -6,7 +6,7 @@
       <name>main</name>
       <type>js</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
 export( 'Test' );
@@ -24,7 +24,7 @@ function Test() {
       <name>package</name>
       <type>json</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
 {

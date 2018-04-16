@@ -41,7 +41,7 @@ CHECK * getLength : path + name
 
 :) 
 module namespace  brjx = "http://brjx.stocker-schmid.ch" ;
- 
+
 declare variable $brjx:SystemServerClient := ("boot.xml", "rc.xml", "rds.xml", "jobs.xml", "macros.xml", "modules.xml", "applications.xml", "components.xml", "scripts.xml");
 declare variable $brjx:SystemServer := ("boot.xml", "rds.xml", "jobs.xml", "macros.xml", "modules.xml", "applications.xml");
 declare variable $brjx:System := ("boot.xml", "rds.xml", "macros.xml");
@@ -50,6 +50,193 @@ declare variable $brjx:Client := ("components.xml", "scripts.xml");
 declare variable $brjx:Cache := ("applications.xml");
 declare variable $brjx:pkg := ("/BRjx_packages/");
 
+
+(:~
+ : Get config value for key
+ :
+ : @author  Arthur Stocker 
+ : @version 1.0 
+ : @see     http://brjx.stocker-schmid.ch/api/BasexRepository_getConfigValueForKey.html 
+ : @param   $key the key from which you wish to get the config value
+ :) 
+declare function brjx:getConfigValueForKey
+  ( $key as xs:string )   as xs:string {
+  for $line in tokenize(file:read-text(db:option("repopath") || "/config.cfg"), "\n")
+    let $keyvalue := tokenize($line, "=")
+    where $keyvalue[1] = $key
+    return $keyvalue[2]
+};
+
+(:~
+ : Get config value for key
+ :
+ : @author  Arthur Stocker 
+ : @version 1.0 
+ : @see     http://brjx.stocker-schmid.ch/api/BasexRepository_setTimeStamp.html 
+ : @param   $action is the name of the timestamp to be updated, and $record the record to be updated, $value the timestamp
+ :)
+declare updating function brjx:setTimeStamp
+  ( $action as xs:string,
+    $record as item()*,
+    $value as item()* )   as empty-sequence() {
+  let $elem := attribute {$action} {$value}
+  return if (not($record/@*[local-name(.) = $action])) 
+    then (insert node ($elem) as last into $record)
+    else (replace node ($record/@*[local-name(.) = $action]) with $elem)
+};
+
+(:~
+ : Get config value for key
+ :
+ : @author  Arthur Stocker 
+ : @version 1.0 
+ : @see     http://brjx.stocker-schmid.ch/api/BasexRepository_setTimeStamps.html 
+ : @param   $action is the name of the timestamp to be updated, and $record the record to be updated
+ :)
+declare updating function brjx:setTimeStamps
+  ( $action as xs:string,
+    $record as item()* )   as empty-sequence() {
+  switch ($action)
+    case "create"
+    case "read"
+    case "update"
+    case "delete" return brjx:setTimeStamp($action, $record, adjust-dateTime-to-timezone(xs:dateTime(current-dateTime()),xs:dayTimeDuration("PT0H")))
+    default return
+      for $db in db:list()
+        for $doc in collection($db)
+          for $record in $doc//record
+            for $action in ( "create", "read", "update", "delete" )
+              return brjx:setTimeStamp($action, $record, if ($action = "delete") then ("") else (adjust-dateTime-to-timezone(xs:dateTime(current-dateTime()),xs:dayTimeDuration("PT0H"))))
+};
+
+(:~
+ : Track record access
+ :
+ : @author  Arthur Stocker 
+ : @version 1.0 
+ : @see     http://brjx.stocker-schmid.ch/api/BasexRepository_trackRecordAccess.html 
+ : @param   record
+ :)
+declare updating function brjx:trackRecordAccess
+  ( $action as xs:string,
+    $id as item()* )  as empty-sequence() {
+  for $db in db:list()
+    for $doc in collection($db)
+      for $record in $doc//record
+        where $record/@id = $id
+          return brjx:setTimeStamps($action, $record)
+};
+
+(:~
+ : Get get all template XML files from the template directory
+ :
+ : @author  Arthur Stocker 
+ : @version 1.0 
+ : @see     http://brjx.stocker-schmid.ch/api/BasexRepository_getTemplateItems.html 
+ : @param   -
+ :) 
+declare function brjx:getTemplateItems
+  ( )   as element()? { 
+  element {"templates"} { 
+    attribute {"id"} {random:uuid()},
+    element {"records"} {
+      let $template := brjx:getConfigValueForKey("template")
+      for $file in file:list($template, true(), "*.xml")
+        where $file != "users.xml"
+          return element {"record"} {
+            attribute {"id"} {random:uuid()},
+            attribute {"create"} {adjust-dateTime-to-timezone(xs:dateTime(current-dateTime()),xs:dayTimeDuration("PT0H"))},
+            attribute {"read"} {adjust-dateTime-to-timezone(xs:dateTime(current-dateTime()),xs:dayTimeDuration("PT0H"))},
+            attribute {"update"} {adjust-dateTime-to-timezone(xs:dateTime(current-dateTime()),xs:dayTimeDuration("PT0H"))},
+            attribute {"delete"} {""},
+            element {"path" } {$template || $file},
+            element {"name"} {replace($file, ".*/([^\.]*)\..*", "$1")},
+            element {"type"} {replace($file, ".*/[^\.]*\.(.*)", "$1")},
+            element {"properties"} {
+              element {"db"} {replace($file, "([^/]*)/.*", "$1")},
+              element {"doc"} {replace($file, "[^/]*/(.*)", "$1")},
+              element {"lastModified"} {file:last-modified($template|| $file)}
+            }
+          }
+    }
+  }
+};
+
+(:~
+ : Create or update CHACHE DB with the template information
+ : and replace the corresponding files in the DB if the template changes
+ :
+ : @author  Arthur Stocker 
+ : @version 1.0 
+ : @see     http://brjx.stocker-schmid.ch/api/BasexRepository_checkTemplateItems.html 
+ : @param   -
+ :) 
+declare updating function brjx:checkTemplateItems
+  ( )   as empty-sequence() {
+  let $cache := "CACHE"
+  return if (db:exists($cache))
+    then (
+      let $db := db:open("CACHE")
+      for $template in brjx:getTemplateItems()/records/*
+        let $cacheitem := $db//*[./path/text() = $template/path/text()]
+        where $cacheitem/path/text() = $template/path/text() and $cacheitem/properties/lastModified/text() != $template/properties/lastModified/text()
+          for $elem in (attribute {"update"} {current-dateTime()}, element {"file"} {$template}, element {"lastModified"} {$template/properties/lastModified/text()})
+            return switch ($elem/name())
+              case "update" return brjx:setTimeStamps($elem/name(), $cacheitem)
+              case "file" return db:replace($elem/record/properties/db/text(), $elem/record/properties/doc/text(), xs:string($elem/record/path/text()))
+              case "lastModified" return replace node ($cacheitem/properties/lastModified) with $elem
+              default return ()
+    )
+    else (db:create($cache, brjx:getTemplateItems(), "templates.xml"))
+};
+
+(:~
+ : Create DB from template
+ :
+ : @author  Arthur Stocker 
+ : @version 1.0 
+ : @see     http://brjx.stocker-schmid.ch/api/BasexRepository_createDBfromTemplate.html 
+ : @param   -
+ :) 
+declare updating function brjx:createDBfromTemplate
+  ( )   as empty-sequence() {
+  let $template := brjx:getConfigValueForKey("template")
+  let $target := brjx:getConfigValueForKey("target")
+  for $step in (1, 2, 3, 4)
+    return switch ($step) 
+      case 1 return file:copy($template || "users.xml", $target || "users.xml")
+      case 2 return 
+        for $file in file:list($template, false(), "BR*")
+          return db:create(replace($file, "/", ""), brjx:getConfigValueForKey("template") || $file, (), map { "autooptimize": true(), "updindex":true(), "textindex": true(), "textinclude": "path, name, type, *:path, *:name, *:type, Q{uri}path, Q{uri}name, Q{uri}type, Q{uri}*, *", "attrindex": true(), "attrinclude": "id, create, read, update, delete, *:id, *:create, *:read, *:update, *:delete, Q{uri}id, Q{uri}create, Q{uri}read, Q{uri}update, Q{uri}delete, Q{uri}*, *" })
+      case 3 return
+        let $job := jobs:eval('import module namespace brjx = "http://brjx.stocker-schmid.ch"; brjx:checkTemplateItems()', (), map { "id": "checktemplates", "interval": "PT15S", "service": true() })
+        return ()
+      case 4 return
+        let $job := jobs:eval('import module namespace brjx = "http://brjx.stocker-schmid.ch"; declare variable $action external; declare variable $record external; brjx:setTimeStamps($action, $record)', map { "action": "", "record": ""}, map {"id": "settimestamps"} )
+        return ()
+      default return ()
+};
+
+(:~
+ : Create DB from template
+ :
+ : @author  Arthur Stocker 
+ : @version 1.0 
+ : @see     http://brjx.stocker-schmid.ch/api/BasexRepository_exportDBtoTemplatePath.html 
+ : @param   -
+ :) 
+declare updating function brjx:exportDBtoTemplatePath
+  ( )   as empty-sequence() {
+  let $template := brjx:getConfigValueForKey("template")
+  let $target := brjx:getConfigValueForKey("target")
+  for $step in (1, 2)
+    return switch ($step)
+      case 1 return 
+        for $db in db:list()
+          return db:export($db, $template || "export/" || $db, map { "method": "xml", "cdata-section-elements": "script" })
+      case 2 return file:copy($target || "users.xml", $template || "export/users.xml")
+      default return ()
+};
 
 (:~
  : Strip trailing slash 
@@ -309,16 +496,21 @@ declare function brjx:getContent
     let $bundle := replace(document-uri($doc), "(.*)\.([^\.][^/]*).*$", "$1.$2")
     where $doc//*/record[./path/text() = replace($repository, $brjx:pkg, "") ]
       (:
-      return string((xs:dateTime(db:list-details()[./text() = tokenize($bundle, "/")[2]]//@modified-date/data()) - xs:dateTime('1970-01-01T00:00:00-00:00')) div xs:dayTimeDuration('PT0.001S'))
+      return string((xs:dateTime(db:list-details()[./text() = tokenize($bundle, "/")[2]]//@modified-date/data()) - xs:dateTime("1970-01-01T00:00:00-00:00")) div xs:dayTimeDuration("PT0.001S"))
       :)
       for $r in $doc//*/record
       where $r[./path/text() = replace($repository, $brjx:pkg, "") and ./name/text() = replace($resource, "(.*)\.([^\.]*)", "$1") and ./type/text() = replace($resource, "(.*)\.([^\.]*)", "$2")]
       return if ($r/@update) 
-        then ( string((xs:dateTime($r/@update/data()) - xs:dateTime('1970-01-01T00:00:00-00:00')) div xs:dayTimeDuration('PT0.001S')) )
-        else ( string((xs:dateTime(db:list-details()[./text() = tokenize($bundle, "/")[2]]//@modified-date/data()) - xs:dateTime('1970-01-01T00:00:00-00:00')) div xs:dayTimeDuration('PT0.001S')) )
+        then ( string((xs:dateTime($r/@update/data()) - xs:dateTime("1970-01-01T00:00:00-00:00")) div xs:dayTimeDuration("PT0.001S")) )
+        else ( string((xs:dateTime(db:list-details()[./text() = tokenize($bundle, "/")[2]]//@modified-date/data()) - xs:dateTime("1970-01-01T00:00:00-00:00")) div xs:dayTimeDuration("PT0.001S")) )
 };
 
 
+
+
+
+
+(:
 declare function brjx:getModulesLastModified
   ( )   as element()? { 
   element {"lastModified"} {
@@ -330,6 +522,8 @@ declare function brjx:getModulesLastModified
     )
   }
 };
+:)
+
 
 
 declare function brjx:getCacheItems

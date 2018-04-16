@@ -5,7 +5,7 @@
       <name>getBRjxProperties</name>
       <type>xq</type>
       <version>0.0.1</version>
-      <properties type="array">
+      <properties>
         <property>$dbname</property>
       </properties>
       <script>
@@ -20,7 +20,7 @@ json:serialize(element json {attribute type {'object'}, db:open($dbname)/BRjx/*}
       <name>setBRjxProperty</name>
       <type>xq</type>
       <version>0.0.1</version>
-      <properties type="array">
+      <properties>
         <property>$dbname</property>
         <property>$key</property>
         <property>$value</property>
@@ -39,7 +39,7 @@ insert node (element {$key} {$value}) as first into db:open($dbname)/BRjx/proper
       <name>getRecords</name>
       <type>xq</type>
       <version>0.0.1</version>
-      <properties type="array">
+      <properties>
         <property>$dbname</property>
         <property>$tableid</property>
       </properties>
@@ -63,7 +63,7 @@ return json:serialize(
       <name>script0</name>
       <type>xq</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
 declare variable $dbname as xs:string external;
@@ -76,7 +76,7 @@ json:serialize(element json {attribute type {'array'}, db:open($dbname)/run/reco
       <name>script1</name>
       <type>xq</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
 declare variable $dbname as xs:string external;
@@ -89,7 +89,7 @@ json:serialize(element json {attribute type {'object'}, db:open($dbname)/BRjx/*}
       <name>script2</name>
       <type>xq</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
 declare variable $dbname as xs:string external;
@@ -102,7 +102,7 @@ json:serialize(element json {attribute type {'object'}, db:open($dbname)/main/ap
       <name>script3</name>
       <type>xq</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
 declare variable $dbname as xs:string external;
@@ -126,7 +126,7 @@ json:serialize(element json {
       <name>script4</name>
       <type>xq</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
 let $doc := <simple:root xmlns:simple='http://basex.org/simple'/>

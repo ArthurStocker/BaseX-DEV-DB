@@ -5,7 +5,7 @@
       <name>main</name>
       <type>js</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
 /**
@@ -165,7 +165,7 @@ if (require.main === module && !(typeof JettyServer == 'undefined')) {
       <name>default</name>
       <type>properties</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
 # BRjx_loader defaults
@@ -204,8 +204,7 @@ static.allowDirectoryListing            = false
 workers.repo                            = BRjx_workers
 
 ## watchdog defaults
-watchdog.interval                       = 2500
-watchdog.launcher.timeout               = 5000
+watchdog.interval                       = 5000
 ]]>
       </script>
     </record>
@@ -214,7 +213,7 @@ watchdog.launcher.timeout               = 5000
       <name>jetty</name>
       <type>properties</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
 # JettyServer defaults
@@ -236,7 +235,7 @@ jetty.server.ssl.keymanager.password    = secret
       <name>log4j</name>
       <type>properties</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
 log4j.reset = true
@@ -273,9 +272,8 @@ log4j.appender.console.layout.ConversionPattern = %-4r [%t] %-5p %c %x - %m%n
  log4j.category.BRjx_loader.init.system = DEBUG
 
 ## BRjx workers package
- log4j.category.BRjx_workers.launcher = DEBUG
- log4j.category.BRjx_workers.lib.mounter = DEBUG
- log4j.category.BRjx_workers.lib.monitor = DEBUG
+ log4j.category.BRjx_workers.monitor = DEBUG
+ log4j.category.BRjx_workers.lib.worker = DEBUG
 
 ## BRjx application library package
  log4j.category.BRjx_library.session = DEBUG
@@ -284,7 +282,7 @@ log4j.appender.console.layout.ConversionPattern = %-4r [%t] %-5p %c %x - %m%n
  log4j.category.BRjx_backend_rds.main = DEBUG
 
 ## BRjx application backend amb package
-# log4j.category.BRjx_backend_amb.main = DEBUG
+ log4j.category.BRjx_backend_amb.main = DEBUG
 
 ## BRjx application backend amb package
 # log4j.category.BRjx_backend_evc.main = DEBUG
@@ -296,7 +294,7 @@ log4j.appender.console.layout.ConversionPattern = %-4r [%t] %-5p %c %x - %m%n
       <name>package</name>
       <type>json</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
 {
@@ -335,7 +333,7 @@ log4j.appender.console.layout.ConversionPattern = %-4r [%t] %-5p %c %x - %m%n
       <name>rc0</name>
       <type>js</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
 /**
@@ -387,31 +385,34 @@ module.exports = function() {
     try {
         EventEmitter.call(brjx.cache);
 
-        let Launcher = require(brjx.config.get('workers.repo')).Launcher;
-        let launcher = new Launcher();
-        let resource = getResource(launcher.id);
-        launcher.watchdog();
+        if (!brjx.cache.monitor.lastModified)
+            brjx.cache.monitor.lastModified = 0;
+
+        let Monitor = require(brjx.config.get('workers.repo')).Monitor;
+        let monitor = new Monitor();
+        let resource = getResource(monitor.id);
+        monitor.watchdog();
 
         watchdog = setInterval(function() {
             var startHandler = (new Date()).getTime();
             var lastModified = resource.lastModified();
 
             if (
-                brjx.cache.watchdog * 1 + (brjx.config.get('watchdog.interval') * 2 || 5000) < startHandler ||
-                brjx.cache.lastModified * 1 != lastModified
+                brjx.cache.lastRefresh * 1 + (brjx.config.get('watchdog.interval') * 2 || 5000) < startHandler ||
+                brjx.cache.monitor.lastModified * 1 != lastModified
             ) {
                 gc();
-                log.warn('Restart Launcher from ' + module.resolve('./' + resources[i].name));
-                brjx.cache.emit('worker-restart', 'launcher');
-                brjx.cache.lastModified = lastModified;                 
-                let Launcher = require(brjx.config.get('workers.repo')).Launcher;
-                let launcher = new Launcher();
-                let resource = getResource(launcher.id);
-                launcher.watchdog();
-                brjx.cache.emit('worker-started', 'launcher');
+                log.warn('Restart Monitor from ' + module.resolve('./' + resources[i].name));
+                brjx.cache.emit('worker-restart', 'monitor');
+                brjx.cache.monitor.lastModified = lastModified;                 
+                let Monitor = require(brjx.config.get('workers.repo')).Monitor;
+                let monitor = new Monitor();
+                let resource = getResource(monitor.id);
+                monitor.watchdog();
+                brjx.cache.emit('worker-started', 'monitor');
                 log.warn('Started Launcher from ' + module.resolve('./' + resources[i].name));
             } else {
-                log.debug('Launcher running');
+                log.debug('Monitor running');
             }
                 
             
@@ -431,7 +432,7 @@ module.exports = function() {
       <name>rc1</name>
       <type>js</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
 /**
@@ -491,7 +492,7 @@ module.exports = function() {
       <name>system</name>
       <type>js</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
 /**

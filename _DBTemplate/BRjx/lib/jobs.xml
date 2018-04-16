@@ -5,7 +5,7 @@
       <name>job1</name>
       <type>js</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
 console.log('job 1');

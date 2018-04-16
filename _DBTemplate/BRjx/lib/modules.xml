@@ -6,7 +6,7 @@
       <name>main</name>
       <type>js</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
 export ('BRjxRecord');
@@ -290,7 +290,7 @@ function BRjxQuery(options) {
       <name>default</name>
       <type>properties</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
 # BRjx_record defaults
@@ -306,7 +306,7 @@ operators                     = ['=','>;','<','>=','<=','!=','STARTSWITH','CONTA
       <name>package</name>
       <type>json</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
 {

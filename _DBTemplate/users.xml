@@ -1,0 +1,22 @@
+<users>
+  <user name="admin" permission="admin">
+    <password algorithm="digest">
+      <hash>304bdfb0383c16f070a897fc1eb25cb4</hash>
+    </password>
+    <password algorithm="salted-sha256">
+      <salt>117566899608285</salt>
+      <hash>47ac7d53bd36b09e8d0b327f6b4251145d267db8bd01049ca542f68c35a8aa17</hash>
+    </password>
+  </user>
+  <user name="ManageIT" permission="none">
+    <password algorithm="digest">
+      <hash>bf681ced0399e1d61e3af6241ec1dbc0</hash>
+    </password>
+    <password algorithm="salted-sha256">
+      <salt>25974662384694</salt>
+      <hash>9ae586712cac1325348147cbb1e7fe1488438357c83c3ef8922afcb9634e3aa8</hash>
+    </password>
+    <database pattern="BRjx*" permission="read"/>
+  </user>
+  <info/>
+</users>

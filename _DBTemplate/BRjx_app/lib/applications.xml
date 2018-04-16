@@ -1,40 +1,89 @@
 <applications id="9df4c329-cb85-4fb5-bfa8-abc5d6e9ed2a">
   <records>
 
-    <record id="431142a7-700e-466c-afa2-dcc4b810fe74">
-      <path>BRjx_application/</path>
+    <record id="9fdafd87-2b34-4a59-b68e-6f1b1e5f8303">
+      <path>BRjx_main/</path>
       <name>index</name>
       <type>js</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
+// Main Application
 exports.GET = function(session) {
-        return ['static', ['BRjx_frontend/test.html', 'text/html']];
-    };
-]]>
-      </script>
-    </record>
-    <record id="9fdafd87-2b34-4a59-b68e-6f1b1e5f8303">
-      <path>BRjx_demo/</path>
-      <name>demo</name>
-      <type>js</type>
-      <version>0.0.1</version>
-      <properties type="array"/>
-      <script>
-<![CDATA[
-exports.GET = function(session) {
-        return ['static', ['BRjx_frontend/test.html', 'text/html']];
+        return ['static', ['BRjx_frontend/index.html', 'text/html']];
     };
 ]]>
       </script>
     </record>
     <record id="245335e5-0ea1-4315-95ae-8d778caff926">
-      <path>BRjx_application/</path>
+      <path>BRjx_main/</path>
       <name>scripts</name>
       <type>js</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
+      <script>
+<![CDATA[
+exports.GET = function(session) {
+        var mime = '';
+        var path = session.getRequestPath;
+        var extension = path.replace(/.*\.([^\.]*$)/,'$1');
+
+        if (extension == 'js') {
+            mime = 'text/javascript';
+        } else {
+            mime = 'text/plain';
+        }
+
+        return ['static', [path.replace(/./, ''), mime]];
+    };
+]]>
+      </script>
+    </record>
+    <record id="2c13121c-39a8-4707-a84d-8da32bd2711a">
+      <path>BRjx_main/</path>
+      <name>styles</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties/>
+      <script>
+<![CDATA[
+exports.GET = function(session) {
+        var mime = '';
+        var path = session.getRequestPath;
+        var extension = path.replace(/.*\.([^\.]*$)/,'$1');
+
+        if (extension == 'css') {
+            mime = 'text/css';
+        } else {
+            mime = 'text/plain';
+        }
+
+        return ['static', [path.replace(/./, ''), mime]];
+    };
+]]>
+      </script>
+    </record>
+    <record id="431142a7-700e-466c-afa2-dcc4b810fe74">
+      <path>BRjx_demo/</path>
+      <name>index</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties/>
+      <script>
+<![CDATA[
+exports.GET = function(session) {
+        return ['static', ['BRjx_frontend/demo.html', 'text/html']];
+    };
+]]>
+      </script>
+    </record>
+    <record id="50efce17-cb5b-4a96-8c89-39596c77efc5">
+      <path>BRjx_demo/</path>
+      <name>scripts</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties/>
       <script>
 <![CDATA[
 exports.GET = function(session) {
@@ -53,12 +102,26 @@ exports.GET = function(session) {
 ]]>
       </script>
     </record>
+    <record id="2661e626-0bae-42aa-9202-92abeb21be9d">
+      <path>BRjx_test/</path>
+      <name>index</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties/>
+      <script>
+<![CDATA[
+exports.GET = function(session) {
+        return ['static', ['BRjx_frontend/test.html', 'text/html']];
+    };
+]]>
+      </script>
+    </record>
     <record id="785b22ec-6b40-445f-92e7-5cf5c3e7d088">
-      <path>BRjx_application/</path>
+      <path>BRjx_test/</path>
       <name>cache</name>
       <type>js</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
 exports.GET = function(session) {
@@ -69,11 +132,11 @@ exports.GET = function(session) {
       </script>
     </record>
     <record id="271af332-1b6a-475b-90d9-790820b6d042">
-      <path>BRjx_application/</path>
+      <path>BRjx_test/</path>
       <name>dump</name>
       <type>js</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
 exports.GET = function(session) {
@@ -101,20 +164,6 @@ exports.GET = function(session) {
 
       return this['/'](session);                
   };
-]]>
-      </script>
-    </record>
-    <record id="2661e626-0bae-42aa-9202-92abeb21be9d">
-      <path>BRjx_application/</path>
-      <name>test</name>
-      <type>js</type>
-      <version>0.0.1</version>
-      <properties type="array"/>
-      <script>
-<![CDATA[
-exports.GET = function(session) {
-        return ['static', ['BRjx_frontend/test.html', 'text/html']];
-    };
 ]]>
       </script>
     </record>

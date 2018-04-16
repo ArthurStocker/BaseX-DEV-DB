@@ -1,17 +1,1430 @@
 <components id="a4c51521-8c84-4d69-b0b5-38aa9fed42f2">
   <records>
+    <record id="b1627bba-f601-4f64-9161-3b3f820d2106">
+      <path>styles/</path>
+      <name>license</name>
+      <type>css</type>
+      <version>0.0.1</version>
+      <properties/>
+      <script>
+<![CDATA[
+/*
+ 
+ *  license.css
+ *  cm
+ *
+ *  Created by Arthur Stocker on 04.08.15.
+ *  Copyright (c) 2014 Arthur Stocker. All rights reserved.
+
+ *
+ *  Default CSS for license- elements
+ *
+ */
+
+/* license elements */
+.window-view.license {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    width: 580px;
+    height: 1020px;
+    padding: 0px 0px 0px -290px;
+    background: #d4e6f7;
+    border: 1px solid #2673BF;
+    border-radius: 10px;
+}
+.window-view.license .window-data {
+    position: absolute;
+    top: 25px;
+    bottom: 25px;
+    width: 520px;
+    height: 970px;
+    padding: 0px 30px 0px 30px;
+    font-family: Courier;
+    white-space: pre;
+}
+.window-ctrl {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    background: #d4e6f7;
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: 0px solid #A0A094;
+}
+.window-controls-item:focus, .window-controls-item:hover, .window-controls-item.active {
+    color: #2673BF;
+    background: #d4e6f7;
+}
+]]>
+      </script>
+    </record>
+    <record id="2304bcc6-a008-4efa-af59-e36804b3f5c5">
+      <path>styles/default/</path>
+      <name>base</name>
+      <type>css</type>
+      <version>0.0.1</version>
+      <properties/>
+      <script>
+<![CDATA[
+/*
+ 
+ *  base.css
+ *  cm
+ *
+ *  Created by Arthur Stocker on 04.08.15.
+ *  Copyright (c) 2014 Arthur Stocker. All rights reserved.
+
+ *
+ *  Default CSS for base- elements
+ *
+ */
+
+/* base elements */
+* {
+    margin: 0px;
+    padding: 0px;
+}
+html {
+    height: 100%;
+}
+body {
+    color: #333333;
+    font-size: 12px;
+    font-family: sans-serif;
+    min-height: 100%;
+    display: -webkit-flex;
+    -webkit-flex-flow: column nowrap;
+    display: flex;
+    flex-flow: column nowrap;
+}
+h1 {
+    color: #A0A0A0;
+    font-size: 36px;
+    font-weight: normal;
+}
+h2 {
+    color: #A0A0A0;
+    font-size: 24px;
+    font-weight: normal;
+}
+h3 {
+    padding: 0px 0px 8px 0px;
+    color: #A0A0A0;
+    font-size: 18px;
+    font-weight: normal;
+}
+h4 {
+    padding: 0px 0px 8px 0px;
+    color: #A0A0A0;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: italic;
+}
+h5 {
+    padding: 0px 0px 8px 0px;
+    color: #2673BF;
+    font-size: 18px;
+    font-weight: normal;
+}
+h6 {
+    padding: 0px 0px 8px 0px;
+    color: #2673BF;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: italic;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+a:focus, a:hover {
+    color: #2673BF;
+}
+]]>
+      </script>
+    </record>
+    <record id="d8389002-3714-424f-9170-e1fa7b561df8">
+      <path>styles/default/</path>
+      <name>font</name>
+      <type>css</type>
+      <version>0.0.1</version>
+      <properties/>
+      <script>
+<![CDATA[
+/*
+ 
+ *  font.css
+ *  cm
+ *
+ *  Created by Arthur Stocker on 04.08.15.
+ *  Copyright (c) 2014 Arthur Stocker. All rights reserved.
+
+ *
+ *  Default CSS for fonts
+ *
+ */
+
+/* font definition */
+.special-font-42 {
+    font-size: 42px;
+    font-family:'Libre Baskerville', serif;
+}
+.special-font-36 {
+    font-size: 36px;
+    font-family:'Libre Baskerville', serif;
+}
+.special-font-18 {
+    font-size: 18px;
+    font-family:'Libre Baskerville', serif;
+}
+.special-font-14 {
+    font-size: 14px;
+    font-family:'Libre Baskerville', serif;
+}
+.special-font-12 {
+    font-size: 12px;
+    font-family:'Libre Baskerville', serif;
+}
+.special-font-6 {
+    font-size: 6px;
+    font-family:'Libre Baskerville', serif;
+}
+.italic-font-42bold {
+    color: #2673BF;
+    font-size: 42px;
+    font-style: italic;
+    font-weight: bold;
+}
+.italic-font-36bold {
+    color: #2673BF;
+    font-size: 36px;
+    font-style: italic;
+    font-weight: bold;
+}
+.italic-font-18bold {
+    color: #2673BF;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: bold;
+}
+.italic-font-14bold {
+    color: #2673BF;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: bold;
+}
+.italic-font-12bold {
+    color: #2673BF;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: bold;
+}
+.italic-font-6bold {
+    color: #2673BF;
+    font-size: 6px;
+    font-style: italic;
+    font-weight: bold;
+}
+.normal-font-42 {
+    font-size: 42px;
+}
+.normal-font-36 {
+    font-size: 36px;
+}
+.normal-font-18 {
+    font-size: 18px;
+}
+.normal-font-14 {
+    font-size: 14px;
+}
+.normal-font-12 {
+    font-size: 12px;
+}
+.normal-font-6 {
+    font-size: 6px;
+}
+]]>
+      </script>
+    </record>
+    <record id="083a2366-671c-4818-b2a1-27ccfb78d575">
+      <path>styles/default/</path>
+      <name>layout</name>
+      <type>css</type>
+      <version>0.0.1</version>
+      <properties/>
+      <script>
+<![CDATA[
+/*
+ 
+ *  layout.css
+ *  cm
+ *
+ *  Created by Arthur Stocker on 04.08.15.
+ *  Copyright (c) 2014 Arthur Stocker. All rights reserved.
+
+ *
+ *  Default CSS for layout
+ *
+ */
+
+/* layout elements */
+body > div {
+    position: absolute;
+    width: 100%;
+    z-index: 900000;
+}
+header, main, footer {
+    background: white;
+    -webkit-flex: 0 1 auto;
+    flex: 0 1 auto;
+}
+main {
+    display: -webkit-flex;
+    -webkit-flex-flow: row nowrap;
+    display: flex;
+    flex-flow: row nowrap;
+    -webkit-flex: 2 1 auto;
+    flex: 2 1 auto;
+}
+nav, aside, article, section {
+    margin: 10px 5px 10px 5px;
+    padding: 10px;
+    background: white;
+}
+nav {
+    -webkit-flex: 1 1 1%;
+    flex: 1 1 1%;
+}
+aside {
+    -webkit-flex: 2 1 1%;
+    flex: 2 1 1%;
+}
+article {
+    -webkit-flex: 5 1 1%;
+    flex: 5 1 1%;
+}
+section {
+    -webkit-flex: 10 1 1%;
+    flex: 10 1 1%;
+}
+nav ul {
+    padding: 2px 0px 0px 10px;
+    text-align: left;
+}
+nav li {
+    padding: 2px;
+    text-transform: uppercase;
+    list-style: none;
+}
+nav a {
+    color: black;
+    text-decoration: none;
+}
+nav a:focus, nav a:hover, nav a:focus, nav a:hover {
+    color: #2673BF;
+}
+header nav, footer nav {
+    margin: 0px;
+    padding: 0px;
+    background: #F8F8F8;
+    border-top: 1px solid #A0A0A0;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid #A0A0A0;
+}
+header nav div {
+    display: -webkit-flex;
+    -webkit-justify-content: flex-start;
+    display: flex;
+    justify-content: flex-start;
+}
+footer nav div {
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+}
+header nav ul, footer nav ul {
+    padding: 10px;
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+    display: flex;
+    flex-direction: row;
+}
+header nav li, footer nav li {
+    padding: 0px 40px 0px 40px;
+    /*-webkit-flex: 1 1 0;
+    flex: 1 1 0;*/
+}
+header nav li a, footer nav li a {
+    padding: 10px;
+    font-weight: bold;
+}
+header nav li a:focus, header nav li a:hover, footer nav li a:focus, footer nav li a:hover {
+    margin: 0px;
+    padding: 10px;
+    color: black;
+    background: #E8E8E8;
+}
+section nav ul {
+    padding: 10px 40px 10px 0px;
+    display: inline-block;
+    text-align: left;
+}
+section nav li {
+    padding: 2px 0px 2px 0px;
+    display: list-item;
+    text-align: left;
+}
+section nav li a {
+    padding: 0px 10px 0px 10px;
+    text-align: left;
+    font-weight: bold;
+    text-transform: none;
+}
+section nav li a:focus, section nav li a:hover {
+    padding: 0px 10px 0px 10px;
+    color: #2673BF;
+    text-align: left;
+    background: transparent;
+}
+]]>
+      </script>
+    </record>
+    <record id="ed5434eb-ef47-4172-b4cc-a78cec9d7d5d">
+      <path>styles/default/component/</path>
+      <name>flayout</name>
+      <type>css</type>
+      <version>0.0.1</version>
+      <properties/>
+      <script>
+<![CDATA[
+/*
+ 
+ *  flayout.css
+ *  cm
+ *
+ *  Created by Arthur Stocker on 04.08.15.
+ *  Copyright (c) 2014 Arthur Stocker. All rights reserved.
+
+ *
+ *  CSS for flayout
+ *
+ */
+
+/* used in Header, Footer */
+.flyout-view {
+    border: 0px;
+    margin-top: 10px;
+    padding-top: 10px;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+.flyout-area {
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+    -webkit-justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.flyout-view li {
+    list-style: none;
+    text-decoration: none;
+    display: inline-block;
+}
+.flyout-view a, .flyout-view span.note {
+    padding: 10px;
+    color: #A0A0A0;
+    display: inline-block;
+    text-decoration: none;
+}
+.flyout-view a:focus, .flyout-view a:hover {
+    color: #2673BF;
+}
+.flyout-data[data-flayoutposition="left"] {
+    line-height: 50px;
+    vertical-align: middle;
+}
+.flyout-data[data-flayoutposition="center"] {
+    line-height: 50px;
+    vertical-align: middle;
+}
+.flyout-data[data-flayoutposition="right"] {
+    line-height: 50px;
+    vertical-align: middle;
+}
+]]>
+      </script>
+    </record>
+    <record id="ae669fe2-b389-4fbd-a588-95f94d6e958b">
+      <path>styles/default/component/</path>
+      <name>navigation</name>
+      <type>css</type>
+      <version>0.0.1</version>
+      <properties/>
+      <script>
+<![CDATA[
+/*
+ 
+ *  navigation.css
+ *  cm
+ *
+ *  Created by Arthur Stocker on 04.08.15.
+ *  Copyright (c) 2014 Arthur Stocker. All rights reserved.
+
+ *
+ *  CSS for navigation
+ *
+ */
+
+/* persistent navigation; Header, Main, Footer */
+aside + .persist-area, section + .persist-area {
+    position: relative;
+}
+.persist-ctrl {
+    position: fixed;
+    visibility: hidden;
+}
+/* context navigation; Main */
+.menu-view {
+    border-right: 1px solid #A0A0A0;
+    /*
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+    -webkit-justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    */
+}
+.menu-ctrl {
+    display: none;
+}
+.menu-item {
+    color: #333333;
+}
+.menu-item:focus, .menu-item:hover, .menu-item.active {
+    color: #2673BF;
+}
+.menu-item-pulldown-ctrl.option:hover, .menu-item-pulldown-ctrl.option:hover {
+    background: #E8E8E8;
+}
+.menu-item-pulldown-ctrl.context:focus, .menu-item-pulldown-ctrl.context:hover {
+    color: #2673BF;
+}
+.menu-item-pulldown-ctrl-closed .menu-pulldown-view {
+    display: none;
+}
+
+
+.menu-pulldown-view {
+    /*position: relative;*/
+}
+.menu-pulldown-view.option {
+    position: absolute;
+    width: 100%;
+    top: 34px;
+    left: 0px;
+    z-index: 999999;
+}
+.menu-pulldown-view.context {
+    margin: 0px;
+    padding: 0px 0px 0px 10px;
+}
+.menu-pulldown-area {
+    /*justify-content: flex-start;*/
+}
+.menu-pulldown-ctrl {
+    display: none;
+}
+/*
+.menu-pulldown-ctrl.option {
+    margin: -10px 30px -10px 30px;
+    padding: 10px 10px 10px 10px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+*/
+
+.horizontally {
+    border-right: 0px;
+}
+]]>
+      </script>
+    </record>
+    <record id="fa617a9f-0a8a-47d3-a7db-15c0887dc78d">
+      <path>styles/default/component/</path>
+      <name>window</name>
+      <type>css</type>
+      <version>0.0.1</version>
+      <properties/>
+      <script>
+<![CDATA[
+/*
+ 
+ *  window.css
+ *  cm
+ *
+ *  Created by Arthur Stocker on 04.08.15.
+ *  Copyright (c) 2014 Arthur Stocker. All rights reserved.
+
+ *
+ *  CSS for window controls
+ *
+ */
+ 
+/* window container */
+.window-layer {
+}
+
+/* used in window div to display controls */
+.window-view {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    width: 580px;
+    height: 1020px;
+    margin: 0px 0px 0px -290px;
+    background: #F8F8F8;
+    border: 1px solid #A0A094;
+    border-radius: 10px;
+}
+.window-view-closed {
+    display: none;
+}
+.window-area {
+}
+.window-data {
+    position: absolute;
+    top: 25px;
+    bottom: 25px;
+    width: 520px;
+    height: 970px;
+    padding: 0px 30px 0px 30px;
+    overflow: scroll;
+}
+.window-ctrl {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    background: #F8F8F8;
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: 1px solid #A0A094;
+}
+.window-wait {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 46px;
+    height: 36px;
+    margin: -18px 0px 0px -23px;
+}
+.window-controls-view {
+    margin: 0px;
+    padding: 2px 10px 2px 10px;
+    background: transparent;
+}
+.window-controls-area {
+    display: flex;
+    justify-content: space-between;
+}
+.window-controls-data {
+    padding: 2px 5px 2px 5px;
+    display: flex;
+    flex-direction: row;
+}
+.window-controls-ctrl {
+    display: none;
+}
+.window-controls-item {
+    display: inline;
+}
+.window-controls-item:focus, .window-controls-item:hover, .window-controls-item.active {
+    background: #E8E8E8;
+}
+]]>
+      </script>
+    </record>
+    <record id="76490214-c0a5-4908-9143-bbaf942a4ed7">
+      <path>styles/default/component/</path>
+      <name>message</name>
+      <type>css</type>
+      <version>0.0.1</version>
+      <properties/>
+      <script>
+<![CDATA[
+/*
+ 
+ *  message.css
+ *  cm
+ *
+ *  Created by Arthur Stocker on 04.08.15.
+ *  Copyright (c) 2014 Arthur Stocker. All rights reserved.
+
+ *
+ *  CSS for message controls
+ *
+ */
+ 
+/* message container */
+.message-layer {
+    padding: 5px 25px 5px 25px;
+    z-index: 999999;
+}
+ 
+/* used in message div to display controls */
+.message-view {
+    margin: 5px 0px 5px 0px;
+    border-radius: 10px;
+}
+.message-view-closed {
+    display: none;
+}
+.message-area {
+    height: 60px;
+    display: flex;
+}
+.message-data {
+    /*top: 25px;*/
+    width: 95%;
+    height: 50px;
+    /*margin: 0px 0px 25px 0px;*/
+    padding: 5px 2px 5px 10px;
+    font-family: Courier;
+    border: 0px;
+    border-radius: 10px 0px 0px 10px;
+    flex: 1 1 95%;
+    text-align: left;
+
+    line-height: 50px;
+}
+.message-ctrl {
+    /*top: 0px;*/
+    left: 95px;
+    width: 5%;
+    height: 100%;
+    border: 0px;
+    border-radius: 0px 10px 10px 0px;
+    flex: 1 1 5%;
+    text-align: center;
+    color: #F8F8F8;
+    text-shadow: 0px 0px 2px #FF0000;
+}
+.message-ctrl #icon {
+    line-height: 57px;
+}
+.message-wait {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 46px;
+    height: 36px;
+    margin: -18px 0px 0px -23px;
+    display: none;
+}
+
+.message-type-red {
+    background: #ffcccc;
+    border: 1px solid #ff0000;
+}
+]]>
+      </script>
+    </record>
+    <record id="e0998754-00f2-4895-bd9f-0ebb1d694543">
+      <path>scripts/default/component/</path>
+      <name>flayout</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties/>
+      <script>
+<![CDATA[
+/*
+ * CSS-TRICKS Persistent Header/Footer
+ *
+ */
+function UpdatePersistView() {
+    $('#persist-view-top').each(function() {
+        var el = $('.persist-area', this),
+            offset = el.offset(),
+            height = el.height(),
+            scrollTop = $(window).scrollTop(),
+            persistSrc = $('.persist-src', this),
+            persistCtrl = $('.persist-ctrl', this),
+            persistData = $('.persist-data', persistCtrl);
+
+            if ((scrollTop > offset.top)) { /* && (scrollTop < offset.top + el.height()) */
+                persistCtrl.css({
+                    "visibility": "visible"
+                });
+            } else {
+                persistCtrl.css({
+                    "visibility": "hidden"
+                });
+            };
+            
+            persistData.css({
+                "width": persistSrc.width()
+            });
+    });
+
+    $('#persist-view-bottom').each(function() {
+        var el = $('.persist-area', this),
+            offset = el.offset(),
+            height = el.height(),
+            scrollTop = $(window).scrollTop() + $(window).height(),
+            persistSrc = $('.persist-src', this),
+            persistCtrl = $('.persist-ctrl', this),
+            persistData = $('.persist-data', persistCtrl);
+
+            if ((scrollTop < offset.top + height)) { /* && (scrollTop < offset.top + el.height()) */
+                persistCtrl.css({
+                    "visibility": "visible"
+                });
+            } else {
+                persistCtrl.css({
+                    "visibility": "hidden"
+                });
+            };
+
+            persistData.css({
+                "width": persistSrc.width()
+            });
+    });
+}
+
+// DOM Ready
+$(function() {
+    var persistData;
+
+    $('#persist-view-top').each(function() {
+        persistData = $('.persist-area', this);
+        persistData.addClass("persist-src");
+        persistData
+            .before(persistData.clone())
+            .css({
+            "top": "0px",
+            "width": persistData.width(),
+            "z-index": "899999"
+        })
+            .addClass("persist-ctrl")
+            .removeClass("persist-src");
+    });
+
+    $('#persist-view-bottom').each(function() {
+        persistData = $('.persist-area', this);
+        persistData.addClass("persist-src");
+        persistData
+            .before(persistData.clone())
+            .css({
+            "bottom": "0px",
+            "width": persistData.width(),
+            "z-index": "899999"
+        })
+            .addClass("persist-ctrl")
+            .removeClass("persist-src");
+    });
+
+    $(window)
+        .scroll(UpdatePersistView)
+        .trigger("scroll");
+});
+]]>
+      </script>
+    </record>
+    <record id="ee1c942b-dd6b-4733-b96c-41524171ef3a">
+      <path>scripts/default/component/</path>
+      <name>navigation</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties/>
+      <script>
+<![CDATA[
+/*
+ * Menu Actions
+ *
+ */
+var Actions = {"window-controls": {}, "menu":{}};
+//
+Actions['window-controls']['menuaction'] = Actions['menu']['menuaction'] = function(e) {
+    var el = $(e.target);
+
+    if (el.attr('id') == 'icon') 
+        el = $(el).parent();
+
+    $('[class~="menu-item"][data-uuid=' + el.attr('data-uuid') + '][data-unit=' + el.attr('data-unit') +'][data-mode|="menu"]').each(function() {
+        $(this).removeClass('active');
+        if ($(this).attr('data-mode') == 'menu-item') {
+            $(this).find('#icon').removeClass($(this).attr('data-active'));
+            $(this).find('#icon').addClass($(this).attr('data-fallow'));
+        }
+    });
+    
+    if (el.attr('data-mode') == 'menu-item' || el.attr('data-mode') == 'menu-pulldown') {
+        $('[name=' + el.attr('name') + ']').toggleClass('active');
+    }
+    
+    if (el.attr('data-mode') == 'menu-item' || el.attr('data-mode') == 'button') {
+        $('[name=' + el.attr('name') + ']').find('#icon').toggleClass(el.attr('data-fallow'));
+        $('[name=' + el.attr('name') + ']').find('#icon').toggleClass(el.attr('data-active'));
+    }
+
+    $('[class~="menu-item"][data-uuid=' + el.attr('data-uuid') + '][data-unit=' + el.attr('data-unit') +'][data-mode="menu-pulldown"]').each(function() {
+        if ($(this).attr('class').indexOf('active') == -1 && $(this).attr('data-state') == 'active')
+            Actions['menu']['togglepulldown']({target:this});
+    });
+    
+    if (debug) console.log("%cmenuaction action receved: %o", "color: red; font-weight: bold; font-style: italic", el);
+
+    return false;
+}
+// Collapsed Pulldown
+Actions['menu']['togglepulldown'] = function (e) {
+    var el = $(e.target);
+
+    if (el.attr('id') == 'icon') 
+        el = $(el).parent();
+    
+    if (el.attr('data-state') == 'active') {
+        $('[data-name=' + el.attr('data-name') + '] .menu-pulldown-view').hide('fast', function() {
+            UpdatePersistView()
+        });
+        $('[data-name=' + el.attr('data-name') + '] > #icon').toggleClass(el.attr('data-fallow'));
+        $('[data-name=' + el.attr('data-name') + '] > #icon').toggleClass(el.attr('data-active'));
+        $('[data-name=' + el.attr('data-name') + ']').find('li').removeClass('active');
+        $('[data-name=' + el.attr('data-name') + ']').attr('data-state', 'fallow');
+    } else {
+        $('[data-name=' + el.attr('data-name') + '] .menu-pulldown-view').show('fast', function() {
+            UpdatePersistView()
+        });
+        $('[data-name=' + el.attr('data-name') + '] > #icon').toggleClass(el.attr('data-active'));
+        $('[data-name=' + el.attr('data-name') + '] > #icon').toggleClass(el.attr('data-fallow'));
+        $('[data-name=' + el.attr('data-name') + ']').attr('data-state', 'active');
+    }
+    
+    if (debug) console.log("%ctoggle pulldown: %o", "color: red; font-weight: bold; font-style: italic;", el); //TODO: remove if templating is implemented
+}
+// 
+Actions['menu']['connection'] = function(e) {
+    var el = $(e.target);
+
+    if (el.attr('id') == 'icon') 
+        el = $(el).parent();
+    
+    if (el.attr('data-state') == 'active') {
+        socket.close();
+        el.attr('data-state', 'fallow')
+    } else {
+        socket.open();
+        el.attr('data-state', 'active')
+    }
+    
+    if (debug) console.log("%cconnection action receved: %o", "color: red; font-weight: bold; font-style: italic", el);
+}
+
+
+// 
+Actions['menu']['openwindow'] = function(e) {  
+    var el = $(e.target);
+
+    if (el.attr('id') == 'icon') 
+        el = $(el).parent();
+    
+    $('[name~="window-view"][data-uuid="' + el.attr('data-target') + '"]').toggleClass('window-view-closed');
+    
+    if (debug) console.log("%copenwindow action receved: %o %o", "color: red; font-weight: bold; font-style: italic", el, '[name~="window-view"][data-uuid="' + el.attr('data-target') + '"]');
+}
+// 
+Actions['menu']['showgnulicense'] = function(e) {
+    var el = $(e.target);
+
+    if (el.attr('id') == 'icon') 
+        el = $(el).parent();
+        
+    if (!licenseloaded) socket.emit('getContentFromURL', {url:el.attr('data-source'), target:el.attr('data-target')})
+    licenseloaded = true;
+    
+    if (debug) console.log("%cshowgnulicense action receved: %o %o", "color: red; font-weight: bold; font-style: italic", el, '[name~="window-view"][data-uuid="' + el.attr('data-target') + '"]');
+}
+
+// 
+Actions['window-controls']['closewindow'] = function(e) {
+    var el = $(e.target);
+
+    if (el.attr('id') == 'icon') 
+        el = $(el).parent();
+    
+    $('[name~="window-view"][data-uuid="' + el.attr('data-target') + '"]').toggleClass('window-view-closed'); 
+    
+    if (debug) console.log("%cclosewindow action receved: %o %o", "color: red; font-weight: bold; font-style: italic", el, '[name~="window-view"][data-uuid="' + el.attr('data-target') + '"]');
+}
+
+
+/*
+ * Init Window
+ *
+ */
+function initMessage(selector, target) {
+    $(selector + ' [name=message-data]').append($('<div />').html(target.message));
+
+    setTimeout(function () { 
+        $(selector).fadeOut(target.init.fadeOut, function () {
+            $(this).remove();
+        });
+    }, target.init.delay);
+
+    if (debug) console.log("%cmessage initialized: %o %o", "color: red; font-weight: bold; font-style: italic", selector, target);
+};
+
+/*
+ * Init Window
+ *
+ */
+function initWindow(selector, target) {
+    // init by init function
+    var init = window[target.controls.init.fn];
+
+    if (typeof init === "function")
+        init(selector + ' ' + target.controls.init.item, '');
+    
+    $(selector).toggleClass('window-view-closed'); 
+    $('[data-unit="' + target.suffix + '-button"]').attr('data-target', $(selector).attr('data-uuid'));
+    
+    if (debug) console.log("%cwindow initialized: %o %o %o %O", "color: orange; font-weight: bold; font-style: italic", $(selector), selector, '[data-unit="' + target.suffix + '-button"]', target);
+}
+
+/*
+ * Bind Action
+ *
+ */
+function bindAction(selector, target) {
+    $(selector).each(function () {
+        if (typeof $(this).attr('data-action') !== 'undefined') {
+            var item = $(this);
+            var events = {};
+
+            Object.keys(JSON.parse(item.attr('data-action'))).forEach(function(eh, index, array) {
+                Object.keys(JSON.parse(item.attr('data-action'))[eh]).forEach(function(el, index, array) {
+                    events[el] = Actions[item.attr('data-type')][JSON.parse(item.attr('data-action'))[eh][el]];
+                    item.bind(events);
+                });
+            });
+
+            if (debug) console.log("%caction bound: %o", "color: orange; font-weight: bold; font-style: italic", item);
+        }
+    });
+}
+
+// DOM Ready
+$(function() {
+    bindAction('.menu-item', '');
+});
+]]>
+      </script>
+    </record>
+    <record id="192aa3eb-60ca-411c-8c6b-fa67f1b15ae4">
+      <path>scripts/</path>
+      <name>ui</name>
+      <type>js</type>
+      <version>0.0.1</version>
+      <properties/>
+      <script>
+<![CDATA[
+/**
+ * @fileOverview Register the Repositories with the RingoJS Engine while reading the RepoPathes from the BaseX DB on the Server.
+ * @author Arthur Stocker
+ * @version 0.0.1
+ */
+
+//"use strict";
+
+/**
+ * const ...
+ */
+
+
+/**
+ * var ...
+ */
+
+
+/**
+ * default values
+ */
+var debug = true;
+var config = null;
+var licenseloaded = false;
+
+//var socket = null;
+
+/**
+ * Create a ui object
+ * @see -
+ * @since 0.0.1
+ * @returns {object} ui
+ */
+function UI() {
+    if (!(this instanceof UI)) {
+        return new UI(arguments);
+    }
+
+    // local variables
+    self = this;
+
+    //setting variables
+    //self.url = 'http://' + args.host + ':' + args.port;
+
+    //socket = io(self.url, {
+    //    transports: ['polling']
+    //}); // rememberTransport: false,  'websocket', 
+
+    self.uuid = function(data) {
+        if (debug) console.log("%cReceived UUID response from Server: %O", "color: green; font-weight: bold; font-style: italic", data);
+    }
+
+    self.stdout = function(data) {
+        data = '<span style="color: green; font-weight: bold;">' + data + '</span>';
+
+        if (debug) console.log("%cReceived STDOUT response from Server: %O", "color: green; font-weight: bold; font-style: italic", data);
+        var message = config.components.message;
+
+        message[0].message = data;
+        addComponent({ message });
+    }
+
+    self.stderr = function(data) {
+        if (debug) console.log("%cReceived STDERR response from Server: %O", "color: green; font-weight: bold; font-style: italic", data);
+    }
+
+    self.modified = function(data) {
+        if (debug) console.log("%cReceived MODIFIED response from Server: %O", "color: green; font-weight: bold; font-style: italic", data);
+        document.getElementById('date').textContent = (new Date(data.stat.mtime));
+    }
+
+    self.getConfig = function(data) {
+        if (debug) console.log("%cReceived GETCONFIG response from Server: %O", "color: green; font-weight: bold; font-style: italic", data);
+        config = data.config;
+        if (config) {
+            if(config.components) addComponent(config.components);
+        }
+    }
+
+    self.getContentFromURL = function(data) {
+        if (debug) console.log("%cReceived GET CONTENT FROM URL response from Server: %O", "color: green; font-weight: bold; font-style: italic", data);
+        $('[name="window-wait"][data-uuid="' + data.target + '"]').hide();
+        $('[name="window-data"][data-uuid="' + data.target + '"]').text(data.content);
+    }
+    
+    self.connect = function() {
+        if (debug) console.log("%cConnected", "color: blue; font-weight: bold; font-style: italic");
+        socket.emit('modified', {path:"/index.html"});
+        if (!config) 
+            socket.emit('getConfig', {})
+    }
+
+    self.disconnect = function() {
+        if (debug) console.log("%cDisconnect", "color: blue; font-weight: bold; font-style: italic");
+    }
+    
+/*
+element.parentNode    Returns the parent node of an element
+element.parentElement    Returns the parent element node of an element
+
+element.childNodes    Returns a collection of an element's child nodes (including text and comment nodes)
+element.children    Returns a collection of an element's child element (excluding text and comment nodes)
+
+
+element.hasChildNodes()    Returns true if an element has any child nodes, otherwise false
+    element.childElementCount    Returns the number of child elements an element has
+
+
+element.firstChild    Returns the first child node of an element
+element.firstElementChild    Returns the first child element of an element
+
+element.nextSibling    Returns the next node at the same node tree level
+element.nextElementSibling    Returns the next element at the same node tree level
+
+element.previousSibling    Returns the previous node at the same node tree level
+element.previousElementSibling    Returns the previous element at the same node tree level
+
+element.lastChild    Returns the last child node of an element
+element.lastElementChild	Returns the last child element of an element
+
+
+element.appendChild()    Adds a new child node, to an element, as the last child node
+    element.cloneNode()    Clones an element
+    element.insertBefore()    Inserts a new child node before a specified, existing, child node
+    element.replaceChild()    Replaces a child node in an element
+element.removeChild()    Removes a child node from an element
+
+
+element.innerHTML    Sets or returns the content of an element
+element.textContent    Sets or returns the textual content of a node and its descendants
+*/
+
+    self.elementWithIdHasAttribute = function(data) {
+        var value = document.getElementById(data.id).hasAttribute(data.name);
+        var response = {
+            type: 'Boolean',
+            id: data.id,
+            name: data.name,
+            value: value
+        };
+        socket.emit('elementWithIdHasAttribute', response);
+    }
+
+    self.getAttributeOfElementWithId = function(data) {
+        var value = document.getElementById(data.id).getAttribute(data.name);
+        var response = {
+            type: 'Any',
+            id: data.id,
+            name: data.name,
+            value: value
+        };
+        socket.emit('attributeValueOfElementWithId', response);
+    }
+
+    self.setAttributeOfElementWithId = function(data) {
+        try {
+            document.getElementById(data.id).setAttribute(data.name, data.value);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    self.removeAttributeOfElementWithId = function(data) {
+        try {
+            document.getElementById(data.id).removeAttribute(data.name);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    return self;
+    
+/*
+element.toString()    Converts an element to a string
+
+
+element.addEventListener()    Attaches an event handler to the specified element
+element.removeEventListener()    Removes an event handler that has been attached with the addEventListener() method
+
+
+
+document.readyState    Returns the (loading) status of the document
+document.strictErrorChecking    Sets or returns whether error-checking is enforced or not
+
+document.hasFocus()    Returns a Boolean value indicating whether the document has focus
+document.activeElement    Returns the currently focused element in the document
+
+document.doctype    Returns the Document Type Declaration associated with the document
+document.documentElement    Returns the Document Element of the document (the <html> element)
+document.head    Returns the <head> element of the document
+document.body    Sets or returns the document's body (the <body> element)
+
+document.links    Returns a collection of all <a> and <area> elements in the document that have a href attribute
+document.scripts    Returns a collection of <script> elements in the document
+
+
+document.importNode()    Imports a node from another document
+document.createAttribute()    Creates an attribute node
+document.createComment()	Creates a Comment node with the specified text
+document.createDocumentFragment()	Creates an empty DocumentFragment node
+document.createElement()	Creates an Element node
+document.createTextNode()	Creates a Text node
+
+
+document.addEventListener()    Attaches an event handler to the document
+document.removeEventListener()    Removes an event handler from the document (that has been attached with the addEventListener() method)
+
+
+document.write()    Writes HTML expressions or JavaScript code to a document
+document.writeln()	Same as write(), but adds a newline character after each statement
+*/
+}
+
+function UUID() {
+    var d = Date.now();
+
+    if(window.performance && typeof window.performance.now === "function"){
+        d += performance.now(); //use high-precision timer if available
+    }
+
+    var uuid = 'øøøøøøøø-øøøø-4øøø-Øøøø-øøøøøøøøøøøø'.replace(/[øØ]/g,
+        function(c) {
+            var r = (d + Math.random()*16)%16 | 0;
+
+            d = Math.floor(d/16);
+            return (c == 'ø' ? r : (r&0x3|0x8)).toString(16);
+        });
+    return uuid;
+}
+
+function addComponent(components) {
+    var args = Args([
+        { options: Args.OBJECT | Args.required, _default: {} }
+    ], arguments);
+    self = this;
+
+    Object.keys(components).forEach(function (type, index, array) {
+
+        components[type].forEach(function (component, cIndex, cArray) {
+            var selector = '';
+            var parent = $(component.init.parent);
+
+            component.uuid = UUID();
+            
+            if (debug) console.log("%cadd template to: %o", "color: purple; font-weight: bold; font-style: italic;", parent);
+            selector += createComponent(type, component, parent, '', (component.suffix ? component.suffix : ''));
+
+            if (debug) console.log("%cinit component: %o with %O", "color: purple; font-weight: bold; font-style: italic;", selector, component.init);
+            // init by init function
+            var init = window[component.init.fn];
+    
+            if (typeof init === "function")
+                init(selector + (component.init.item ? ' ' + component.init.item : ''), component);
+        }, this);
+    }, this);
+
+    function createComponent(type, component, parent, classPrefix, classSuffix) {
+        var temp = document.importNode($('[data-template~="' + type + '-template"]').prop('content'), true),
+            parts = [
+                $(temp).find('#view'),
+                $(temp).find('#area'),
+                $(temp).find('#data'),
+                $(temp).find('#ctrl'),
+                $(temp).find('#wait')
+            ],
+            tempname = null;
+
+        parts.forEach(function (part, pIndex, pArray) {
+            var id = $(part).attr('id');
+
+            $(part).removeAttr('id');
+
+            if (pIndex == 0)
+             tempname = '[name=' + type + '-' + id + '][data-uuid=' + component.uuid + ']';
+
+            if (pIndex != 2 || component.controls || component.message)
+                $(part).attr('name', type + '-' + id);
+            
+            $(part).attr('class', type + (classPrefix ? '-' + classPrefix : '') + '-' + id + (pIndex == 0 && classSuffix ? ' ' + classSuffix : ''));
+            $(part).attr('data-uuid', component.uuid);
+            $(part).attr('data-type', type);
+
+            if (pIndex == 2) {
+                if (component.groups) {
+                    Object.keys(component.groups).forEach(function (unit, fIndex, fArray) {
+                        var el = $(part).clone();
+                        $(parts[pIndex-1]).append(el);
+
+                        el.attr('name', type + '-' + id + '-' + unit);
+                        el.attr('data-unit', unit);
+                        el.contents().each(function (nIndex, child) {
+                            if (child.nodeType == 8 && child.nodeValue.indexOf('-template') > -1) {
+                                // child is a comment
+                                component.groups[unit].forEach(function (item, iIndex, iArray) {
+                                    createItem(type, component, el, unit, item, iIndex, child.nodeValue.trim());
+                                }, this);
+                                $(child).remove();
+                            }
+                        });
+                    }, this);
+
+                    $(part).remove();
+                }
+            }
+
+            if (pIndex == 3) {
+                if (component.controls)
+                    $(part).contents().each(function (nIndex, child) {
+                        if (child.nodeType == 8 && child.nodeValue.indexOf('-template') > -1) {
+                            // child is a comment
+                            component.controls.uuid = UUID();
+                            component.controls.target = component.uuid;
+                            createComponent(child.nodeValue.trim().replace('-template', ''), component.controls, $(part), '', (component.controls.suffix ? component.controls.suffix : ''));
+                            $(child).remove();
+                        }
+                    });
+
+                if (component.groups)
+                    $(part).find('#icon').attr('class', $(part).find('#icon').attr('class') + component.class.ctrl);
+            }
+        }, this);
+
+        switch (component.insert) {
+            case "asFirst":
+                $(parent).prepend(temp);
+                break;
+            case "aslast":
+            default:
+                $(parent).append(temp);
+        }
+
+        return tempname;
+    }
+
+    function createItem(type, component, parent, unit, item, index, template) {
+        var temp = document.importNode($('[data-template~="' + template + '"]').prop('content'), true),
+            parts = [
+                $(temp).find('#item')
+            ];
+
+            parts.forEach(function (part, pIndex, pArray) {
+                var id = $(part).attr('id');
+
+                $(part).removeAttr('id');
+            
+                $(part).attr('name', type + '-' + id + '-' + unit + '-' + index);
+
+                $(part).attr('class', component.class.item + (item.state == 'active' && item.mode == 'menu-item' ? ' ' + item.state : ''));
+                $(part).attr('data-uuid', component.uuid);
+                $(part).attr('data-type', type);
+                $(part).attr('data-unit', unit);
+                $(part).attr('data-mode', item.mode);
+                $(part).attr('data-action', JSON.stringify(item.action));
+                $(part).attr('data-active', item.active);
+                $(part).attr('data-fallow', item.fallow);
+
+                if (item.state)
+                    $(part).attr('data-state', item.state);
+
+                $(part).append($('<div />').html(item.text).text());
+
+                //$(part).find('#icon').attr('name', type + '-' + id + '-' + unit + '-' + index);
+                $(part).find('#icon').toggleClass(item[item.state] || item.fallow);
+
+                if (item.mode == 'button' && component.target) {
+                    $(part).attr('data-target', component.target);
+                }
+
+                if (item.mode == 'menu-pulldown' && item.groups) {
+                    $(part).attr('class', $(part).attr('class') + (item.suffix ? ' ' + item.suffix : ''));
+                    $(part).attr('data-name', item.type);
+                    item.uuid = UUID();
+                    item.class = component.class;
+                    createComponent(type, item, part, 'pulldown', item.type);
+                }
+            }, this);
+
+            $(parent).append(temp);
+    }
+}
+
+var ui = new UI();
+]]>
+      </script>
+    </record>
     <record id="462b4f80-de05-42c0-b363-9a3c0dc3c008">
       <path>BRjx_frontend/</path>
-      <name>default</name>
-      <type>xq</type>
+      <name>index</name>
+      <type>html</type>
       <version>0.0.1</version>
-      <properties type="array">
-        <class>base</class>
-        <property>&gt; links</property>
-        <property>&gt; scripts</property>
-        <property>title</property>
-        <property>&gt; body</property>
-      </properties>
+      <properties/>
       <script>
 <![CDATA[
 <!DOCTYPE html>
@@ -23,21 +1436,286 @@
       <script type="text/javascript" src="https://use.fontawesome.com/e2a55cc896.js"></script>
       <script type="text/javascript" src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
 
-      <title></title>
+        <link href="/styles/license.css" rel="stylesheet" type="text/css" />
+
+        <link href="/styles/default/base.css" rel="stylesheet" type="text/css" />
+        <link href="/styles/default/font.css" rel="stylesheet" type="text/css" />
+        <link href="/styles/default/layout.css" rel="stylesheet" type="text/css" />
+        <link href="/styles/default/component/flayout.css" rel="stylesheet" type="text/css" />
+        <link href="/styles/default/component/navigation.css" rel="stylesheet" type="text/css" />
+        <link href="/styles/default/component/window.css" rel="stylesheet" type="text/css" />
+        <link href="/styles/default/component/message.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript" src="/scripts/ui.js"></script>
+
+        <script type="text/javascript" src="/scripts/default/component/flayout.js"></script>
+        <script type="text/javascript" src="/scripts/default/component/navigation.js"></script>
+
+    <script>
+var favIcon = "\
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAAlwSFlzAAAD\
+2AAAA9gBbkdjNQAAActpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6\
+eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYg\
+eG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4K\
+ICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6eG1w\
+PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIgogICAgICAgICAgICB4bWxuczp0aWZmPSJo\
+dHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyI+CiAgICAgICAgIDx4bXA6Q3JlYXRvclRvb2w+\
+d3d3Lmlua3NjYXBlLm9yZzwveG1wOkNyZWF0b3JUb29sPgogICAgICAgICA8dGlmZjpPcmllbnRh\
+dGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9y\
+ZGY6UkRGPgo8L3g6eG1wbWV0YT4KGMtVWAAAAuJJREFUOBFNU81PU0EQ/73te22xJVA+bGmhEsEQ\
+EIzBgwcOHjDRGwfjX4GJf4InE+9GL5xM9OaBg8bgwShKIhASFEq0WKCfSFugr7SvfZ/r7KslTDI7\
+uzM7H/vbGalat+ZkD15wYACAxTlnjEnwKh6Ypg3L4ZDIIEiSJLoGwTLpDi3bnofWtPLkJMhuCdrY\
+Ds8fnXHLOle1TW0pEvGGbmcZRYsQkwuXHFpEhp+7ZR6b+8w3fpXcs9CTpZ2d02XhR8KJyrSxiL1U\
+kqjVrTbaH8Dbp+O4EgmSSZTe4lZ8wMPcp3jIZKDeNA0Rn8ghouhuupbmwpo7qvJnr3/wv+Wae1cs\
+wpfJsoxS6QjpdIYwksCIDQJPEGGAZPI37UxspypY3T9DuDfg2toLIQ7spfaw8u0LbzSaWPqexaPn\
+68gWNRRyB1h8/wnrW4dYThxjPOzHfqEK/X8CEYQZhgVFkeFIPnxYSSGZO8PCjoZkqoBMeg/xoTgS\
+GQ2LSRVjsSCKJxrol9wCBOSyrhsECjBybQL0r+gNhXB/6BTNah4DgxF0dRtQ7Q5cD/nwcHYEHT6B\
+e4s85MhMk4DUDEyNX4HCVSwspSBpZcQHuhCORKlPDHxNnGJmpPPcuaKqKBWPIJ7MdMOgkmwEg3Sh\
+K443ayrujjJM3ZiEY1sonzaxlmlgerTbTatWKsjlcjg+LiOdyYCJKIqiuMZSTcHVuIy52Uk0TBkq\
+ZUoXdbJJuDVxmcDjWF5NQKLHh8NhDMaiYKpa5R1+rxvg3Voej2diaPIgNnaK0HUNH7dU3IwFUK3p\
+7g/5/T4EgpcoqZcajHG5r7dHDnV6bcsBq5sOf7V5huFoHfdux9GoSZge0/Bk8wQ9QYYHd4YR7Yth\
+N3WASqXiBLv7PdAtpz1MVqFY48mDkwv9x3lNM/n2nzLXGuZFvTtMusWzUrWu0zh7XtIzI17ZY1Fj\
+Md10zv9akRkE02C6DUSdSk3AFZKFpm7P/wNCW/RqiuL5mgAAAABJRU5ErkJggg==\
+";
+
+var docHead = document.getElementsByTagName('head')[0];
+var newLink = document.createElement('link');
+newLink.rel = 'shortcut icon';
+newLink.type = 'image/x-icon';
+newLink.href = 'data:image/png;base64,'+favIcon;
+docHead.appendChild(newLink);
+    </script>
+
+      <title>ManageIT Environment</title>
    </head>
    <body>
 
+        <templates>
+            <template data-template="message-template">
+                <div id="view">
+                    <div id="area">
+                        <div id="wait">
+                            <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div id="data"></div>
+                        <div id="ctrl">
+                            <i id="icon" class="fa fa-times fa-3x" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </template>
+            <template data-template="window-template">
+                <div id="view">
+                    <div id="area">
+                        <div id="ctrl">
+                            <!-- window-controls-template -->
+                        </div>
+                        <div id="wait">
+                            <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        <div id="data"></div>
+                    </div>
+                </div>
+            </template>
+            <template data-template="menu-template window-controls-template">
+                <nav id="view">
+                    <div id="area">
+                        <ul id="data">
+                            <!-- menu-item-template -->
+                        </ul>
+                    </div>
+                    <div id="ctrl">
+                        <i id="icon" class="fa " aria-hidden="true"></i>
+                    </div>
+                </nav>
+            </template>
+            <template data-template="menu-item-template">
+                <li id="item" class="" data-uuid="" data-type="" data-unit="" data-mode="" data-state="" data-action='' data-active="" data-fallow="">
+                    <i id="icon" class="fa" aria-hidden="true"></i>
+                </li>
+            </template>
+        </templates>
+        <div class="top-layer"> 
+            <div class="message-layer"></div>
+            <div class="window-layer"></div>
+        </div>
+        <header id="persist-view-top" class="persist-view">
+            <section class="flyout-view">
+                <div class="flyout-area">
+                    <div class="flyout-data" data-flyoutposition="left">
+                         <h1>Manage<span class="special-font-42 italic-font-42bold">it</span><span class="normal-font-18"> environment</span></h1>
+                    </div>
+                    <div class="flyout-data" data-flyoutposition="center"></div>
+                    <div class="flyout-data" data-flyoutposition="right"></div>
+                </div>
+                <div class="flyout-ctrl"></div>
+            </section>
+            <div class="persist-area">
+                <div class="persist-data"></div>
+            </div>
+        </header>
+
+        <main id="content-view-center">
+            <section>
+            <!-- -->
+                <!-- main content -->
+                Main Content ! </br>
+                    <div id="ringoContainer" style="width:100%;height:10%;border:0px solid grey">
+
+
+        <div id="lowerLeftPane">
+            <h1>Ringo WebSocket Demo</h1>
+
+            <p>Try viewing this page in multiple browser windows!</p>
+
+            <form onsubmit="return sendMessage()">
+                <input name="message" size="40" placeholder="Type message and hit &lt;Enter&gt;">
+            </form>
+
+            <div id="amb">
+                <p></p>
+            </div>
+        </div>
+
+        <div id="lowerRightPane">
+            <h1>Ringo EventSource Demo</h1>
+
+            <p>&nbsp;</p>
+
+            <p>&nbsp;</p>
+
+            <div id="evc">
+                <p></p>
+            </div>
+        </div>
+    </div>
+
+
+            <!-- -->
+            </section>
+            <!-- -->
+            <aside>
+                <article>Side Content</article>
+                <article>Info 1</article>
+                <article>Info 2</article>
+                <article>Info 3</article>
+                <article>Info 4</article>
+                <article>Info 5</article>
+            </aside>
+            <!-- -->
+        </main>
+
+        <footer id="persist-view-bottom" class="persist-view">
+            <div class="persist-area">
+                <div class="persist-data"></div>
+            </div>
+            <section class="flyout-view">
+                <div class="flyout-area">
+                    <div class="flyout-data" data-flyoutposition="left">
+                        <ul class="note">
+                            <li>
+                                <a href="#about">Über Manage<span class="special-font-12 italic-font-14bold">it</span><span class="normal-font-6"> environment</span></a>
+                            </li>
+                            <li>
+                                <a class="menu-item" href="http://www.gnu.org/licenses/" data-source="http://www.gnu.org/licenses/gpl-3.0.txt" data-target="" data-type="menu" data-unit="license-button" data-mode="button" data-action='{"eh1":{"click":"menuaction"}, "eh2":{"click":"openwindow"}, "eh3":{"click":"showgnulicense"}}' data-active="fa-file-text-o" data-fallow="fa-file-text-o" data-state="">GNU General Public License</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flyout-data" data-flyoutposition="center"></div>
+                    <div class="flyout-data" data-flyoutposition="right">
+                        <ul class="note">
+                            <li><span class="note">Diese Seite wurde zuletzt am <span id="date">DD. MMM YYYY um hh:mm Uhr</span> geändert.</span>
+                                <a href="stocker-schmid.ch">&copy; stocker-schmid.ch</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flyout-ctrl"></div>
+            </section>
+        </footer>
+
    </body>
+
+
+<script type="text/javascript">
+    function append(target, text) {
+        var p = document.createElement("p");
+        p.appendChild(document.createTextNode(text));
+        document.getElementById(target).firstElementChild.innerText = text;
+    }
+</script>
+<!-- -->
+<script type="text/javascript">
+    if (typeof EventSource === "function") {
+        var url = location.href;
+        console.log(url);
+        var source = new EventSource(url + "evc");
+        source.onopen = function(evt) {
+            append("evc", "[Connection opened]");
+        };
+        source.onmessage = function(evt) {
+            append("evc", evt.data);
+        };
+        source.onerror = function(evt) {
+            source.close();
+            append("evc", "[Connection error]");
+        };
+    } else {
+        append("evc", "Sorry, your browser does not seem to support EventSource.");
+    }
+</script>
+<!-- -->
+<script type="text/javascript">
+    //document.addEventListener('DOMContentLoaded',
+    //setTimeout(
+    //    function() {
+    if (typeof WebSocket !== "function" && typeof MozWebSocket === "function") {
+        WebSocket = MozWebSocket;
+    }
+    if (typeof WebSocket === "function") {
+        // Build websocket URL from current location
+        var url = location.href.replace(/^[^:]+/, "ws");
+        console.log(url);
+        var socket = new WebSocket(url + "amb");
+        socket.onopen = function(evt) {
+            append("amb", "[Connection opened]");
+        };
+        socket.onmessage = function(evt) {
+            append("amb", evt.data);
+        };
+        socket.onclose = function(evt) {
+            socket.close();
+            append("amb", "[Connection closed]");
+        };
+    } else {
+        append("amb", "Sorry, your browser does not seem to support WebSockets.");
+    }
+    //    }, 1000);
+    //, false);
+
+    function sendMessage() {
+        if (socket) {
+            var form = document.forms[0];
+            socket.send(form.message.value);
+            form.reset();
+        }
+        return false;
+    }
+</script>
+
+
 </html>
 ]]>
       </script>
     </record>
     <record id="5ddff8a2-92c4-423d-99c1-808dd8d4a21b">
       <path>BRjx_frontend/</path>
-      <name>test</name>
+      <name>demo</name>
       <type>html</type>
       <version>0.0.1</version>
-      <properties type="array"/>
+      <properties/>
       <script>
 <![CDATA[
 <!DOCTYPE html>
@@ -219,50 +1897,31 @@
     </style>
     <script>
 var favIcon = "\
-iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3\
-CculE8AAAACXBIWXMAAAsTAAALEwEAmpwYAAACC2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczpt\
-ZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS40LjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcm\
-RmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMu\
-YWRvYmUuY29tL3RpZmYvMS4wLyI+CiAgICAgICAgIDx0aWZmOlJlc29sdXRpb25Vbml0PjI8L3RpZmY6UmVzb2x1dGlvblVuaXQ+CiAgICAgICAgID\
-x0aWZmOkNvbXByZXNzaW9uPjE8L3RpZmY6Q29tcHJlc3Npb24+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+\
-CiAgICAgICAgIDx0aWZmOlBob3RvbWV0cmljSW50ZXJwcmV0YXRpb24+MjwvdGlmZjpQaG90b21ldHJpY0ludGVycHJldGF0aW9uPgogICAgICA8L3\
-JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KD0UqkwAAC/ZJREFUWAl1V1mMHNd1PbV3d3V3VfU20z07yZnhMqIomhRF\
-0iIpyALihbZ/SMuAhBj+CAIphmLkJ3ECmIgTwEASwAEFJgL8kcj6SMgPQ7Jlw0G4ILY22rJGprgMlyFnODOctfet9pxqaRTJSWpQU/2q6r1737nnnn\
-tLwP9znDhxQjp37lzAx2H0yl/93ffGVEF7UhSCwyHCcSHEgCjJw6qiBL4fzNfq7aWu7c1omvqGkdbP//kLL8x/tLR49uxZ4eTJk/5H409dhE+NPhoc\
-O3ZMvnTpkhcNv/HcC/sRBN/SE/EvZvKZjKaI6LRaaJQrvathpGFlM4gbWbihgG63C89z12LxxE/yxcLpPzp5cjpa59SpUzLP3prRePP4Xw5sGv/+91\
-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";
+iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJN\
+AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAAsTAAALEwEAmpwY\
+AAACC2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpu\
+czptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS40LjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9\
+Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRm\
+OkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8v\
+bnMuYWRvYmUuY29tL3RpZmYvMS4wLyI+CiAgICAgICAgIDx0aWZmOlJlc29sdXRpb25Vbml0PjI8\
+L3RpZmY6UmVzb2x1dGlvblVuaXQ+CiAgICAgICAgIDx0aWZmOkNvbXByZXNzaW9uPjE8L3RpZmY6\
+Q29tcHJlc3Npb24+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRp\
+b24+CiAgICAgICAgIDx0aWZmOlBob3RvbWV0cmljSW50ZXJwcmV0YXRpb24+MjwvdGlmZjpQaG90\
+b21ldHJpY0ludGVycHJldGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6\
+UkRGPgo8L3g6eG1wbWV0YT4KD0UqkwAAArxJREFUOBGVU0tIlFEUPuf+9x9nyJGKspBgKDQts0UT\
+EYLpiG2iRS0MchUItmoTIS1/gxa97EULhVJbxRSteiwCJxcFBRMmLsbRnvhIwnzkvP757z2d+4+5\
+98D5z+Oe7zzuuT9AiXBNblgYoGHadylxQBFEidgWiMoqPicrHJSFzBmBYpE0FPkkCMQRhC4K2Exa\
+fxIGbMpSTs2xOCXswIDQiF+vHV8O5HM9nO00IH1DxIgo2zRIKOo5RYrrnAVhdZoEAE5Cph60LXAr\
+v8hzX0z0Nj+q7R6u1QjT6Vux1okbre+4bFoXMlM5HXAm78RGCXU3gE4KaI9b4MS86guvygihmZDe\
+mJxuQS9lwuFeo/tEcJJlavp2Y85gQlAcdxXGZXTLHpEEUJYMNXBrFdz+ewP4drdt3geajymCcAiB\
+nhjTx9w8nDE6j8BwJq58jL8LhUUYN3YLj2XY6LWRnfUsKglEwtjr5DhCJPu7PN+B2ASIY98HY3lj\
+v3Va1N/ZtL9e0qqJk69qNztmzpJVUWUkOI7mDpBMJQuoRgC9Nn6/stODyf7zRWOjwEa+9cTU/ROF\
+9ri5M9TGb8jfwpdl7FrBQP2Kh9mSm5OvKXUXRxp59x2SF+27nnIvxAMzs4147srLjtHVUNt2S+1d\
+UTj84XrkKkBNwQ/uStTtLofOLGEVO+aXFD6De83+Ja/lB3w48PhyQOpJC70dridHtBblUsKc53m7\
+AKTNb/Lz1mChOpu1Z7NgVwmhyoUQk9xBHfNPaVtqQWvYr8FeRPQqLQuP8DrzHDSHSFoIOLqUL2sA\
+CUqCl9YaQwyMcgchfp1BqZQ9mofi7yDosBBym9b6Bx/8YTklpSTXxRpONkMKZnh6jqEIgz9yTAUn\
+Sv0fZV06juPvft3BSiJReg9DQ0MHmWPmLM7b6Ovrs/04BpX+Cd/a2Ocf8ac5LrDxEzUAAAAASUVO\
+RK5CYII=";
 
 var docHead = document.getElementsByTagName('head')[0];
 var newLink = document.createElement('link');

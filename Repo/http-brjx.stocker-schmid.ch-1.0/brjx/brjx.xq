@@ -486,7 +486,7 @@ declare function brjx:getContent
  : @param   $input the path from which you wish to get the last-modified date of the repository or resource
  :          (modified date of a repository or resource is the same as they are stored in the same db)
  :
- : return a value of type long. As Javascript cannot represent 64bit Java long we add a _ in front to return a string and remove it in the Java Class before conversion.
+ : return a value of type long. As Javascript cannot represent 64bit Java long we return a string and convert it in the Java Class before.
  :) 
  declare function brjx:getLastModified 
   ( $input as xs:string )   as xs:string {
